@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ruto Receipts</title>
+  <meta name="description" content="A searchable archive of President William Ruto's public statements, on video, set against fact-checks and the record.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap">
+      <p class="kicker">Public record · Kenya</p>
+      <h1>Ruto <span>Receipts</span></h1>
+      <p class="lede">What the President said, on camera, next to what the record shows. Every clip links to its original post and an independent fact-check.</p>
+    </div>
+  </header>
+
+  <nav class="controls wrap" aria-label="Filters">
+    <input id="search" type="search" placeholder="Search quotes, topics…" autocomplete="off">
+    <div id="verdicts" class="chips" role="group" aria-label="Verdict"></div>
+    <div id="tags" class="chips" role="group" aria-label="Topic"></div>
+    <div class="row">
+      <span id="count" class="count"></span>
+      <label class="sort">Sort
+        <select id="sort">
+          <option value="new">Newest first</option>
+          <option value="old">Oldest first</option>
+        </select>
+      </label>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <ul id="grid" class="grid"></ul>
+    <p id="empty" class="empty" hidden>No clips match those filters.</p>
+  </main>
+
+  <dialog id="viewer" aria-labelledby="v-title">
+    <button class="close" aria-label="Close">×</button>
+    <article>
+      <span id="v-verdict" class="badge"></span>
+      <h2 id="v-title"></h2>
+      <p id="v-meta" class="meta"></p>
+      <blockquote id="v-quote"></blockquote>
+      <div id="v-embed" class="embed"></div>
+      <p id="v-clipnote" class="meta" hidden></p>
+      <section class="reality">
+        <h3>What the record shows</h3>
+        <p id="v-reality"></p>
+        <p class="links">
+          <a id="v-check" target="_blank" rel="noopener">Read the fact-check ↗</a>
+          <a id="v-tweet" target="_blank" rel="noopener">Original post on X ↗</a>
+        </p>
+      </section>
+    </article>
+  </dialog>
+
+  <footer class="wrap foot">
+    <p>Verdicts come from the linked fact-checkers and reporting, not from this site. Spotted an error or have a clip with a source? Open an issue or a pull request with the post URL and a fact-check link.</p>
+  </footer>
+
+  <script src="data/claims.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
