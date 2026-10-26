@@ -845,5 +845,43 @@ window.CLAIMS = [
       "ethnicity",
       "politics"
     ]
+  },
+  {
+    "id": "tsc-letters-mps-state-house-distribution",
+    "title": "Claimed teacher recruitment was 100% merit-based while State House handed batches of TSC letters to MPs",
+    "quote": "The recruitment of 56,000 teachers was conducted strictly on merit, without corruption, bribery, or political connection. No Kenyan needs to know anyone in government to get a job.",
+    "date": "2023-09-01",
+    "context": "State House press briefing and regional rallies defending the national teacher hiring drive",
+    "verdict": "False",
+    "reality": "National Assembly Speaker Moses Wetang'ula and Majority Chief Whip Sylvanus Osoro publicly confirmed that MPs accompanied leadership to State House where President Ruto gave them batches of TSC employment letters (approx. 10 per MP) to distribute, with legislators accused of selling the constitutional appointment letters for KSh 150,000 to KSh 400,000 in gross violation of Article 237 of the Constitution.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1825101662996381989",
+    "factcheck_url": "https://citizen.digital/news/how-mps-sell-tsc-employment-letters-awarded-by-ruto-at-state-house-wetangula-n348270",
+    "tags": [
+      "education",
+      "corruption",
+      "tsc",
+      "governance",
+      "patronage"
+    ],
+    "thumbnail": null,
+    "clip_note": "Speaker Wetang'ula and Majority Whip Osoro publicly admitted MPs were issued TSC employment letters at State House."
+  },
+  {
+    "id": "jss-intern-teachers-permanent-promise",
+    "title": "Promised JSS intern teachers automatic transition to permanent terms after one year",
+    "quote": "All intern teachers currently serving in Junior Secondary Schools will be confirmed to permanent and pensionable terms after serving for one year. Nobody will be dropped.",
+    "date": "2023-08-16",
+    "context": "Public address during primary school heads conference, Sheikh Zayed Hall, Mombasa",
+    "verdict": "Broken promise",
+    "reality": "In early 2024, the government reneged on the pledge, forcing JSS teachers into a second year of underpaid internship on KSh 17,000 stipends, prompting a nationwide strike. The Employment and Labour Relations Court declared the internship scheme illegal and exploitative, ruling that TSC has no constitutional mandate to hire registered teachers on casual terms.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1780277341857997093",
+    "factcheck_url": "https://nation.africa/kenya/news/court-declares-jss-intern-teachers-programme-illegal-4592750",
+    "tags": [
+      "education",
+      "tsc",
+      "jobs",
+      "labor"
+    ],
+    "thumbnail": null
   }
 ];
