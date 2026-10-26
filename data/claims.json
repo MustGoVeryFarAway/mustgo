@@ -623,5 +623,129 @@
       "corruption",
       "historical"
     ]
+  },
+  {
+    "id": "ssu-disbandment-river-yala-promise",
+    "title": "Pledged state abductions, extrajudicial killings, and River Yala bodies were over forever",
+    "quote": "I have directed the immediate disbandment of the Special Service Unit... Under my watch, police will never be used for political assassination or extrajudicial killings. Bodies will never again be found in rivers like River Yala.",
+    "date": "2022-10-16",
+    "context": "Speech at Kericho Green Stadium, Kericho County",
+    "verdict": "Broken promise",
+    "reality": "By mid-2024, human rights monitors (Amnesty Kenya, KNCHR, VOCAL Africa) documented dozens of abductions by hooded state security officers, with multiple tortured bodies recovered from River Yala, River Nzoia, and the Kware quarry in Mukuru.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1581622353347891200",
+    "factcheck_url": "https://www.amnestykenya.org/missing-voices-2023-annual-report-end-police-impunity/",
+    "tags": [
+      "security",
+      "police-brutality",
+      "extrajudicial-killings",
+      "human-rights"
+    ],
+    "thumbnail": null,
+    "clip_note": "Presidential address announcing the disbandment of the DCI Special Service Unit (SSU)."
+  },
+  {
+    "id": "rex-masai-live-ammunition-denial",
+    "title": "Administration denied police used live ammunition against peaceful protesters",
+    "quote": "Police officers exercised maximum restraint and did not deploy live ammunition against peaceful demonstrators.",
+    "date": "2024-06-21",
+    "context": "Government briefing following the 20 June 2024 Finance Bill demonstrations in Nairobi",
+    "verdict": "False",
+    "reality": "An official post-mortem examination by Chief Government Pathologist Dr. Johansen Oduor and an IPOA investigation confirmed 29-year-old Rex Masai died from severe haemorrhage after being shot directly with a high-velocity live bullet on Moi Avenue.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1804153074094403666",
+    "factcheck_url": "https://nation.africa/kenya/news/post-mortem-reveals-rex-masai-was-killed-by-a-bullet-4666014",
+    "tags": [
+      "police-brutality",
+      "protests",
+      "security",
+      "human-rights"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "parliament-shootings-restraint-claim",
+    "title": "Claimed police exercised restraint during the 25 June Parliament protests",
+    "quote": "Security infrastructure was mobilized to defend the nation against treasonous elements who compromised critical installations... our officers acted with commendable restraint.",
+    "date": "2024-06-25",
+    "context": "Late-night televised address to the nation, State House Nairobi",
+    "verdict": "False",
+    "reality": "Human Rights Watch and Amnesty International documented that police and rooftop snipers fired live ammunition directly into fleeing crowds, killing at least 23 people on that day alone, with multiple victims shot in the back and chest while unarmed.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1805663784561803714",
+    "factcheck_url": "https://www.hrw.org/news/2024/06/29/kenya-lethal-force-used-against-protesters",
+    "tags": [
+      "police-brutality",
+      "protests",
+      "security",
+      "human-rights"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "abductions-give-me-names-kisumu",
+    "title": "Challenged public to produce names of anyone abducted by police",
+    "quote": "If there is any Kenyan who has been abducted or arrested and not presented in court, let the family bring forward the name to me. Under my watch, no Kenyan will be abducted.",
+    "date": "2024-08-29",
+    "context": "Live televised presidential town hall, Kisumu State Lodge",
+    "verdict": "False",
+    "reality": "The Law Society of Kenya (LSK), KNCHR, and Amnesty Kenya had already published official dockets containing over 60 documented names of individuals abducted in unmarked Subarus by state security agents, including high-profile cases like Gabriel Oguda and Shad Khalif.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1829141097618583648",
+    "factcheck_url": "https://nation.africa/kenya/news/the-anatomy-of-state-sponsored-abductions-in-kenya-4746200",
+    "tags": [
+      "security",
+      "police-brutality",
+      "human-rights",
+      "protests"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "maandamano-2023-police-professionalism",
+    "title": "Commended police for professionalism during July 2023 protests",
+    "quote": "I want to congratulate the police for acting professionally and protecting lives and property during the recent violent riots.",
+    "date": "2023-07-20",
+    "context": "Public rally and development tour, Isiolo County",
+    "verdict": "Misleading",
+    "reality": "A joint report by Amnesty Kenya, IPOA, and KNCHR documented that at least 57 people were killed by police bullets in July 2023 alone, with officers tear-gassing nursery school pupils in Kangemi and shooting unarmed youths in Mlolongo and Kisumu.",
+    "tweet_url": null,
+    "factcheck_url": "https://www.amnestykenya.org/missing-voices-2023-annual-report-end-police-impunity/",
+    "tags": [
+      "police-brutality",
+      "security",
+      "human-rights",
+      "protests"
+    ]
+  },
+  {
+    "id": "kware-quarry-transparent-investigation",
+    "title": "Pledged independent police investigation into Mukuru Kware quarry bodies",
+    "quote": "The police will conduct a transparent, thorough, and swift investigation into the bodies found in Kware, Mukuru. Anyone involved will face the full force of the law.",
+    "date": "2024-07-14",
+    "context": "Public address during church service, Elgeyo Marakwet",
+    "verdict": "Broken promise",
+    "reality": "A month later, the primary suspect Collins Jumaisi escaped from Gigiri Police Station while in custody. Human rights organizations highlighted that the Kware dumping site was less than 100 metres from Kware Police Station, demanding an independent judicial inquiry rather than internal police probes.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1812423377224855799",
+    "factcheck_url": "https://www.hrw.org/news/2024/07/23/kenya-investigate-mukuru-quarry-killings-independently",
+    "tags": [
+      "security",
+      "extrajudicial-killings",
+      "human-rights"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "dp-baby-pendo-police-denial-2017",
+    "title": "Administration denied police responsibility for 2017 post-election fatalities",
+    "quote": "The government maintains that police officers handled election demonstrations strictly within the law and did not target innocent civilians.",
+    "date": "2017-08-16",
+    "context": "Press briefing on security operations following the 2017 general election, Nairobi",
+    "verdict": "False",
+    "reality": "A landmark judicial inquest in 2019 into the death of 6-month-old Samantha Pendo in Kisumu found that she died of blunt force trauma caused by police batons during a house raid, holding senior police commanders criminally liable under command responsibility.",
+    "tweet_url": null,
+    "factcheck_url": "https://www.knchr.org/Articles/ArtMID/2432/ArticleID/1075/Landmark-Ruling-on-Baby-Pendo-Inquest",
+    "tags": [
+      "police-brutality",
+      "security",
+      "human-rights",
+      "historical"
+    ]
   }
 ]
