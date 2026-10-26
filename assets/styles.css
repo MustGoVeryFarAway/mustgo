@@ -170,8 +170,15 @@ html.dark {
 }
 
 /* Global Reset & Base */
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
 
 body {
   margin: 0;
@@ -181,12 +188,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.25s ease, color 0.25s ease;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .wrap {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 20px;
+  box-sizing: border-box;
 }
 
 /* Kenyan Flag Accent Stripe */
@@ -204,6 +216,7 @@ body {
   padding: 24px 0 32px;
   background: radial-gradient(ellipse 90% 60% at 50% -15%, rgba(187, 30, 30, 0.07), transparent 75%);
   position: relative;
+  overflow: hidden;
 }
 
 .top-nav {
@@ -279,7 +292,7 @@ body {
 }
 
 h1 {
-  font: 400 clamp(40px, 7.5vw, 82px)/1.04 var(--font-display);
+  font: 400 clamp(38px, 7.5vw, 82px)/1.04 var(--font-display);
   margin: 0 0 14px;
   letter-spacing: -.03em;
   color: var(--ink);
@@ -355,12 +368,10 @@ h1 span {
 .theme-icon-light { display: none; }
 .theme-icon-dark { display: inline-block; }
 
-:root[data-theme="dark"] .theme-icon-light { display: inline-block; }
-:root[data-theme="dark"] .theme-icon-dark { display: none; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .theme-icon-light { display: inline-block; }
-  :root:not([data-theme="light"]) .theme-icon-dark { display: none; }
-}
+:root[data-theme="dark"] .theme-icon-light,
+html.dark .theme-icon-light { display: inline-block; }
+:root[data-theme="dark"] .theme-icon-dark,
+html.dark .theme-icon-dark { display: none; }
 
 .btn-text {
   background: none;
@@ -513,7 +524,7 @@ h1 span {
 .score-pill[data-v="Unproven"] .dot { background: var(--unproven); }
 
 /* ==========================================================================
-   Sticky Controls & Filters
+   Sticky Controls & Filters (Zero Horizontal Overflow)
    ========================================================================== */
 
 .controls {
@@ -528,11 +539,20 @@ h1 span {
   border-bottom: 1px solid var(--line);
   display: grid;
   gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* CRITICAL FIX: Ensure grid children shrink to fit viewport without expanding grid */
+.controls > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .search-box {
   position: relative;
   width: 100%;
+  min-width: 0;
 }
 
 .search-icon {
@@ -555,6 +575,7 @@ h1 span {
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
   transition: border-color .15s ease, box-shadow .15s ease;
+  box-sizing: border-box;
 }
 
 #search:focus {
@@ -598,6 +619,9 @@ h1 span {
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
 }
 
 .chips-label {
@@ -615,6 +639,8 @@ h1 span {
   overflow-x: auto;
   scrollbar-width: none;
   padding: 2px 0;
+  min-width: 0;
+  flex: 1;
   mask-image: linear-gradient(to right, transparent 0, black 12px, black calc(100% - 12px), transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0, black 12px, black calc(100% - 12px), transparent 100%);
 }
@@ -634,6 +660,7 @@ h1 span {
   align-items: center;
   gap: 6px;
   box-shadow: var(--shadow-sm);
+  white-space: nowrap;
 }
 
 .chip:hover {
@@ -659,6 +686,8 @@ h1 span {
   align-items: center;
   font-size: 13.5px;
   color: var(--muted);
+  min-width: 0;
+  width: 100%;
 }
 
 .active-filters-info {
@@ -693,6 +722,8 @@ h1 span {
   display: grid;
   gap: 22px;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .card {
@@ -706,6 +737,7 @@ h1 span {
   transition: transform .22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .22s ease, border-color .2s ease;
   box-shadow: var(--shadow-sm);
   position: relative;
+  min-width: 0;
 }
 
 .card:hover,
@@ -901,6 +933,7 @@ dialog {
   color: var(--ink);
   box-shadow: var(--shadow-xl);
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
 dialog::backdrop {
@@ -1238,6 +1271,8 @@ blockquote {
   padding: 48px 0 32px;
   color: var(--muted);
   font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .foot-grid {
