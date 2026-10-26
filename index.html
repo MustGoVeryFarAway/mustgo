@@ -3,27 +3,86 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ruto Receipts</title>
-  <meta name="description" content="A searchable archive of President William Ruto's public statements, on video, set against fact-checks and the record.">
+  <title>MustGo.co.ke · Ruto Receipts | Public Record Archive</title>
+  <meta name="description" content="A searchable civic archive of President William Ruto's public statements, on video, set against independent fact-checks and the public record.">
+  <meta name="theme-color" content="#141414">
+
+  <!-- OpenGraph / Social Previews (WhatsApp, X, Facebook) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MustGo.co.ke">
+  <meta property="og:title" content="MustGo.co.ke · The Ruto Receipts Archive">
+  <meta property="og:description" content="What the President said, on camera, set against independent fact-checks and official records. The internet remembers.">
+  <meta property="og:url" content="https://mustgo.co.ke">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MustGo.co.ke · The Ruto Receipts Archive">
+  <meta name="twitter:description" content="What the President said, on camera, set against independent fact-checks and official records.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
+  <!-- Kenyan flag stripe -->
+  <div class="flag-stripe" aria-hidden="true"></div>
+
   <header class="masthead">
     <div class="wrap">
-      <p class="kicker">Public record · Kenya</p>
-      <h1>Ruto <span>Receipts</span></h1>
-      <p class="lede">What the President said, on camera, next to what the record shows. Every clip links to its original post and an independent fact-check.</p>
+      <div class="top-nav">
+        <div class="domain-badge">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span>mustgo.co.ke</span>
+        </div>
+        <div class="header-actions">
+          <button id="open-submit" class="btn btn-outline btn-sm">
+            <span class="btn-icon">＋</span> Submit a Receipt
+          </button>
+        </div>
+      </div>
+
+      <p class="kicker">Public Record Archive · Kenya</p>
+      <h1>MustGo <span>Receipts</span></h1>
+      <p class="lede">What President William Ruto said on camera, set against independent fact-checks and official records. Every clip links to its source and full public verification.</p>
+
+      <!-- Scorecard / Truth Meter -->
+      <section class="scorecard" aria-label="Verification Summary">
+        <div class="scorecard-header">
+          <div class="scorecard-title">
+            <span class="scorecard-icon">⚖️</span>
+            <strong>The Record Scorecard</strong>
+          </div>
+          <div id="sc-summary" class="scorecard-summary">Loading record...</div>
+        </div>
+        <div id="sc-bar" class="score-bar" role="progressbar" aria-label="Distribution of verdicts"></div>
+        <div id="sc-pills" class="score-pills"></div>
+      </section>
     </div>
   </header>
 
+  <!-- Filter & Search Controls -->
   <nav class="controls wrap" aria-label="Filters">
-    <input id="search" type="search" placeholder="Search quotes, topics…" autocomplete="off">
-    <div id="verdicts" class="chips" role="group" aria-label="Verdict"></div>
-    <div id="tags" class="chips" role="group" aria-label="Topic"></div>
+    <div class="search-box">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <input id="search" type="search" placeholder="Search quotes, topics, places (e.g. unga, budget, jobs)..." autocomplete="off" spellcheck="false">
+      <button id="clear-search" class="clear-btn" type="button" aria-label="Clear search" hidden>×</button>
+    </div>
+
+    <div class="chips-group">
+      <span class="chips-label">Verdict:</span>
+      <div id="verdicts" class="chips" role="group" aria-label="Filter by Verdict"></div>
+    </div>
+
+    <div class="chips-group">
+      <span class="chips-label">Topic:</span>
+      <div id="tags" class="chips" role="group" aria-label="Filter by Topic"></div>
+    </div>
+
     <div class="row">
-      <span id="count" class="count"></span>
+      <div class="active-filters-info">
+        <span id="count" class="count"></span>
+        <button id="reset-filters" class="btn-text" type="button" hidden>Reset all filters</button>
+      </div>
       <label class="sort">Sort
         <select id="sort">
           <option value="new">Newest first</option>
@@ -35,31 +94,159 @@
 
   <main class="wrap">
     <ul id="grid" class="grid"></ul>
-    <p id="empty" class="empty" hidden>No clips match those filters.</p>
+    <div id="empty" class="empty" hidden>
+      <div class="empty-icon">📂</div>
+      <h3>No matching receipts found</h3>
+      <p>Try searching for a different keyword or resetting your filters.</p>
+      <button id="empty-reset-btn" class="btn btn-outline" type="button">Show all receipts</button>
+    </div>
   </main>
 
+  <!-- Receipt Viewer Modal (Mobile Bottom-Sheet & Desktop Dialog) -->
   <dialog id="viewer" aria-labelledby="v-title">
-    <button class="close" aria-label="Close">×</button>
-    <article>
-      <span id="v-verdict" class="badge"></span>
-      <h2 id="v-title"></h2>
-      <p id="v-meta" class="meta"></p>
-      <blockquote id="v-quote"></blockquote>
-      <div id="v-embed" class="embed"></div>
-      <p id="v-clipnote" class="meta" hidden></p>
-      <section class="reality">
-        <h3>What the record shows</h3>
-        <p id="v-reality"></p>
-        <p class="links">
-          <a id="v-check" target="_blank" rel="noopener">Read the fact-check ↗</a>
-          <a id="v-tweet" target="_blank" rel="noopener">Original post on X ↗</a>
-        </p>
-      </section>
-    </article>
+    <div class="dialog-inner">
+      <div class="dialog-header">
+        <div class="dialog-nav-buttons">
+          <button id="v-prev" class="btn-icon-nav" aria-label="Previous receipt" title="Previous (←)">←</button>
+          <button id="v-next" class="btn-icon-nav" aria-label="Next receipt" title="Next (→)">→</button>
+          <span id="v-position" class="dialog-position-count"></span>
+        </div>
+        <button class="close" aria-label="Close dialog">×</button>
+      </div>
+
+      <article>
+        <div class="viewer-top-meta">
+          <span id="v-verdict" class="badge"></span>
+          <span id="v-id" class="receipt-id-tag"></span>
+        </div>
+
+        <h2 id="v-title"></h2>
+        <p id="v-meta" class="meta"></p>
+        
+        <blockquote id="v-quote"></blockquote>
+
+        <!-- Embed or Video Fallback Plaque -->
+        <div id="v-embed" class="embed"></div>
+        <p id="v-clipnote" class="meta" hidden></p>
+
+        <section class="reality">
+          <div class="reality-header">
+            <h3>What the record shows</h3>
+            <span class="verified-stamp">✓ Verified Record</span>
+          </div>
+          <p id="v-reality"></p>
+          <div class="links">
+            <a id="v-check" target="_blank" rel="noopener" class="link-btn primary-link">
+              <span>Read the Fact-Check ↗</span>
+            </a>
+            <a id="v-tweet" target="_blank" rel="noopener" class="link-btn secondary-link">
+              <span>Original Post on X ↗</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- Social Sharing & Receipt Generator Actions -->
+        <section class="viewer-actions" aria-label="Share and Download">
+          <div class="action-buttons">
+            <button id="btn-share-wa" class="btn btn-wa" type="button" title="Share receipt to WhatsApp">
+              <span class="btn-icon">💬</span> WhatsApp
+            </button>
+            <button id="btn-share-x" class="btn btn-x" type="button" title="Share receipt to X">
+              <span class="btn-icon">𝕏</span> Share on X
+            </button>
+            <button id="btn-copy-link" class="btn btn-outline" type="button" title="Copy direct link to this receipt">
+              <span class="btn-icon">🔗</span> <span id="copy-text">Copy Link</span>
+            </button>
+            <button id="btn-download-slip" class="btn btn-receipt" type="button" title="Generate and download image receipt">
+              <span class="btn-icon">🧾</span> <span id="download-text">Download Receipt</span>
+            </button>
+          </div>
+        </section>
+      </article>
+    </div>
   </dialog>
 
-  <footer class="wrap foot">
-    <p>Verdicts come from the linked fact-checkers and reporting, not from this site. Spotted an error or have a clip with a source? Open an issue or a pull request with the post URL and a fact-check link.</p>
+  <!-- Submit a Receipt Modal -->
+  <dialog id="submit-dialog" aria-labelledby="sub-title">
+    <div class="dialog-inner">
+      <div class="dialog-header">
+        <h2 id="sub-title">Submit a Public Receipt</h2>
+        <button class="close" aria-label="Close submit dialog">×</button>
+      </div>
+
+      <form id="submit-form" class="submit-form">
+        <p class="form-lede">Have a video clip of a statement made by the President, along with an independent fact-check or official record? Submit it here to be archived on <strong>mustgo.co.ke</strong>.</p>
+        
+        <label class="form-label">
+          <span>Claim Headline *</span>
+          <input type="text" id="sub-headline" placeholder="e.g. Claimed price of maize flour is KSh100" required>
+        </label>
+
+        <label class="form-label">
+          <span>Quote (as verbatim as possible) *</span>
+          <textarea id="sub-quote" rows="3" placeholder="What was said..." required></textarea>
+        </label>
+
+        <div class="form-row">
+          <label class="form-label">
+            <span>Date *</span>
+            <input type="date" id="sub-date" required>
+          </label>
+          <label class="form-label">
+            <span>Context / Location</span>
+            <input type="text" id="sub-context" placeholder="e.g. State House roundtable, church service">
+          </label>
+        </div>
+
+        <label class="form-label">
+          <span>Video Clip URL (X, YouTube, TikTok)</span>
+          <input type="url" id="sub-video" placeholder="https://x.com/... or https://youtube.com/...">
+        </label>
+
+        <label class="form-label">
+          <span>Fact-Check or Official Record URL *</span>
+          <input type="url" id="sub-factcheck" placeholder="https://africacheck.org/... or KNBS/Hansard link" required>
+          <small class="form-hint">Verdicts must be backed by an accredited fact-checker or official government reporting.</small>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" id="btn-submit-github" class="btn btn-primary">
+            <span>Open as GitHub Issue ↗</span>
+          </button>
+          <button type="button" id="btn-copy-submission" class="btn btn-outline">
+            <span>Copy Submission Text</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <!-- Footer with Methodology & Disclaimer -->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-col">
+          <h4>MustGo.co.ke</h4>
+          <p>A non-partisan civic archive dedicated to public accountability, factual accuracy, and institutional memory in Kenya.</p>
+          <p class="foot-tagline">"The internet never forgets."</p>
+        </div>
+        <div class="foot-col">
+          <h4>Standards & Sources</h4>
+          <p>Verdicts on this site belong to accredited independent fact-checkers (such as Africa Check, PesaCheck) and official state records (KNBS, Parliament Hansard, Auditor General reports), not editorial opinions.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Corrections & Open Data</h4>
+          <p>Spotted a factual error or have an update? <a href="#submit" id="foot-submit-link">Submit a correction</a> or open a pull request. Raw data is available as an open JSON dataset.</p>
+          <p><a href="data/claims.json" target="_blank" class="open-data-link">Download claims.json ↗</a></p>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <p>© MustGo.co.ke · Public Domain Archive · Built for Kenyan Civic Accountability</p>
+      </div>
+    </div>
   </footer>
 
   <script src="data/claims.js"></script>
