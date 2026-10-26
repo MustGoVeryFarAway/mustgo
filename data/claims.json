@@ -410,5 +410,218 @@
     "tags": [
       "healthcare"
     ]
+  },
+  {
+    "id": "dp-stadiums-six-months-2017",
+    "title": "Promised 9 modern stadiums completed in 6 months",
+    "quote": "In six months, the stadium in Wote will be complete; in three months, the stadium in Chuka will be complete; in six months, the stadium in Moyale will be complete... 9 stadiums are underway.",
+    "date": "2017-06-25",
+    "context": "Kameme FM live interview and Jubilee reelection campaign rally",
+    "verdict": "Broken promise",
+    "reality": "By the end of the Jubilee administration in 2022, none of the 9 promised regional stadiums had been completed, with Wote, Kamariny, and Chuka stadiums stalling for years despite multi-million shilling allocations.",
+    "tweet_url": "https://x.com/Kenyans/status/1275376759882674177",
+    "factcheck_url": "https://africacheck.org/fact-checks/reports/did-kenyas-jubilee-government-build-stadiums-it-promised-2013-and-2017",
+    "tags": [
+      "sports",
+      "infrastructure",
+      "campaign-2017"
+    ],
+    "thumbnail": null,
+    "clip_note": "Broadcast recording of the famous 6-month stadium promise."
+  },
+  {
+    "id": "dp-laptops-class-one-2013",
+    "title": "Promised laptops to every Class One pupil within 100 days",
+    "quote": "Every child who enters Class One in Kenya next year will receive a laptop to ensure our children are digital citizens.",
+    "date": "2013-02-04",
+    "context": "Jubilee Coalition 2013 manifesto launch, KICC Nairobi",
+    "verdict": "Broken promise",
+    "reality": "The individual laptop pledge was abandoned following procurement cancellations and cost blowouts; the project was downgraded to shared classroom tablets under the Digital Literacy Programme, reaching only a fraction of primary schools.",
+    "tweet_url": "https://x.com/KTNNewsKE/status/1084803328222384128",
+    "factcheck_url": "https://africacheck.org/fact-checks/reports/tracking-kenyas-jubilee-government-delivery-its-2013-election-pledges",
+    "tags": [
+      "education",
+      "technology",
+      "campaign-2013"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "dp-arror-kimwarer-7bn-2019",
+    "title": "Claimed only KSh7bn involved in Arror and Kimwarer dam projects",
+    "quote": "You've heard that government has lost about 21 billion in Kimwarer and Arror dam which is a flat lie. The money in question is about seven billion shillings and for every coin that has been paid we have a bank guarantee.",
+    "date": "2019-02-28",
+    "context": "Address to the press and public, Supreme Court grounds, Nairobi",
+    "verdict": "False",
+    "reality": "Director of Public Prosecutions and DCI records showed that over KSh 19 billion had been paid out to bankrupt contractor CMC di Ravenna with no physical work on the ground, leading to the prosecution of Treasury CS Henry Rotich.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1101140027655180290",
+    "factcheck_url": "https://nation.africa/kenya/news/revealed-how-billions-were-lost-in-arror-and-kimwarer-dams-scandal-143682",
+    "tags": [
+      "corruption",
+      "budget",
+      "infrastructure"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "dp-galana-kulalu-1m-acres",
+    "title": "Promised 1 million acres under irrigation at Galana Kulalu",
+    "quote": "We are putting one million acres under irrigation in the Galana Kulalu project so that Kenya will never import food again.",
+    "date": "2014-04-10",
+    "context": "State address on food security and agriculture, Kilifi County",
+    "verdict": "Broken promise",
+    "reality": "The Auditor-General's report revealed that less than 10,000 acres were ever cultivated after absorbing over KSh 7.2 billion, with the national irrigation scheme declaring the model farm unviable.",
+    "tweet_url": null,
+    "factcheck_url": "https://africacheck.org/fact-checks/reports/kenyas-galana-kulalu-mega-irrigation-scheme-audit-exposes-mismanagement",
+    "tags": [
+      "agriculture",
+      "food-security",
+      "economy"
+    ]
+  },
+  {
+    "id": "dp-jubilee-1-3m-jobs-2017",
+    "title": "Promised to create 1.3 million jobs every year",
+    "quote": "Our commitment to the young people of Kenya is that we will create 1.3 million new jobs every single year over the next five years.",
+    "date": "2017-06-26",
+    "context": "Jubilee Party 2017 Manifesto launch, Kasarani Gymnasium, Nairobi",
+    "verdict": "Broken promise",
+    "reality": "KNBS Economic Surveys recorded that formal (modern sector) employment expanded by an average of only 70,000 to 90,000 jobs per year between 2017 and 2022, less than a tenth of the target.",
+    "tweet_url": null,
+    "factcheck_url": "https://africacheck.org/fact-checks/reports/tracking-jubilees-13-million-jobs-every-year-promise",
+    "tags": [
+      "jobs",
+      "economy",
+      "campaign-2017"
+    ]
+  },
+  {
+    "id": "dp-weston-hotel-land-2018",
+    "title": "Claimed Weston Hotel land was acquired through legal due diligence",
+    "quote": "I bought that land legitimately from a company that held a clean title deed after carrying out full due diligence.",
+    "date": "2019-02-12",
+    "context": "Live television interview on Citizen TV with Hussein Mohamed",
+    "verdict": "False",
+    "reality": "The National Land Commission (NLC) and Court of Appeal established that the land originally belonged to the Kenya Civil Aviation Authority (KCAA) and was illegally excised and alienated before being transferred to Weston Hotel.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1095410940655644673",
+    "factcheck_url": "https://nation.africa/kenya/news/ruto-weston-hotel-and-the-kcaa-land-saga-117282",
+    "tags": [
+      "land",
+      "governance"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "campaign-2022-hustler-fund-interest-free",
+    "title": "Promised KSh50bn Hustler Fund would be completely interest-free",
+    "quote": "The 50-billion Hustler Fund will not charge any interest. It will be free money lent to mama mboga and boda boda to liberate them from shylocks.",
+    "date": "2022-06-23",
+    "context": "Kenya Kwanza economic forum and campaign rally, Kiambu",
+    "verdict": "Broken promise",
+    "reality": "When officially launched in November 2022, the Hustler Fund charged an annual interest rate of 8% (calculated daily), making it an interest-bearing credit facility rather than interest-free as promised.",
+    "tweet_url": "https://x.com/Kenyans/status/1598218146745585664",
+    "factcheck_url": "https://pesacheck.org/did-ruto-promise-an-interest-free-hustler-fund-during-the-2022-campaign-8c6508920193",
+    "tags": [
+      "economy",
+      "jobs",
+      "campaign-2022"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "campaign-dollar-fall-to-120",
+    "title": "Advised Kenyans to sell dollars, claiming rate would drop to KSh120",
+    "quote": "Those who are working and holding dollars, I am giving you free advice that shortly you might face losses... in a few weeks the dollar exchange rate will come down to around 120.",
+    "date": "2023-03-22",
+    "context": "Official opening of Kenya Sevens camp and address to the press, Nairobi",
+    "verdict": "False",
+    "reality": "The Kenyan Shilling continued to depreciate against the US Dollar for the next 10 months, sinking from KSh131 at the time of the claim to an all-time low of KSh163 per dollar in January 2024.",
+    "tweet_url": "https://x.com/Kenyans/status/1638541999719874560",
+    "factcheck_url": "https://pesacheck.org/fact-check-ruto-claims-shilling-will-strengthen-against-dollar-soon-6a84c25f4a7c",
+    "tags": [
+      "economy",
+      "currency",
+      "trade"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "campaign-fuel-price-reduction-2022",
+    "title": "Promised lower fuel prices immediately upon eliminating subsidies",
+    "quote": "The fuel subsidy is a cartels' scheme to siphon public funds. The moment we eliminate state capture in the fuel sector, pump prices will naturally go down.",
+    "date": "2022-07-18",
+    "context": "Kenya Kwanza presidential campaign town hall, Nairobi",
+    "verdict": "Broken promise",
+    "reality": "Upon the removal of the fuel subsidy in September 2022 and the doubling of VAT on fuel to 16% in the Finance Act 2023, petrol prices soared to unprecedented records over KSh217 per litre.",
+    "tweet_url": null,
+    "factcheck_url": "https://africacheck.org/fact-checks/reports/kenyas-president-ruto-scrapped-fuel-subsidies-did-prices-drop-he-claimed",
+    "tags": [
+      "cost-of-living",
+      "energy",
+      "campaign-2022"
+    ]
+  },
+  {
+    "id": "dp-free-secondary-education-2014",
+    "title": "Promised secondary education would be completely free by 2017",
+    "quote": "Our plan as the Jubilee government is to make secondary education 100 percent free within the next three years so that no child is sent home for school fees.",
+    "date": "2014-05-18",
+    "context": "Inter-denominational church service, Machakos County",
+    "verdict": "Broken promise",
+    "reality": "Secondary education was never made completely free; although the government introduced day school tuition subsidies in 2018, parents still faced hefty boarding, uniform, lunch, and activity charges, with costs continuing to rise.",
+    "tweet_url": null,
+    "factcheck_url": "https://africacheck.org/fact-checks/reports/can-kenya-afford-make-secondary-school-completely-free-2018",
+    "tags": [
+      "education",
+      "cost-of-living"
+    ]
+  },
+  {
+    "id": "campaign-no-more-borrowing-2022",
+    "title": "Pledged his administration would not borrow any money",
+    "quote": "We will not borrow a single cent. We have enough money in Kenya to run government without going to foreign banks to burden our children with loans.",
+    "date": "2022-02-14",
+    "context": "Campaign tour, Nyeri County",
+    "verdict": "Broken promise",
+    "reality": "Within the first two years of his administration, total public debt increased by over KSh2.4 trillion, with repeated commercial syndicated loans and new multi-billion funding packages from the World Bank and IMF.",
+    "tweet_url": null,
+    "factcheck_url": "https://pesacheck.org/did-ruto-promise-not-to-borrow-loans-if-elected-president-5ff6ecdb0a10",
+    "tags": [
+      "debt",
+      "economy",
+      "campaign-2022"
+    ]
+  },
+  {
+    "id": "dp-57-mega-dams-2016",
+    "title": "Promised construction of 57 mega-dams nationwide",
+    "quote": "The Jubilee administration has embarked on building 57 mega-dams across the country to solve the water and irrigation problem once and for all.",
+    "date": "2016-11-20",
+    "context": "Commissioning of water infrastructure project, Baringo County",
+    "verdict": "Broken promise",
+    "reality": "A special audit by the Auditor-General and parliamentary investigations revealed that out of 57 planned mega-dams, fewer than 5 were ever completed, with tens of billions lost to stalled contracts and contractor compensation claims.",
+    "tweet_url": null,
+    "factcheck_url": "https://nation.africa/kenya/news/audit-lays-bare-the-57-mega-dams-drain-374620",
+    "tags": [
+      "water",
+      "infrastructure",
+      "agriculture"
+    ]
+  },
+  {
+    "id": "minister-maize-subsidized-allocation-2009",
+    "title": "Denied involvement in 2009 NCPB subsidized maize scandal",
+    "quote": "No grain of subsidized maize was improperly allocated under my watch as Minister for Agriculture.",
+    "date": "2009-02-17",
+    "context": "Parliamentary debate on the National Cereals and Produce Board (NCPB) emergency maize allocation",
+    "verdict": "Misleading",
+    "reality": "A forensic audit by PricewaterhouseCoopers (PwC) commissioned by the Treasury documented that the Ministry oversaw the irregular allocation of over 100,000 bags of subsidized maize to briefcase millers during a severe national famine.",
+    "tweet_url": null,
+    "factcheck_url": "https://nation.africa/kenya/news/how-pwc-audit-unmasked-the-2009-maize-scandal-116290",
+    "tags": [
+      "agriculture",
+      "corruption",
+      "historical"
+    ]
   }
 ]
