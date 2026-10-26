@@ -24,6 +24,28 @@
     t._timer = setTimeout(() => { t.hidden = true; }, ms);
   }
 
+  // --- Theme Management ---
+  function initTheme() {
+    const saved = localStorage.getItem("mustgo-theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initial = saved || (prefersDark ? "dark" : "light");
+
+    document.documentElement.setAttribute("data-theme", initial);
+    document.documentElement.classList.toggle("dark", initial === "dark");
+
+    const toggleBtn = $("theme-toggle");
+    if (toggleBtn) {
+      toggleBtn.onclick = () => {
+        const isDark = document.documentElement.getAttribute("data-theme") === "dark" || document.documentElement.classList.contains("dark");
+        const next = isDark ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        document.documentElement.classList.toggle("dark", next === "dark");
+        localStorage.setItem("mustgo-theme", next);
+        showToast(`Switched to ${next} mode`);
+      };
+    }
+  }
+
   // --- Scorecard / Truth Meter ---
   function initScorecard() {
     const total = claims.length;
@@ -305,7 +327,7 @@
     const twttr = await loadWidgets();
     if (twttr && id) {
       embed.innerHTML = "";
-      const dark = matchMedia("(prefers-color-scheme: dark)").matches;
+      const dark = document.documentElement.getAttribute("data-theme") === "dark" || matchMedia("(prefers-color-scheme: dark)").matches;
       const el = await twttr.widgets.createTweet(id, embed, { theme: dark ? "dark" : "light", align: "center", dnt: true });
       if (el) return;
     }
@@ -398,7 +420,6 @@
   }
 
   function generateReceiptSlip(c) {
-    const btn = $("btn-download-slip");
     const label = $("download-text");
     if (label) label.textContent = "Generating...";
 
@@ -435,7 +456,7 @@
     ctx.fillText("KENYA PUBLIC ACCOUNTABILITY ARCHIVE", 80, 168);
 
     // Metadata line
-    ctx.font = "500 22px Inter, sans-serif";
+    ctx.font = "500 22px 'Plus Jakarta Sans', Inter, sans-serif";
     const metaStr = `DATE: ${fmtDate(c.date).toUpperCase()}   |   ID: #${c.id.toUpperCase()}`;
     ctx.fillText(metaStr, 80, 220);
 
@@ -462,7 +483,7 @@
     let curY = quoteY + 20;
     if (c.context) {
       ctx.fillStyle = "#5d5a55";
-      ctx.font = "500 22px Inter, sans-serif";
+      ctx.font = "500 22px 'Plus Jakarta Sans', sans-serif";
       curY = wrapText(ctx, `Context: ${c.context}`, 80, curY, 920, 30);
     }
 
@@ -492,7 +513,7 @@
     curY += 45;
 
     ctx.fillStyle = "#141414";
-    ctx.font = "500 28px Inter, sans-serif";
+    ctx.font = "500 28px 'Plus Jakarta Sans', sans-serif";
     curY = wrapText(ctx, c.reality, 80, curY, 920, 42);
 
     // Source link note
@@ -504,7 +525,6 @@
     // Decorative Barcode at the bottom
     const barcodeY = 1260;
     ctx.fillStyle = "#141414";
-    // Draw procedural barcode stripes
     let bx = 80;
     const barWidths = [3, 8, 4, 12, 3, 6, 14, 4, 8, 3, 10, 4, 16, 3, 6, 10, 4, 14, 6, 8, 3, 12, 4, 8, 3, 14, 4, 6, 12, 4, 8, 14, 3, 8, 6, 10, 4, 12, 4, 8, 14, 3, 10];
     barWidths.forEach((w) => {
@@ -620,8 +640,20 @@
     $("v-prev").onclick = () => navigateViewer(-1);
     $("v-next").onclick = () => navigateViewer(1);
 
-    // Keyboard shortcuts in viewer
+    // Keyboard shortcuts
     window.addEventListener("keydown", (e) => {
+      // Global "/" key to search
+      if (e.key === "/" && document.activeElement !== $("search") && !["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName)) {
+        e.preventDefault();
+        const s = $("search");
+        if (s) {
+          s.focus();
+          s.select();
+        }
+        return;
+      }
+
+      // Viewer Arrow navigation
       if (!viewer.open) return;
       if (e.key === "ArrowLeft") navigateViewer(-1);
       if (e.key === "ArrowRight") navigateViewer(1);
@@ -680,6 +712,7 @@
   }
 
   // --- Initial Launch ---
+  initTheme();
   initScorecard();
   renderChips();
   render();
