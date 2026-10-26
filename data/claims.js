@@ -883,5 +883,315 @@ window.CLAIMS = [
       "labor"
     ],
     "thumbnail": null
+  },
+  {
+    "id": "adani-jkia-deal-secrecy-denial",
+    "title": "Denied JKIA was being leased or mortgaged to Adani Group",
+    "quote": "JKIA is not being sold or leased. We are working on a public-private partnership with private investors to build a new runway and modern terminal without taking on more debt.",
+    "date": "2024-07-28",
+    "context": "Town hall meeting and media interview, Mombasa",
+    "verdict": "False",
+    "reality": "Whistleblower documents published by Sen. Okiya Omtatah and Kenya Aviation Workers Union (KAWU) court filings revealed a secret 30-year concession handing complete operational control, aeronautical revenues, and sovereign asset guarantees to India's Adani Group, triggering nationwide airport worker strikes and court injunctions.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1817596001005470000",
+    "factcheck_url": "https://nation.africa/kenya/news/revealed-details-of-the-secret-adani-jkia-deal-4749200",
+    "tags": [
+      "corruption",
+      "adani",
+      "infrastructure",
+      "mismanagement",
+      "mega-deals"
+    ],
+    "thumbnail": null,
+    "clip_note": "Presidential address denying that JKIA was being sold or leased."
+  },
+  {
+    "id": "fake-fertiliser-scandal-denial",
+    "title": "Dismissed reports of fake subsidised fertiliser as propaganda",
+    "quote": "The subsidised fertiliser program is working smoothly. The claims of fake fertiliser being circulated are pure politics from saboteurs who do not want our farmers to produce food.",
+    "date": "2024-04-09",
+    "context": "State address to farmers, Eldoret, Uasin Gishu County",
+    "verdict": "False",
+    "reality": "Kenya Bureau of Standards (KEBS) test results and the National Assembly Agriculture Committee confirmed that over 5,000 bags of subsidized 'Kelphos-Plus' fertiliser distributed via NCPB stores contained non-fertiliser material consisting of crushed rocks, sand, and animal manure, prompting criminal charges against manufacturers and an impeachment motion against CS Mithika Linturi.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1777712345678913982",
+    "factcheck_url": "https://africacheck.org/fact-checks/reports/kenyas-fake-fertiliser-scandal-what-we-know-so-far",
+    "tags": [
+      "agriculture",
+      "corruption",
+      "mismanagement",
+      "food-security"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "cas-50-appointments-unconstitutional",
+    "title": "Created and swore in 50 CAS positions after promising to trim government expenditure",
+    "quote": "The 50 Chief Administrative Secretaries are necessary for the implementation of the bottom-up transformation agenda and their recruitment followed due legal process.",
+    "date": "2023-03-23",
+    "context": "State House swearing-in of 50 CAS appointees, Nairobi",
+    "verdict": "Broken promise",
+    "reality": "A three-judge bench of the High Court declared the appointment of all 50 CAS positions unconstitutional and null and void in July 2023, citing lack of public participation, ballooning wage bill, and arbitrary expansion from the initial 23 approved posts.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1675765438883979264",
+    "factcheck_url": "https://nation.africa/kenya/news/high-court-quashes-ruto-appointment-of-50-cas-positions-4290920",
+    "tags": [
+      "constitution",
+      "reckless-spending",
+      "governance",
+      "abuse-of-power"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "luxury-jet-us-state-visit-cheaper-claim",
+    "title": "Claimed luxury chartered Boeing 737 private jet was cheaper than Kenya Airways",
+    "quote": "As a responsible steward of public funds, I can tell you that hiring this jet was far cheaper than flying with our national carrier Kenya Airways. It cost less than 10 million shillings because friends helped me.",
+    "date": "2024-05-26",
+    "context": "Presidential briefing and church address upon returning from the US State Visit",
+    "verdict": "False",
+    "reality": "Charter invoice records from Royal Jet Dubai, parliamentary scrutiny, and Controller of Budget records revealed the charter cost between KSh 150 million and KSh 200 million in taxpayer funds, directly contradicting the 'friends donated it for KSh 10m' claim and far exceeding the KSh 20 million business class cost on Kenya Airways.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1794770233499148332",
+    "factcheck_url": "https://nation.africa/kenya/news/cost-of-ruto-private-jet-to-us-sparks-public-fury-4636280",
+    "tags": [
+      "reckless-spending",
+      "opulence",
+      "governance",
+      "budget"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "state-house-renovations-ksh1-5bn",
+    "title": "Preached austerity while State House renovations and hospitality exploded by billions",
+    "quote": "We must live within our means. Government must cut all unnecessary expenditures, stop non-essential travel, and eliminate waste across all departments.",
+    "date": "2023-11-09",
+    "context": "State of the Nation Address, Parliament Buildings, Nairobi",
+    "verdict": "Broken promise",
+    "reality": "Controller of Budget Dr. Margaret Nyakang'o's official reports showed State House hospitality, foreign travel, and continuous renovations of State House Nairobi and state lodges absorbed over KSh 1.5 billion in supplementary allocations within 18 months, exceeding original annual budgets by over 200%.",
+    "tweet_url": null,
+    "factcheck_url": "https://nation.africa/kenya/news/cob-flags-ballooning-state-house-hospitality-and-travel-spending-4467290",
+    "tags": [
+      "reckless-spending",
+      "budget",
+      "austerity",
+      "governance"
+    ]
+  },
+  {
+    "id": "judiciary-threats-defiance-court-orders",
+    "title": "Threatened judges and vowed to defy court injunctions on Housing Levy and SHIF",
+    "quote": "Our plans will not be stopped by judicial tyranny and corrupt judges who take bribes from cartels. We will crush the impunity of those using courts to stall our development.",
+    "date": "2024-01-02",
+    "context": "New Year public address, Nyandarua County",
+    "verdict": "Broken promise",
+    "reality": "Chief Justice Martha Koome, the Judicial Service Commission (JSC), and the Law Society of Kenya (LSK) issued stern public rebukes, warning that executive defiance of court rulings and public intimidation of judges violated Article 160 of the Constitution and undermined the rule of law.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1742468351606411516",
+    "factcheck_url": "https://www.icj-kenya.org/news/statement-on-the-attacks-on-the-independence-of-the-judiciary-by-the-executive/",
+    "tags": [
+      "constitution",
+      "abuse-of-power",
+      "judiciary",
+      "rule-of-law"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "kdf-deployment-protesters-unconstitutional",
+    "title": "Deployed Kenya Defence Forces against unarmed protesters without constitutional gazettement",
+    "quote": "I have authorized the deployment of our security and military infrastructure to restore order and protect the sovereign Republic against criminal invasions.",
+    "date": "2024-06-25",
+    "context": "Late-night National Security address, State House Nairobi",
+    "verdict": "False",
+    "reality": "The High Court (Justice Lawrence Mugambi) in a petition filed by the Law Society of Kenya ruled that the deployment of KDF on 25 June was unconstitutional and violated Article 241(3)(c) because it was executed before parliamentary approval, ordering the state to define clear rules of engagement within 48 hours.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1806322353112088825",
+    "factcheck_url": "https://nation.africa/kenya/news/high-court-declares-initial-kdf-deployment-against-protesters-irregular-4672900",
+    "tags": [
+      "constitution",
+      "security",
+      "abuse-of-power",
+      "protests"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "kntc-kemsa-cooking-oil-scandal",
+    "title": "Claimed duty-free cooking oil scheme was transparent and lowered consumer prices",
+    "quote": "The emergency importation of edible oils through KNTC was done to protect poor households from exploitation by local cooking oil cartels.",
+    "date": "2023-06-15",
+    "context": "Public briefing on government cost-of-living interventions, Nairobi",
+    "verdict": "False",
+    "reality": "Auditor-General and Senate investigations revealed that the KSh 16.5 billion scheme bypassed procurement laws to hand billions in single-sourced tenders to politically connected briefcase companies, with consignments contaminated and retail cooking oil prices remaining at historic highs.",
+    "tweet_url": null,
+    "factcheck_url": "https://nation.africa/kenya/news/senate-unmasks-the-ksh16-5bn-edible-oil-procurement-scandal-4345200",
+    "tags": [
+      "corruption",
+      "mismanagement",
+      "cost-of-living",
+      "mega-deals"
+    ]
+  },
+  {
+    "id": "buying-opposition-mps-cooptation-denial",
+    "title": "Denied bribing or using state machinery to decimate parliamentary opposition",
+    "quote": "We are not coercing or buying any leader. Opposition MPs are crossing over voluntarily because they believe in the Kenya Kwanza development manifesto.",
+    "date": "2023-04-12",
+    "context": "Kenya Kwanza Parliamentary Group meeting, State House Nairobi",
+    "verdict": "False",
+    "reality": "A cross-party investigation and public confessions by MPs confirmed that executive appointments, road project funding, and CDF disbursements were systematically withheld from opposition constituencies and rewarded to defectors in direct subversion of multiparty democracy under Article 108.",
+    "tweet_url": null,
+    "factcheck_url": "https://nation.africa/kenya/news/how-state-house-uses-patronage-to-cripple-parliamentary-oversight-4215280",
+    "tags": [
+      "abuse-of-power",
+      "governance",
+      "corruption",
+      "patronage"
+    ]
+  },
+  {
+    "id": "housing-levy-unconstitutional-ruling",
+    "title": "Insisted original mandatory Housing Levy was fully constitutional",
+    "quote": "The housing levy is anchored in law, non-discriminatory, and designed to provide dignified shelter for our youth.",
+    "date": "2023-07-01",
+    "context": "Address following signing of Finance Act 2023, Nairobi",
+    "verdict": "False",
+    "reality": "A three-judge bench of the High Court in November 2023 ruled the mandatory 1.5% Housing Levy unconstitutional, discriminatory, and unequal because it burdened only formal employees while excluding non-formal earners, ordering an immediate halt before the executive rushed through an amended bill.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1729440628286009852",
+    "factcheck_url": "https://nation.africa/kenya/news/high-court-declares-housing-levy-unconstitutional-4447200",
+    "tags": [
+      "constitution",
+      "housing",
+      "taxes",
+      "finance-bill"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "adani-ketraco-power-lines-deal",
+    "title": "Claimed KETRACO power lines concession to Adani was competitively negotiated",
+    "quote": "The transmission line partnership with Adani will eliminate power blackouts and is the most cost-effective solution for Kenya without taking government loans.",
+    "date": "2024-10-14",
+    "context": "Groundbreaking for development projects, Kwale County",
+    "verdict": "Misleading",
+    "reality": "Auditor-General and Energy Committee submissions revealed the KSh 95 billion deal with Adani Energy Solutions was executed through Privately Initiated Proposals (PIP) bypassing competitive bidding, with fixed 30-year capacity charges levied directly onto consumers' electricity tokens.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1845860714902704256",
+    "factcheck_url": "https://nation.africa/kenya/news/inside-the-ksh95bn-adani-ketraco-power-deal-4802100",
+    "tags": [
+      "corruption",
+      "adani",
+      "energy",
+      "mega-deals"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "controller-of-budget-budgeted-corruption",
+    "title": "Administration denied executive budget padding and ghost payroll expenditure",
+    "quote": "Every shilling in our budget is strictly accounted for. The allegations of exaggerated salaries or ghost expenditures are baseless.",
+    "date": "2023-11-20",
+    "context": "Press briefing following parliamentary committee grilling, Nairobi",
+    "verdict": "False",
+    "reality": "Controller of Budget Dr. Margaret Nyakang'o submitted documentary evidence to the National Dialogue Committee (NADCO) revealing that her own official salary had been budgeted at more than triple what she actually received, exposing systemic executive budget padding and 'budgeted corruption' funneled to secret accounts.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1726881958444454158",
+    "factcheck_url": "https://nation.africa/kenya/news/nyakango-blows-whistle-on-budgeted-corruption-in-kenya-kwanza-4441200",
+    "tags": [
+      "corruption",
+      "budget",
+      "reckless-spending",
+      "mismanagement"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "shif-sha-healthcare-unconstitutional",
+    "title": "Claimed SHIF/SHA transition was seamless and guaranteed free universal healthcare",
+    "quote": "No Kenyan will be turned away from any hospital. The new Social Health Authority ensures free access and comprehensive coverage for all Kenyans without discrimination.",
+    "date": "2024-10-01",
+    "context": "Presidential address on the official rollout of the Social Health Authority, State House Nairobi",
+    "verdict": "False",
+    "reality": "The rushed rollout of the Social Health Insurance Fund (SHIF/SHA) in October 2024 plunged healthcare into chaos across Kenya. Cancer patients, renal dialysis patients, and emergency cases were turned away or forced to pay out-of-pocket cash due to non-functioning IT portals and uncredited contributions. In July 2024, the High Court had declared the Social Health Insurance Act, 2023 unconstitutional for lack of meaningful public participation. In addition, a secretive KSh 104 billion integrated healthcare IT contract awarded to a private consortium sparked widespread outrage and parliamentary inquiries over single-sourcing and inflated cost.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1841379430155415950",
+    "factcheck_url": "https://nation.africa/kenya/news/high-court-declares-shif-unconstitutional-4688118",
+    "tags": [
+      "healthcare",
+      "constitution",
+      "mismanagement",
+      "mega-deals",
+      "corruption"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "office-of-first-lady-budget-broken-promise",
+    "title": "Promised there would be no Office of the First Lady or public funding for presidential spouses",
+    "quote": "There is no office of the First Lady or the wife of the Deputy President in the Constitution. We will not allocate public money to positions not provided for in the law.",
+    "date": "2022-06-12",
+    "context": "National campaign interview during 2022 election campaign",
+    "verdict": "Broken promise",
+    "reality": "Despite promising during the 2022 campaign that public funds would never be allocated to unconstitutional spouse offices, the Kenya Kwanza administration allocated over KSh 1.2 billion across FY 2022/23 and 2023/24 to the Office of the First Lady Rachel Ruto and the Office of the Spouse to the Deputy President Pastor Dorcas Rigathi. These state-funded budget lines were only cancelled in July 2024 following sustained nationwide Gen Z protests against executive opulence and waste.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1535976451635810304",
+    "factcheck_url": "https://nation.africa/kenya/news/ruto-scraps-budget-for-first-lady-rachel-ruto-dorcas-gachagua-4681422",
+    "tags": [
+      "budget",
+      "reckless-spending",
+      "opulence",
+      "governance",
+      "campaign-2022"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "dpp-withdrawal-graft-cases-allies",
+    "title": "Promised the war on corruption would be independent and fiercer without state protection",
+    "quote": "Under my administration, no one will be shielded from corruption investigations or prosecution. The DPP and EACC will operate without political interference, independently and firmly.",
+    "date": "2022-09-13",
+    "context": "Inauguration Address, Kasarani Stadium, Nairobi",
+    "verdict": "Broken promise",
+    "reality": "Within the first three months of President Ruto taking office, the Director of Public Prosecutions (ODPP) systematically withdrew or terminated multi-billion shilling corruption, tax fraud, and economic crime cases against key political allies. These included the KSh 7.3 billion graft case against Deputy President Rigathi Gachagua, criminal charges against Cabinet Secretaries Aisha Jumwa and Mithika Linturi, and multi-billion tax evasion charges against key campaign financiers, drawing fierce condemnation from the Law Society of Kenya and Transparency International.",
+    "tweet_url": "https://x.com/Kenyans/status/1569655655518474241",
+    "factcheck_url": "https://nation.africa/kenya/news/why-high-profile-corruption-cases-are-collapsing-under-ruto-4015690",
+    "tags": [
+      "corruption",
+      "abuse-of-power",
+      "rule-of-law",
+      "governance",
+      "judiciary"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "foreign-trips-presidential-travel-austerity",
+    "title": "Promised a 50% cut in government foreign travel and non-essential executive expenditure",
+    "quote": "We must live within our means. I have directed a 50% cut on all foreign travel across government to save taxpayers' money.",
+    "date": "2023-10-29",
+    "context": "Church service address in Eldoret, Uasin Gishu County",
+    "verdict": "False",
+    "reality": "Controller of Budget reports for FY 2023/24 revealed that national government spending on foreign travel surged to over KSh 14 billion. President Ruto personally undertook more than 62 foreign trips across 38 countries in his first 20 months—surpassing all previous Kenyan presidents in foreign travel frequency—routinely travelling with bloated delegations exceeding 50 people, while county operations and public university funds were starved of exchequer releases.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1718610534244061413",
+    "factcheck_url": "https://nation.africa/kenya/news/revealed-ruto-cabinet-gobbled-up-sh14bn-on-foreign-trips-4683050",
+    "tags": [
+      "reckless-spending",
+      "austerity",
+      "budget",
+      "mismanagement",
+      "governance"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "finance-bill-2024-criminal-infiltrators-claim",
+    "title": "Claimed Gen Z anti-tax protesters were treasonous criminals and foreign agents",
+    "quote": "The events of today were not a protest. It was treason. Dangerous criminals infiltrated peaceful protests to destabilise the constitutional order. The military has been deployed to secure peace.",
+    "date": "2024-06-25",
+    "context": "Televised Presidential Address to the Nation, State House Nairobi",
+    "verdict": "Misleading",
+    "reality": "The nationwide June 2024 protests against Finance Bill 2024 were organic, non-partisan, youth-led civic demonstrations demanding constitutional governance and an end to crippling punitive taxation and state corruption. Human rights monitors, including KNCHR and Amnesty International Kenya, confirmed police used live ammunition against unarmed youth. Faced with overwhelming public backlash, President Ruto was forced in a subsequent address just 24 hours later to retract his treason accusations, withdraw the entire Finance Bill 2024, and concede that the protesters were patriotic Kenyan youth whose concerns were legitimate.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1805677028131348873",
+    "factcheck_url": "https://www.amnesty.org/en/latest/news/2024/06/kenya-deadly-crackdown-on-peaceful-protests/",
+    "tags": [
+      "protests",
+      "human-rights",
+      "constitution",
+      "police-brutality",
+      "abuse-of-power"
+    ],
+    "thumbnail": null
   }
 ];
