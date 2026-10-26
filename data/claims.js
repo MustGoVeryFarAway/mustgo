@@ -747,5 +747,103 @@ window.CLAIMS = [
       "human-rights",
       "historical"
     ]
+  },
+  {
+    "id": "mau-forest-settlers-title-deeds-2009",
+    "title": "Defended Mau Forest settlers claiming genuine title deeds and opposed evictions",
+    "quote": "Nobody will be moved from the Mau Forest like animals; they have genuine title deeds issued by the government.",
+    "date": "2009-08-22",
+    "context": "Rally in Bomet and parliamentary opposition to the Mau Forest Task Force recommendations",
+    "verdict": "False",
+    "reality": "The Prime Minister's Task Force on the Conservation of the Mau Forest Complex (2009) and subsequent National Land Commission investigations confirmed that over 100,000 hectares of forestland were illegally and irregularly excised through illegal paper titles allocated to powerful political figures and speculators.",
+    "tweet_url": null,
+    "factcheck_url": "https://nation.africa/kenya/news/the-untold-story-of-the-plunder-of-mau-forest-118492",
+    "tags": [
+      "environment",
+      "mau-forest",
+      "land",
+      "historical"
+    ]
+  },
+  {
+    "id": "mau-forest-no-evictions-promise-2018",
+    "title": "Promised Mau settlers they would not be evicted without compensation",
+    "quote": "We will ensure that those living in the Mau area are not subjected to harassment and that a clear cutline is respected with alternative settlement.",
+    "date": "2018-07-28",
+    "context": "Public address in Narok South during Jubilee administration tensions",
+    "verdict": "Broken promise",
+    "reality": "In 2019, the government launched forceful Phase 2 evictions evicting over 10,000 families with schools and homes demolished by Kenya Forest Service (KFS) rangers without compensation or alternative resettlement.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1023192301882269696",
+    "factcheck_url": "https://africacheck.org/fact-checks/reports/kenyas-mau-forest-evictions-tracking-promises-and-reality",
+    "tags": [
+      "environment",
+      "mau-forest",
+      "land"
+    ]
+  },
+  {
+    "id": "logging-ban-lifted-mature-trees-2023",
+    "title": "Claimed lifting the 6-year logging ban was necessary because mature trees were rotting",
+    "quote": "It is foolish for mature trees to rot in forests while Kenyans are importing timber and carpenters lack wood... We have lifted the ban on logging so that we can create jobs and utilize mature timber.",
+    "date": "2023-07-02",
+    "context": "Public address during church service, Molo, Nakuru County",
+    "verdict": "Misleading",
+    "reality": "The Environment and Land Court quashed the government's directive to lift the logging ban in October 2023, ruling that the decision was unconstitutional, lacked mandatory public participation and Environmental Impact Assessments, and resulted in illegal logging in indigenous forests rather than controlled commercial plantations.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1675466810144342017",
+    "factcheck_url": "https://nation.africa/kenya/news/high-court-quashes-ruto-directive-lifting-logging-ban-4402688",
+    "tags": [
+      "environment",
+      "logging",
+      "economy"
+    ]
+  },
+  {
+    "id": "logging-trees-15-billion-promise",
+    "title": "Claimed tree planting target would not be hurt by lifting commercial logging",
+    "quote": "Lifting the logging ban will not affect our national target to grow 15 billion trees by 2032; we are planting far more than we harvest.",
+    "date": "2023-07-09",
+    "context": "Speech in Nyandarua County",
+    "verdict": "Unproven",
+    "reality": "The Kenya Forestry Research Institute (KEFRI) and Auditor General audits noted that survival rates of newly planted seedlings remained under 45% due to inadequate water and aftercare, while lifting the logging moratorium led to rapid canopy depletion in vital catchments.",
+    "tweet_url": null,
+    "factcheck_url": "https://africacheck.org/fact-checks/reports/can-kenya-really-grow-15-billion-trees-10-years-fact-checking-the-claim",
+    "tags": [
+      "environment",
+      "logging"
+    ]
+  },
+  {
+    "id": "shareholding-government-equal-service-denial",
+    "title": "Denies government operates on ethnic shareholding while 2 communities dominate state jobs",
+    "quote": "No community in Kenya will be left behind. This is the government of Kenya for all 50 million Kenyans, regardless of how you voted.",
+    "date": "2023-09-03",
+    "context": "Inter-denominational church service, Bungoma County",
+    "verdict": "False",
+    "reality": "The Public Service Commission (PSC) Compliance Report on Diversity (2023/24) revealed that the Kalenjin and Kikuyu communities held more than 50% of all public service recruitments and over 60% of parastatal CEO and Principal Secretary appointments, severely violating Article 232 of the Constitution on regional balance.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1698299292866638064",
+    "factcheck_url": "https://nation.africa/kenya/news/two-communities-dominate-ruto-cabinet-and-state-appointments-psc-audit-4518290",
+    "tags": [
+      "governance",
+      "ethnicity",
+      "shareholding",
+      "appointments"
+    ],
+    "clip_note": "President addressing claims of ethnic bias and shareholding in state appointments."
+  },
+  {
+    "id": "vernacular-mobilization-one-kenya-contradiction",
+    "title": "Claimed Kenya had permanently moved past tribal politics into economic issues",
+    "quote": "We have dismantled the politics of ethnicity and tribe forever in Kenya. From now on, politics is about the economy, the bottom-up model, and the issues of ordinary citizens.",
+    "date": "2022-09-13",
+    "context": "Inauguration Address, Moi International Sports Centre Kasarani, Nairobi",
+    "verdict": "Broken promise",
+    "reality": "NCIC audits and judicial challenges in the High Court documented that subsequent state distributions, senior security dockets, and regional development allocations were overtly weaponized along ethnic voting patterns, with top leaders publicly defending ethnic shareholding.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1569658252275200000",
+    "factcheck_url": "https://pesacheck.org/tracking-kenya-kwanza-promises-on-ethnicity-and-cohesion-8d49201",
+    "tags": [
+      "governance",
+      "ethnicity",
+      "politics"
+    ]
   }
 ];
