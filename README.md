@@ -8,14 +8,21 @@ A high-performance, static civic archive for **[mustgo.co.ke](https://mustgo.co.
 
 ## Key Features
 
-- **The Record Scorecard**: Live truth meter displaying total tracked statements and the distribution of verdicts (False, Misleading, Broken Promise, Unproven) with interactive filtering.
-- **Deep-Linking & Hash Routing**: Every claim has its own permanent URL hash (e.g. `mustgo.co.ke/#unga-ksh100-june-2024`). Opening or sharing a link automatically opens the clip and fact-check.
+- **6 Thematic Campaign Dossiers**: Organized by major areas of misrule:
+  1. ⚖️ **Constitutional Violations & Impunity** (High Court rulings, 50 illegal CASs, unconstitutional Housing Levy & SHIF, illegal KDF deployment).
+  2. 💸 **Reckless Spending & Opulence** (KSh 200M Boeing 737 luxury jet, KSh 1.5B State House renovations, 62+ foreign trips, spouse budgets).
+  3. 🚨 **Killings, Abductions & Brutality** (Rex Masai, Evans Kiratu, Parliament live ammunition, Mukuru Kware quarry bodies).
+  4. 💼 **Corruption Scandals & Mega-Deals** (Secret Adani JKIA & Ketraco concessions, fake subsidised fertiliser, KNTC cooking oil, dropped graft cases).
+  5. 📉 **Economic Ruin & Broken Promises** (KSh 100 Unga, 16% fuel VAT, dollar crash to 163, borrowing escalation, Hustler Fund 8% interest).
+  6. 👥 **Abuse of Power & Tribalism** (Ethnic shareholding doctrine, State House MP patronage, illegal TSC appointment letters).
+- **The Executive Charge Sheet & Factsheet Generator**: An interactive indictment dashboard presenting overall statistics and allowing one-click copying of pre-formatted, bulleted campaign factsheets ready to share across WhatsApp, Telegram, and social media.
+- **The Record Scorecard**: Live truth meter displaying total tracked statements (71 verified claims) and the distribution of verdicts (False, Misleading, Broken Promise, Unproven) with interactive filtering.
+- **Deep-Linking & Hash Routing**: Every claim and dossier has its own permanent URL hash (e.g. `mustgo.co.ke/#dossier=corruption` or `mustgo.co.ke/#adani-jkia-deal-secrecy-denial`). Opening or sharing a link automatically filters or opens the receipt.
 - **Downloadable Receipt Slip Generator**: An on-device HTML5 Canvas generator that creates high-resolution, pixel-crisp receipt image cards ready to share on WhatsApp Status, Instagram, and X.
 - **Direct WhatsApp & Social Sharing**: Pre-formatted, one-click sharing buttons for WhatsApp chats/groups and X (Twitter) threads.
 - **Media Resilience & Fallbacks**: Clips without videos display an editorial "Official Press / Speech Record" plaque with crowdsourcing prompts, and X embeds gracefully degrade if blocked by ad-blockers.
 - **Sequential Navigation**: Browse through receipts with `←` and `→` keyboard shortcuts or on-screen controls.
-- **Crowdsourced Submissions**: Built-in modal allowing contributors to submit new statements with links to fact-checks, formatted as GitHub Issues.
-- **Mobile-First UX**: Responsive bottom-sheet modal drawer on smartphones.
+- **Print / PDF Dossier**: Built-in `@media print` stylesheet allowing activists and organizers to print cleanly formatted physical dossiers for barazas, leafleting, and community education.
 
 ---
 
