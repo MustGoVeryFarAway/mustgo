@@ -1255,5 +1255,24 @@ window.CLAIMS = [
       "abuse-of-power"
     ],
     "thumbnail": null
+  },
+  {
+    "id": "dp-muteshi-pev-land-ruling-2013",
+    "title": "Claimed lawful purchase of 100-acre Turbo farm grabbed from PEV displaced victim Adrian Muteshi (Munishi)",
+    "quote": "I purchased the land legitimately from Dorothy Yator as an innocent purchaser for value after carrying out proper due diligence, and had no knowledge of any fraudulent dealings.",
+    "date": "2013-06-28",
+    "context": "High Court of Kenya (Nairobi), Civil Suit No. 510 of 2010 (Adrian Gilbert Muteshi v. William Samoei Ruto & 4 others)",
+    "verdict": "False",
+    "reality": "During the 2007/2008 post-election violence (PEV), 75-year-old farmer Adrian Gilbert Muteshi (often referred to as Muteshi or Munishi) was violently displaced from his 100-acre farm in Turbo, Uasin Gishu County. While Muteshi was living in exile as an IDP in Nairobi, his land (Uasin Gishu/Tapsagoi/33) was fraudulently subdivided and illegally transferred to William Ruto. On June 28, 2013, High Court Judge Rose Ougo ruled that the acquisition was fraudulent and illegal, ordering Deputy President Ruto to immediately vacate the land, surrender all 100 acres back to Muteshi, and pay KSh 5 million in general damages for unlawful trespass and denial of use. In 2017, Ruto withdrew his appeal against the court ruling.",
+    "tweet_url": null,
+    "factcheck_url": "https://www.standardmedia.co.ke/article/2000087019/ruto-loses-land-case-ordered-to-pay-sh5-million",
+    "tags": [
+      "land",
+      "corruption",
+      "judiciary",
+      "human-rights",
+      "historical"
+    ],
+    "thumbnail": null
   }
 ];

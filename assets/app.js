@@ -17,7 +17,8 @@
         "cabinet-50pct-women",
         "finance-bill-2024-criminal-infiltrators-claim",
         "icc-cases-witness-tampering-vindication-claim",
-        "icc-paul-gicheru-witness-tampering-denial"
+        "icc-paul-gicheru-witness-tampering-denial",
+        "dp-muteshi-pev-land-ruling-2013"
       ])
     },
     spending: {
@@ -72,7 +73,8 @@
         "tsc-letters-mps-state-house-distribution",
         "controller-of-budget-budgeted-corruption",
         "shif-sha-healthcare-unconstitutional",
-        "icc-paul-gicheru-witness-tampering-denial"
+        "icc-paul-gicheru-witness-tampering-denial",
+        "dp-muteshi-pev-land-ruling-2013"
       ])
     },
     economy: {

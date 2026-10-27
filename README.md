@@ -9,14 +9,14 @@ A high-performance, static civic archive for **[mustgo.co.ke](https://mustgo.co.
 ## Key Features
 
 - **6 Thematic Campaign Dossiers**: Organized by major areas of misrule:
-  1. ⚖️ **Constitutional Violations & Impunity** (High Court rulings, 50 illegal CASs, unconstitutional Housing Levy & SHIF, illegal KDF deployment, ICC witness tampering mistrial).
+  1. ⚖️ **Constitutional Violations & Impunity** (High Court rulings, 50 illegal CASs, unconstitutional Housing Levy & SHIF, illegal KDF deployment, ICC witness tampering mistrial, Adrian Muteshi 100-acre land restitution order).
   2. 💸 **Reckless Spending & Opulence** (KSh 200M Boeing 737 luxury jet, KSh 1.5B State House renovations, 62+ foreign trips, spouse budgets).
   3. 🚨 **Killings, Abductions & Brutality** (Rex Masai, Evans Kiratu, Parliament live ammunition, Mukuru Kware quarry bodies, ICC witness deaths including Meshack Yebei).
-  4. 💼 **Corruption Scandals & Mega-Deals** (Secret Adani JKIA & Ketraco concessions, fake subsidised fertiliser, KNTC cooking oil, dropped graft cases, ICC Article 70 witness bribery syndicate).
+  4. 💼 **Corruption Scandals & Mega-Deals** (Secret Adani JKIA & Ketraco concessions, fake subsidised fertiliser, KNTC cooking oil, dropped graft cases, ICC Article 70 witness bribery syndicate, Adrian Muteshi PEV land grabbing).
   5. 📉 **Economic Ruin & Broken Promises** (KSh 100 Unga, 16% fuel VAT, dollar crash to 163, borrowing escalation, Hustler Fund 8% interest).
   6. 👥 **Abuse of Power & Tribalism** (Ethnic shareholding doctrine, State House MP patronage, illegal TSC appointment letters, subverting ICC investigations).
 - **The Executive Charge Sheet & Factsheet Generator**: An interactive indictment dashboard presenting overall statistics and allowing one-click copying of pre-formatted, bulleted campaign factsheets ready to share across WhatsApp, Telegram, and social media.
-- **The Record Scorecard**: Live truth meter displaying total tracked statements (74 verified claims) and the distribution of verdicts (False, Misleading, Broken Promise, Unproven) with interactive filtering.
+- **The Record Scorecard**: Live truth meter displaying total tracked statements (75 verified claims) and the distribution of verdicts (False, Misleading, Broken Promise, Unproven) with interactive filtering.
 - **Deep-Linking & Hash Routing**: Every claim and dossier has its own permanent URL hash (e.g. `mustgo.co.ke/#dossier=corruption` or `mustgo.co.ke/#icc-witness-meshack-yebei-murder-denial`). Opening or sharing a link automatically filters or opens the receipt.
 - **Downloadable Receipt Slip Generator**: An on-device HTML5 Canvas generator that creates high-resolution, pixel-crisp receipt image cards ready to share on WhatsApp Status, Instagram, and X.
 - **Direct WhatsApp & Social Sharing**: Pre-formatted, one-click sharing buttons for WhatsApp chats/groups and X (Twitter) threads.
