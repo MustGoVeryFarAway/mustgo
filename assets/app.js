@@ -431,12 +431,26 @@
     $("v-check").href = c.factcheck_url;
 
     const tw = $("v-tweet");
-    tw.hidden = !c.tweet_url;
-    if (c.tweet_url) tw.href = c.tweet_url;
+    if (c.tweet_url) {
+      tw.href = c.tweet_url;
+      tw.hidden = false;
+      tw.style.display = "";
+    } else {
+      tw.removeAttribute("href");
+      tw.hidden = true;
+      tw.style.display = "none";
+    }
 
     const note = $("v-clipnote");
-    note.hidden = !c.clip_note;
-    note.textContent = c.clip_note ? `About this clip: ${c.clip_note}` : "";
+    if (c.clip_note) {
+      note.hidden = false;
+      note.style.display = "";
+      note.textContent = `About this clip: ${c.clip_note}`;
+    } else {
+      note.hidden = true;
+      note.style.display = "none";
+      note.textContent = "";
+    }
 
     // Position indicator in viewer
     const idx = currentFilteredList.findIndex((item) => item.id === c.id);
