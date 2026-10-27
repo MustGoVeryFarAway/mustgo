@@ -41,6 +41,9 @@
             <span class="theme-icon-dark" aria-hidden="true">🌙</span>
             <span class="theme-text">Theme</span>
           </button>
+          <button id="open-chargesheet" class="btn btn-charge btn-sm" type="button" title="View executive charge sheet and factsheet">
+            <span class="btn-icon">📋</span> Charge Sheet
+          </button>
           <button id="open-submit" class="btn btn-primary btn-sm">
             <span class="btn-icon">＋</span> Submit a Receipt
           </button>
@@ -50,10 +53,18 @@
       <div class="hero-content">
         <div class="kicker-pill">
           <span class="kicker-flag">🇰🇪</span>
-          <span class="kicker-text">Public Accountability Archive · Kenya</span>
+          <span class="kicker-text">Civic Accountability & Campaign Archive · Kenya</span>
         </div>
         <h1>MustGo <span>Receipts</span></h1>
-        <p class="lede">What President William Ruto said on camera, set against independent fact-checks and official records. Every clip links to its source and full public verification.</p>
+        <p class="lede">What President William Ruto said on camera, set against independent fact-checks, judicial rulings, and official state audits. Documenting corruption, constitutional breaches, police brutality, and broken promises.</p>
+        <div class="hero-actions">
+          <button id="hero-chargesheet-btn" class="btn btn-primary btn-sm" type="button">
+            <span class="btn-icon">📋</span> View Executive Charge Sheet
+          </button>
+          <a href="#dossiers-section" class="btn btn-outline btn-sm">
+            <span class="btn-icon">📁</span> Explore 6 Campaign Dossiers
+          </a>
+        </div>
       </div>
 
       <!-- Scorecard / Truth Meter -->
@@ -70,6 +81,79 @@
       </section>
     </div>
   </header>
+
+  <!-- Campaign Thematic Dossiers -->
+  <section id="dossiers-section" class="dossiers-section wrap" aria-label="Campaign Dossiers">
+    <div class="dossiers-header">
+      <div class="dossiers-title-group">
+        <span class="dossiers-kicker">CIVIC CAMPAIGN DOSSIERS</span>
+        <h2>The Record by Category of Misrule</h2>
+      </div>
+      <p class="dossiers-intro">Select a pillar below to filter verified receipts by specific constitutional violations, corruption scandals, or state abuses.</p>
+    </div>
+    
+    <div id="dossiers-grid" class="dossiers-grid">
+      <button class="dossier-card" type="button" data-dossier="constitution">
+        <div class="dossier-top">
+          <span class="dossier-icon">⚖️</span>
+          <span class="dossier-count" id="count-dossier-constitution">8</span>
+        </div>
+        <h3 class="dossier-name">Constitutional Violations & Impunity</h3>
+        <p class="dossier-desc">Defiance of court orders, 50 illegal CASs, unconstitutional Housing Levy, SHIF strike-down & KDF deployment.</p>
+        <span class="dossier-arrow">Explore Dossier →</span>
+      </button>
+
+      <button class="dossier-card" type="button" data-dossier="spending">
+        <div class="dossier-top">
+          <span class="dossier-icon">💸</span>
+          <span class="dossier-count" id="count-dossier-spending">7</span>
+        </div>
+        <h3 class="dossier-name">Reckless Spending & Opulence</h3>
+        <p class="dossier-desc">Boeing 737 luxury jet, KSh 1.5B State House renovations, 62+ foreign trips & unconstitutional spouse office budgets.</p>
+        <span class="dossier-arrow">Explore Dossier →</span>
+      </button>
+
+      <button class="dossier-card" type="button" data-dossier="killings">
+        <div class="dossier-top">
+          <span class="dossier-icon">🚨</span>
+          <span class="dossier-count" id="count-dossier-killings">12</span>
+        </div>
+        <h3 class="dossier-name">Killings, Abductions & Brutality</h3>
+        <p class="dossier-desc">Rex Masai, Evans Kiratu, Parliament live bullets, Mukuru Kware bodies & denied police abductions.</p>
+        <span class="dossier-arrow">Explore Dossier →</span>
+      </button>
+
+      <button class="dossier-card" type="button" data-dossier="corruption">
+        <div class="dossier-top">
+          <span class="dossier-icon">💼</span>
+          <span class="dossier-count" id="count-dossier-corruption">12</span>
+        </div>
+        <h3 class="dossier-name">Corruption & Secret Mega-Deals</h3>
+        <p class="dossier-desc">Secret Adani JKIA & Ketraco concessions, fake subsidised fertiliser, KSh 16.5B cooking oil & dropped graft cases.</p>
+        <span class="dossier-arrow">Explore Dossier →</span>
+      </button>
+
+      <button class="dossier-card" type="button" data-dossier="economy">
+        <div class="dossier-top">
+          <span class="dossier-icon">📉</span>
+          <span class="dossier-count" id="count-dossier-economy">16</span>
+        </div>
+        <h3 class="dossier-name">Economic Ruin & Broken Promises</h3>
+        <p class="dossier-desc">KSh 100 Unga, 16% fuel VAT, dollar crash to 163, zero borrowing pledge broken, Hustler Fund 8% interest.</p>
+        <span class="dossier-arrow">Explore Dossier →</span>
+      </button>
+
+      <button class="dossier-card" type="button" data-dossier="abuse_power">
+        <div class="dossier-top">
+          <span class="dossier-icon">👥</span>
+          <span class="dossier-count" id="count-dossier-abuse_power">9</span>
+        </div>
+        <h3 class="dossier-name">Abuse of Power & Tribalism</h3>
+        <p class="dossier-desc">Ethnic shareholding doctrine, State House MP patronage, illegal TSC appointment letters & co-opting opposition.</p>
+        <span class="dossier-arrow">Explore Dossier →</span>
+      </button>
+    </div>
+  </section>
 
   <!-- Filter & Search Controls -->
   <nav class="controls wrap" aria-label="Filters">
@@ -105,6 +189,32 @@
   </nav>
 
   <main class="wrap">
+    <!-- Active Dossier Banner (Shown when a dossier is selected) -->
+    <div id="dossier-banner" class="dossier-banner" hidden>
+      <div class="dossier-banner-content">
+        <span id="db-icon" class="dossier-banner-icon">⚖️</span>
+        <div>
+          <div class="dossier-banner-top">
+            <span class="dossier-pill-tag">ACTIVE CAMPAIGN DOSSIER</span>
+            <span id="db-count" class="dossier-banner-count"></span>
+          </div>
+          <h2 id="db-title" class="dossier-banner-title"></h2>
+          <p id="db-desc" class="dossier-banner-desc"></p>
+        </div>
+      </div>
+      <div class="dossier-banner-actions">
+        <button id="db-share-wa" class="btn btn-wa btn-sm" type="button" title="Share dossier summary on WhatsApp">
+          <span class="btn-icon">💬</span> WhatsApp
+        </button>
+        <button id="db-share-x" class="btn btn-x btn-sm" type="button" title="Share dossier on X">
+          <span class="btn-icon">𝕏</span> Post on X
+        </button>
+        <button id="db-clear" class="btn btn-outline btn-sm" type="button" title="View all receipts">
+          ✕ Clear Dossier
+        </button>
+      </div>
+    </div>
+
     <ul id="grid" class="grid"></ul>
     <div id="empty" class="empty" hidden>
       <div class="empty-icon">📂</div>
@@ -232,6 +342,66 @@
           </button>
         </div>
       </form>
+    </div>
+  </dialog>
+
+  <!-- Executive Charge Sheet Dialog -->
+  <dialog id="chargesheet-dialog" class="chargesheet-dialog" aria-labelledby="cs-title">
+    <div class="mobile-drawer-handle" aria-hidden="true"></div>
+    <div class="dialog-inner chargesheet-inner">
+      <div class="dialog-header">
+        <div class="chargesheet-title-wrap">
+          <span class="kicker-flag">🇰🇪</span>
+          <div>
+            <span class="cs-top-tag">OFFICIAL CIVIC DOSSIER</span>
+            <h2 id="cs-title">The Executive Charge Sheet · Ruto Administration</h2>
+          </div>
+        </div>
+        <button class="close" aria-label="Close charge sheet dialog">×</button>
+      </div>
+
+      <div class="chargesheet-body">
+        <div class="chargesheet-lead-box">
+          <p class="chargesheet-lead-text">
+            A comprehensive, verified record compiling judicial rulings, Controller of Budget reports, Auditor-General findings, and independent fact-checks against the current Kenyan administration.
+          </p>
+          <div class="chargesheet-stats-row">
+            <div class="cs-stat">
+              <span class="cs-stat-num" id="cs-total-count">71</span>
+              <span class="cs-stat-label">Documented Receipts</span>
+            </div>
+            <div class="cs-stat">
+              <span class="cs-stat-num">6+</span>
+              <span class="cs-stat-label">High Court Overturns</span>
+            </div>
+            <div class="cs-stat">
+              <span class="cs-stat-num">KSh 300B+</span>
+              <span class="cs-stat-label">Opaque Mega-Deals</span>
+            </div>
+            <div class="cs-stat">
+              <span class="cs-stat-num">60+</span>
+              <span class="cs-stat-label">Documented Deaths</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 Thematic Indictment Blocks -->
+        <div class="cs-sections-list" id="cs-sections-list">
+          <!-- Dynamically populated by app.js -->
+        </div>
+
+        <div class="chargesheet-footer-actions">
+          <button id="cs-btn-copy" class="btn btn-primary" type="button">
+            <span class="btn-icon">📋</span> <span id="cs-copy-text">Copy Full Campaign Factsheet</span>
+          </button>
+          <button id="cs-btn-wa" class="btn btn-wa" type="button">
+            <span class="btn-icon">💬</span> Share Factsheet on WhatsApp
+          </button>
+          <button id="cs-btn-print" class="btn btn-outline" type="button">
+            <span class="btn-icon">🖨️</span> Print / Save PDF
+          </button>
+        </div>
+      </div>
     </div>
   </dialog>
 

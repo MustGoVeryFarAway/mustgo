@@ -1,9 +1,123 @@
 (() => {
   const claims = (window.CLAIMS || []).slice();
   const $ = (id) => document.getElementById(id);
-  const state = { q: "", verdict: null, tag: null, sort: "new" };
+
+  const DOSSIERS = {
+    constitution: {
+      name: "Constitutional Violations & Impunity",
+      icon: "⚖️",
+      desc: "Systematic breaches of the 2010 Constitution, defiance of High Court rulings, 50 illegal CAS appointments, unconstitutional Housing Levy & SHIF, and deploying the military against unarmed citizens.",
+      tags: new Set(["constitution", "judiciary", "rule-of-law"]),
+      ids: new Set([
+        "cas-50-appointments-unconstitutional",
+        "housing-levy-unconstitutional-ruling",
+        "kdf-deployment-protesters-unconstitutional",
+        "judiciary-threats-defiance-court-orders",
+        "shif-sha-healthcare-unconstitutional",
+        "cabinet-50pct-women",
+        "finance-bill-2024-criminal-infiltrators-claim"
+      ])
+    },
+    spending: {
+      name: "Reckless Spending & Executive Opulence",
+      icon: "💸",
+      desc: "Wasteful public expenditure, KSh 200M Boeing 737 luxury jet, KSh 1.5B State House renovations, record foreign travel, unconstitutional spouse office budgets, and ghost payroll budget padding.",
+      tags: new Set(["reckless-spending", "opulence", "austerity"]),
+      ids: new Set([
+        "luxury-jet-us-state-visit-cheaper-claim",
+        "state-house-renovations-ksh1-5bn",
+        "office-of-first-lady-budget-broken-promise",
+        "foreign-trips-presidential-travel-austerity",
+        "controller-of-budget-budgeted-corruption",
+        "universities-budget-ksh40bn"
+      ])
+    },
+    killings: {
+      name: "Killings, Abductions & Police Brutality",
+      icon: "🚨",
+      desc: "State violence against citizens, live ammunition used on unarmed Gen Z youth, extrajudicial killings, denied abductions, and mass bodies dumped in Mukuru Kware quarry.",
+      tags: new Set(["police-brutality", "extrajudicial-killings", "human-rights"]),
+      ids: new Set([
+        "rex-masai-live-ammunition-denial",
+        "ssu-disbandment-river-yala-promise",
+        "parliament-shootings-restraint-claim",
+        "abductions-give-me-names-kisumu",
+        "kware-quarry-transparent-investigation",
+        "maandamano-2023-police-professionalism",
+        "protest-death-toll-19",
+        "protest-deaths-six",
+        "no-extrajudicial-killings",
+        "no-known-abductions",
+        "dp-baby-pendo-police-denial-2017"
+      ])
+    },
+    corruption: {
+      name: "Corruption Scandals & Secret Mega-Deals",
+      icon: "💼",
+      desc: "Multi-billion single-sourced concessions, secret 30-year Adani JKIA & Ketraco takeovers, fake subsidized fertiliser containing sand and dung, edible oil graft, and dropped corruption charges against political allies.",
+      tags: new Set(["corruption", "mega-deals", "adani"]),
+      ids: new Set([
+        "adani-jkia-deal-secrecy-denial",
+        "adani-ketraco-power-lines-deal",
+        "fake-fertiliser-scandal-denial",
+        "kntc-kemsa-cooking-oil-scandal",
+        "dpp-withdrawal-graft-cases-allies",
+        "dp-arror-kimwarer-7bn-2019",
+        "minister-maize-subsidized-allocation-2009",
+        "dp-weston-hotel-land-2018",
+        "tsc-letters-mps-state-house-distribution",
+        "controller-of-budget-budgeted-corruption",
+        "shif-sha-healthcare-unconstitutional"
+      ])
+    },
+    economy: {
+      name: "Economic Ruin & Broken Promises",
+      icon: "📉",
+      desc: "Catastrophic failure on core economic pledges: KSh 100 unga on day one, doubling fuel VAT, shilling crash to 163, escalating national debt, 8% interest on Hustler Fund, laptops, and 9 stadiums.",
+      tags: new Set(["cost-of-living", "debt", "currency", "taxes", "finance-bill"]),
+      ids: new Set([
+        "unga-ksh100-june-2024",
+        "campaign-fuel-price-reduction-2022",
+        "campaign-dollar-fall-to-120",
+        "campaign-no-more-borrowing-2022",
+        "campaign-2022-hustler-fund-interest-free",
+        "sona-2023-unga-145-175",
+        "dp-stadiums-six-months-2017",
+        "dp-laptops-class-one-2013",
+        "dp-galana-kulalu-1m-acres",
+        "dp-jubilee-1-3m-jobs-2017",
+        "dp-free-secondary-education-2014",
+        "dp-57-mega-dams-2016",
+        "jss-intern-teachers-permanent-promise"
+      ])
+    },
+    abuse_power: {
+      name: "Abuse of Power, Co-optation & Tribalism",
+      icon: "👥",
+      desc: "Promoting an unconstitutional ethnic 'shareholding' doctrine, using State House and TSC appointment letters for MP patronage, buying opposition MPs, and subverting independent oversight.",
+      tags: new Set(["abuse-of-power", "shareholding", "ethnicity", "patronage"]),
+      ids: new Set([
+        "shareholding-government-equal-service-denial",
+        "vernacular-mobilization-one-kenya-contradiction",
+        "buying-opposition-mps-cooptation-denial",
+        "tsc-letters-mps-state-house-distribution",
+        "judiciary-threats-defiance-court-orders",
+        "dpp-withdrawal-graft-cases-allies",
+        "cas-50-appointments-unconstitutional"
+      ])
+    }
+  };
+
+  const state = { q: "", verdict: null, tag: null, sort: "new", dossier: null };
   let currentClaim = null;
   let currentFilteredList = [];
+
+  function claimMatchesDossier(c, dossierKey) {
+    const d = DOSSIERS[dossierKey];
+    if (!d) return false;
+    if (d.ids.has(c.id)) return true;
+    return (c.tags || []).some((t) => d.tags.has(t));
+  }
 
   const esc = (s = "") => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   const dateKey = (c) => (c.date || "").replace("~", "");
@@ -184,6 +298,7 @@
   }
 
   function matches(c) {
+    if (state.dossier && !claimMatchesDossier(c, state.dossier)) return false;
     if (state.verdict && c.verdict !== state.verdict) return false;
     if (state.tag && !(c.tags || []).includes(state.tag)) return false;
     if (!state.q) return true;
@@ -203,7 +318,15 @@
       ? `<span class="video-status-tag">▶ Video Clip</span>`
       : `<span class="video-status-tag">📜 Record</span>`;
 
-    const tagPills = (c.tags || []).slice(0, 3).map((t) => `<span class="tag-pill">#${esc(t)}</span>`).join("");
+    let dossierBadge = "";
+    for (const [key, d] of Object.entries(DOSSIERS)) {
+      if (claimMatchesDossier(c, key)) {
+        dossierBadge = `<span class="tag-pill tag-dossier" title="${esc(d.name)}">${d.icon} ${esc(d.name.split(" ")[0])}</span>`;
+        break;
+      }
+    }
+
+    const tagPills = (c.tags || []).slice(0, 2).map((t) => `<span class="tag-pill">#${esc(t)}</span>`).join("");
 
     li.innerHTML = `
       <div class="thumb ${hasVideo ? "" : "no-video"}">
@@ -216,7 +339,7 @@
       <div class="body">
         <h2>${esc(c.title)}</h2>
         <p class="meta">${fmtDate(c.date)}${c.context ? " · " + esc(c.context) : ""}</p>
-        <div class="tags-list">${tagPills}</div>
+        <div class="tags-list">${dossierBadge}${tagPills}</div>
       </div>`;
     li.onclick = () => open(c);
     li.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(c); } };
@@ -227,6 +350,7 @@
     state.q = "";
     state.verdict = null;
     state.tag = null;
+    state.dossier = null;
     const searchInput = $("search");
     if (searchInput) searchInput.value = "";
     $("clear-search").hidden = true;
@@ -242,9 +366,30 @@
     $("empty").hidden = currentFilteredList.length > 0;
     $("count").textContent = `${currentFilteredList.length} of ${claims.length} receipts`;
 
-    const isFiltered = Boolean(state.q || state.verdict || state.tag);
+    const isFiltered = Boolean(state.q || state.verdict || state.tag || state.dossier);
     $("reset-filters").hidden = !isFiltered;
     updateScorecardPills();
+
+    // Update dossier cards active state
+    document.querySelectorAll(".dossier-card").forEach((card) => {
+      const isActive = state.dossier === card.dataset.dossier;
+      card.setAttribute("aria-pressed", String(isActive));
+    });
+
+    // Update Dossier Banner
+    const banner = $("dossier-banner");
+    if (banner) {
+      if (state.dossier && DOSSIERS[state.dossier]) {
+        const d = DOSSIERS[state.dossier];
+        banner.hidden = false;
+        $("db-icon").textContent = d.icon;
+        $("db-title").textContent = d.name;
+        $("db-desc").textContent = d.desc;
+        $("db-count").textContent = `${currentFilteredList.length} Receipts`;
+      } else {
+        banner.hidden = true;
+      }
+    }
   }
 
   // Load X's embed script on demand
@@ -347,8 +492,31 @@
     if (!hash) {
       const viewer = $("viewer");
       if (viewer && viewer.open) viewer.close();
+      const cs = $("chargesheet-dialog");
+      if (cs && cs.open) cs.close();
       return;
     }
+
+    if (hash === "chargesheet") {
+      const cs = $("chargesheet-dialog");
+      if (cs) {
+        populateChargeSheetContent();
+        cs.showModal();
+      }
+      return;
+    }
+
+    if (hash.startsWith("dossier=")) {
+      const dKey = hash.replace("dossier=", "");
+      if (DOSSIERS[dKey]) {
+        state.dossier = dKey;
+        render();
+        const banner = $("dossier-banner");
+        if (banner) banner.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      return;
+    }
+
     const found = claims.find((c) => c.id === hash);
     if (found) {
       open(found, false);
@@ -614,6 +782,191 @@
     });
   }
 
+  // --- Campaign Tools: Dossiers & Charge Sheet ---
+  function initDossiers() {
+    Object.keys(DOSSIERS).forEach((key) => {
+      const matchingCount = claims.filter((c) => claimMatchesDossier(c, key)).length;
+      const countEl = $(`count-dossier-${key}`);
+      if (countEl) countEl.textContent = matchingCount;
+    });
+
+    document.querySelectorAll(".dossier-card").forEach((card) => {
+      card.onclick = () => {
+        const dKey = card.dataset.dossier;
+        if (state.dossier === dKey) {
+          state.dossier = null;
+          history.pushState(null, "", window.location.pathname + window.location.search);
+        } else {
+          state.dossier = dKey;
+          history.pushState(null, "", `#dossier=${dKey}`);
+          const banner = $("dossier-banner");
+          if (banner) {
+            banner.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
+        render();
+      };
+    });
+
+    const dbClear = $("db-clear");
+    if (dbClear) {
+      dbClear.onclick = () => {
+        state.dossier = null;
+        history.pushState(null, "", window.location.pathname + window.location.search);
+        render();
+      };
+    }
+
+    const dbShareWa = $("db-share-wa");
+    if (dbShareWa) {
+      dbShareWa.onclick = () => {
+        if (!state.dossier) return;
+        const d = DOSSIERS[state.dossier];
+        const matching = claims.filter((c) => claimMatchesDossier(c, state.dossier));
+        const origin = window.location.origin === "null" || !window.location.origin ? "https://mustgo.co.ke" : window.location.origin;
+        const text = `🚨 *MustGo.co.ke Dossier: ${d.name}*\n\n${d.desc}\n\n📊 *${matching.length} Verified Receipts Documented*\n\nRead the full dossier and evidence:\n${origin}${window.location.pathname}#dossier=${state.dossier}\n\n#MustGo #KenyanAccountability`;
+        window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, "_blank");
+      };
+    }
+
+    const dbShareX = $("db-share-x");
+    if (dbShareX) {
+      dbShareX.onclick = () => {
+        if (!state.dossier) return;
+        const d = DOSSIERS[state.dossier];
+        const origin = window.location.origin === "null" || !window.location.origin ? "https://mustgo.co.ke" : window.location.origin;
+        const text = `🇰🇪 MustGo Dossier: ${d.name}\n\n${d.desc.slice(0, 140)}...\n\nExplore all receipts:\n${origin}${window.location.pathname}#dossier=${state.dossier}\n\n#MustGo #RutoReceipts`;
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, "_blank");
+      };
+    }
+  }
+
+  function initChargeSheet() {
+    const csDialog = $("chargesheet-dialog");
+    if (!csDialog) return;
+
+    const openBtn = $("open-chargesheet");
+    const heroBtn = $("hero-chargesheet-btn");
+
+    const openCS = () => {
+      populateChargeSheetContent();
+      csDialog.showModal();
+    };
+
+    if (openBtn) openBtn.onclick = openCS;
+    if (heroBtn) heroBtn.onclick = openCS;
+
+    const closeBtn = csDialog.querySelector(".close");
+    if (closeBtn) {
+      closeBtn.onclick = () => {
+        csDialog.close();
+        if (window.location.hash === "#chargesheet") {
+          history.pushState(null, "", window.location.pathname + window.location.search);
+        }
+      };
+    }
+
+    csDialog.addEventListener("click", (e) => {
+      if (e.target === csDialog) {
+        csDialog.close();
+        if (window.location.hash === "#chargesheet") {
+          history.pushState(null, "", window.location.pathname + window.location.search);
+        }
+      }
+    });
+
+    const printBtn = $("cs-btn-print");
+    if (printBtn) printBtn.onclick = () => window.print();
+
+    const copyBtn = $("cs-btn-copy");
+    if (copyBtn) {
+      copyBtn.onclick = () => {
+        const summaryText = buildChargeSheetText();
+        navigator.clipboard.writeText(summaryText).then(() => {
+          const textEl = $("cs-copy-text");
+          if (textEl) textEl.textContent = "✓ Factsheet Copied!";
+          showToast("Full campaign factsheet copied to clipboard!");
+          setTimeout(() => { if (textEl) textEl.textContent = "Copy Full Campaign Factsheet"; }, 2500);
+        });
+      };
+    }
+
+    const waBtn = $("cs-btn-wa");
+    if (waBtn) {
+      waBtn.onclick = () => {
+        const summaryText = buildChargeSheetText();
+        const origin = window.location.origin === "null" || !window.location.origin ? "https://mustgo.co.ke" : window.location.origin;
+        const text = `🇰🇪 *EXECUTIVE CHARGE SHEET · MUSTGO.CO.KE*\n\n${summaryText.slice(0, 1800)}\n\n👉 Full evidence archive:\n${origin}`;
+        window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, "_blank");
+      };
+    }
+  }
+
+  function populateChargeSheetContent() {
+    const list = $("cs-sections-list");
+    if (!list) return;
+    list.innerHTML = "";
+
+    const totalCountEl = $("cs-total-count");
+    if (totalCountEl) totalCountEl.textContent = claims.length;
+
+    Object.keys(DOSSIERS).forEach((key) => {
+      const d = DOSSIERS[key];
+      const matching = claims.filter((c) => claimMatchesDossier(c, key));
+      const block = document.createElement("div");
+      block.className = "cs-section-block";
+
+      const previewItems = matching.slice(0, 3).map((c) => `
+        <div class="cs-receipt-item">
+          <span class="cs-receipt-title">${esc(c.title)}</span>
+          <span class="cs-receipt-verdict">[${esc(c.verdict.toUpperCase())}]</span>
+        </div>
+      `).join("");
+
+      block.innerHTML = `
+        <div class="cs-section-header">
+          <div class="cs-section-title">
+            <span>${d.icon}</span>
+            <span>${esc(d.name)}</span>
+          </div>
+          <span class="cs-section-count">${matching.length} receipts</span>
+        </div>
+        <p class="meta" style="margin:0 0 10px; font-size:13px; color:var(--muted);">${esc(d.desc)}</p>
+        <div class="cs-receipts-preview">${previewItems}</div>
+        <button type="button" class="cs-view-dossier-link" data-dossier="${key}">View all ${matching.length} receipts in this dossier →</button>
+      `;
+
+      block.querySelector(".cs-view-dossier-link").onclick = () => {
+        const cs = $("chargesheet-dialog");
+        if (cs) cs.close();
+        state.dossier = key;
+        history.pushState(null, "", `#dossier=${key}`);
+        render();
+        const banner = $("dossier-banner");
+        if (banner) banner.scrollIntoView({ behavior: "smooth", block: "start" });
+      };
+
+      list.appendChild(block);
+    });
+  }
+
+  function buildChargeSheetText() {
+    let out = "🇰🇪 MUSTGO.CO.KE · THE RUTO ADMINISTRATION CHARGE SHEET\n";
+    out += "Verified record based on High Court rulings, state audits & independent fact-checks.\n\n";
+    Object.keys(DOSSIERS).forEach((key) => {
+      const d = DOSSIERS[key];
+      const matching = claims.filter((c) => claimMatchesDossier(c, key));
+      out += `${d.icon} ${d.name.toUpperCase()} (${matching.length} Receipts)\n`;
+      out += `${d.desc}\n`;
+      matching.slice(0, 4).forEach((c) => {
+        out += `  • ${c.title} [${c.verdict.toUpperCase()}]\n`;
+      });
+      out += "\n";
+    });
+    out += "Archived at: https://mustgo.co.ke #MustGo #KenyanAccountability";
+    return out;
+  }
+
   // --- Setup Event Listeners ---
   function initEvents() {
     const viewer = $("viewer");
@@ -706,6 +1059,10 @@
         submitDialog.showModal();
       };
     }
+
+    // Initialize campaign tools
+    initDossiers();
+    initChargeSheet();
 
     // Hash routing
     window.addEventListener("hashchange", handleHashChange);

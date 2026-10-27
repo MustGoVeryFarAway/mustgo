@@ -1357,3 +1357,495 @@ blockquote {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   Campaign Tools: Thematic Dossiers & Executive Charge Sheet
+   ========================================================================== */
+
+/* Charge Sheet Button in Top Nav */
+.btn-charge {
+  background: var(--card-subtle);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 700;
+  transition: all .18s ease;
+}
+
+.btn-charge:hover {
+  background: var(--card);
+  border-color: var(--red);
+  color: var(--red);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Hero Action Buttons */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Campaign Thematic Dossiers Section */
+.dossiers-section {
+  margin: 32px auto 28px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.dossiers-header {
+  margin-bottom: 16px;
+}
+
+.dossiers-kicker {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.dossiers-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 3vw, 28px);
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+
+.dossiers-intro {
+  font-size: 14.5px;
+  color: var(--muted);
+  max-width: 640px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.dossiers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+  min-width: 0;
+}
+
+.dossier-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  min-width: 0;
+  position: relative;
+}
+
+.dossier-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--ink-secondary);
+  box-shadow: var(--shadow-md);
+}
+
+.dossier-card:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+.dossier-card[aria-pressed="true"] {
+  border-color: var(--red);
+  background: var(--false-bg);
+  box-shadow: 0 0 0 2px var(--red);
+}
+
+.dossier-card[aria-pressed="true"] .dossier-name {
+  color: var(--red);
+}
+
+.dossier-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.dossier-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.dossier-count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--card-subtle);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.dossier-card[aria-pressed="true"] .dossier-count {
+  background: var(--red);
+  color: #ffffff;
+  border-color: var(--red);
+}
+
+.dossier-name {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 8px;
+  line-height: 1.35;
+}
+
+.dossier-desc {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin: 0 0 16px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.dossier-arrow {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--red);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Active Dossier Banner */
+.dossier-banner {
+  background: var(--card);
+  border: 1.5px solid var(--red);
+  border-radius: var(--radius);
+  padding: 18px 24px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  box-shadow: var(--shadow-md);
+  animation: fadeIn .2s ease;
+  min-width: 0;
+}
+
+.dossier-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.dossier-banner-icon {
+  font-size: 34px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.dossier-banner-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.dossier-pill-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--red);
+  color: #fff;
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: .8px;
+}
+
+.dossier-banner-count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.dossier-banner-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  margin: 0 0 4px;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.dossier-banner-desc {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.dossier-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+/* Executive Charge Sheet Dialog */
+.chargesheet-dialog {
+  max-width: 880px;
+  width: 94%;
+  max-height: 90vh;
+}
+
+.chargesheet-inner {
+  padding: 24px 30px 32px;
+}
+
+.chargesheet-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cs-top-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 1.2px;
+  display: block;
+}
+
+.chargesheet-title-wrap h2 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  margin: 0;
+  color: var(--ink);
+}
+
+.chargesheet-lead-box {
+  background: var(--card-subtle);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin-bottom: 24px;
+}
+
+.chargesheet-lead-text {
+  font-size: 14.5px;
+  color: var(--ink-secondary);
+  line-height: 1.55;
+  margin: 0 0 16px;
+}
+
+.chargesheet-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.cs-stat {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.cs-stat-num {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--red);
+  display: block;
+  line-height: 1.2;
+}
+
+.cs-stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-top: 4px;
+  display: block;
+}
+
+.cs-sections-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cs-section-block {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+
+.cs-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+.cs-section-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cs-section-count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.cs-receipts-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cs-receipt-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 13.5px;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--line-subtle);
+}
+
+.cs-receipt-item:last-child {
+  border-bottom: none;
+}
+
+.cs-receipt-title {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.cs-receipt-verdict {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--red);
+  flex-shrink: 0;
+}
+
+.cs-view-dossier-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--red);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.chargesheet-footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+/* Print Optimization for Activist Circulation & Leaflets */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12pt;
+  }
+
+  .flag-stripe,
+  .top-nav,
+  .header-actions,
+  .hero-actions,
+  .controls,
+  .dossier-banner-actions,
+  .viewer-actions,
+  .btn,
+  .close,
+  .theme-btn,
+  dialog {
+    display: none !important;
+  }
+
+  .masthead {
+    border-bottom: 2pt solid #000000;
+    padding-bottom: 12pt;
+    margin-bottom: 16pt;
+  }
+
+  .grid {
+    display: block !important;
+  }
+
+  .card {
+    page-break-inside: avoid;
+    border: 1pt solid #cccccc !important;
+    margin-bottom: 12pt;
+    box-shadow: none !important;
+  }
+
+  .dossiers-section {
+    page-break-after: always;
+  }
+
+  .chargesheet-dialog {
+    display: block !important;
+    position: static !important;
+    box-shadow: none !important;
+    border: none !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+}
+
+/* Mobile Responsiveness for Dossiers & Chargesheet */
+@media (max-width: 768px) {
+  .dossiers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dossier-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dossier-banner-actions {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .chargesheet-stats-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
