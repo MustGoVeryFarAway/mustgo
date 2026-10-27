@@ -1,6 +1,17 @@
 (() => {
   const claims = (window.CLAIMS || []).slice();
+  const mps = (window.MPS || []).slice();
+  const impunityCases = (window.IMPUNITY_CASES || []).slice();
+  const memorialRecords = (window.MEMORIAL_RECORDS || []).slice();
+  const i18n = window.I18N || {};
   const $ = (id) => document.getElementById(id);
+
+  let activeTab = "receipts";
+  let currentLang = localStorage.getItem("mustgo_lang") || "en";
+  const mpState = { q: "", vote: "all", county: null };
+  const impunityState = { status: "all" };
+  const memorialState = { cat: "all" };
+  let deferredPrompt = null;
 
   const DOSSIERS = {
     constitution: {
@@ -213,6 +224,7 @@
     const pillsEl = $("sc-pills");
     if (pillsEl) {
       pillsEl.innerHTML = "";
+      const isSw = currentLang === "sw";
       verdictOrder.forEach((v) => {
         const count = counts[v] || 0;
         if (!count) return;
@@ -222,7 +234,9 @@
         pill.className = "score-pill";
         pill.dataset.v = v;
         pill.setAttribute("aria-pressed", String(state.verdict === v));
-        pill.innerHTML = `<span class="dot"></span><span>${v}</span> <strong>${count}</strong> <span class="meta">(${pct}%)</span>`;
+        const vKey = "verdict_" + v.toLowerCase().replace(/ /g, "_");
+        const vLabel = isSw ? t(vKey) : v;
+        pill.innerHTML = `<span class="dot"></span><span>${vLabel}</span> <strong>${count}</strong> <span class="meta">(${pct}%)</span>`;
         pill.onclick = () => {
           state.verdict = state.verdict === v ? null : v;
           updateChipSelection();
@@ -261,12 +275,16 @@
     const verdicts = ["False", "Misleading", "Broken promise", "Unproven"].filter((v) => verdictCounts[v]);
     const vEl = $("verdicts");
     vEl.innerHTML = "";
+    const isSw = currentLang === "sw";
+    const allVerdictsLabel = isSw ? t("all_verdicts") : "All verdicts";
     [null, ...verdicts].forEach((v) => {
       const b = document.createElement("button");
       b.className = "chip";
       b.dataset.val = v || "";
-      const label = v ? `${v} <span class="chip-count">(${verdictCounts[v]})</span>` : `All verdicts <span class="chip-count">(${claims.length})</span>`;
-      b.innerHTML = label;
+      const vKey = v ? "verdict_" + v.toLowerCase().replace(/ /g, "_") : "";
+      const vText = v ? (isSw ? t(vKey) : v) : allVerdictsLabel;
+      const count = v ? verdictCounts[v] : claims.length;
+      b.innerHTML = `${vText} <span class="chip-count">(${count})</span>`;
       b.setAttribute("aria-pressed", String(state.verdict === v));
       b.onclick = () => {
         state.verdict = v;
@@ -280,11 +298,12 @@
     const tags = Object.keys(tagCounts).sort();
     const tEl = $("tags");
     tEl.innerHTML = "";
+    const allTopicsLabel = isSw ? t("all_topics") : "All topics";
     [null, ...tags].forEach((t) => {
       const b = document.createElement("button");
       b.className = "chip";
       b.dataset.val = t || "";
-      const label = t ? `#${t} <span class="chip-count">(${tagCounts[t]})</span>` : `All topics <span class="chip-count">(${claims.length})</span>`;
+      const label = t ? `#${t} <span class="chip-count">(${tagCounts[t]})</span>` : `${allTopicsLabel} <span class="chip-count">(${claims.length})</span>`;
       b.innerHTML = label;
       b.setAttribute("aria-pressed", String(state.tag === t));
       b.onclick = () => {
@@ -311,7 +330,7 @@
     if (state.verdict && c.verdict !== state.verdict) return false;
     if (state.tag && !(c.tags || []).includes(state.tag)) return false;
     if (!state.q) return true;
-    const hay = [c.title, c.quote, c.context, c.reality, ...(c.tags || [])].join(" ").toLowerCase();
+    const hay = [c.title, c.title_sw, c.quote, c.quote_sw, c.context, c.reality, c.reality_sw, ...(c.tags || [])].filter(Boolean).join(" ").toLowerCase();
     return state.q.split(/\s+/).every((w) => hay.includes(w));
   }
 
@@ -323,9 +342,10 @@
       ? `<img src="${esc(c.thumbnail)}" alt="" loading="lazy" onerror="this.remove()">`
       : "";
     const hasVideo = Boolean(c.tweet_url);
+    const isSw = currentLang === "sw";
     const videoTag = hasVideo
-      ? `<span class="video-status-tag">▶ Video Clip</span>`
-      : `<span class="video-status-tag">📜 Record</span>`;
+      ? `<span class="video-status-tag">${isSw ? "▶ Video Fupi" : "▶ Video Clip"}</span>`
+      : `<span class="video-status-tag">${isSw ? "📜 Rekodi" : "📜 Record"}</span>`;
 
     let dossierBadge = "";
     for (const [key, d] of Object.entries(DOSSIERS)) {
@@ -336,17 +356,21 @@
     }
 
     const tagPills = (c.tags || []).slice(0, 2).map((t) => `<span class="tag-pill">#${esc(t)}</span>`).join("");
+    const titleText = (isSw && c.title_sw) ? c.title_sw : c.title;
+    const quoteText = (isSw && c.quote_sw) ? c.quote_sw : c.quote;
+    const verdictKey = "verdict_" + c.verdict.toLowerCase().replace(/ /g, "_");
+    const verdictText = isSw ? t(verdictKey) : c.verdict;
 
     li.innerHTML = `
       <div class="thumb ${hasVideo ? "" : "no-video"}">
-        <div class="fallback">${esc(c.quote).slice(0, 130)}${(c.quote || "").length > 130 ? "…" : ""}</div>
+        <div class="fallback">${esc(quoteText).slice(0, 130)}${(quoteText || "").length > 130 ? "…" : ""}</div>
         ${img}
-        <span class="badge" data-v="${esc(c.verdict)}">${esc(c.verdict)}</span>
+        <span class="badge" data-v="${esc(c.verdict)}">${esc(verdictText)}</span>
         <span class="play" aria-hidden="true"></span>
         ${videoTag}
       </div>
       <div class="body">
-        <h2>${esc(c.title)}</h2>
+        <h2>${esc(titleText)}</h2>
         <p class="meta">${fmtDate(c.date)}${c.context ? " · " + esc(c.context) : ""}</p>
         <div class="tags-list">${dossierBadge}${tagPills}</div>
       </div>`;
@@ -373,7 +397,10 @@
     const grid = $("grid");
     grid.replaceChildren(...currentFilteredList.map(card));
     $("empty").hidden = currentFilteredList.length > 0;
-    $("count").textContent = `${currentFilteredList.length} of ${claims.length} receipts`;
+    const isSw = currentLang === "sw";
+    $("count").textContent = isSw
+      ? `Risiti ${currentFilteredList.length} kati ya ${claims.length}`
+      : `${currentFilteredList.length} of ${claims.length} receipts`;
 
     const isFiltered = Boolean(state.q || state.verdict || state.tag || state.dossier);
     $("reset-filters").hidden = !isFiltered;
@@ -421,15 +448,19 @@
       history.pushState(null, "", `#${c.id}`);
     }
 
+    const isSw = currentLang === "sw";
+    const verdictKey = "verdict_" + c.verdict.toLowerCase().replace(/ /g, "_");
+    const verdictText = isSw ? t(verdictKey) : c.verdict;
+
     const v = $("v-verdict");
-    v.textContent = c.verdict;
+    v.textContent = verdictText;
     v.dataset.v = c.verdict;
 
     $("v-id").textContent = `#${c.id}`;
-    $("v-title").textContent = c.title;
+    $("v-title").textContent = (isSw && c.title_sw) ? c.title_sw : c.title;
     $("v-meta").textContent = [fmtDate(c.date), c.context].filter(Boolean).join(" · ");
-    $("v-quote").textContent = `“${c.quote}”`;
-    $("v-reality").textContent = c.reality;
+    $("v-quote").textContent = `“${(isSw && c.quote_sw) ? c.quote_sw : c.quote}”`;
+    $("v-reality").textContent = (isSw && c.reality_sw) ? c.reality_sw : c.reality;
     $("v-check").href = c.factcheck_url;
 
     const tw = $("v-tweet");
@@ -520,6 +551,59 @@
       return;
     }
 
+    if (hash === "receipts") {
+      switchTab("receipts", false);
+      return;
+    }
+
+    if (hash === "mps") {
+      switchTab("mps", false);
+      return;
+    }
+
+    if (hash.startsWith("mp=")) {
+      switchTab("mps", false);
+      const mpId = hash.replace("mp=", "");
+      setTimeout(() => {
+        const mpEl = $(mpId);
+        if (mpEl) {
+          mpEl.scrollIntoView({ behavior: "smooth", block: "center" });
+          mpEl.style.borderColor = "var(--red)";
+        }
+      }, 100);
+      return;
+    }
+
+    if (hash === "impunity") {
+      switchTab("impunity", false);
+      return;
+    }
+
+    if (hash.startsWith("impunity=")) {
+      switchTab("impunity", false);
+      const impId = hash.replace("impunity=", "");
+      setTimeout(() => {
+        const impEl = $(impId);
+        if (impEl) impEl.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 100);
+      return;
+    }
+
+    if (hash === "memorial") {
+      switchTab("memorial", false);
+      return;
+    }
+
+    if (hash.startsWith("memorial=")) {
+      switchTab("memorial", false);
+      const memId = hash.replace("memorial=", "");
+      setTimeout(() => {
+        const memEl = $(memId);
+        if (memEl) memEl.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 100);
+      return;
+    }
+
     if (hash === "chargesheet") {
       const cs = $("chargesheet-dialog");
       if (cs) {
@@ -530,6 +614,7 @@
     }
 
     if (hash.startsWith("dossier=")) {
+      switchTab("receipts", false);
       const dKey = hash.replace("dossier=", "");
       if (DOSSIERS[dKey]) {
         state.dossier = dKey;
@@ -542,6 +627,7 @@
 
     const found = claims.find((c) => c.id === hash);
     if (found) {
+      switchTab("receipts", false);
       open(found, false);
     }
   }
@@ -1083,12 +1169,493 @@
       };
     }
 
-    // Initialize campaign tools
+    // Initialize campaign tools and new civic modules
     initDossiers();
     initChargeSheet();
+    initHubNav();
+    initMPs();
+    initImpunity();
+    initMemorial();
+    initPWA();
+    initLanguage();
 
     // Hash routing
     window.addEventListener("hashchange", handleHashChange);
+  }
+
+  // --- Translation & Localization Engine ---
+  function t(key) {
+    if (i18n[currentLang] && i18n[currentLang][key]) {
+      return i18n[currentLang][key];
+    }
+    if (i18n["en"] && i18n["en"][key]) {
+      return i18n["en"][key];
+    }
+    return key;
+  }
+
+  function applyLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem("mustgo_lang", lang);
+
+    const langBtnText = $("lang-text");
+    if (langBtnText) {
+      langBtnText.textContent = lang === "en" ? "KISWAHILI" : "ENGLISH";
+    }
+
+    // Translate marked static DOM elements
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      const text = t(key);
+      if (text) el.textContent = text;
+    });
+
+    // Update search inputs placeholders
+    const searchInput = $("search");
+    if (searchInput) searchInput.placeholder = t("search_placeholder");
+    const mpSearch = $("mp-search");
+    if (mpSearch) mpSearch.placeholder = t("mp_search_placeholder");
+
+    // Re-render all views and active filters
+    initScorecard();
+    renderChips();
+    render();
+    initMPs();
+    renderMPs();
+    renderImpunity();
+    renderMemorial();
+
+    // If modal is currently open, re-render it in the new language
+    if (currentClaim && $("viewer") && $("viewer").open) {
+      open(currentClaim, false);
+    }
+  }
+
+  function initLanguage() {
+    const langBtn = $("lang-toggle");
+    if (langBtn) {
+      langBtn.onclick = () => {
+        const nextLang = currentLang === "en" ? "sw" : "en";
+        applyLanguage(nextLang);
+        showToast(nextLang === "sw" ? "Lugha imebadilishwa kuwa Kiswahili 🇰🇪" : "Language switched to English 🇰🇪");
+      };
+    }
+    applyLanguage(currentLang);
+  }
+
+  // --- Civic Hub Tab Switching ---
+  function switchTab(tabId, pushHash = true) {
+    activeTab = tabId;
+    document.querySelectorAll(".hub-tab").forEach((tab) => {
+      tab.classList.toggle("active", tab.dataset.tab === tabId);
+    });
+
+    const secReceipts = $("section-receipts");
+    const secMps = $("section-mps");
+    const secImpunity = $("section-impunity");
+    const secMemorial = $("section-memorial");
+
+    if (secReceipts) secReceipts.hidden = tabId !== "receipts";
+    if (secMps) secMps.hidden = tabId !== "mps";
+    if (secImpunity) secImpunity.hidden = tabId !== "impunity";
+    if (secMemorial) secMemorial.hidden = tabId !== "memorial";
+
+    if (pushHash) {
+      history.pushState(null, "", `#${tabId}`);
+    }
+
+    if (tabId === "receipts") {
+      render();
+    } else if (tabId === "mps") {
+      renderMPs();
+    } else if (tabId === "impunity") {
+      renderImpunity();
+    } else if (tabId === "memorial") {
+      renderMemorial();
+    }
+
+    const targetSection = $(`section-${tabId}`);
+    if (targetSection && pushHash) {
+      const topOffset = targetSection.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top: Math.max(0, topOffset), behavior: "smooth" });
+    }
+  }
+
+  function initHubNav() {
+    document.querySelectorAll(".hub-tab").forEach((tab) => {
+      tab.onclick = () => switchTab(tab.dataset.tab, true);
+    });
+  }
+
+  // --- Find Your MP Feature ---
+  function initMPs() {
+    const countyContainer = $("mp-county-filters");
+    if (countyContainer) {
+      const counties = [...new Set(mps.map((m) => m.county))].filter(Boolean).sort();
+      countyContainer.innerHTML = "";
+
+      const allBtn = document.createElement("button");
+      allBtn.className = "chip active";
+      allBtn.textContent = currentLang === "sw" ? t("all_counties") : "All Counties";
+      allBtn.onclick = () => {
+        mpState.county = null;
+        countyContainer.querySelectorAll(".chip").forEach((c) => c.classList.remove("active"));
+        allBtn.classList.add("active");
+        renderMPs();
+      };
+      countyContainer.appendChild(allBtn);
+
+      counties.forEach((county) => {
+        const b = document.createElement("button");
+        b.className = "chip";
+        b.textContent = county;
+        b.onclick = () => {
+          mpState.county = county;
+          countyContainer.querySelectorAll(".chip").forEach((c) => c.classList.remove("active"));
+          b.classList.add("active");
+          renderMPs();
+        };
+        countyContainer.appendChild(b);
+      });
+    }
+
+    // Update dynamic MP counts
+    const hubMpsCount = $("hub-count-mps");
+    if (hubMpsCount) hubMpsCount.textContent = mps.length;
+    const allCount = $("mp-count-all");
+    if (allCount) allCount.textContent = mps.length;
+    const yesCount = $("mp-count-yes");
+    if (yesCount) yesCount.textContent = mps.filter((m) => m.finance_bill_2024 === "YES").length;
+    const noCount = $("mp-count-no");
+    if (noCount) noCount.textContent = mps.filter((m) => m.finance_bill_2024 === "NO").length;
+
+    document.querySelectorAll("#mp-vote-filters .chip").forEach((btn) => {
+      btn.onclick = () => {
+        document.querySelectorAll("#mp-vote-filters .chip").forEach((c) => c.classList.remove("active"));
+        btn.classList.add("active");
+        mpState.vote = btn.dataset.vote;
+        renderMPs();
+      };
+    });
+
+    const searchInput = $("mp-search");
+    const clearBtn = $("clear-mp-search");
+    if (searchInput) {
+      searchInput.addEventListener("input", (e) => {
+        mpState.q = e.target.value.trim().toLowerCase();
+        if (clearBtn) clearBtn.hidden = !mpState.q;
+        renderMPs();
+      });
+      if (clearBtn) {
+        clearBtn.onclick = () => {
+          searchInput.value = "";
+          mpState.q = "";
+          clearBtn.hidden = true;
+          searchInput.focus();
+          renderMPs();
+        };
+      }
+    }
+
+    const resetBtn = $("mp-reset-filters");
+    if (resetBtn) {
+      resetBtn.onclick = () => {
+        mpState.q = "";
+        mpState.vote = "all";
+        mpState.county = null;
+        if (searchInput) searchInput.value = "";
+        if (clearBtn) clearBtn.hidden = true;
+        document.querySelectorAll("#mp-vote-filters .chip").forEach((c) => c.classList.toggle("active", c.dataset.vote === "all"));
+        if (countyContainer) {
+          countyContainer.querySelectorAll(".chip").forEach((c, i) => c.classList.toggle("active", i === 0));
+        }
+        renderMPs();
+      };
+    }
+
+    const emptyReset = $("mp-empty-reset-btn");
+    if (emptyReset && resetBtn) emptyReset.onclick = resetBtn.onclick;
+
+    renderMPs();
+  }
+
+  function renderMPs() {
+    const grid = $("mp-grid");
+    const empty = $("mp-empty");
+    if (!grid) return;
+
+    const list = mps.filter((m) => {
+      if (mpState.vote !== "all" && m.finance_bill_2024 !== mpState.vote) return false;
+      if (mpState.county && m.county !== mpState.county) return false;
+      if (mpState.q) {
+        const hay = [m.name, m.constituency, m.county, m.party, m.role, m.notes].join(" ").toLowerCase();
+        if (!hay.includes(mpState.q)) return false;
+      }
+      return true;
+    });
+
+    const isSw = currentLang === "sw";
+    const resultsCount = $("mp-results-count");
+    if (resultsCount) {
+      resultsCount.textContent = isSw
+        ? `Inaonyesha Wabunge ${list.length} kati ya ${mps.length}`
+        : `Showing ${list.length} of ${mps.length} MPs`;
+    }
+    const resetFiltersBtn = $("mp-reset-filters");
+    if (resetFiltersBtn) {
+      resetFiltersBtn.hidden = mpState.q === "" && mpState.vote === "all" && mpState.county === null;
+      resetFiltersBtn.textContent = isSw ? "Rejesha vichujio" : "Reset filters";
+    }
+
+    if (list.length === 0) {
+      grid.innerHTML = "";
+      if (empty) empty.hidden = false;
+      return;
+    }
+    if (empty) empty.hidden = true;
+
+    grid.innerHTML = list.map((m) => {
+      const isYes = m.finance_bill_2024 === "YES";
+      const isNo = m.finance_bill_2024 === "NO";
+      const voteClass = isYes ? "vote-yes" : isNo ? "vote-no" : "vote-absent";
+      const voteLabel = isYes
+        ? (isSw ? "ALIPIGA NDIO · ALIPITISHA USHURU" : "VOTED YES · PASSED TAX")
+        : isNo
+        ? (isSw ? "ALIPIGA LA · ALIKATAA USHURU" : "VOTED NO · REJECTED TAX")
+        : (isSw ? "HAKUWEPO / ALIONDOKA" : "ABSENT / WALKOUT");
+      const voteIcon = isYes ? "❌" : isNo ? "✅" : "⚠️";
+
+      const xMsg = `Constituency Check: ${m.name} (@${m.twitter || m.name.replace(/[^a-zA-Z]/g, "")}) of ${m.constituency}, ${m.county} voted ${m.finance_bill_2024} on the Finance Bill 2024.\n\nReview the full record: mustgo.co.ke/#mps\n#MustGo #RutoReceipts`;
+      const copyText = `${m.name} (${m.constituency}, ${m.county}): Voted ${m.finance_bill_2024} on Finance Bill 2024. Review record on mustgo.co.ke/#mps`;
+
+      const voteTitle = isSw ? "Kura ya Mswada wa Fedha 2024:" : "Finance Bill 2024:";
+      const housingLabel = isSw ? "Ushuru wa Nyumba:" : "Housing Levy:";
+      const shifLabel = isSw ? "Bima ya SHIF/SHA:" : "SHIF Health:";
+      const shareBtn = isSw ? "Shiriki Kwenye 𝕏" : "Post on X";
+      const copyBtn = isSw ? "Nakili Rekodi" : "Copy Record";
+      const toastMsg = isSw ? t("mp_copied_toast") : "MP scorecard copied!";
+
+      return `
+        <article class="mp-card" id="${esc(m.id)}">
+          <div>
+            <div class="mp-card-top">
+              <div>
+                <h3 class="mp-name">${esc(m.name)}</h3>
+                <span class="mp-constituency">${esc(m.constituency)} · ${esc(m.county)}</span>
+              </div>
+              <span class="mp-party-pill">${esc(m.party)} (${esc(m.coalition)})</span>
+            </div>
+
+            <div class="mp-vote-banner ${voteClass}">
+              <span class="mp-vote-label">${voteTitle}</span>
+              <span class="mp-vote-value">${voteIcon} ${voteLabel}</span>
+            </div>
+
+            <div class="mp-secondary-votes">
+              <div class="mp-sub-vote">
+                <span class="mp-sub-vote-label">${housingLabel}</span>
+                <span class="mp-sub-vote-val ${m.housing_levy === "YES" ? "val-yes" : "val-no"}">${esc(m.housing_levy)}</span>
+              </div>
+              <div class="mp-sub-vote">
+                <span class="mp-sub-vote-label">${shifLabel}</span>
+                <span class="mp-sub-vote-val ${m.shif_act === "YES" ? "val-yes" : "val-no"}">${esc(m.shif_act)}</span>
+              </div>
+            </div>
+
+            <p class="mp-notes">${esc(m.notes || m.role || "")}</p>
+          </div>
+
+          <div class="mp-actions">
+            <button class="btn btn-x btn-mp" type="button" onclick="window.open('https://twitter.com/intent/tweet?text=${encodeURIComponent(xMsg)}', '_blank')">
+              <span class="btn-icon">𝕏</span> <span>${shareBtn}</span>
+            </button>
+            <button class="btn btn-outline btn-mp" type="button" onclick="navigator.clipboard.writeText('${esc(copyText)}').then(() => showToast('${toastMsg}'))">
+              <span class="btn-icon">📋</span> <span>${copyBtn}</span>
+            </button>
+          </div>
+        </article>
+      `;
+    }).join("");
+  }
+
+  // --- Impunity Watch Feature ---
+  function initImpunity() {
+    document.querySelectorAll("#impunity-filters .chip").forEach((btn) => {
+      btn.onclick = () => {
+        document.querySelectorAll("#impunity-filters .chip").forEach((c) => c.classList.remove("active"));
+        btn.classList.add("active");
+        impunityState.status = btn.dataset.status;
+        renderImpunity();
+      };
+    });
+    renderImpunity();
+  }
+
+  function renderImpunity() {
+    const listEl = $("impunity-list");
+    if (!listEl) return;
+
+    const cases = impunityCases.filter((c) => {
+      if (impunityState.status === "all") return true;
+      if (impunityState.status === "DEFYING COURT ORDER" && c.status.includes("DEFYING")) return true;
+      if (impunityState.status === "CIRCUMVENTED" && c.status.includes("CIRCUMVENTED")) return true;
+      if (impunityState.status === "CONSERVATORY INJUNCTION ACTIVE" && c.status.includes("CONSERVATORY")) return true;
+      return c.status === impunityState.status;
+    });
+
+    const isSw = currentLang === "sw";
+    const benchLabel = t("impunity_bench_label");
+    const rulingLabel = t("impunity_ruling_label");
+    const defianceLabel = t("impunity_defiance_label");
+    const readRulingLabel = t("impunity_read_caselaw");
+
+    listEl.innerHTML = cases.map((c) => {
+      const title = (isSw && c.title_sw) ? c.title_sw : c.title;
+      const court = (isSw && c.court_sw) ? c.court_sw : c.court;
+      const articles = (isSw && c.articles_violated_sw && c.articles_violated_sw.length) ? c.articles_violated_sw : (c.articles_violated || []);
+      const ruling = (isSw && c.ruling_sw) ? c.ruling_sw : c.ruling;
+      const defiance = (isSw && c.executive_defiance_sw) ? c.executive_defiance_sw : c.executive_defiance;
+
+      return `
+        <article class="impunity-card" id="${esc(c.id)}">
+          <div class="impunity-card-header">
+            <div>
+              <h3 class="impunity-case-title">${esc(title)}</h3>
+              <span class="impunity-meta">${esc(court)} · ${esc(c.petition_no)} (${fmtDate(c.date)})</span>
+            </div>
+            <span class="impunity-status-tag">${esc(c.status)}</span>
+          </div>
+
+          <div class="impunity-bench">
+            <strong>${benchLabel}</strong> ${esc(c.bench)}
+          </div>
+
+          <div class="impunity-articles">
+            ${articles.map((a) => `<span class="article-pill">⚖️ ${esc(a)}</span>`).join("")}
+          </div>
+
+          <div class="impunity-ruling-box">
+            <strong>${rulingLabel}</strong>
+            ${esc(ruling)}
+          </div>
+
+          <div class="impunity-defiance-box">
+            <strong>${defianceLabel}</strong>
+            ${esc(defiance)}
+          </div>
+
+          <div>
+            <a href="${esc(c.source_url)}" target="_blank" rel="noopener" class="impunity-source-link">
+              <span>${readRulingLabel}</span>
+            </a>
+          </div>
+        </article>
+      `;
+    }).join("");
+  }
+
+  // --- Memorial of Courage Feature ---
+  function initMemorial() {
+    document.querySelectorAll("#memorial-filters .chip").forEach((btn) => {
+      btn.onclick = () => {
+        document.querySelectorAll("#memorial-filters .chip").forEach((c) => c.classList.remove("active"));
+        btn.classList.add("active");
+        memorialState.cat = btn.dataset.cat;
+        renderMemorial();
+      };
+    });
+    renderMemorial();
+  }
+
+  function renderMemorial() {
+    const grid = $("memorial-grid");
+    if (!grid) return;
+
+    const list = memorialRecords.filter((m) => {
+      if (memorialState.cat === "all") return true;
+      return (m.type || "").toLowerCase().includes(memorialState.cat.toLowerCase());
+    });
+
+    const isSw = currentLang === "sw";
+    const officialLabel = t("memorial_official_label");
+    const statusLabel = t("memorial_status_label");
+    const shareBtn = t("memorial_share_btn");
+    const xBtn = t("memorial_x_btn");
+
+    grid.innerHTML = list.map((m) => {
+      const type = (isSw && m.type_sw) ? m.type_sw : m.type;
+      const circumstances = (isSw && m.circumstances_sw) ? m.circumstances_sw : m.circumstances;
+      const justiceStatus = (isSw && m.justice_status_sw) ? m.justice_status_sw : m.justice_status;
+      const tribute = (isSw && m.tribute_sw) ? m.tribute_sw : m.tribute;
+      const ageText = m.age ? `${isSw ? "Umri" : "Age"} ${esc(m.age)}` : (isSw ? "Umri Haijulikani" : "Age Unknown");
+
+      const shareText = isSw
+        ? `🕊️ Kwa Kumbukumbu ya ${m.name} (${ageText}), ${m.location} mnamo ${fmtDate(m.date)}.\n\n${circumstances}\n\nHali ya Haki: ${justiceStatus}\n\nMtandao hautosahau kamwe. mustgo.co.ke/#memorial`
+        : `🕊️ In Memory of ${m.name} (${ageText}), ${m.location} on ${fmtDate(m.date)}.\n\n${m.circumstances}\n\nJustice Status: ${m.justice_status}\n\nThe internet remembers. mustgo.co.ke/#memorial`;
+
+      return `
+        <article class="memorial-card" id="${esc(m.id)}">
+          <div>
+            <div class="memorial-top">
+              <div>
+                <h3 class="memorial-name">${esc(m.name)}</h3>
+                <span class="memorial-meta">${ageText} · ${fmtDate(m.date)} · ${esc(m.location)}</span>
+              </div>
+              <span class="memorial-candle" title="${isSw ? 'Pumzika kwa Amani' : 'Rest in Power'}">🕯️</span>
+            </div>
+
+            <span class="memorial-type-badge">${esc(type)}</span>
+            <p class="memorial-circumstances">${esc(circumstances)}</p>
+
+            <div class="memorial-ref">
+              <strong>${officialLabel}</strong> ${esc(m.official_record)}
+            </div>
+
+            <div class="memorial-status">
+              <strong>${statusLabel}</strong> ${esc(justiceStatus)}
+            </div>
+
+            <p class="memorial-tribute">"${esc(tribute)}"</p>
+          </div>
+
+          <div class="memorial-actions">
+            <button class="btn btn-wa btn-sm" type="button" onclick="window.open('https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}', '_blank')">
+              <span class="btn-icon">💬</span> ${shareBtn}
+            </button>
+            <button class="btn btn-x btn-sm" type="button" onclick="window.open('https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}', '_blank')">
+              <span class="btn-icon">𝕏</span> ${xBtn}
+            </button>
+          </div>
+        </article>
+      `;
+    }).join("");
+  }
+
+  // --- PWA Support ---
+  function initPWA() {
+    function updateOnlineStatus() {
+      const pill = $("offline-pill");
+      if (pill) pill.hidden = navigator.onLine;
+    }
+    window.addEventListener("online", updateOnlineStatus);
+    window.addEventListener("offline", updateOnlineStatus);
+    updateOnlineStatus();
+
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const btn = $("pwa-install-btn");
+      if (btn) {
+        btn.hidden = false;
+        btn.onclick = () => {
+          btn.hidden = true;
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then(() => {
+            deferredPrompt = null;
+          });
+        };
+      }
+    });
   }
 
   // --- Initial Launch ---

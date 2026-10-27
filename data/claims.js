@@ -15,7 +15,10 @@ window.CLAIMS = [
       "agriculture"
     ],
     "thumbnail": null,
-    "clip_note": "Live broadcast of the full 30 June 2024 interview; the claim is somewhere in the broadcast."
+    "clip_note": "Live broadcast of the full 30 June 2024 interview; the claim is somewhere in the broadcast.",
+    "title_sw": "Alidai bei ya unga wa mahindi imeshuka hadi KSh100 kote nchini",
+    "reality_sw": "Mnamo Juni 2024, pakiti ya kilo 2 ya unga wa mahindi iliuzwa kati ya KSh130 na KSh165 kulingana na takwimu rasmi za KNBS na uchunguzi wa madukani kote nchini.",
+    "quote_sw": "Kilo mbili ya unga sasa inauzwa kwa shilingi mia moja."
   },
   {
     "id": "tourists-doubled-2022-2023",
@@ -32,7 +35,10 @@ window.CLAIMS = [
       "tourism"
     ],
     "thumbnail": null,
-    "clip_note": "Live broadcast of the full 30 June 2024 interview; the claim is somewhere in the broadcast."
+    "clip_note": "Live broadcast of the full 30 June 2024 interview; the claim is somewhere in the broadcast.",
+    "title_sw": "Alidai idadi ya watalii iliongezeka mara mbili kutoka milioni 1 hadi milioni 2",
+    "reality_sw": "Takwimu za KNBS zilionyesha watalii walikuwa milioni 1.54 mnamo 2022 na milioni 2.1 mnamo 2023. Kupunguza idadi ya 2022 kulifanya ongezeko halisi la 35% kuonekana kama lilikuwa mara mbili.",
+    "quote_sw": "Idadi ya watalii mwaka 2022 ilikuwa milioni moja; mwaka 2023 imefika watalii milioni mbili."
   },
   {
     "id": "universities-budget-ksh40bn",
@@ -49,7 +55,10 @@ window.CLAIMS = [
       "budget"
     ],
     "thumbnail": null,
-    "clip_note": "Live broadcast of the full 30 June 2024 interview; the claim is somewhere in the broadcast."
+    "clip_note": "Live broadcast of the full 30 June 2024 interview; the claim is somewhere in the broadcast.",
+    "title_sw": "Alidai bajeti ya vyuo vikuu iliongezwa kutoka KSh20bn hadi KSh40bn",
+    "reality_sw": "Ripoti ya Makadirio ya Bajeti ya Kitaifa ya 2024/25 ilionyesha bajeti halisi ya elimu ya juu ilitengewa KSh28.4bn, wala haikufikia KSh40bn kama ilivyodaiwa.",
+    "quote_sw": "Tumeongeza bajeti ya vyuo vikuu kutoka bilioni 20 hadi bilioni 40."
   },
   {
     "id": "youth-4-5-million-jobless",
@@ -67,7 +76,10 @@ window.CLAIMS = [
       "youth"
     ],
     "thumbnail": null,
-    "clip_note": "Live broadcast of the full 30 June 2024 interview; the claim is somewhere in the broadcast."
+    "clip_note": "Live broadcast of the full 30 June 2024 interview; the claim is somewhere in the broadcast.",
+    "title_sw": "Alidai vijana milioni 4.5 waliohitimu vyuo hawana ajira",
+    "reality_sw": "Takwimu za KNBS zilionyesha takriban vijana milioni 3.5 hawako shuleni au kazini, na idadi ya wenye stashahada au shahada ilikuwa chini sana ya takwimu hiyo aliyojumuisha makundi tofauti.",
+    "quote_sw": "Tuna takriban vijana milioni nne na nusu waliomaliza vyuo wenye shahada na stashahada lakini hawana kazi."
   },
   {
     "id": "protest-death-toll-19",
@@ -85,7 +97,10 @@ window.CLAIMS = [
       "protests"
     ],
     "thumbnail": null,
-    "clip_note": "Live broadcast of the full 30 June 2024 interview; the claim is somewhere in the broadcast."
+    "clip_note": "Live broadcast of the full 30 June 2024 interview; the claim is somewhere in the broadcast.",
+    "title_sw": "Alidai ni watu 19 pekee waliouawa wakati wa maandamano ya Juni 2024",
+    "reality_sw": "Tume ya Kitaifa ya Haki za Kibinadamu (KNCHR) ilithibitisha vifo 39 kufikia Julai 1, na idadi hiyo ilizidi 60 baadaye, huku zaidi ya watu 360 wakijeruhiwa kwa risasi hai.",
+    "quote_sw": "Ninavyojua mimi, watu 19 wamepoteza maisha yao."
   },
   {
     "id": "sona-2023-unga-145-175",
@@ -103,7 +118,10 @@ window.CLAIMS = [
       "agriculture"
     ],
     "clip_note": "Full live stream of the 2023 address from Ruto's own account; the claim is somewhere in the speech.",
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alidai katika Hotuba ya Hali ya Taifa 2023 kwamba unga ulikuwa unauzwa KSh145-KSh175",
+    "reality_sw": "Wastani wa bei ya reja reja ya KNBS ya Novemba 2023 ilikuwa KSh180 hadi KSh210 kwa pakiti ya kilo 2 katika miji mingi ya Kenya.",
+    "quote_sw": "Pakiti ya kilo 2 ya unga wa mahindi sasa inauzwa kati ya Sh145 na Sh175."
   },
   {
     "id": "sona-2023-ttc-admissions-300pct",
@@ -119,7 +137,10 @@ window.CLAIMS = [
       "education"
     ],
     "clip_note": "Full live stream of the 2023 address from Ruto's own account; the claim is somewhere in the speech.",
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alidai udahili katika vyuo vya walimu uliongezeka kwa 300% kufikia 20,456",
+    "reality_sw": "Utafiti wa Kiuchumi wa KNBS ulionyesha wanafunzi wa ualimu walikuwa 17,984 mnamo 2022; hivyo 20,456 lilikuwa ongezeko la karibu 13.7% pekee, wala si 300% kama ilivyodaiwa.",
+    "quote_sw": "Udahili katika vyuo vya mafunzo ya walimu umeongezeka kwa 300% na sasa umefikia 20,456."
   },
   {
     "id": "sona-2023-20000-health-workers",
@@ -136,7 +157,10 @@ window.CLAIMS = [
       "jobs"
     ],
     "clip_note": "Full live stream of the 2023 address from Ruto's own account; the claim is somewhere in the speech.",
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alidai wahudumu wa afya 20,000 wapya waliajiriwa",
+    "reality_sw": "Wizara ya Afya na Muungano wa Madaktari (KMPDU) walithibitisha hakuna uajiri kama huo uliotokea; madaktari walikuwa kwenye mgomo mkubwa wakidai kuajiriwa kwa madaktari wanafunzi.",
+    "quote_sw": "Tumeajiri wahudumu wa afya wapya elfu ishirini nchini."
   },
   {
     "id": "public-debt-ksh8-8-trillion",
@@ -151,7 +175,10 @@ window.CLAIMS = [
     "tags": [
       "debt",
       "economy"
-    ]
+    ],
+    "title_sw": "Alipunguza takwimu za deni la umma na kudai lilikuwa KSh8.8 trilioni pekee",
+    "reality_sw": "Nyaraka za Hazina ya Kitaifa na Benki Kuu ya Kenya (CBK) zilionyesha deni la umma lilikuwa tayari limepita KSh10.2 trilioni wakati alipochukua mamlaka mnamo Septemba 2022.",
+    "quote_sw": "Deni letu la taifa lilikuwa shilingi trilioni 8.8."
   },
   {
     "id": "exports-28pct-of-gdp",
@@ -166,7 +193,10 @@ window.CLAIMS = [
     "tags": [
       "economy",
       "trade"
-    ]
+    ],
+    "title_sw": "Alidai mauzo ya nje yaliporomoka kutoka 28% hadi 10% ya Pato la Taifa (GDP)",
+    "reality_sw": "Takwimu za Benki ya Dunia na KNBS zilionyesha mauzo ya nje ya Kenya hayajawahi kufikia 28% ya GDP katika historia ya hivi karibuni, kiwango cha juu zaidi kikiwa karibu 16% mnamo 2011.",
+    "quote_sw": "Mauzo yetu ya nje yalishuka kutoka asilimia 28 hadi asilimia 10 ya GDP."
   },
   {
     "id": "housing-250000-jobs",
@@ -181,7 +211,10 @@ window.CLAIMS = [
     "tags": [
       "housing",
       "jobs"
-    ]
+    ],
+    "title_sw": "Alidai mradi wa nyumba za gharama nafuu ulitengeneza ajira 250,000",
+    "reality_sw": "Ripoti ya KNBS ya 2024 ilionyesha sekta nzima ya ujenzi nchini iliajiri wafanyakazi chini ya 230,000 rasmi, na miradi ya serikali iliajiri sehemu ndogo sana ya idadi hiyo.",
+    "quote_sw": "Mradi wa nyumba tayari umezalisha ajira laki mbili na nusu kwa vijana."
   },
   {
     "id": "fertiliser-food-production-50pct",
@@ -195,7 +228,10 @@ window.CLAIMS = [
     "factcheck_url": "https://africacheck.org/fact-checks/reports/1000daysscorecard-has-kenyan-president-ruto-delivered-jobs-economy-and",
     "tags": [
       "agriculture"
-    ]
+    ],
+    "title_sw": "Alidai ruzuku ya mbolea iliongeza uzalishaji wa chakula kwa asilimia 50",
+    "reality_sw": "Ongezeko halisi la uzalishaji wa nafaka lilikuwa karibu 15-20% na lilichangiwa zaidi na mvua nzuri za El Niño baada ya miaka mitatu ya ukame, wala si ruzuku pekee.",
+    "quote_sw": "Mpango wetu wa ruzuku ya mbolea umeongeza uzalishaji wa chakula kwa 50%."
   },
   {
     "id": "forex-reserves-2-5-months",
@@ -209,7 +245,10 @@ window.CLAIMS = [
     "factcheck_url": "https://africacheck.org/fact-checks/reports/1000daysscorecard-has-kenyan-president-ruto-delivered-jobs-economy-and",
     "tags": [
       "economy"
-    ]
+    ],
+    "title_sw": "Alidai akiba ya fedha za kigeni ilikuwa inatosha miezi 2.5 tu alipoingia madarakani",
+    "reality_sw": "Takwimu rasmi za Benki Kuu ya Kenya za Septemba 2022 zilionyesha akiba ya fedha za kigeni ilikuwa $7.34bn, ikitosheleza miezi 4.13 ya uagizaji, juu ya kiwango cha kisheria cha miezi 4.",
+    "quote_sw": "Tulikuta akiba ya fedha za kigeni inatosha miezi miwili na nusu tu ya uagizaji."
   },
   {
     "id": "ecitizen-14-million-users",
@@ -224,7 +263,10 @@ window.CLAIMS = [
     "tags": [
       "governance",
       "digital"
-    ]
+    ],
+    "title_sw": "Alidai zaidi ya Wakenya milioni 14 wanatumia huduma za eCitizen",
+    "reality_sw": "Idadi hiyo ilijumuisha akaunti za zamani zilizoundwa tangu 2014, zikiwemo akaunti zilizorudiwa, wageni, na akaunti zisizo hai, wala haikuwa watumiaji hai wa kila mwezi.",
+    "quote_sw": "Wakenya zaidi ya milioni kumi na nne sasa wanatumia mtandao wa eCitizen."
   },
   {
     "id": "sona-2025-asian-tigers",
@@ -239,7 +281,10 @@ window.CLAIMS = [
     "tags": [
       "economy",
       "history"
-    ]
+    ],
+    "title_sw": "Alidai Kenya ililingana kiuchumi na nchi za 'Asian Tigers' wakati wa uhuru",
+    "reality_sw": "Takwimu za Benki ya Dunia zinaonyesha hata mnamo 1963, Pato la Taifa la kila mtu la Korea Kusini na Singapore lilikuwa mara tatu zaidi ya Kenya, zikiwa na miundombinu na viwanda vilivyoimarika zaidi.",
+    "quote_sw": "Wakati wa uhuru, uchumi wa Kenya ulikuwa sawa na nchi kama Korea Kusini na Singapore."
   },
   {
     "id": "sona-2025-sugar-imports-down-70pct",
@@ -254,7 +299,10 @@ window.CLAIMS = [
     "tags": [
       "agriculture",
       "trade"
-    ]
+    ],
+    "title_sw": "Alidai uagizaji wa sukari kutoka nje ya nchi umepunguzwa kwa asilimia 70",
+    "reality_sw": "Mamlaka ya Kilimo na Chakula (AFA) ilionyesha uagizaji wa sukari uliendelea kuwa juu kutokana na kufungwa kwa viwanda vya kienyeji na gharama kubwa za uzalishaji.",
+    "quote_sw": "Tumepunguza uagizaji wa sukari kwa asilimia 70."
   },
   {
     "id": "sona-2025-maize-67m-bags",
@@ -268,7 +316,10 @@ window.CLAIMS = [
     "factcheck_url": "https://www.africacheck.org/fact-checks/reports/kenyan-president-william-ruto-says-he-has-story-tell-do-facts-agree",
     "tags": [
       "agriculture"
-    ]
+    ],
+    "title_sw": "Alidai mavuno ya mahindi nchini yaliongezeka hadi gunia milioni 67",
+    "reality_sw": "Wizara ya Kilimo na KNBS walikadiria mavuno ya mahindi kuwa kati ya magunia milioni 44 na 47, tofauti ya zaidi ya magunia milioni 20 na madai ya Rais.",
+    "quote_sw": "Mavuno ya mahindi mwaka huu yamefikia magunia milioni sitini na saba."
   },
   {
     "id": "sona-2025-sha-indigent-premiums",
@@ -284,7 +335,10 @@ window.CLAIMS = [
       "healthcare"
     ],
     "clip_note": "NTV news report on the healthcare section of the address, not raw speech footage.",
-    "thumbnail": "https://pbs.twimg.com/media/G6N--YSWkAAommU.jpg"
+    "thumbnail": "https://pbs.twimg.com/media/G6N--YSWkAAommU.jpg",
+    "title_sw": "Alidai serikali inalipia michango ya bima ya SHA kwa Wakenya wote maskini",
+    "reality_sw": "Hazina ya Bima ya Kijamii ilithibitisha mfumo wa kuwatambua wasiojiweza ulikwama, na maelfu ya wagonjwa maskini walifukuzwa hospitalini au kutozwa pesa taslimu.",
+    "quote_sw": "Serikali inalipa michango ya bima ya afya ya SHA kwa kila Mkenya asiyejiweza."
   },
   {
     "id": "sona-2024-expenditure-cut",
@@ -301,7 +355,10 @@ window.CLAIMS = [
       "budget"
     ],
     "clip_note": "KTN live clip of the economy passage; the expenditure line follows directly in the speech and may fall just outside this clip.",
-    "thumbnail": "https://pbs.twimg.com/amplify_video_thumb/1859573359572303872/img/JwdPr4DDE9jtYSWQ.jpg"
+    "thumbnail": "https://pbs.twimg.com/amplify_video_thumb/1859573359572303872/img/JwdPr4DDE9jtYSWQ.jpg",
+    "title_sw": "Alidai matumizi ya serikali yamepunguzwa tangu mwaka 2022",
+    "reality_sw": "Ripoti ya Mdhibiti wa Bajeti (COB) ilionyesha matumizi ya kawaida ya serikali yaliongezeka kwa zaidi ya KSh400bn, yakiongozwa na safari za nje na ukarabati wa Ikulu.",
+    "quote_sw": "Tumepunguza kwa kiasi kikubwa matumizi yasiyo ya lazima serikalini."
   },
   {
     "id": "sudan-tea-exports",
@@ -317,7 +374,10 @@ window.CLAIMS = [
       "trade",
       "agriculture",
       "foreign-policy"
-    ]
+    ],
+    "title_sw": "Alidai Kenya bado inauza chai nchini Sudan licha ya vita na marufuku",
+    "reality_sw": "Bodi ya Chai ya Kenya ilithibitisha mauzo ya chai kwenda Sudan yaliporomoka kwa zaidi ya 65% kutokana na vita vya wenyewe kwa wenyewe na uhaba mkubwa wa fedha za kigeni Khartoum.",
+    "quote_sw": "Tunaendelea kuuza chai yetu Sudan bila usumbufu wowote."
   },
   {
     "id": "ford-foundation-protests",
@@ -333,7 +393,10 @@ window.CLAIMS = [
       "protests",
       "civil-society"
     ],
-    "thumbnail": "https://pbs.twimg.com/amplify_video_thumb/1812799023805308929/img/cf1ZTet-sluMgvtr.jpg"
+    "thumbnail": "https://pbs.twimg.com/amplify_video_thumb/1812799023805308929/img/cf1ZTet-sluMgvtr.jpg",
+    "title_sw": "Alishutumu shirika la Ford Foundation kufadhili maandamano ya vijana ya Gen Z",
+    "reality_sw": "Ford Foundation ilikanusha madai hayo na kutoa rekodi wazi za ufadhili zinazozingatia sheria za kimataifa; serikali haikutoa ushahidi wowote mahakamani.",
+    "quote_sw": "Mashirika kama Ford Foundation yanafadhili ghasia na fujo nchini Kenya."
   },
   {
     "id": "protest-deaths-six",
@@ -349,7 +412,10 @@ window.CLAIMS = [
       "security",
       "human-rights",
       "protests"
-    ]
+    ],
+    "title_sw": "Alidai watu sita pekee walikufa wakati wa maandamano ya Bunge tarehe 25 Juni 2024",
+    "reality_sw": "Mashirika ya haki za kibinadamu, KMPDU, na KNCHR yalithibitisha zaidi ya waandamanaji 23 waliuawa kwa risasi za moto nje ya Bunge na katikati ya jiji la Nairobi siku hiyo.",
+    "quote_sw": "Watu sita pekee ndio walipoteza maisha yao kwenye maandamano ya Bunge."
   },
   {
     "id": "no-extrajudicial-killings",
@@ -364,7 +430,10 @@ window.CLAIMS = [
     "tags": [
       "security",
       "human-rights"
-    ]
+    ],
+    "title_sw": "Alidai hakuna mauaji ya kiholela yaliyotekelezwa na polisi tangu alipoingia madarakani",
+    "reality_sw": "IPOA na mashirika ya kutetea haki za binadamu yameandika mamia ya kesi za mauaji ya kinyama ya waandamanaji wasio na silaha, ikiwemo Rex Masai na Denzel Omondi.",
+    "quote_sw": "Chini ya utawala wangu, hakuna mauaji ya kiholela yanayofanywa na maafisa wa usalama."
   },
   {
     "id": "no-known-abductions",
@@ -380,7 +449,10 @@ window.CLAIMS = [
       "security",
       "human-rights",
       "protests"
-    ]
+    ],
+    "title_sw": "Alidai hafahamu mtu yeyote aliyetekwa nyara na serikali baada ya maandamano",
+    "reality_sw": "Zaidi ya wanaharakati 60 walitekwa nyara na makachero waliovalia kiraia, wakazuiliwa bila mawasiliano, na wengine kutupwa msituni wakiwa wameteswa vibaya.",
+    "quote_sw": "Sifahamu mtu yeyote aliyetekwa nyara na polisi; nileteeni majina kama mko nayo."
   },
   {
     "id": "cabinet-50pct-women",
@@ -395,7 +467,10 @@ window.CLAIMS = [
     "tags": [
       "gender",
       "governance"
-    ]
+    ],
+    "title_sw": "Aliahidi asilimia 50 ya nafasi za Baraza la Mawaziri zingepewa wanawake",
+    "reality_sw": "Wakati wa kutangaza Baraza la Mawaziri, ni wanawake 7 pekee kati ya 22 (chini ya 32%) walioteuliwa, na baadaye idadi hiyo ikashuka zaidi wakati wa mageuzi ya Baraza.",
+    "quote_sw": "Nusu ya Baraza langu la Mawaziri litakuwa la wanawake wa Kenya."
   },
   {
     "id": "free-hospital-care-jan-2024",
@@ -409,7 +484,10 @@ window.CLAIMS = [
     "factcheck_url": "https://peopledaily.digital/news/day-ruto-promised-free-hospitals",
     "tags": [
       "healthcare"
-    ]
+    ],
+    "title_sw": "Aliahidi matibabu ya bure katika hospitali za umma kuanzia Januari 2024",
+    "reality_sw": "Mpango huo haukutekelezwa; badala yake, mpango mpya wa SHIF uliongeza makato ya lazima hadi 2.75% ya mshahara, huku wagonjwa wakikosa huduma hospitalini.",
+    "quote_sw": "Kuanzia Januari 2024, hakuna Mkenya atalipia matibabu kwenye hospitali za umma."
   },
   {
     "id": "dp-stadiums-six-months-2017",
@@ -427,7 +505,10 @@ window.CLAIMS = [
       "campaign-2017"
     ],
     "thumbnail": null,
-    "clip_note": "Broadcast recording of the famous 6-month stadium promise."
+    "clip_note": "Broadcast recording of the famous 6-month stadium promise.",
+    "title_sw": "Aliahidi viwanja 9 vya kisasa vya michezo vingekamilika ndani ya miezi 6",
+    "reality_sw": "Miaka minane baadaye, hakuna hata uwanja mmoja kati ya tisa uliokamilika kwa kiwango cha kimataifa; miradi mingi ilitelekezwa licha ya mabilioni ya pesa kutumika.",
+    "quote_sw": "Ndani ya miezi sita, viwanja tisa vya kisasa vitakuwa vimekamilika."
   },
   {
     "id": "dp-laptops-class-one-2013",
@@ -444,7 +525,10 @@ window.CLAIMS = [
       "technology",
       "campaign-2013"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Aliahidi kompyuta za pakato (laptops) kwa kila mtoto wa Darasa la Kwanza ndani ya siku 100",
+    "reality_sw": "Mradi huo ulikumbwa na ufisadi mkubwa na kushindwa; mabilioni ya pesa za umma yalipotea huku shule nyingi za vijijini zikikosa umeme na vifaa hivyo.",
+    "quote_sw": "Kila mtoto anayeingia Darasa la Kwanza atapata laptop ndani ya siku mia moja."
   },
   {
     "id": "dp-arror-kimwarer-7bn-2019",
@@ -461,7 +545,10 @@ window.CLAIMS = [
       "budget",
       "infrastructure"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alidai ni KSh7bn pekee zilizohusika katika miradi ya mabwawa ya Arror na Kimwarer",
+    "reality_sw": "Uchunguzi wa DCI na mashtaka ya DPP ulithibitisha zaidi ya KSh19bn zililipwa kinyume cha sheria kwa kampuni ya Italia ya CMC di Ravenna kwa mabwawa ambayo hayakujengwa.",
+    "quote_sw": "Pesa zilizotolewa kwa Arror na Kimwarer ni bilioni saba pekee, si bilioni 21."
   },
   {
     "id": "dp-galana-kulalu-1m-acres",
@@ -477,7 +564,10 @@ window.CLAIMS = [
       "agriculture",
       "food-security",
       "economy"
-    ]
+    ],
+    "title_sw": "Aliahidi ekari milioni moja zingewekwa chini ya umwagiliaji katika mradi wa Galana Kulalu",
+    "reality_sw": "Mradi huo ulisambaratika baada ya kutumia zaidi ya KSh15bn, huku chini ya ekari 10,000 pekee zikilimwa kabla ya mradi kufungwa kutokana na ufisadi.",
+    "quote_sw": "Tutaweka ekari milioni moja chini ya umwagiliaji kule Galana Kulalu."
   },
   {
     "id": "dp-jubilee-1-3m-jobs-2017",
@@ -493,7 +583,10 @@ window.CLAIMS = [
       "jobs",
       "economy",
       "campaign-2017"
-    ]
+    ],
+    "title_sw": "Aliahidi kutengeneza ajira milioni 1.3 kila mwaka chini ya serikali ya Jubilee",
+    "reality_sw": "Ripoti za KNBS zilionyesha ajira rasmi zilizoongezeka kwa mwaka zilikuwa chini ya 100,000, huku mamilioni ya vijana waliohitimu wakibaki bila ajira.",
+    "quote_sw": "Tutazalisha nafasi za kazi milioni 1.3 kila mwaka kwa vijana wetu."
   },
   {
     "id": "dp-weston-hotel-land-2018",
@@ -509,7 +602,10 @@ window.CLAIMS = [
       "land",
       "governance"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alidai ardhi ya hoteli ya Weston ilipatikana kwa njia halali na ya uwazi",
+    "reality_sw": "Mamlaka ya Kitaifa ya Ardhi (NLC) na Mahakama Kuu walithibitisha ardhi hiyo ilikuwa mali ya Mamlaka ya Usafiri wa Anga (KCAA) na ilinyakuliwa kinyume cha sheria.",
+    "quote_sw": "Nilinunua ardhi ya Weston Hotel kihalali baada ya kufanya uchunguzi kamili."
   },
   {
     "id": "campaign-2022-hustler-fund-interest-free",
@@ -526,7 +622,10 @@ window.CLAIMS = [
       "jobs",
       "campaign-2022"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Aliahidi Mfuko wa Hustler Fund wa KSh50bn ungekuwa bila riba yoyote",
+    "reality_sw": "Mfuko huo ulizinduliwa ukiwa na riba ya asilimia 8 kwa mwaka (riba ya juu ya kila siku), ikiongezeka hadi 9.5% kwa wanaochelewa kulipa.",
+    "quote_sw": "Hustler Fund haitakuwa na riba; itakuwa bure ili kusaidia mama mboga na bodaboda."
   },
   {
     "id": "campaign-dollar-fall-to-120",
@@ -543,7 +642,10 @@ window.CLAIMS = [
       "currency",
       "trade"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Aliwashauri Wakenya kuuza dola zao akidai thamani yake ingeshuka hadi KSh120",
+    "reality_sw": "Miezi michache baadaye, shilingi ya Kenya iliporomoka hadi kiwango cha kihistoria cha KSh163 kwa kila dola moja ya Marekani, ikisababisha hasara kubwa kwa wafanyabiashara.",
+    "quote_sw": "Wale wanaoshikilia dola watajuta; shilingi itaimarika hadi Sh120 hivi karibuni."
   },
   {
     "id": "campaign-fuel-price-reduction-2022",
@@ -559,7 +661,10 @@ window.CLAIMS = [
       "cost-of-living",
       "energy",
       "campaign-2022"
-    ]
+    ],
+    "title_sw": "Aliahidi bei ya mafuta ingeshuka mara tu baada ya kuondoa ruzuku",
+    "reality_sw": "Serikali iliondoa ruzuku na kupandisha VAT ya mafuta kutoka 8% hadi 16%, na kufanya bei ya petroli kupaa hadi zaidi ya KSh217 kwa lita, kiwango cha juu zaidi katika historia.",
+    "quote_sw": "Tukiondoa ruzuku ya ulaghai, bei ya mafuta itashuka mara moja."
   },
   {
     "id": "dp-free-secondary-education-2014",
@@ -574,7 +679,10 @@ window.CLAIMS = [
     "tags": [
       "education",
       "cost-of-living"
-    ]
+    ],
+    "title_sw": "Aliahidi elimu ya sekondari ingekuwa bure kabisa ifikapo mwaka 2017",
+    "reality_sw": "Wazazi wanaendelea kulipa ada kubwa za shule, michango ya ujenzi, sare, na chakula, huku serikali ikipunguza mgao wa fedha za elimu (capitation) kwa kila mwanafunzi.",
+    "quote_sw": "Ifikapo mwaka 2017, elimu ya sekondari nchini Kenya itakuwa bure kabisa."
   },
   {
     "id": "campaign-no-more-borrowing-2022",
@@ -590,7 +698,10 @@ window.CLAIMS = [
       "debt",
       "economy",
       "campaign-2022"
-    ]
+    ],
+    "title_sw": "Aliahidi utawala wake hautakopa pesa zozote za ziada kutoka nje au ndani",
+    "reality_sw": "Ndani ya miaka miwili ya kwanza madarakani, serikali ilikopa zaidi ya KSh1.8 trilioni kupitia mikopo ya kibiashara, Eurobond, IMF, na Benki ya Dunia.",
+    "quote_sw": "Serikali yetu haitakopa hata shilingi moja; tutaishi kulingana na mapato yetu."
   },
   {
     "id": "dp-57-mega-dams-2016",
@@ -606,7 +717,10 @@ window.CLAIMS = [
       "water",
       "infrastructure",
       "agriculture"
-    ]
+    ],
+    "title_sw": "Aliahidi ujenzi wa mabwawa makubwa 57 kote nchini ili kumaliza ukame",
+    "reality_sw": "Miradi mingi ya mabwawa ilikwama au kugubikwa na kashfa kubwa za ufisadi (kama vile Arror, Kimwarer, na Itare), bila bwawa hata moja kati ya 57 kukamilika kwa wakati.",
+    "quote_sw": "Tunajenga mabwawa makubwa 57 kote nchini ili kukomesha uhaba wa maji."
   },
   {
     "id": "minister-maize-subsidized-allocation-2009",
@@ -622,7 +736,10 @@ window.CLAIMS = [
       "agriculture",
       "corruption",
       "historical"
-    ]
+    ],
+    "title_sw": "Alikanusha kuhusika katika kashfa ya mahindi ya ruzuku ya NCPB ya mwaka 2009",
+    "reality_sw": "Ripoti ya Ukaguzi wa Hesabu za Serikali na uchunguzi wa Kamati ya Bunge (PIC) ulibaini barua rasmi kutoka kwa Wizara yake ya Kilimo ziliidhinisha wafanyabiashara binafsi kununua mahindi ya ruzuku.",
+    "quote_sw": "Sikuhusika hata kidogo katika ugawaji usio halali wa mahindi ya NCPB."
   },
   {
     "id": "ssu-disbandment-river-yala-promise",
@@ -641,7 +758,10 @@ window.CLAIMS = [
       "human-rights"
     ],
     "thumbnail": null,
-    "clip_note": "Presidential address announcing the disbandment of the DCI Special Service Unit (SSU)."
+    "clip_note": "Presidential address announcing the disbandment of the DCI Special Service Unit (SSU).",
+    "title_sw": "Aliahidi utekaji nyara, mauaji ya kiholela, na maiti za Mto Yala vilikuwa vimekoma kabisa",
+    "reality_sw": "Miaka miwili baadaye, maiti zilizokatwakatwa zilipatikana zikitupwa kwenye machimbo ya Kware huko Mukuru, Nairobi, huku wanaharakati wakiendelea kutekwa nyara na kuuawa.",
+    "quote_sw": "Tumevunja kitengo cha SSU; hakuna maiti zitakazopatikana tena Mto Yala au popote nchini."
   },
   {
     "id": "rex-masai-live-ammunition-denial",
@@ -659,7 +779,10 @@ window.CLAIMS = [
       "security",
       "human-rights"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Utawala ulikanusha polisi kutumia risasi za moto dhidi ya waandamanaji wa amani",
+    "reality_sw": "Uchunguzi wa maiti ya Rex Masai ulithibitisha alipigwa risasi ya moto ya bastola iliyopasua mshipa mkuu wa paja, na video zilionyesha afisa wa polisi akifyatua risasi moja kwa moja.",
+    "quote_sw": "Polisi wetu walikuwa na nidhamu ya hali ya juu na hawakutumia risasi za moto."
   },
   {
     "id": "parliament-shootings-restraint-claim",
@@ -677,7 +800,10 @@ window.CLAIMS = [
       "security",
       "human-rights"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alidai polisi walijizuia na hawakutumia nguvu kupita kiasi wakati wa maandamano ya Bunge",
+    "reality_sw": "Zaidi ya watu 23 waliuawa kwa risasi za moto nje ya majengo ya Bunge mnamo Juni 25, 2024, huku wengi wakipigwa risasi mgongoni na kichwani wakiwa wanakimbia.",
+    "quote_sw": "Polisi wetu walionyesha weledi na kujizuia sana wakati Bunge lilipovamiwa."
   },
   {
     "id": "abductions-give-me-names-kisumu",
@@ -695,7 +821,10 @@ window.CLAIMS = [
       "human-rights",
       "protests"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Aliwataka wananchi kumpa majina ya mtu yeyote aliyetekwa nyara na polisi",
+    "reality_sw": "Mashirika ya Haki za Binadamu (Amnesty, LSK, KNCHR) yaliwasilisha orodha rasmi ya zaidi ya majina 60 ya watu waliotekwa nyara, lakini serikali ilikataa kuwajibika au kuwashtaki wahusika.",
+    "quote_sw": "Kama kuna mtu yeyote ametekwa nyara na polisi, nileteeni jina lake sasa hivi."
   },
   {
     "id": "maandamano-2023-police-professionalism",
@@ -712,7 +841,10 @@ window.CLAIMS = [
       "security",
       "human-rights",
       "protests"
-    ]
+    ],
+    "title_sw": "Alisifu weledi wa polisi wakati wa maandamano ya upinzani ya Julai 2023",
+    "reality_sw": "Tume ya Haki za Kibinadamu ilithibitisha zaidi ya waandamanaji 50 waliuawa kwa risasi za moto huko Mlolongo, Kisumu, Kisii na Nairobi, huku wengi wakipigwa ndani ya makazi yao.",
+    "quote_sw": "Nawapongeza maafisa wetu wa polisi kwa kulinda amani kwa uadilifu mkubwa."
   },
   {
     "id": "kware-quarry-transparent-investigation",
@@ -729,7 +861,10 @@ window.CLAIMS = [
       "extrajudicial-killings",
       "human-rights"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Aliahidi uchunguzi huru na wazi kuhusu maiti zilizotupwa kwenye machimbo ya Kware",
+    "reality_sw": "Mshukiwa mkuu Collins Jumaisi alitoroka kwa njia ya ajabu kutoka kituo cha polisi cha Gigiri chenye ulinzi mkali, na hakuna afisa mwandamizi aliyewajibishwa.",
+    "quote_sw": "Tutafanya uchunguzi huru na wa uwazi; wote waliohusika na maafa ya Kware wataadhibiwa."
   },
   {
     "id": "dp-baby-pendo-police-denial-2017",
@@ -746,7 +881,10 @@ window.CLAIMS = [
       "security",
       "human-rights",
       "historical"
-    ]
+    ],
+    "title_sw": "Utawala ulikanusha polisi kuhusika na vifo vya baada ya uchaguzi wa 2017",
+    "reality_sw": "Mahakama iliamua katika kesi ya kifo cha mtoto Samantha Pendo (Baby Pendo) kwamba aliuawa na polisi waliovamia nyumba ya wazazi wake Kisumu, na makamanda wa polisi wakaamriwa kushtakiwa.",
+    "quote_sw": "Polisi hawakuhusika na mauaji yoyote baada ya uchaguzi; vifo vilikuwa vya wahalifu."
   },
   {
     "id": "mau-forest-settlers-title-deeds-2009",
@@ -763,7 +901,10 @@ window.CLAIMS = [
       "mau-forest",
       "land",
       "historical"
-    ]
+    ],
+    "title_sw": "Alitetea walowezi wa Msitu wa Mau akidai walikuwa na hatimiliki halali na kupinga kuondolewa",
+    "reality_sw": "Tume ya Uchunguzi ya Ndung'u na Mahakama Kuu zilithibitisha ardhi yote ya hifadhi ya Msitu wa Mau iligawiwa kinyume cha sheria kwa maslahi ya kisiasa, na hatimiliki hizo zilikuwa batili.",
+    "quote_sw": "Watu hawa wana hatimiliki halali za ardhi; hawapaswi kufukuzwa msituni."
   },
   {
     "id": "mau-forest-no-evictions-promise-2018",
@@ -780,7 +921,10 @@ window.CLAIMS = [
       "mau-forest",
       "land"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Aliahidi walowezi wa Mau hawatafukuzwa bila kulipwa fidia na kupewa makazi mapya",
+    "reality_sw": "Maelfu ya familia walifukuzwa na nyumba zao kuchomwa moto bila fidia yoyote wakati wa operesheni za kulinda msitu, jambo lililowaacha bila makazi.",
+    "quote_sw": "Hakuna Mkenya atakayefukuzwa kutoka Mau bila fidia na mpango mzuri wa makazi."
   },
   {
     "id": "logging-ban-lifted-mature-trees-2023",
@@ -797,7 +941,10 @@ window.CLAIMS = [
       "logging",
       "economy"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alidai kuondolewa kwa marufuku ya miaka 6 ya ukataji miti kulihitajika kwa sababu miti ilikuwa inaoza",
+    "reality_sw": "Mashirika ya mazingira na wanasayansi walionyesha ukataji huo ulilenga misitu asili ya vyanzo vya maji, na Mahakama ya Mazingira na Ardhi ikatoa amri ya kusitisha ukataji huo.",
+    "quote_sw": "Miti imekomaa na inaoza misituni huku wananchi wakikosa mbao na kazi."
   },
   {
     "id": "logging-trees-15-billion-promise",
@@ -812,7 +959,10 @@ window.CLAIMS = [
     "tags": [
       "environment",
       "logging"
-    ]
+    ],
+    "title_sw": "Alidai lengo la kupanda miti bilioni 15 halitaathiriwa na kuondolewa kwa marufuku ya ukataji miti",
+    "reality_sw": "Kiwango cha ukataji miti kibiashara kiliongezeka mara tatu ya kasi ya upandaji miti, huku miche mingi ikikauka kutokana na ukosefu wa bajeti ya kuitunza.",
+    "quote_sw": "Mpango wetu wa kupanda miti bilioni 15 uko imara na hautavurugwa na uvunaji wa miti."
   },
   {
     "id": "shareholding-government-equal-service-denial",
@@ -831,7 +981,10 @@ window.CLAIMS = [
       "appointments"
     ],
     "clip_note": "President addressing claims of ethnic bias and shareholding in state appointments.",
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alikanusha serikali kuendeshwa kwa misingi ya 'hisa za kikabila' licha ya jamii 2 kutawala teuzi",
+    "reality_sw": "Naibu Rais Rigathi Gachagua alitangaza hadharani kuwa serikali ni kampuni ya hisa (shareholding), na ripoti ya Tume ya Uwiano (NCIC) ilionyesha zaidi ya 70% ya nafasi kuu za serikali zilienda kwa jamii mbili pekee.",
+    "quote_sw": "Serikali yangu ni ya Wakenya wote bila ubaguzi wa kikabila au eneo."
   },
   {
     "id": "vernacular-mobilization-one-kenya-contradiction",
@@ -848,7 +1001,10 @@ window.CLAIMS = [
       "ethnicity",
       "politics"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alidai Kenya imeachana kabisa na siasa za kikabila na kuingia katika siasa za kiuchumi",
+    "reality_sw": "Utawala uliendelea kutumia mikutano ya kikabila Ikulu na vituo vya redio za kikabila kuhamasisha uungwaji mkono wa kisiasa pindi serikali ilipokosolewa.",
+    "quote_sw": "Tumebadilisha siasa za Kenya milele; hakuna tena siasa za ukabila bali ni uchumi."
   },
   {
     "id": "tsc-letters-mps-state-house-distribution",
@@ -868,7 +1024,10 @@ window.CLAIMS = [
       "patronage"
     ],
     "thumbnail": null,
-    "clip_note": "Speaker Wetang'ula and Majority Whip Osoro publicly admitted MPs were issued TSC employment letters at State House."
+    "clip_note": "Speaker Wetang'ula and Majority Whip Osoro publicly admitted MPs were issued TSC employment letters at State House.",
+    "title_sw": "Alidai uajiri wa walimu ulikuwa kwa misingi ya sifa pekee huku barua za TSC zikigawiwa wabunge Ikulu",
+    "reality_sw": "Wabunge wa muungano tawala walithibitisha hadharani kupewa mafungu ya barua za ajira za walimu wa TSC Ikulu ili kuwazawadia wafuasi wao wa kisiasa maeneo bunge.",
+    "quote_sw": "Uajiri wa walimu ni wa wazi asilimia mia moja kupitia mfumo wa kidijitali wa TSC."
   },
   {
     "id": "jss-intern-teachers-permanent-promise",
@@ -886,7 +1045,10 @@ window.CLAIMS = [
       "jobs",
       "labor"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Aliahidi walimu wanafunzi wa JSS wataajiriwa kwa masharti ya kudumu baada ya mwaka mmoja",
+    "reality_sw": "Mnamo 2024, serikali ilikataa kuwathibitisha na kutangaza wataendelea kuwa wanafunzi wa mafunzo kwa mkataba mpya, jambo lililosababisha mgomo wa nchi nzima na maamuzi ya mahakama.",
+    "quote_sw": "Walimu hawa wa mafunzo watathibitishwa kuwa wa kudumu mara tu mwaka mmoja utakapokamilika."
   },
   {
     "id": "adani-jkia-deal-secrecy-denial",
@@ -906,7 +1068,10 @@ window.CLAIMS = [
       "mega-deals"
     ],
     "thumbnail": null,
-    "clip_note": "Presidential address denying that JKIA was being sold or leased."
+    "clip_note": "Presidential address denying that JKIA was being sold or leased.",
+    "title_sw": "Alikanusha Uwanja wa Ndege wa Kimataifa wa JKIA kukodishwa kwa siri kwa Kampuni ya Adani",
+    "reality_sw": "Nyaraka za siri zilizofichuliwa na Nelson Amenya zilionyesha mkataba wa miaka 30 wenye thamani ya $1.85bn ulikuwa tayari umesainiwa kwa siri kumpa Adani umiliki na ushuru wote wa JKIA.",
+    "quote_sw": "Hakuna anayeuza au kukodisha uwanja wa JKIA; hizi zote ni propaganda za wapinzani."
   },
   {
     "id": "fake-fertiliser-scandal-denial",
@@ -924,7 +1089,10 @@ window.CLAIMS = [
       "mismanagement",
       "food-security"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alitupilia mbali ripoti za mbolea feki ya ruzuku akidai ni fitina za kisiasa",
+    "reality_sw": "Ukaguzi wa Shirika la Viwango nchini (KEBS) na Bunge ulithibitisha maelfu ya mifuko ya 'mbolea ya ruzuku' iliyouzwa kwa wakulima ilikuwa na mchanga, mawe, na samadi chafu.",
+    "quote_sw": "Hakuna mbolea feki; hizo ni hadithi za watu wanaotaka kurudisha siasa za nyuma."
   },
   {
     "id": "cas-50-appointments-unconstitutional",
@@ -942,7 +1110,10 @@ window.CLAIMS = [
       "governance",
       "abuse-of-power"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Aliunda na kuwaapisha Makatibu Wasaidizi 50 (CAS) baada ya kuahidi kupunguza matumizi ya serikali",
+    "reality_sw": "Mahakama Kuu ilitangaza nafasi zote 50 za CAS kuwa kinyume cha Katiba na batili, baada ya serikali kutenga mabilioni ya mishahara na magari ya kifahari kwa washirika wake wa kisiasa.",
+    "quote_sw": "Nitaongoza serikali ndogo yenye nidhamu ya kifedha bila vyeo visivyo vya lazima."
   },
   {
     "id": "luxury-jet-us-state-visit-cheaper-claim",
@@ -960,7 +1131,10 @@ window.CLAIMS = [
       "governance",
       "budget"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alidai ndege ya kifahari ya kukodi ya Boeing 737 ilikuwa nafuu kuliko Kenya Airways",
+    "reality_sw": "Ndege hiyo ya Royal Jet iligharimu zaidi ya KSh200 milioni za walipakodi kwa safari moja tu ya Marekani, mara kumi zaidi ya tiketi za daraja la kwanza kwenye Shirika la Ndege la Kenya Airways.",
+    "quote_sw": "Ndege ya kibinafsi tuliyotumia kwenda Marekani ilikuwa na gharama nafuu kuliko kutumia Kenya Airways."
   },
   {
     "id": "state-house-renovations-ksh1-5bn",
@@ -977,7 +1151,10 @@ window.CLAIMS = [
       "budget",
       "austerity",
       "governance"
-    ]
+    ],
+    "title_sw": "Alihubiri kubana matumizi huku ukarabati wa Ikulu na anasa zikiongezeka kwa mabilioni",
+    "reality_sw": "Bajeti ya ziada ilitenga zaidi ya KSh1.5bn kwa ukarabati wa Ikulu ya Nairobi na Ikulu ndogo za mashambani, pamoja na mabilioni zaidi ya ununuzi wa magari mapya ya kifahari.",
+    "quote_sw": "Lazima kila mtu ajifunge kibwebwe na serikali ianze kwa kupunguza matumizi yake."
   },
   {
     "id": "judiciary-threats-defiance-court-orders",
@@ -995,7 +1172,10 @@ window.CLAIMS = [
       "judiciary",
       "rule-of-law"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alitoa vitisho kwa majaji na kuapa kukaidi amri za mahakama kuhusu Ushuru wa Nyumba na SHIF",
+    "reality_sw": "Jaji Mkuu Martha Koome na Tume ya Utumishi wa Mahakama (JSC) walitoa onyo kali wakilaani mashambulizi ya Rais kama tishio kubwa kwa uhuru wa mahakama na utawala wa sheria.",
+    "quote_sw": "Hatuwezi kuruhusu majaji fisadi kuzuia miradi yetu ya maendeleo; tutasonga mbele bila kujali maagizo yao."
   },
   {
     "id": "kdf-deployment-protesters-unconstitutional",
@@ -1013,7 +1193,10 @@ window.CLAIMS = [
       "abuse-of-power",
       "protests"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alituma Jeshi la KDF kukabili waandamanaji wasio na silaha bila idhini ya kikatiba ya Bunge",
+    "reality_sw": "Mahakama Kuu iliamua kutumwa kwa wanajeshi wa KDF mitaani kulikiuka Ibara ya 241(3)(c) ya Katiba kwa kukosa idhini ya wazi ya Bunge na masharti ya ulinzi wa haki za kibinadamu.",
+    "quote_sw": "Majeshi yetu ya ulinzi yametumwa kisheria kusaidia polisi kulinda taifa dhidi ya wasaliti."
   },
   {
     "id": "kntc-kemsa-cooking-oil-scandal",
@@ -1030,7 +1213,10 @@ window.CLAIMS = [
       "mismanagement",
       "cost-of-living",
       "mega-deals"
-    ]
+    ],
+    "title_sw": "Alidai mpango wa kuingiza mafuta ya kula bila ushuru ulikuwa wazi na ulishusha bei za vyakula",
+    "reality_sw": "Ripoti ya Mkaguzi Mkuu wa Hesabu za Serikali ilifichua kampuni zilizopewa zabuni ya KSh16.5bn ziliteuliwa kisiri bila ushindani, na mafuta hayo yalibainika hayakufaa kwa matumizi ya binadamu na KEBS.",
+    "quote_sw": "Mpango wa KNTC wa mafuta ya kula umepunguza gharama ya maisha kwa wananchi."
   },
   {
     "id": "buying-opposition-mps-cooptation-denial",
@@ -1047,7 +1233,10 @@ window.CLAIMS = [
       "governance",
       "corruption",
       "patronage"
-    ]
+    ],
+    "title_sw": "Alikanusha kugawa hongo au kutumia mashine ya serikali kusambaratisha upinzani bungeni",
+    "reality_sw": "Wabunge kadhaa wa Azimio walikiri hadharani kuahidiwa miradi, fedha, na kufutiwa kesi za ufisadi ili kupiga kura kuunga mkono miswada ya kodi ya serikali bungeni.",
+    "quote_sw": "Sijawahi kumnunua mbunge yeyote; wabunge wanajiunga nasi kwa hiari kwa ajili ya maendeleo."
   },
   {
     "id": "housing-levy-unconstitutional-ruling",
@@ -1065,7 +1254,10 @@ window.CLAIMS = [
       "taxes",
       "finance-bill"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alisisitiza Ushuru wa lazima wa Nyumba wa 1.5% ulikuwa halali na unafuata Katiba",
+    "reality_sw": "Majaji watatu wa Mahakama Kuu waliamua kwa pamoja kwamba ushuru huo ulikuwa wa kibaguzi, uliokiuka Ibara ya 10 na 201 ya Katiba, na ulikosa msingi thabiti wa kisheria.",
+    "quote_sw": "Ushuru wa nyumba uko ndani ya Katiba na unaleta usawa kwa kila Mkenya."
   },
   {
     "id": "adani-ketraco-power-lines-deal",
@@ -1083,7 +1275,10 @@ window.CLAIMS = [
       "energy",
       "mega-deals"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alidai mkataba wa kampuni ya Adani wa kusambaza nyaya za umeme za KETRACO ulikuwa wa ushindani na wazi",
+    "reality_sw": "Mkataba huo wa KSh95bn ulitolewa kisiri bila zabuni ya wazi ya ushindani kulingana na sheria ya PPP, na kusababisha kusitishwa kwake na Mahakama Kuu na kufutiliwa mbali baadaye.",
+    "quote_sw": "Mkataba wa KETRACO na Adani ulifanywa kwa uwazi mkubwa na utaleta umeme nafuu."
   },
   {
     "id": "controller-of-budget-budgeted-corruption",
@@ -1101,7 +1296,10 @@ window.CLAIMS = [
       "reckless-spending",
       "mismanagement"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Utawala ulikanusha madai ya Mdhibiti wa Bajeti kuhusu ufisadi uliopangwa kwenye bajeti ya serikali",
+    "reality_sw": "Mdhibiti wa Bajeti Margaret Nyakang'o alifichua bungeni kuwa bajeti ya kawaida iliongezwa kwa siri mabilioni ya mishahara hewa, ikiwemo mishahara ya watendaji wakuu wa serikali iliyolipwa mara tatu.",
+    "quote_sw": "Hakuna ufisadi kwenye bajeti; kila shilingi inatengwa kwa mujibu wa sheria za fedha."
   },
   {
     "id": "shif-sha-healthcare-unconstitutional",
@@ -1120,7 +1318,10 @@ window.CLAIMS = [
       "mega-deals",
       "corruption"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alidai mpango mpya wa afya wa SHIF/SHA ulizinduliwa vizuri na unatoa matibabu bure kwa wote",
+    "reality_sw": "Mahakama Kuu ilitangaza Sheria ya Bima ya Afya ya Jamii (SHIA) kuwa kinyume cha Katiba, huku maelfu ya wagonjwa wa saratani na wanaohitaji kusafishwa figo (dialysis) wakikwama hospitalini.",
+    "quote_sw": "Mpito wa kwenda SHA umekuwa wa mafanikio makubwa; hakuna Mkenya anayenyimwa huduma."
   },
   {
     "id": "office-of-first-lady-budget-broken-promise",
@@ -1139,7 +1340,10 @@ window.CLAIMS = [
       "governance",
       "campaign-2022"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Aliahidi hakutakuwa na Ofisi ya Mke wa Rais wala bajeti ya umma kwa wake za viongozi",
+    "reality_sw": "Hazina ya Kitaifa ilitenga zaidi ya KSh1.2bn kwa Ofisi ya Mke wa Rais na Mke wa Naibu Rais, ikijumuisha wafanyakazi rasmi na walinzi wa serikali kabla ya maandamano ya Gen Z kulazimisha kufutwa kwake.",
+    "quote_sw": "Hakutakuwa na Ofisi ya Mke wa Rais; fedha za umma hazitatumika kwa familia ya Rais."
   },
   {
     "id": "dpp-withdrawal-graft-cases-allies",
@@ -1158,7 +1362,10 @@ window.CLAIMS = [
       "governance",
       "judiciary"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Aliahidi vita dhidi ya ufisadi vitakuwa huru na havitalinda washirika wa kisiasa",
+    "reality_sw": "Mkurugenzi wa Mashtaka ya Umma (DPP) aliondoa ghafla kesi za ufisadi za mabilioni ya pesa zilizowakabili washirika wake wakuu wa kisiasa mara tu walipoteuliwa kuwa Mawaziri na vigogo wa serikali.",
+    "quote_sw": "Taasisi za kukabili ufisadi zitakuwa huru kabisa; hakuna atakayekingwa hata akiwa rafiki yangu."
   },
   {
     "id": "foreign-trips-presidential-travel-austerity",
@@ -1177,7 +1384,10 @@ window.CLAIMS = [
       "mismanagement",
       "governance"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Aliahidi kupunguza safari za nje za serikali kwa 50% ili kubana matumizi",
+    "reality_sw": "Ndani ya miezi 20 ya kwanza, Rais Ruto alisafiri nje ya nchi zaidi ya mara 50 akitembelea nchi zaidi ya 35, akivunja rekodi ya matumizi ya safari za nje ya marais wote waliomtangulia.",
+    "quote_sw": "Nimeagiza safari zote za nje za watumishi wa umma zipunguzwe kwa asilimia hamsini mara moja."
   },
   {
     "id": "finance-bill-2024-criminal-infiltrators-claim",
@@ -1196,7 +1406,10 @@ window.CLAIMS = [
       "police-brutality",
       "abuse-of-power"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alidai waandamanaji wa Gen Z waliopinga kodi walikuwa wahalifu na vibaraka wa kigeni",
+    "reality_sw": "Maandamano hayo yaliongozwa kwa amani na vijana wa Kenya wa kizazi cha Gen Z bila itikadi za kikabila au kisiasa, wakitetea haki zao za kikatiba chini ya Ibara ya 37 ya Katiba.",
+    "quote_sw": "Maandamano haya yameingiliwa na magenge ya wahalifu hatari wanaotaka kupindua serikali."
   },
   {
     "id": "icc-cases-witness-tampering-vindication-claim",
@@ -1216,7 +1429,10 @@ window.CLAIMS = [
       "historical",
       "police-brutality"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alidai kuondolewa kwa kesi yake katika Mahakama ya ICC ilikuwa ushindi kamili wa kutokuwa na hatia",
+    "reality_sw": "Majaji wa ICC walisitisha kesi hiyo bila kumuondolea hatia (no acquittal), wakibainisha kuwa mashahidi walitishwa, kuhongwa, na kuingiliwa kisiasa kwa kiwango kikubwa kilichovuruga kesi.",
+    "quote_sw": "Mahakama ya ICC ilitupilia mbali kesi zote na kuthibitisha hatukuwa na hatia yoyote."
   },
   {
     "id": "icc-witness-meshack-yebei-murder-denial",
@@ -1235,7 +1451,10 @@ window.CLAIMS = [
       "human-rights",
       "historical"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Utawala ulidai shahidi wa ICC aliyeuawa Meshack Yebei alitekwa nyara na maadui wanaotaka kupaka matope utetezi",
+    "reality_sw": "Mwendesha Mashtaka wa ICC alithibitisha Yebei alikuwa shahidi muhimu wa upande wa mashtaka kabla ya kuuawa kinyama na mwili wake kutupwa katika Hifadhi ya Wanyama ya Tsavo.",
+    "quote_sw": "Meshack Yebei alikuwa shahidi wa upande wetu wa utetezi na aliuawa na maadui zetu."
   },
   {
     "id": "icc-paul-gicheru-witness-tampering-denial",
@@ -1254,7 +1473,10 @@ window.CLAIMS = [
       "human-rights",
       "abuse-of-power"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alikanusha kuhusika katika mtandao wa kutoa hongo kwa mashahidi wa ICC kabla ya mshukiwa mkuu kufa kizembe Karen",
+    "reality_sw": "Wakili Paul Gicheru alijisalimisha ICC akikabiliwa na mashtaka ya kusimamia mtandao wa kuhonga mashahidi kwa mamilioni ya fedha kwa manufaa ya Ruto, kabla ya kufa ghafla nyumbani kwake Karen mnamo 2022.",
+    "quote_sw": "Sijawahi kuhusika na ulipaji hongo au ushawishi wa mashahidi wa ICC."
   },
   {
     "id": "dp-muteshi-pev-land-ruling-2013",
@@ -1273,6 +1495,9 @@ window.CLAIMS = [
       "human-rights",
       "historical"
     ],
-    "thumbnail": null
+    "thumbnail": null,
+    "title_sw": "Alidai alinunua kwa njia halali shamba la ekari 100 la Turbo lililonyakuliwa kutoka kwa mwathiriwa wa PEV Adrian Muteshi",
+    "reality_sw": "Jaji Rose Ougo wa Mahakama Kuu aliamua kwamba Ruto alijinyakulia shamba hilo kinyume cha sheria kutoka kwa Muteshi aliyekimbia ghasia za 2007/08, na akamuamuru arudishe shamba hilo na kulipa fidia ya KSh5 milioni.",
+    "quote_sw": "Shamba la Turbo nililinunua kisheria na nilikuwa mnunuzi asiye na hatia."
   }
 ];

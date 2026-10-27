@@ -1,0 +1,19 @@
+{
+  "name": "MustGo.co.ke · The Ruto Receipts Archive",
+  "short_name": "MustGo Receipts",
+  "description": "Civic accountability archive of statements, MP voting scorecards, judicial defiance, and human rights memorial.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#111110",
+  "theme_color": "#141414",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+window.IMPUNITY_CASES = [
+  {
+    "id": "cas-50-struck-down",
+    "title": "Creation of 50 Chief Administrative Secretary (CAS) Posts",
+    "title_sw": "Uteuzi wa Makatibu Wasaidizi 50 (CAS) Kinyume cha Katiba",
+    "court": "High Court of Kenya",
+    "court_sw": "Mahakama Kuu ya Kenya",
+    "petition_no": "Petition No. E174 of 2023",
+    "bench": "Justices Hedwig Ong'udi, Aleem Visram, and Kanyi Kimondo",
+    "date": "2023-07-03",
+    "category": "Constitutional Violations",
+    "category_sw": "Ukiukaji wa Katiba",
+    "ruling": "The High Court declared President Ruto's creation and appointment of 50 CAS positions unconstitutional, null, and void for violating Article 152 and public participation provisions under Article 10.",
+    "ruling_sw": "Mahakama Kuu ilitangaza uamuzi wa Rais Ruto wa kuunda na kuteua CAS 50 kuwa kinyume cha Katiba, batili na haramu kwa kukiuka Kifungu cha 152 na ukosefu wa ushirikishwaji wa umma chini ya Kifungu cha 10.",
+    "executive_defiance": "The Executive attempted to retain the political allies in ministry offices, and later drafted the National Assembly Statute Law (Miscellaneous Amendments) Bill 2024 to re-introduce the CAS positions through statutory backdoors despite severe economic austerity claims.",
+    "executive_defiance_sw": "Serikali ilijaribu kuwabakisha washirika hao wa kisiasa ofisini, kisha ikawasilisha Mswada Bungeni kuanzisha tena nyadhifa hizo za CAS kisiri licha ya wananchi kulemewa na gharama ya maisha.",
+    "status": "CIRCUMVENTED VIA NEW BILL",
+    "status_sw": "ILIKWEPWA KWA MSWADA MPYA",
+    "articles_violated": [
+      "Art. 10",
+      "Art. 152",
+      "Art. 201",
+      "Art. 232"
+    ],
+    "articles_violated_sw": [
+      "Kifungu 10 (Maadili ya Kitaifa)",
+      "Kifungu 152 (Muundo wa Baraza la Mawaziri)",
+      "Kifungu 201 (Usimamizi wa Fedha za Umma)",
+      "Kifungu 232 (Maadili ya Utumishi wa Umma)"
+    ],
+    "source_url": "https://kenyalaw.org/caselaw/cases/view/256084/"
+  },
+  {
+    "id": "housing-levy-discriminatory-ruling",
+    "title": "Mandatory Housing Levy Struck Down (Finance Act 2023 Sec 84)",
+    "title_sw": "Kukataliwa kwa Ushuru wa Lazima wa Nyumba (Sheria ya Fedha 2023)",
+    "court": "High Court of Kenya",
+    "court_sw": "Mahakama Kuu ya Kenya",
+    "petition_no": "Petitions E281, E282, E283 & E284 of 2023",
+    "bench": "Justices David Majanja, Christine Meoli, and Lawrence Mugambi",
+    "date": "2023-11-28",
+    "category": "Taxes & Property Rights",
+    "category_sw": "Ushuru na Haki ya Mali",
+    "ruling": "The High Court ruled that the mandatory 1.5% Housing Levy was discriminatory, violated Article 10, Article 201 of the Constitution, and lacked a comprehensive legal framework by targeting formally employed citizens while excluding informal earners.",
+    "ruling_sw": "Majaji walihukumu kwamba makato ya 1.5% ya nyumba yalikuwa ya kibaguzi dhidi ya wafanyakazi wa mshahara, yakakiuka Kifungu 10 na 201 cha Katiba na yalikosa msingi wa kisheria.",
+    "executive_defiance": "Despite the Court of Appeal upholding the injunction on 26 January 2024, the Executive ordered employers to continue deductions, rushed the Affordable Housing Bill 2024 through Parliament under whips, and President Ruto publicly issued direct verbal threats against litigating citizens and judicial officers.",
+    "executive_defiance_sw": "Licha ya Mahakama ya Rufaa kusisitiza marufuku hayo, serikali iliamuru waajiri kuendelea kukata mishahara, ikalazimisha mswada mpya bungeni na Rais akatoa vitisho hadharani dhidi ya majaji na wananchi waliokwenda mahakamani.",
+    "status": "DEFYING COURT ORDER",
+    "status_sw": "UKAIDI WA AMRI YA MAHAKAMA",
+    "articles_violated": [
+      "Art. 10",
+      "Art. 27",
+      "Art. 201"
+    ],
+    "articles_violated_sw": [
+      "Kifungu 10 (Utawala wa Sheria)",
+      "Kifungu 27 (Usawa na Kutobaguliwa)",
+      "Kifungu 201 (Haki katika Ushuru)"
+    ],
+    "source_url": "https://kenyalaw.org/caselaw/cases/view/261944/"
+  },
+  {
+    "id": "shif-sha-unconstitutional-nullification",
+    "title": "Social Health Insurance Act (SHIF/SHA) Declared Unconstitutional",
+    "title_sw": "Sheria ya Bima ya Afya ya SHIF/SHA Yatangazwa Kinyume cha Katiba",
+    "court": "High Court of Kenya",
+    "court_sw": "Mahakama Kuu ya Kenya",
+    "petition_no": "Petition No. E473 of 2023",
+    "bench": "Justices Alfred Mabeya, Robert Limo, and Freda Mugambi",
+    "date": "2024-07-12",
+    "category": "Healthcare & Dignity",
+    "category_sw": "Haki ya Afya na Utu",
+    "ruling": "The High Court declared the Social Health Insurance Act (SHIA), the Digital Health Act, and Primary Healthcare Act unconstitutional due to lack of adequate public participation, discriminatory levies on informal workers, and violation of the fundamental right to emergency healthcare under Article 43.",
+    "ruling_sw": "Mahakama Kuu ilitangaza sheria zote tatu za SHIF kuwa kinyume cha Katiba kwa kukosa ushirikishwaji wa kutosha wa umma na kukiuka haki ya kupata matibabu ya dharura chini ya Kifungu cha 43.",
+    "executive_defiance": "Rather than addressing structural and constitutional defects during the 120-day suspension window, the Executive forcibly rolled out the broken SHA system on October 1, 2024, stranding hundreds of thousands of kidney dialysis, cancer, and maternity patients across the country.",
+    "executive_defiance_sw": "Badala ya kurekebisha makosa hayo ndani ya siku 120 zilizotolewa, serikali ililazimisha mfumo huo mbovu mnamo Oktoba 1, 2024, na kusababisha maelfu ya wagonjwa wa figo, saratani na wajawazito kufungiwa milango hospitalini.",
+    "status": "CIRCUMVENTED / CHAOTIC ROLLOUT",
+    "status_sw": "UZINDUZI WA KIBAGUZI BILA KUZINGATIA SHERIA",
+    "articles_violated": [
+      "Art. 10",
+      "Art. 43(1)(a)",
+      "Art. 43(2)"
+    ],
+    "articles_violated_sw": [
+      "Kifungu 10 (Maadili ya Kitaifa)",
+      "Kifungu 43(1)(a) (Haki ya Kiwango cha Juu cha Afya)",
+      "Kifungu 43(2) (Haki ya Kutonyimwa Matibabu ya Dharura)"
+    ],
+    "source_url": "https://kenyalaw.org/caselaw/cases/view/271295/"
+  },
+  {
+    "id": "kdf-deployment-against-protesters",
+    "title": "Militarization & KDF Deployment Against Civilian Protesters",
+    "title_sw": "Kutumia Jeshi la KDF Dhidi ya Raia Wasiokuwa na Silaha",
+    "court": "High Court of Kenya",
+    "court_sw": "Mahakama Kuu ya Kenya",
+    "petition_no": "Petition No. E292 of 2024",
+    "bench": "Justice Lawrence Mugambi",
+    "date": "2024-06-27",
+    "category": "Human Rights & Police Brutality",
+    "category_sw": "Haki za Kibinadamu na Jeshi",
+    "ruling": "In a petition brought by the Law Society of Kenya (LSK), the High Court found that the Defence CS's gazette notice deploying military troops against unarmed civilian anti-tax protesters was dangerously vague and ordered the state to define terms and duration within 48 hours.",
+    "ruling_sw": "Kufuatia kesi ya LSK, Mahakama Kuu iliamuru serikali ifafanue wazi muda na mipaka ya wanajeshi mitaani ndani ya saa 48, ikionya kwamba kutumia wanajeshi dhidi ya waandamanaji wa amani ni hatari kwa demokrasia.",
+    "executive_defiance": "The Executive maintained heavily armed KDF troops in urban centers, water cannon armored vehicles, and mounted machine guns around civilian streets, flouting parliamentary oversight and judicial guidelines on civilian policing.",
+    "executive_defiance_sw": "Serikali iliendelea kuweka wanajeshi wenye silaha nzito za kivita mitaani mwa miji mikuu bila kufuata miongozo ya mahakama wala idhini kamili ya Bunge.",
+    "status": "PARTIALLY DEFIED",
+    "status_sw": "ILIPUUZWA KWA SEHEMU",
+    "articles_violated": [
+      "Art. 37",
+      "Art. 58",
+      "Art. 238",
+      "Art. 241"
+    ],
+    "articles_violated_sw": [
+      "Kifungu 37 (Haki ya Kukusanyika na Kuandamana)",
+      "Kifungu 238 (Kanuni za Usalama wa Kitaifa)",
+      "Kifungu 241 (Mamlaka na Mipaka ya Jeshi la KDF)"
+    ],
+    "source_url": "https://kenyalaw.org/caselaw/cases/view/270812/"
+  },
+  {
+    "id": "privatisation-act-kicc-parastatals",
+    "title": "Privatisation of 11 State Corporations Without Parliament",
+    "title_sw": "Ubinafsishaji wa Mashirika 11 ya Serikali Bila Idhini ya Bunge",
+    "court": "High Court of Kenya",
+    "court_sw": "Mahakama Kuu ya Kenya",
+    "petition_no": "Petition No. E499 of 2023",
+    "bench": "Justice Chacha Mwita",
+    "date": "2024-04-18",
+    "category": "National Assets & Mega-Deals",
+    "category_sw": "Rasilimali za Umma na Mikataba Mikubwa",
+    "ruling": "The High Court blocked the government from selling 11 strategic state corporations (including KICC, Kenya Pipeline Company, NOCK, New KCC) under the Privatisation Act 2023, ruling that stripping Parliament and citizens of approval rights undermined sovereign public ownership.",
+    "ruling_sw": "Mahakama Kuu ilizuia uuzaji wa mashirika 11 ya kitaifa (ikiwemo KICC, Kenya Pipeline na KCC) ikisema kupora Bunge na umma mamlaka ya kuidhinisha ni ukiukaji mkubwa wa usimamizi wa rasilimali za umma.",
+    "executive_defiance": "After the court injunction blocked direct sales, the Executive pivoted to secret, single-sourced 30-year concession takeovers (such as the secret Adani Group proposals for JKIA and Ketraco) under the Privately Initiated Proposal (PIP) backdoor.",
+    "executive_defiance_sw": "Baada ya amri ya mahakama kuzuia mauzo ya moja kwa moja, serikali iligeukia mikataba ya siri ya miaka 30 kama vile mkataba wa Adani JKIA bila zabuni ya ushindani.",
+    "status": "CIRCUMVENTED VIA ADANI PIPs",
+    "status_sw": "ILIKWEPWA KUPITIA MIKATABA YA SIRI YA ADANI",
+    "articles_violated": [
+      "Art. 1",
+      "Art. 10",
+      "Art. 201",
+      "Art. 227"
+    ],
+    "articles_violated_sw": [
+      "Kifungu 1 (Mamlaka Kuu ya Wananchi)",
+      "Kifungu 10 (Uwazi na Uwajibikaji)",
+      "Kifungu 201 (Usimamizi wa Fedha za Umma)",
+      "Kifungu 227 (Zabuni za Haki na Ushindani)"
+    ],
+    "source_url": "https://kenyalaw.org/caselaw/cases/view/268910/"
+  },
+  {
+    "id": "adani-jkia-concession-freeze",
+    "title": "High Court Injunction Freezing Secret Adani JKIA Takeover",
+    "title_sw": "Amri ya Mahakama Kusitisha Mkataba wa Siri wa Adani JKIA",
+    "court": "High Court of Kenya",
+    "court_sw": "Mahakama Kuu ya Kenya",
+    "petition_no": "Petition No. E392 of 2024",
+    "bench": "Justice John Chigiti",
+    "date": "2024-09-09",
+    "category": "National Assets & Mega-Deals",
+    "category_sw": "Rasilimali za Umma",
+    "ruling": "The High Court granted conservatory orders barring the Government of Kenya from executing or implementing the opaque 30-year lease agreement of Jomo Kenyatta International Airport (JKIA) to Indian conglomerate Adani Group following petitions by LSK and KHRC.",
+    "ruling_sw": "Mahakama Kuu ilitoa amri ya kusitisha mkataba mzima wa kukodisha Uwanja wa Ndege wa Kimataifa wa JKIA kwa kampuni ya Adani kwa miaka 30 kufuatia kesi iliyowasilishwa na LSK na KHRC.",
+    "executive_defiance": "Senior government officials initially denied the existence of secret agreements, while state apparatus deployed police to crack down on striking aviation workers and harass whistleblowers.",
+    "executive_defiance_sw": "Viongozi wakuu wa serikali hapo awali walikanusha kuwepo kwa mkataba huo wa siri na badala yake wakatuma polisi kuwapiga wafanyakazi wa JKIA waliogoma kudai haki.",
+    "status": "CONSERVATORY INJUNCTION ACTIVE",
+    "status_sw": "AMRI YA ZUIA BADO INAFANYA KAZI",
+    "articles_violated": [
+      "Art. 10",
+      "Art. 35",
+      "Art. 201",
+      "Art. 227"
+    ],
+    "articles_violated_sw": [
+      "Kifungu 10 (Uwazi wa Umma)",
+      "Kifungu 35 (Haki ya Kupata Taarifa)",
+      "Kifungu 227 (Sheria za Zabuni za Umma)"
+    ],
+    "source_url": "https://kenyalaw.org/caselaw/cases/view/274011/"
+  },
+  {
+    "id": "adani-ketraco-powerlines-freeze",
+    "title": "High Court Injunction Halting KSh 95B Adani Ketraco Deal",
+    "title_sw": "Mahakama Yasitisha Mkataba wa KSh 95B wa Adani na Ketraco",
+    "court": "High Court of Kenya",
+    "court_sw": "Mahakama Kuu ya Kenya",
+    "petition_no": "Petition No. E434 of 2024",
+    "bench": "Justice Bahati Mwamuye",
+    "date": "2024-10-25",
+    "category": "Mega-Deals & Energy",
+    "category_sw": "Nishati na Mikataba Mikubwa",
+    "ruling": "The High Court issued an interim injunction restraining Ketraco and the Energy Ministry from executing the KSh 95.68 billion deal awarding Adani Energy Solutions a 30-year concession to construct and operate high-voltage power transmission lines.",
+    "ruling_sw": "Mahakama ilitoa amri ya muda kuzuia Ketraco na Wizara ya Nishati kutekeleza mkataba wa Shilingi bilioni 95 na Adani wa ujenzi wa njia za umeme.",
+    "executive_defiance": "Energy CS had already announced the signing of the agreement behind closed doors without tabling competitive tenders or comparative fiscal analysis.",
+    "executive_defiance_sw": "Waziri wa Nishati alikuwa tayari ametangaza kusaini mkataba huo kisiri bila kuweka hadharani zabuni za ushindani wala ukaguzi wa kina wa kifedha.",
+    "status": "CONSERVATORY INJUNCTION ACTIVE",
+    "status_sw": "AMRI YA ZUIA INAFANYA KAZI",
+    "articles_violated": [
+      "Art. 10",
+      "Art. 35",
+      "Art. 227"
+    ],
+    "articles_violated_sw": [
+      "Kifungu 10 (Utawala Bora na Uwazi)",
+      "Kifungu 35 (Haki ya Taarifa za Umma)",
+      "Kifungu 227 (Usawa Katika Mikataba ya Serikali)"
+    ],
+    "source_url": "https://kenyalaw.org/caselaw/cases/view/276504/"
+  },
+  {
+    "id": "executive-threats-to-judiciary",
+    "title": "Executive Threats & Contempt Against Judicial Officers",
+    "title_sw": "Vitisho vya Serikali Kuu Dhidi ya Majaji na Uhuru wa Mahakama",
+    "court": "High Court & Judicial Service Commission",
+    "court_sw": "Tume ya Huduma za Mahakama (JSC) & LSK",
+    "petition_no": "JSC Administrative Inquiry / LSK Resolution",
+    "bench": "Chief Justice Martha Koome, LSK Council",
+    "date": "2024-01-03",
+    "category": "Rule of Law & Independence",
+    "category_sw": "Utawala wa Sheria na Uhuru wa Mahakama",
+    "ruling": "Chief Justice Martha Koome and the Judicial Service Commission warned the Executive that public attacks accusing judges who rule against government projects of corruption was an assault on the Constitution and Article 160.",
+    "ruling_sw": "Jaji Mkuu Martha Koome alionya kuwa mashambulizi ya wazi ya Rais dhidi ya majaji wanaotoa maamuzi dhidi ya miradi ya serikali ni tishio kubwa kwa Katiba na uhuru wa mahakama chini ya Kifungu cha 160.",
+    "executive_defiance": "President Ruto vowed publicly at rallies that his administration would ignore court orders standing in the way of affordable housing, triggering nationwide peaceful protests by over 10,000 advocates under LSK.",
+    "executive_defiance_sw": "Rais Ruto alitangaza hadharani kwenye mikutano ya kisiasa kwamba serikali yake haitazingatia amri za mahakama zinazopinga miradi yake, na kusababisha maandamano ya mawakili zaidi ya 10,000 nchini kote.",
+    "status": "ONGOING EXECUTIVE INTERFERENCE",
+    "status_sw": "MASHAMBULIZI YANAYOENDELEA",
+    "articles_violated": [
+      "Art. 160",
+      "Art. 165",
+      "Art. 249"
+    ],
+    "articles_violated_sw": [
+      "Kifungu 160 (Uhuru Kamili wa Mahakama)",
+      "Kifungu 165 (Mamlaka ya Mahakama Kuu)",
+      "Kifungu 249 (Kulinda Katiba na Haki za Wananchi)"
+    ],
+    "source_url": "https://www.judiciary.go.ke/press-releases/"
+  },
+  {
+    "id": "tsc-appointment-letters-mps",
+    "title": "State House Distribution of TSC Teacher Letters to MPs",
+    "title_sw": "Kugawa Barua za Ajira za Walimu (TSC) Ikulu kwa Wabunge",
+    "court": "Employment and Labour Relations Court",
+    "court_sw": "Mahakama ya Leba na Ajira",
+    "petition_no": "ELRC Petition No. E022 of 2023",
+    "bench": "Justice Byram Ongaya",
+    "date": "2023-04-14",
+    "category": "Abuse of Office & Patronage",
+    "category_sw": "Matumizi Mabaya ya Ofisi",
+    "ruling": "The court held that the Teachers Service Commission (TSC) is an independent constitutional commission under Article 237 and cannot outsource or surrender recruitment quotas to elected politicians or the Executive.",
+    "ruling_sw": "Mahakama iliamua kwamba Tume ya Walimu (TSC) ni tume huru ya Kikatiba chini ya Kifungu 237 na haiwezi kugawa nafasi za ajira kupitia wanasiasa au ofisi ya Rais.",
+    "executive_defiance": "Ruto and Kenya Kwanza leaders repeatedly hosted MPs at State House and distributed teacher employment letters to reward compliant MPs and lure opposition legislators into the government fold.",
+    "executive_defiance_sw": "Viongozi wa Kenya Kwanza waliendelea kuitisha wabunge Ikulu na kuwapa barua za ajira za walimu kama njia ya kuwahonga na kuwashawishi wabunge wa upinzani kujiunga na serikali.",
+    "status": "FLAGRANT PATRONAGE",
+    "status_sw": "UPENDELEO WA KISIASA NA KUVUNJA SHERIA",
+    "articles_violated": [
+      "Art. 10",
+      "Art. 232",
+      "Art. 237"
+    ],
+    "articles_violated_sw": [
+      "Kifungu 10 (Uadilifu na Usawa)",
+      "Kifungu 232 (Maadili ya Utumishi wa Umma)",
+      "Kifungu 237 (Uhuru wa Tume ya Walimu TSC)"
+    ],
+    "source_url": "https://kenyalaw.org/caselaw/cases/view/251309/"
+  },
+  {
+    "id": "dpp-dropping-allies-graft-cases",
+    "title": "Unconstitutional Dropping of Multi-Billion Graft Cases for Allies",
+    "title_sw": "Kufuta Kesi za Ufisadi za Mabilioni ya Pesa kwa Washirika wa Rais",
+    "court": "High Court of Kenya",
+    "court_sw": "Mahakama Kuu ya Kenya",
+    "petition_no": "Petition No. E455 of 2022",
+    "bench": "Justice Nixon Sifuna",
+    "date": "2023-02-23",
+    "category": "Anti-Corruption & Impunity",
+    "category_sw": "Ufisadi na Ukwepaji Sheria",
+    "ruling": "Justice Sifuna issued scathing rebukes against the Director of Public Prosecutions (DPP) for abusing Section 87(a) and Article 157 to systematically drop multi-billion-shilling corruption charges against prominent politicians immediately upon their appointment to Ruto's Cabinet.",
+    "ruling_sw": "Jaji Sifuna alitoa hukumu kali akimkosoa Mkurugenzi wa Mashtaka (DPP) kwa kutumia vibaya Kifungu cha 157 kufuta ghafla kesi kubwa za ufisadi mara tu washukiwa walipoteuliwa kuwa mawaziri wa Rais Ruto.",
+    "executive_defiance": "All charges involving the KSh 7.3B Arror-Kimwarer dam scandal and fraudulent procurement against key political allies were completely wiped clean without any exchequer restitution.",
+    "executive_defiance_sw": "Kesi zote zilizohusu kashfa ya mabwawa ya Arror na Kimwarer ya Sh bilioni 7.3 na wizi wa pesa za umma zilifutwa bila hata shilingi moja kurejeshwa serikalini.",
+    "status": "CHARGES DISMISSED WITHOUT RECOVERY",
+    "status_sw": "KESI ZILIFUTWA BILA KUREJESHA FEDHA",
+    "articles_violated": [
+      "Art. 10",
+      "Art. 157",
+      "Art. 201"
+    ],
+    "articles_violated_sw": [
+      "Kifungu 10 (Uwajibikaji na Uadilifu)",
+      "Kifungu 157 (Mamlaka ya Mashtaka ya Umma)",
+      "Kifungu 201 (Usimamizi Bora wa Fedha)"
+    ],
+    "source_url": "https://kenyalaw.org/caselaw/cases/view/248102/"
+  }
+];

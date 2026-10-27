@@ -569,23 +569,44 @@ html.dark .theme-icon-dark { display: none; }
   opacity: .5;
 }
 
-#search {
+.search-box input,
+#search,
+#mp-search {
   width: 100%;
-  padding: 12px 64px 12px 42px;
+  height: 48px;
+  padding: 12px 50px 12px 44px;
   font: 500 15px var(--font-sans);
-  color: inherit;
+  color: var(--ink);
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  transition: border-color .15s ease, box-shadow .15s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all .2s cubic-bezier(0.16, 1, 0.3, 1);
   box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-#search:focus {
+.search-box input:hover,
+#search:hover,
+#mp-search:hover {
+  border-color: var(--muted);
+}
+
+.search-box input:focus,
+#search:focus,
+#mp-search:focus {
   outline: none;
   border-color: var(--red);
-  box-shadow: 0 0 0 3px rgba(187, 30, 30, 0.12);
+  box-shadow: 0 0 0 3px rgba(187, 30, 30, 0.16);
+  background: var(--card);
+}
+
+.search-box input::placeholder,
+#search::placeholder,
+#mp-search::placeholder {
+  color: var(--muted);
+  opacity: .85;
 }
 
 .search-kbd {
@@ -1853,6 +1874,639 @@ blockquote {
   }
 
   .chargesheet-stats-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ==========================================================================
+   Civic Navigation Hub (Tabs)
+   ========================================================================== */
+
+.hub-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px 20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.hub-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.hub-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font: 600 14px var(--font-sans);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-sm);
+}
+
+.hub-tab:hover {
+  color: var(--ink);
+  border-color: var(--line);
+  background: var(--card);
+  transform: translateY(-1px);
+}
+
+.hub-tab.active {
+  color: var(--ink);
+  border-color: var(--red);
+  background: var(--card);
+  box-shadow: 0 4px 14px rgba(187, 30, 30, 0.15);
+  font-weight: 700;
+  transform: translateY(-2px);
+}
+
+.hub-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.hub-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: 700 11px var(--font-mono);
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--line);
+  color: var(--ink-secondary);
+  line-height: 1.2;
+}
+
+.hub-tab.active .hub-badge {
+  background: var(--red-subtle);
+  color: var(--red);
+  border: 1px solid rgba(187, 30, 30, 0.2);
+}
+
+/* Header Action Enhancements */
+.lang-btn {
+  font-weight: 700 !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lang-flag {
+  font-size: 14px;
+}
+
+.offline-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 700 11px var(--font-mono);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.offline-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d97706;
+  animation: pulse 1.5s infinite;
+}
+
+.open-data-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.open-data-links a {
+  color: var(--red);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.open-data-links a:hover {
+  text-decoration: underline;
+}
+
+/* Tab Section Headers */
+.section-hero-header {
+  padding: 24px 0 20px;
+}
+
+.section-hero-header h2 {
+  font: 400 clamp(26px, 4vw, 36px)/1.15 var(--font-display);
+  letter-spacing: -0.02em;
+  margin: 12px 0 10px;
+  color: var(--ink);
+}
+
+.section-lead {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 72ch;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Find Your MP Scorecard
+   ========================================================================== */
+
+.mp-controls {
+  background: var(--card-subtle);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.mp-controls .search-box {
+  margin-bottom: 16px;
+}
+
+.chip-yes.active {
+  background: var(--false) !important;
+  color: #ffffff !important;
+  border-color: var(--false) !important;
+}
+
+.chip-no.active {
+  background: var(--green) !important;
+  color: #ffffff !important;
+  border-color: var(--green) !important;
+}
+
+.mp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.mp-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.mp-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(187, 30, 30, 0.3);
+  box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.12), 0 4px 10px -2px rgba(0, 0, 0, 0.06);
+}
+
+.mp-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.mp-name {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+
+.mp-constituency {
+  font: 600 13px var(--font-mono);
+  color: var(--muted);
+}
+
+.mp-party-pill {
+  font: 700 11px var(--font-mono);
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--line);
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.mp-vote-banner {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.mp-vote-banner.vote-yes {
+  background: var(--false-bg);
+  border: 1px solid var(--false-border);
+  color: var(--false);
+}
+
+.mp-vote-banner.vote-no {
+  background: var(--green-subtle);
+  border: 1px solid rgba(15, 107, 58, 0.25);
+  color: var(--green);
+}
+
+.mp-vote-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.mp-vote-value {
+  font: 800 14px var(--font-mono);
+}
+
+.mp-secondary-votes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+
+.mp-sub-vote {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mp-sub-vote-label {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.mp-sub-vote-val {
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.mp-sub-vote-val.val-yes {
+  color: var(--false);
+}
+
+.mp-sub-vote-val.val-no {
+  color: var(--green);
+}
+
+.mp-notes {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ink-secondary);
+  margin: 0 0 16px;
+  font-style: italic;
+  padding-left: 10px;
+  border-left: 3px solid var(--line);
+}
+
+.mp-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.btn-mp {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s ease;
+}
+
+/* ==========================================================================
+   Impunity Watch (The Judicial Defiance Index)
+   ========================================================================== */
+
+.impunity-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.impunity-stat-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: var(--shadow-sm);
+}
+
+.impunity-stat-icon {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.impunity-stat-num {
+  font: 800 22px var(--font-mono);
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.impunity-stat-label {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.impunity-filters {
+  margin-bottom: 24px;
+}
+
+.impunity-list {
+  display: grid;
+  gap: 20px;
+}
+
+.impunity-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--false);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.impunity-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.impunity-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.impunity-case-title {
+  font: 400 20px/1.2 var(--font-display);
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+
+.impunity-meta {
+  font: 600 13px var(--font-mono);
+  color: var(--muted);
+}
+
+.impunity-status-tag {
+  font: 700 11px var(--font-mono);
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--false-bg);
+  border: 1px solid var(--false-border);
+  color: var(--false);
+  white-space: nowrap;
+}
+
+.impunity-bench {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.impunity-bench strong {
+  color: var(--ink-secondary);
+}
+
+.impunity-articles {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.article-pill {
+  font: 700 11px var(--font-mono);
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--red-subtle);
+  border: 1px solid rgba(187, 30, 30, 0.2);
+  color: var(--red);
+}
+
+.impunity-ruling-box {
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-secondary);
+}
+
+.impunity-ruling-box strong {
+  color: var(--ink);
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.impunity-defiance-box {
+  background: var(--false-bg);
+  border: 1px solid var(--false-border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.impunity-defiance-box strong {
+  color: var(--false);
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.impunity-source-link {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--red);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.impunity-source-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Memorial of Courage
+   ========================================================================== */
+
+.kicker-memorial {
+  background: rgba(217, 119, 6, 0.1) !important;
+  border-color: rgba(217, 119, 6, 0.3) !important;
+  color: #b45309 !important;
+}
+
+.memorial-filters {
+  margin-bottom: 24px;
+}
+
+.memorial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 22px;
+}
+
+.memorial-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.memorial-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--line);
+}
+
+.memorial-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.memorial-name {
+  font: 400 20px/1.2 var(--font-display);
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+
+.memorial-meta {
+  font: 600 13px var(--font-mono);
+  color: var(--muted);
+}
+
+.memorial-candle {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.memorial-type-badge {
+  display: inline-block;
+  font: 700 11px var(--font-mono);
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--line);
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.memorial-circumstances {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-secondary);
+  margin: 0 0 14px;
+}
+
+.memorial-ref {
+  font: 500 12px var(--font-mono);
+  color: var(--muted);
+  background: var(--bg);
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.memorial-status {
+  font: 700 11px var(--font-mono);
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--false-bg);
+  border: 1px solid var(--false-border);
+  color: var(--false);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.memorial-tribute {
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--muted);
+  border-left: 3px solid var(--line);
+  padding-left: 10px;
+  margin: 0 0 16px;
+}
+
+.memorial-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+@media (max-width: 640px) {
+  .mp-grid,
+  .memorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impunity-stats-grid {
     grid-template-columns: 1fr 1fr;
   }
 }

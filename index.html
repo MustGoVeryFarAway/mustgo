@@ -18,6 +18,8 @@
   <meta name="twitter:description" content="What the President said, on camera, set against independent fact-checks and official records.">
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -36,16 +38,26 @@
           <span class="domain-subtag">receipts</span>
         </div>
         <div class="header-actions">
+          <span id="offline-pill" class="offline-pill" hidden title="Running in offline mode">
+            <span class="offline-dot"></span> Offline
+          </span>
+          <button id="lang-toggle" class="btn btn-outline btn-sm lang-btn" type="button" aria-label="Toggle language between English and Kiswahili" title="Badili Lugha / Toggle English &amp; Kiswahili">
+            <span class="lang-flag" aria-hidden="true">🇰🇪</span>
+            <span id="lang-text">KISWAHILI</span>
+          </button>
+          <button id="pwa-install-btn" class="btn btn-outline btn-sm pwa-btn" type="button" hidden title="Install MustGo App">
+            <span class="btn-icon">📲</span> <span id="pwa-text">App</span>
+          </button>
           <button id="theme-toggle" class="btn btn-outline btn-sm theme-btn" type="button" aria-label="Toggle dark/light theme" title="Toggle theme">
             <span class="theme-icon-light" aria-hidden="true">☀️</span>
             <span class="theme-icon-dark" aria-hidden="true">🌙</span>
             <span class="theme-text">Theme</span>
           </button>
           <button id="open-chargesheet" class="btn btn-charge btn-sm" type="button" title="View executive charge sheet and factsheet">
-            <span class="btn-icon">📋</span> Charge Sheet
+            <span class="btn-icon">📋</span> <span data-i18n="nav_chargesheet">Charge Sheet</span>
           </button>
           <button id="open-submit" class="btn btn-primary btn-sm">
-            <span class="btn-icon">＋</span> Submit a Receipt
+            <span class="btn-icon">＋</span> <span data-i18n="nav_submit">Submit a Receipt</span>
           </button>
         </div>
       </div>
@@ -82,8 +94,34 @@
     </div>
   </header>
 
-  <!-- Campaign Thematic Dossiers -->
-  <section id="dossiers-section" class="dossiers-section wrap" aria-label="Campaign Dossiers">
+  <!-- Civic Navigation Hub -->
+  <nav class="hub-nav wrap" aria-label="Civic Navigation Hub">
+    <button class="hub-tab active" id="tab-btn-receipts" data-tab="receipts" type="button">
+      <span class="hub-icon">🧾</span>
+      <span class="hub-label" data-i18n="nav_receipts">Receipts Archive</span>
+      <span class="hub-badge" id="hub-count-receipts">75</span>
+    </button>
+    <button class="hub-tab" id="tab-btn-mps" data-tab="mps" type="button">
+      <span class="hub-icon">🗳️</span>
+      <span class="hub-label" data-i18n="nav_mps">Find Your MP</span>
+      <span class="hub-badge" id="hub-count-mps">217</span>
+    </button>
+    <button class="hub-tab" id="tab-btn-impunity" data-tab="impunity" type="button">
+      <span class="hub-icon">⚖️</span>
+      <span class="hub-label" data-i18n="nav_impunity">Impunity Watch</span>
+      <span class="hub-badge" id="hub-count-impunity">10</span>
+    </button>
+    <button class="hub-tab" id="tab-btn-memorial" data-tab="memorial" type="button">
+      <span class="hub-icon">🕊️</span>
+      <span class="hub-label" data-i18n="nav_memorial">Memorial of Courage</span>
+      <span class="hub-badge" id="hub-count-memorial">13</span>
+    </button>
+  </nav>
+
+  <!-- Tab Section 1: Receipts Archive -->
+  <div id="section-receipts" class="tab-section">
+    <!-- Campaign Thematic Dossiers -->
+    <section id="dossiers-section" class="dossiers-section wrap" aria-label="Campaign Dossiers">
     <div class="dossiers-header">
       <div class="dossiers-title-group">
         <span class="dossiers-kicker">CIVIC CAMPAIGN DOSSIERS</span>
@@ -223,6 +261,142 @@
       <button id="empty-reset-btn" class="btn btn-outline" type="button">Show all receipts</button>
     </div>
   </main>
+  </div><!-- /#section-receipts -->
+
+  <!-- Tab Section 2: Find Your MP Scorecard -->
+  <section id="section-mps" class="tab-section wrap" hidden aria-label="Find Your MP Scorecard">
+    <div class="section-hero-header">
+      <div class="kicker-pill">
+        <span class="kicker-flag">🗳️</span>
+        <span class="kicker-text" data-i18n="mp_kicker">PARLIAMENTARY ACCOUNTABILITY · 290 CONSTITUENCIES</span>
+      </div>
+      <h2 data-i18n="nav_mps">Find Your MP · Voting Scorecard</h2>
+      <p class="section-lead" data-i18n="mp_sub">
+        Did your representative vote with you or against you? Review how MPs voted on the historic Finance Bill 2024, the Affordable Housing Levy, and SHIF. Track their official voting records on key legislation.
+      </p>
+    </div>
+
+    <!-- MP Controls -->
+    <div class="mp-controls">
+      <div class="search-box">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input id="mp-search" type="search" placeholder="Search MP by name, constituency, or county (e.g. Kikuyu, Babu, Nairobi)..." autocomplete="off" spellcheck="false">
+        <button id="clear-mp-search" class="clear-btn" type="button" aria-label="Clear search" hidden>×</button>
+      </div>
+
+      <div class="chips-group">
+        <span class="chips-label" data-i18n="mp_vote_label">Finance Bill 2024 Vote:</span>
+        <div id="mp-vote-filters" class="chips" role="group" aria-label="Filter by Vote">
+          <button class="chip active" data-vote="all" type="button"><span data-i18n="mp_filter_all">All MPs</span> (<span id="mp-count-all">217</span>)</button>
+          <button class="chip chip-yes" data-vote="YES" type="button"><span data-i18n="mp_filter_yes">Voted YES · Passed Tax</span> (<span id="mp-count-yes">144</span>)</button>
+          <button class="chip chip-no" data-vote="NO" type="button"><span data-i18n="mp_filter_no">Voted NO · Rejected Tax</span> (<span id="mp-count-no">73</span>)</button>
+        </div>
+      </div>
+
+      <div class="chips-group">
+        <span class="chips-label">Counties:</span>
+        <div id="mp-county-filters" class="chips" role="group" aria-label="Filter by County">
+          <!-- Populated by app.js -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="active-filters-info">
+          <span id="mp-results-count" class="count">Showing 217 MPs</span>
+          <button id="mp-reset-filters" class="btn-text" type="button" hidden>Reset filters</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MP Grid -->
+    <div id="mp-grid" class="mp-grid"></div>
+    <div id="mp-empty" class="empty" hidden>
+      <div class="empty-icon">🗳️</div>
+      <h3>No matching MPs found</h3>
+      <p>Try searching for a different constituency, MP name, or county.</p>
+      <button id="mp-empty-reset-btn" class="btn btn-outline" type="button">Show all MPs</button>
+    </div>
+  </section>
+
+  <!-- Tab Section 3: Impunity Watch (Judicial Defiance Index) -->
+  <section id="section-impunity" class="tab-section wrap" hidden aria-label="Impunity Watch">
+    <div class="section-hero-header">
+      <div class="kicker-pill">
+        <span class="kicker-flag">⚖️</span>
+        <span class="kicker-text">RULE OF LAW · JUDICIAL DEFIANCE INDEX</span>
+      </div>
+      <h2>Impunity Watch · The Judicial Defiance Index</h2>
+      <p class="section-lead">
+        A forensic register of High Court, Court of Appeal, and Supreme Court rulings overturned, ignored, or circumvented by the Executive.
+      </p>
+    </div>
+
+    <!-- Impunity Overview Metrics -->
+    <div class="impunity-stats-grid">
+      <div class="impunity-stat-card">
+        <span class="impunity-stat-icon">📜</span>
+        <span class="impunity-stat-num">10</span>
+        <span class="impunity-stat-label">Landmark Rulings Tracked</span>
+      </div>
+      <div class="impunity-stat-card">
+        <span class="impunity-stat-icon">🏛️</span>
+        <span class="impunity-stat-num">4</span>
+        <span class="impunity-stat-label">High Court Benches Defied</span>
+      </div>
+      <div class="impunity-stat-card">
+        <span class="impunity-stat-icon">⚠️</span>
+        <span class="impunity-stat-num">Art. 10 &amp; 201</span>
+        <span class="impunity-stat-label">Most Violated Articles</span>
+      </div>
+      <div class="impunity-stat-card">
+        <span class="impunity-stat-icon">🛡️</span>
+        <span class="impunity-stat-num">100%</span>
+        <span class="impunity-stat-label">Official Kenya Law Citations</span>
+      </div>
+    </div>
+
+    <!-- Impunity Filter Chips -->
+    <div class="chips-group impunity-filters">
+      <span class="chips-label">Filter Status:</span>
+      <div id="impunity-filters" class="chips" role="group" aria-label="Filter by Status">
+        <button class="chip active" data-status="all" type="button">All Rulings</button>
+        <button class="chip" data-status="DEFYING COURT ORDER" type="button">Defying Court Order</button>
+        <button class="chip" data-status="CIRCUMVENTED" type="button">Circumvented via Backdoor</button>
+        <button class="chip" data-status="CONSERVATORY INJUNCTION ACTIVE" type="button">Active Injunction</button>
+      </div>
+    </div>
+
+    <!-- Impunity Cards List -->
+    <div id="impunity-list" class="impunity-list"></div>
+  </section>
+
+  <!-- Tab Section 4: The Memorial of Courage -->
+  <section id="section-memorial" class="tab-section wrap" hidden aria-label="Memorial of Courage">
+    <div class="section-hero-header">
+      <div class="kicker-pill kicker-memorial">
+        <span class="kicker-flag">🕊️</span>
+        <span class="kicker-text">IN MEMORIAM · JUSTICE FOR THE BRAVE</span>
+      </div>
+      <h2>The Memorial of Courage · Victims of Injustice</h2>
+      <p class="section-lead">
+        Remembering the peaceful Kenyans shot dead, assaulted, or abducted in the fight for economic justice and constitutional freedom. We document their names, stories, and the status of justice.
+      </p>
+    </div>
+
+    <!-- Memorial Filter Chips -->
+    <div class="chips-group memorial-filters">
+      <span class="chips-label">Category:</span>
+      <div id="memorial-filters" class="chips" role="group" aria-label="Filter by Category">
+        <button class="chip active" data-cat="all" type="button">All Memorial Records</button>
+        <button class="chip" data-cat="Police Killings" type="button">Protest Deaths (Live Rounds)</button>
+        <button class="chip" data-cat="Enforced Abduction" type="button">Enforced Abductions</button>
+        <button class="chip" data-cat="Police Brutality" type="button">Police Brutality</button>
+      </div>
+    </div>
+
+    <!-- Memorial Cards Grid -->
+    <div id="memorial-grid" class="memorial-grid"></div>
+  </section>
 
   <!-- Receipt Viewer Modal (Mobile Bottom-Sheet & Desktop Dialog) -->
   <dialog id="viewer" aria-labelledby="v-title">
@@ -254,16 +428,16 @@
 
         <section class="reality">
           <div class="reality-header">
-            <h3>What the record shows</h3>
-            <span class="verified-stamp">✓ Verified Record</span>
+            <h3 data-i18n="what_record_shows">What the record shows</h3>
+            <span class="verified-stamp" data-i18n="verified_record">✓ Verified Record</span>
           </div>
           <p id="v-reality"></p>
           <div class="links">
             <a id="v-check" target="_blank" rel="noopener" class="link-btn primary-link">
-              <span>Read the Fact-Check ↗</span>
+              <span data-i18n="read_factcheck">Read the Fact-Check ↗</span>
             </a>
             <a id="v-tweet" target="_blank" rel="noopener" class="link-btn secondary-link" hidden style="display: none;">
-              <span>Original Post on X ↗</span>
+              <span data-i18n="original_x_post">Original Post on X ↗</span>
             </a>
           </div>
         </section>
@@ -275,13 +449,13 @@
               <span class="btn-icon">💬</span> WhatsApp
             </button>
             <button id="btn-share-x" class="btn btn-x" type="button" title="Share receipt to X">
-              <span class="btn-icon">𝕏</span> Share on X
+              <span class="btn-icon">𝕏</span> <span data-i18n="btn_share_x">Share on X</span>
             </button>
             <button id="btn-copy-link" class="btn btn-outline" type="button" title="Copy direct link to this receipt">
-              <span class="btn-icon">🔗</span> <span id="copy-text">Copy Link</span>
+              <span class="btn-icon">🔗</span> <span id="copy-text" data-i18n="btn_copy_link">Copy Link</span>
             </button>
             <button id="btn-download-slip" class="btn btn-receipt" type="button" title="Generate and download image receipt">
-              <span class="btn-icon">🧾</span> <span id="download-text">Download Receipt</span>
+              <span class="btn-icon">🧾</span> <span id="download-text" data-i18n="btn_download_receipt">Download Receipt</span>
             </button>
           </div>
         </section>
@@ -426,8 +600,13 @@
         </div>
         <div class="foot-col">
           <h4>Corrections & Open Data</h4>
-          <p>Spotted a factual error or have an update? <a href="#submit" id="foot-submit-link">Submit a correction</a> or open a pull request. Raw data is available as an open JSON dataset.</p>
-          <p><a href="data/claims.json" target="_blank" class="open-data-link">Download claims.json ↗</a></p>
+          <p>Spotted a factual error or have an update? <a href="#submit" id="foot-submit-link">Submit a correction</a> or open a pull request. Datasets are licensed under Public Domain.</p>
+          <div class="open-data-links">
+            <a href="data/claims.json" target="_blank" class="open-data-link">claims.json ↗</a> ·
+            <a href="data/mps.json" target="_blank" class="open-data-link">mps.json ↗</a> ·
+            <a href="data/impunity.json" target="_blank" class="open-data-link">impunity.json ↗</a> ·
+            <a href="data/memorial.json" target="_blank" class="open-data-link">memorial.json ↗</a>
+          </div>
         </div>
       </div>
       <div class="foot-bottom">
@@ -436,7 +615,22 @@
     </div>
   </footer>
 
+  <script src="data/i18n.js"></script>
   <script src="data/claims.js"></script>
+  <script src="data/mps.js"></script>
+  <script src="data/impunity.js"></script>
+  <script src="data/memorial.js"></script>
   <script src="assets/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').then((reg) => {
+          console.log('MustGo ServiceWorker active:', reg.scope);
+        }).catch((err) => {
+          console.warn('SW registration:', err);
+        });
+      });
+    }
+  </script>
 </body>
 </html>
