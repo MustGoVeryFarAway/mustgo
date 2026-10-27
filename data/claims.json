@@ -1193,5 +1193,63 @@
       "abuse-of-power"
     ],
     "thumbnail": null
+  },
+  {
+    "id": "icc-cases-witness-tampering-vindication-claim",
+    "title": "Claimed total vindication after ICC trial terminated without acquittal due to witness tampering",
+    "quote": "The allegations brought against us were pure fabrications, falsehoods and malicious political conspiracies. Truth has prevailed and we have been totally vindicated by the court.",
+    "date": "2016-04-16",
+    "context": "Jubilee coalition thanksgiving rally at Afraha Stadium, Nakuru following ICC case termination",
+    "verdict": "Misleading",
+    "reality": "Trial Chamber V(A) of the International Criminal Court (ICC) did not acquit William Ruto; rather, it declared a mistrial and vacated the charges without prejudice specifically citing a 'troubling incidence of witness interference and intolerable political meddling'. The prosecution documented that 16 of its 42 witnesses recanted or refused to cooperate due to intimidation, death threats, or bribery. Crucial witnesses, including Meshack Yebei (abducted and found murdered in Tsavo in 2015) and Eldoret journalist John Kituyi (beaten to death while probing Yebei's death), lost their lives, leading the judges to refuse an acquittal so charges could be renewed if fresh evidence surfaces.",
+    "tweet_url": "https://x.com/citizentvkenya/status/721327170887340032",
+    "factcheck_url": "https://africacheck.org/fact-checks/reports/kenya-icc-and-facts-cases-against-ruto-and-sang",
+    "tags": [
+      "icc",
+      "judiciary",
+      "justice",
+      "human-rights",
+      "historical",
+      "police-brutality"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "icc-witness-meshack-yebei-murder-denial",
+    "title": "Administration claimed murdered ICC witness Meshack Yebei was abducted by conspirators framing the defense",
+    "quote": "Meshack Yebei was our critical defense witness. His abduction was engineered by people working to frame me and undermine our defense at The Hague.",
+    "date": "2015-01-07",
+    "context": "Statement issued by Ruto's legal defense team in Eldoret following the abduction of Meshack Yebei",
+    "verdict": "False",
+    "reality": "The ICC Office of the Prosecutor (OTP) formally contradicted Ruto's defense, confirming that Meshack Yebei was originally a prosecution contact who had received death threats and had been offered protective relocation by the ICC, which he had declined. In March 2015, Yebei's mutilated, decomposing body was found dumped in the Tsavo River near Voi, with signs of torture and strangulation. Kenyan police investigations into his murder stalled indefinitely without arrests, forming part of a documented pattern of witness disappearances, intimidation, and killings that caused the prosecution case to collapse.",
+    "tweet_url": "https://x.com/Kenyans/status/552762299770519552",
+    "factcheck_url": "https://www.hrw.org/news/2015/01/14/kenya-investigate-disappearance-icc-witness",
+    "tags": [
+      "icc",
+      "killings",
+      "extrajudicial-killings",
+      "human-rights",
+      "historical"
+    ],
+    "thumbnail": null
+  },
+  {
+    "id": "icc-paul-gicheru-witness-tampering-denial",
+    "title": "Denied involvement in systematic ICC witness bribery ring before key suspect died mysteriously in Karen",
+    "quote": "The allegations of witness tampering and bribery at the ICC are politically motivated witch-hunts recycled by our opponents to derail our political ambitions.",
+    "date": "2020-11-05",
+    "context": "Press remarks following the surrender of lawyer Paul Gicheru to the ICC in The Hague",
+    "verdict": "False",
+    "reality": "In 2021-2022, the ICC prosecuted Kenyan lawyer Paul Gicheru for running a coordinated criminal syndicate under Article 70 of the Rome Statute, presenting financial transaction records, phone intercepts, and witness testimony proving witnesses in Ruto's case were paid between KSh 500,000 and KSh 5 Million each to recant their testimony or execute false affidavits. On 26 September 2022—just two weeks after William Ruto was sworn in as President and before the ICC could issue its verdict on Gicheru—Gicheru was found dead under unexplained circumstances at his Karen residence in Nairobi. A toxicology investigation yielded no public conclusion, marking another unexplained death linked to the collapsed Hague trial.",
+    "tweet_url": "https://x.com/citizentvkenya/status/1574443906666139649",
+    "factcheck_url": "https://www.aljazeera.com/news/2022/9/27/kenyan-lawyer-facing-icc-witness-bribery-charges-found-dead",
+    "tags": [
+      "icc",
+      "corruption",
+      "justice",
+      "human-rights",
+      "abuse-of-power"
+    ],
+    "thumbnail": null
   }
 ]

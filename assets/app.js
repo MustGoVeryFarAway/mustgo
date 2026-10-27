@@ -6,8 +6,8 @@
     constitution: {
       name: "Constitutional Violations & Impunity",
       icon: "⚖️",
-      desc: "Systematic breaches of the 2010 Constitution, defiance of High Court rulings, 50 illegal CAS appointments, unconstitutional Housing Levy & SHIF, and deploying the military against unarmed citizens.",
-      tags: new Set(["constitution", "judiciary", "rule-of-law"]),
+      desc: "Systematic breaches of the 2010 Constitution, defiance of High Court rulings, 50 illegal CAS appointments, unconstitutional Housing Levy & SHIF, deploying the military against unarmed citizens, and ICC witness tampering mistrial.",
+      tags: new Set(["constitution", "judiciary", "rule-of-law", "justice"]),
       ids: new Set([
         "cas-50-appointments-unconstitutional",
         "housing-levy-unconstitutional-ruling",
@@ -15,7 +15,9 @@
         "judiciary-threats-defiance-court-orders",
         "shif-sha-healthcare-unconstitutional",
         "cabinet-50pct-women",
-        "finance-bill-2024-criminal-infiltrators-claim"
+        "finance-bill-2024-criminal-infiltrators-claim",
+        "icc-cases-witness-tampering-vindication-claim",
+        "icc-paul-gicheru-witness-tampering-denial"
       ])
     },
     spending: {
@@ -35,8 +37,8 @@
     killings: {
       name: "Killings, Abductions & Police Brutality",
       icon: "🚨",
-      desc: "State violence against citizens, live ammunition used on unarmed Gen Z youth, extrajudicial killings, denied abductions, and mass bodies dumped in Mukuru Kware quarry.",
-      tags: new Set(["police-brutality", "extrajudicial-killings", "human-rights"]),
+      desc: "State violence against citizens, live ammunition used on unarmed Gen Z youth, extrajudicial killings, ICC witness deaths (Meshack Yebei), denied abductions, and mass bodies dumped in Mukuru Kware quarry.",
+      tags: new Set(["police-brutality", "extrajudicial-killings", "human-rights", "killings"]),
       ids: new Set([
         "rex-masai-live-ammunition-denial",
         "ssu-disbandment-river-yala-promise",
@@ -48,13 +50,15 @@
         "protest-deaths-six",
         "no-extrajudicial-killings",
         "no-known-abductions",
-        "dp-baby-pendo-police-denial-2017"
+        "dp-baby-pendo-police-denial-2017",
+        "icc-witness-meshack-yebei-murder-denial",
+        "icc-cases-witness-tampering-vindication-claim"
       ])
     },
     corruption: {
       name: "Corruption Scandals & Secret Mega-Deals",
       icon: "💼",
-      desc: "Multi-billion single-sourced concessions, secret 30-year Adani JKIA & Ketraco takeovers, fake subsidized fertiliser containing sand and dung, edible oil graft, and dropped corruption charges against political allies.",
+      desc: "Multi-billion single-sourced concessions, secret 30-year Adani JKIA & Ketraco takeovers, fake subsidized fertiliser containing sand and dung, edible oil graft, ICC witness bribery syndicate, and dropped corruption charges against political allies.",
       tags: new Set(["corruption", "mega-deals", "adani"]),
       ids: new Set([
         "adani-jkia-deal-secrecy-denial",
@@ -67,7 +71,8 @@
         "dp-weston-hotel-land-2018",
         "tsc-letters-mps-state-house-distribution",
         "controller-of-budget-budgeted-corruption",
-        "shif-sha-healthcare-unconstitutional"
+        "shif-sha-healthcare-unconstitutional",
+        "icc-paul-gicheru-witness-tampering-denial"
       ])
     },
     economy: {
@@ -94,7 +99,7 @@
     abuse_power: {
       name: "Abuse of Power, Co-optation & Tribalism",
       icon: "👥",
-      desc: "Promoting an unconstitutional ethnic 'shareholding' doctrine, using State House and TSC appointment letters for MP patronage, buying opposition MPs, and subverting independent oversight.",
+      desc: "Promoting an unconstitutional ethnic 'shareholding' doctrine, using State House and TSC appointment letters for MP patronage, buying opposition MPs, subverting independent oversight, and ICC witness tampering rings.",
       tags: new Set(["abuse-of-power", "shareholding", "ethnicity", "patronage"]),
       ids: new Set([
         "shareholding-government-equal-service-denial",
@@ -103,7 +108,9 @@
         "tsc-letters-mps-state-house-distribution",
         "judiciary-threats-defiance-court-orders",
         "dpp-withdrawal-graft-cases-allies",
-        "cas-50-appointments-unconstitutional"
+        "cas-50-appointments-unconstitutional",
+        "icc-paul-gicheru-witness-tampering-denial",
+        "icc-cases-witness-tampering-vindication-claim"
       ])
     }
   };
