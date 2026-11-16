@@ -149,6 +149,14 @@
     return approx ? `c. ${out}` : out;
   };
 
+  function debounce(fn, delay = 120) {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => fn(...args), delay);
+    };
+  }
+
   function showToast(msg, ms = 2500) {
     const t = $("toast");
     if (!t) return;
@@ -877,6 +885,33 @@
     $("submit-dialog").close();
   }
 
+  function submitViaEmail() {
+    const form = $("submit-form");
+    if (form && !form.reportValidity()) return;
+
+    const title = $("sub-headline").value.trim();
+    const quote = $("sub-quote").value.trim();
+    const date = $("sub-date").value.trim();
+    const context = $("sub-context").value.trim();
+    const video = $("sub-video").value.trim();
+    const factcheck = $("sub-factcheck").value.trim();
+
+    const subject = `MustGo Receipt Submission: ${title}`;
+    const body = [
+      "Receipt Submission for mustgo.co.ke",
+      "",
+      `Title: ${title}`,
+      `Quote: "${quote}"`,
+      `Date: ${date}`,
+      `Context: ${context || "N/A"}`,
+      `Video URL: ${video || "N/A"}`,
+      `Fact-Check / Official Record URL: ${factcheck}`
+    ].join("\n");
+
+    window.location.href = `mailto:mustgomail@proton.me?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    showToast("Opening email draft to mustgomail@proton.me...");
+  }
+
   function copySubmissionText() {
     const title = $("sub-headline").value.trim();
     const quote = $("sub-quote").value.trim();
@@ -1018,6 +1053,12 @@
 
     const totalCountEl = $("cs-total-count");
     if (totalCountEl) totalCountEl.textContent = claims.length;
+    const impCountEl = $("cs-impunity-count");
+    if (impCountEl) impCountEl.textContent = impunityCases.length;
+    const mpsCountEl = $("cs-mps-count");
+    if (mpsCountEl) mpsCountEl.textContent = mps.length;
+    const memCountEl = $("cs-memorial-count");
+    if (memCountEl) memCountEl.textContent = memorialRecords.length;
 
     Object.keys(DOSSIERS).forEach((key) => {
       const d = DOSSIERS[key];
@@ -1127,13 +1168,14 @@
     $("btn-copy-link").onclick = () => currentClaim && copyClaimLink(currentClaim);
     $("btn-download-slip").onclick = () => currentClaim && generateReceiptSlip(currentClaim);
 
-    // Search events
+    // Search events (debounced for smooth typing)
     const searchInput = $("search");
     const clearBtn = $("clear-search");
+    const debouncedRender = debounce(render, 120);
     searchInput.addEventListener("input", (e) => {
       state.q = e.target.value.trim().toLowerCase();
       clearBtn.hidden = !state.q;
-      render();
+      debouncedRender();
     });
     clearBtn.onclick = () => {
       searchInput.value = "";
@@ -1159,6 +1201,8 @@
       if (e.target === submitDialog) submitDialog.close();
     });
     $("submit-form").addEventListener("submit", handleFormSubmit);
+    const emailSubBtn = $("btn-submit-email");
+    if (emailSubBtn) emailSubBtn.onclick = submitViaEmail;
     $("btn-copy-submission").onclick = copySubmissionText;
 
     const footSubmitLink = $("foot-submit-link");
@@ -1179,6 +1223,15 @@
     initPWA();
     initLanguage();
 
+    // Back to top button
+    const backToTopBtn = $("back-to-top");
+    if (backToTopBtn) {
+      window.addEventListener("scroll", () => {
+        backToTopBtn.hidden = window.scrollY < 480;
+      }, { passive: true });
+      backToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
     // Hash routing
     window.addEventListener("hashchange", handleHashChange);
   }
@@ -1197,6 +1250,7 @@
   function applyLanguage(lang) {
     currentLang = lang;
     localStorage.setItem("mustgo_lang", lang);
+    document.documentElement.lang = lang;
 
     const langBtnText = $("lang-text");
     if (langBtnText) {
@@ -1216,11 +1270,11 @@
     const mpSearch = $("mp-search");
     if (mpSearch) mpSearch.placeholder = t("mp_search_placeholder");
 
-    // Re-render all views and active filters
+    // Re-render all views and active filters without rebinding listeners
     initScorecard();
     renderChips();
     render();
-    initMPs();
+    renderMPCountyChips();
     renderMPs();
     renderImpunity();
     renderMemorial();
@@ -1247,7 +1301,9 @@
   function switchTab(tabId, pushHash = true) {
     activeTab = tabId;
     document.querySelectorAll(".hub-tab").forEach((tab) => {
-      tab.classList.toggle("active", tab.dataset.tab === tabId);
+      const isActive = tab.dataset.tab === tabId;
+      tab.classList.toggle("active", isActive);
+      tab.setAttribute("aria-selected", String(isActive));
     });
 
     const secReceipts = $("section-receipts");
@@ -1288,36 +1344,52 @@
   }
 
   // --- Find Your MP Feature ---
-  function initMPs() {
+  function renderMPCountyChips() {
     const countyContainer = $("mp-county-filters");
-    if (countyContainer) {
-      const counties = [...new Set(mps.map((m) => m.county))].filter(Boolean).sort();
-      countyContainer.innerHTML = "";
+    if (!countyContainer) return;
+    const counties = [...new Set(mps.map((m) => m.county))].filter(Boolean).sort();
+    countyContainer.innerHTML = "";
 
-      const allBtn = document.createElement("button");
-      allBtn.className = "chip active";
-      allBtn.textContent = currentLang === "sw" ? t("all_counties") : "All Counties";
-      allBtn.onclick = () => {
-        mpState.county = null;
-        countyContainer.querySelectorAll(".chip").forEach((c) => c.classList.remove("active"));
-        allBtn.classList.add("active");
+    const allBtn = document.createElement("button");
+    allBtn.className = `chip${mpState.county === null ? " active" : ""}`;
+    allBtn.type = "button";
+    allBtn.setAttribute("aria-pressed", String(mpState.county === null));
+    allBtn.textContent = currentLang === "sw" ? t("all_counties") : "All Counties";
+    allBtn.onclick = () => {
+      mpState.county = null;
+      countyContainer.querySelectorAll(".chip").forEach((c) => {
+        c.classList.remove("active");
+        c.setAttribute("aria-pressed", "false");
+      });
+      allBtn.classList.add("active");
+      allBtn.setAttribute("aria-pressed", "true");
+      renderMPs();
+    };
+    countyContainer.appendChild(allBtn);
+
+    counties.forEach((county) => {
+      const b = document.createElement("button");
+      const isActive = mpState.county === county;
+      b.className = `chip${isActive ? " active" : ""}`;
+      b.type = "button";
+      b.setAttribute("aria-pressed", String(isActive));
+      b.textContent = county;
+      b.onclick = () => {
+        mpState.county = county;
+        countyContainer.querySelectorAll(".chip").forEach((c) => {
+          c.classList.remove("active");
+          c.setAttribute("aria-pressed", "false");
+        });
+        b.classList.add("active");
+        b.setAttribute("aria-pressed", "true");
         renderMPs();
       };
-      countyContainer.appendChild(allBtn);
+      countyContainer.appendChild(b);
+    });
+  }
 
-      counties.forEach((county) => {
-        const b = document.createElement("button");
-        b.className = "chip";
-        b.textContent = county;
-        b.onclick = () => {
-          mpState.county = county;
-          countyContainer.querySelectorAll(".chip").forEach((c) => c.classList.remove("active"));
-          b.classList.add("active");
-          renderMPs();
-        };
-        countyContainer.appendChild(b);
-      });
-    }
+  function initMPs() {
+    renderMPCountyChips();
 
     // Update dynamic MP counts
     const hubMpsCount = $("hub-count-mps");
@@ -1328,11 +1400,20 @@
     if (yesCount) yesCount.textContent = mps.filter((m) => m.finance_bill_2024 === "YES").length;
     const noCount = $("mp-count-no");
     if (noCount) noCount.textContent = mps.filter((m) => m.finance_bill_2024 === "NO").length;
+    const absentTotal = mps.filter((m) => m.finance_bill_2024 !== "YES" && m.finance_bill_2024 !== "NO").length;
+    const absentBtn = $("mp-filter-absent-btn");
+    const absentCount = $("mp-count-absent");
+    if (absentCount) absentCount.textContent = absentTotal;
+    if (absentBtn) absentBtn.hidden = absentTotal === 0;
 
     document.querySelectorAll("#mp-vote-filters .chip").forEach((btn) => {
       btn.onclick = () => {
-        document.querySelectorAll("#mp-vote-filters .chip").forEach((c) => c.classList.remove("active"));
+        document.querySelectorAll("#mp-vote-filters .chip").forEach((c) => {
+          c.classList.remove("active");
+          c.setAttribute("aria-pressed", "false");
+        });
         btn.classList.add("active");
+        btn.setAttribute("aria-pressed", "true");
         mpState.vote = btn.dataset.vote;
         renderMPs();
       };
@@ -1341,10 +1422,11 @@
     const searchInput = $("mp-search");
     const clearBtn = $("clear-mp-search");
     if (searchInput) {
+      const debouncedRenderMPs = debounce(renderMPs, 120);
       searchInput.addEventListener("input", (e) => {
         mpState.q = e.target.value.trim().toLowerCase();
         if (clearBtn) clearBtn.hidden = !mpState.q;
-        renderMPs();
+        debouncedRenderMPs();
       });
       if (clearBtn) {
         clearBtn.onclick = () => {
@@ -1365,10 +1447,12 @@
         mpState.county = null;
         if (searchInput) searchInput.value = "";
         if (clearBtn) clearBtn.hidden = true;
-        document.querySelectorAll("#mp-vote-filters .chip").forEach((c) => c.classList.toggle("active", c.dataset.vote === "all"));
-        if (countyContainer) {
-          countyContainer.querySelectorAll(".chip").forEach((c, i) => c.classList.toggle("active", i === 0));
-        }
+        document.querySelectorAll("#mp-vote-filters .chip").forEach((c) => {
+          const isAll = c.dataset.vote === "all";
+          c.classList.toggle("active", isAll);
+          c.setAttribute("aria-pressed", String(isAll));
+        });
+        renderMPCountyChips();
         renderMPs();
       };
     }
@@ -1385,7 +1469,11 @@
     if (!grid) return;
 
     const list = mps.filter((m) => {
-      if (mpState.vote !== "all" && m.finance_bill_2024 !== mpState.vote) return false;
+      if (mpState.vote === "ABSENT") {
+        if (m.finance_bill_2024 === "YES" || m.finance_bill_2024 === "NO") return false;
+      } else if (mpState.vote !== "all" && m.finance_bill_2024 !== mpState.vote) {
+        return false;
+      }
       if (mpState.county && m.county !== mpState.county) return false;
       if (mpState.q) {
         const hay = [m.name, m.constituency, m.county, m.party, m.role, m.notes].join(" ").toLowerCase();

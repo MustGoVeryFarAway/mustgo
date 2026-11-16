@@ -7,19 +7,25 @@
   <meta name="description" content="A searchable civic archive of President William Ruto's public statements, on video, set against independent fact-checks and the public record.">
   <meta name="theme-color" content="#141414">
 
+  <link rel="canonical" href="https://mustgo.co.ke/">
+
   <!-- OpenGraph / Social Previews (WhatsApp, X, Facebook) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MustGo.co.ke">
   <meta property="og:title" content="MustGo.co.ke · The Ruto Receipts Archive">
   <meta property="og:description" content="What the President said, on camera, set against independent fact-checks and official records. The internet remembers.">
   <meta property="og:url" content="https://mustgo.co.ke">
+  <meta property="og:image" content="https://mustgo.co.ke/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MustGo.co.ke · The Ruto Receipts Archive">
   <meta name="twitter:description" content="What the President said, on camera, set against independent fact-checks and official records.">
+  <meta name="twitter:image" content="https://mustgo.co.ke/assets/og-image.png">
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -46,12 +52,12 @@
             <span id="lang-text">KISWAHILI</span>
           </button>
           <button id="pwa-install-btn" class="btn btn-outline btn-sm pwa-btn" type="button" hidden title="Install MustGo App">
-            <span class="btn-icon">📲</span> <span id="pwa-text">App</span>
+            <span class="btn-icon">📲</span> <span id="pwa-text" data-i18n="pwa_install_btn">App</span>
           </button>
           <button id="theme-toggle" class="btn btn-outline btn-sm theme-btn" type="button" aria-label="Toggle dark/light theme" title="Toggle theme">
             <span class="theme-icon-light" aria-hidden="true">☀️</span>
             <span class="theme-icon-dark" aria-hidden="true">🌙</span>
-            <span class="theme-text">Theme</span>
+            <span class="theme-text" data-i18n="theme_toggle">Theme</span>
           </button>
           <button id="open-chargesheet" class="btn btn-charge btn-sm" type="button" title="View executive charge sheet and factsheet">
             <span class="btn-icon">📋</span> <span data-i18n="nav_chargesheet">Charge Sheet</span>
@@ -65,10 +71,10 @@
       <div class="hero-content">
         <div class="kicker-pill">
           <span class="kicker-flag">🇰🇪</span>
-          <span class="kicker-text">Civic Accountability & Campaign Archive · Kenya</span>
+          <span class="kicker-text" data-i18n="kicker">Civic Accountability & Campaign Archive · Kenya</span>
         </div>
-        <h1>MustGo <span>Receipts</span></h1>
-        <p class="lede">What President William Ruto said on camera, set against independent fact-checks, judicial rulings, and official state audits. Documenting corruption, constitutional breaches, police brutality, and broken promises.</p>
+        <h1><span data-i18n="hero_h1_main">MustGo</span> <span data-i18n="hero_h1_sub">Receipts</span></h1>
+        <p class="lede" data-i18n="hero_lede">What President William Ruto said on camera, set against independent fact-checks, judicial rulings, and official state audits. Documenting corruption, constitutional breaches, police brutality, and broken promises.</p>
         <div class="hero-actions">
           <button id="hero-chargesheet-btn" class="btn btn-primary btn-sm" type="button">
             <span class="btn-icon">📋</span> View Executive Charge Sheet
@@ -84,7 +90,7 @@
         <div class="scorecard-header">
           <div class="scorecard-title">
             <span class="scorecard-icon">⚖️</span>
-            <strong>The Record Scorecard</strong>
+            <strong data-i18n="scorecard_title">The Record Scorecard</strong>
           </div>
           <div id="sc-summary" class="scorecard-summary">Loading record...</div>
         </div>
@@ -95,23 +101,23 @@
   </header>
 
   <!-- Civic Navigation Hub -->
-  <nav class="hub-nav wrap" aria-label="Civic Navigation Hub">
-    <button class="hub-tab active" id="tab-btn-receipts" data-tab="receipts" type="button">
+  <nav class="hub-nav wrap" role="tablist" aria-label="Civic Navigation Hub">
+    <button class="hub-tab active" id="tab-btn-receipts" data-tab="receipts" type="button" role="tab" aria-selected="true" aria-controls="section-receipts">
       <span class="hub-icon">🧾</span>
       <span class="hub-label" data-i18n="nav_receipts">Receipts Archive</span>
       <span class="hub-badge" id="hub-count-receipts">75</span>
     </button>
-    <button class="hub-tab" id="tab-btn-mps" data-tab="mps" type="button">
+    <button class="hub-tab" id="tab-btn-mps" data-tab="mps" type="button" role="tab" aria-selected="false" aria-controls="section-mps">
       <span class="hub-icon">🗳️</span>
       <span class="hub-label" data-i18n="nav_mps">Find Your MP</span>
       <span class="hub-badge" id="hub-count-mps">217</span>
     </button>
-    <button class="hub-tab" id="tab-btn-impunity" data-tab="impunity" type="button">
+    <button class="hub-tab" id="tab-btn-impunity" data-tab="impunity" type="button" role="tab" aria-selected="false" aria-controls="section-impunity">
       <span class="hub-icon">⚖️</span>
       <span class="hub-label" data-i18n="nav_impunity">Impunity Watch</span>
       <span class="hub-badge" id="hub-count-impunity">10</span>
     </button>
-    <button class="hub-tab" id="tab-btn-memorial" data-tab="memorial" type="button">
+    <button class="hub-tab" id="tab-btn-memorial" data-tab="memorial" type="button" role="tab" aria-selected="false" aria-controls="section-memorial">
       <span class="hub-icon">🕊️</span>
       <span class="hub-label" data-i18n="nav_memorial">Memorial of Courage</span>
       <span class="hub-badge" id="hub-count-memorial">13</span>
@@ -124,10 +130,10 @@
     <section id="dossiers-section" class="dossiers-section wrap" aria-label="Campaign Dossiers">
     <div class="dossiers-header">
       <div class="dossiers-title-group">
-        <span class="dossiers-kicker">CIVIC CAMPAIGN DOSSIERS</span>
-        <h2>The Record by Category of Misrule</h2>
+        <span class="dossiers-kicker" data-i18n="dossiers_kicker">CIVIC CAMPAIGN DOSSIERS</span>
+        <h2 data-i18n="dossiers_title">The Record by Category of Misrule</h2>
       </div>
-      <p class="dossiers-intro">Select a pillar below to filter verified receipts by specific constitutional violations, corruption scandals, or state abuses.</p>
+      <p class="dossiers-intro" data-i18n="dossiers_intro">Select a pillar below to filter verified receipts by specific constitutional violations, corruption scandals, or state abuses.</p>
     </div>
     
     <div id="dossiers-grid" class="dossiers-grid">
@@ -203,24 +209,24 @@
     </div>
 
     <div class="chips-group">
-      <span class="chips-label">Verdict:</span>
+      <span class="chips-label" data-i18n="filter_verdict">Verdict:</span>
       <div id="verdicts" class="chips" role="group" aria-label="Filter by Verdict"></div>
     </div>
 
     <div class="chips-group">
-      <span class="chips-label">Topic:</span>
+      <span class="chips-label" data-i18n="filter_topic">Topic:</span>
       <div id="tags" class="chips" role="group" aria-label="Filter by Topic"></div>
     </div>
 
     <div class="row">
       <div class="active-filters-info">
         <span id="count" class="count"></span>
-        <button id="reset-filters" class="btn-text" type="button" hidden>Reset all filters</button>
+        <button id="reset-filters" class="btn-text" type="button" hidden data-i18n="reset_filters">Reset all filters</button>
       </div>
-      <label class="sort">Sort
+      <label class="sort"><span data-i18n="sort_label">Sort</span>
         <select id="sort">
-          <option value="new">Newest first</option>
-          <option value="old">Oldest first</option>
+          <option value="new" data-i18n="sort_newest">Newest first</option>
+          <option value="old" data-i18n="sort_oldest">Oldest first</option>
         </select>
       </label>
     </div>
@@ -287,9 +293,10 @@
       <div class="chips-group">
         <span class="chips-label" data-i18n="mp_vote_label">Finance Bill 2024 Vote:</span>
         <div id="mp-vote-filters" class="chips" role="group" aria-label="Filter by Vote">
-          <button class="chip active" data-vote="all" type="button"><span data-i18n="mp_filter_all">All MPs</span> (<span id="mp-count-all">217</span>)</button>
-          <button class="chip chip-yes" data-vote="YES" type="button"><span data-i18n="mp_filter_yes">Voted YES · Passed Tax</span> (<span id="mp-count-yes">144</span>)</button>
-          <button class="chip chip-no" data-vote="NO" type="button"><span data-i18n="mp_filter_no">Voted NO · Rejected Tax</span> (<span id="mp-count-no">73</span>)</button>
+          <button class="chip active" data-vote="all" type="button" aria-pressed="true"><span data-i18n="mp_filter_all">All MPs</span> (<span id="mp-count-all">217</span>)</button>
+          <button class="chip chip-yes" data-vote="YES" type="button" aria-pressed="false"><span data-i18n="mp_filter_yes">Voted YES · Passed Tax</span> (<span id="mp-count-yes">144</span>)</button>
+          <button class="chip chip-no" data-vote="NO" type="button" aria-pressed="false"><span data-i18n="mp_filter_no">Voted NO · Rejected Tax</span> (<span id="mp-count-no">73</span>)</button>
+          <button class="chip chip-absent" data-vote="ABSENT" type="button" aria-pressed="false" id="mp-filter-absent-btn" hidden><span data-i18n="mp_filter_absent">Absent / Walkout</span> (<span id="mp-count-absent">0</span>)</button>
         </div>
       </div>
 
@@ -325,8 +332,8 @@
         <span class="kicker-flag">⚖️</span>
         <span class="kicker-text">RULE OF LAW · JUDICIAL DEFIANCE INDEX</span>
       </div>
-      <h2>Impunity Watch · The Judicial Defiance Index</h2>
-      <p class="section-lead">
+      <h2 data-i18n="impunity_title">Impunity Watch · The Judicial Defiance Index</h2>
+      <p class="section-lead" data-i18n="impunity_sub">
         A forensic register of High Court, Court of Appeal, and Supreme Court rulings overturned, ignored, or circumvented by the Executive.
       </p>
     </div>
@@ -377,8 +384,8 @@
         <span class="kicker-flag">🕊️</span>
         <span class="kicker-text">IN MEMORIAM · JUSTICE FOR THE BRAVE</span>
       </div>
-      <h2>The Memorial of Courage · Victims of Injustice</h2>
-      <p class="section-lead">
+      <h2 data-i18n="memorial_title">The Memorial of Courage · Victims of Injustice</h2>
+      <p class="section-lead" data-i18n="memorial_sub">
         Remembering the peaceful Kenyans shot dead, assaulted, or abducted in the fight for economic justice and constitutional freedom. We document their names, stories, and the status of justice.
       </p>
     </div>
@@ -446,7 +453,7 @@
         <section class="viewer-actions" aria-label="Share and Download">
           <div class="action-buttons">
             <button id="btn-share-wa" class="btn btn-wa" type="button" title="Share receipt to WhatsApp">
-              <span class="btn-icon">💬</span> WhatsApp
+              <span class="btn-icon">💬</span> <span data-i18n="btn_whatsapp">WhatsApp</span>
             </button>
             <button id="btn-share-x" class="btn btn-x" type="button" title="Share receipt to X">
               <span class="btn-icon">𝕏</span> <span data-i18n="btn_share_x">Share on X</span>
@@ -473,7 +480,7 @@
       </div>
 
       <form id="submit-form" class="submit-form">
-        <p class="form-lede">Have a video clip of a statement made by the President, along with an independent fact-check or official record? Submit it here to be archived on <strong>mustgo.co.ke</strong>.</p>
+        <p class="form-lede">Have a video clip of a statement made by the President, along with an independent fact-check or official record? Submit it here to be archived on <strong>mustgo.co.ke</strong>, or write directly to <a href="mailto:mustgomail@proton.me">mustgomail@proton.me</a>.</p>
         
         <label class="form-label">
           <span>Claim Headline *</span>
@@ -511,6 +518,9 @@
           <button type="submit" id="btn-submit-github" class="btn btn-primary">
             <span>Open as GitHub Issue ↗</span>
           </button>
+          <button type="button" id="btn-submit-email" class="btn btn-outline">
+            <span>✉️ Email to mustgomail@proton.me</span>
+          </button>
           <button type="button" id="btn-copy-submission" class="btn btn-outline">
             <span>Copy Submission Text</span>
           </button>
@@ -545,16 +555,16 @@
               <span class="cs-stat-label">Documented Receipts</span>
             </div>
             <div class="cs-stat">
-              <span class="cs-stat-num">6+</span>
-              <span class="cs-stat-label">High Court Overturns</span>
+              <span class="cs-stat-num" id="cs-impunity-count">10</span>
+              <span class="cs-stat-label">Court Rulings Tracked</span>
             </div>
             <div class="cs-stat">
-              <span class="cs-stat-num">KSh 300B+</span>
-              <span class="cs-stat-label">Opaque Mega-Deals</span>
+              <span class="cs-stat-num" id="cs-mps-count">217</span>
+              <span class="cs-stat-label">MPs Tracked</span>
             </div>
             <div class="cs-stat">
-              <span class="cs-stat-num">60+</span>
-              <span class="cs-stat-label">Documented Deaths</span>
+              <span class="cs-stat-num" id="cs-memorial-count">13</span>
+              <span class="cs-stat-label">Memorial Records</span>
             </div>
           </div>
         </div>
@@ -579,6 +589,15 @@
     </div>
   </dialog>
 
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" title="Back to top" hidden>↑</button>
+
+  <!-- Service Worker Update Banner -->
+  <div id="sw-update-banner" class="sw-update-banner" role="status" aria-live="polite" hidden>
+    <span>New archive update available.</span>
+    <button id="sw-reload-btn" class="btn btn-primary btn-sm" type="button">Reload</button>
+  </div>
+
   <!-- Toast Notification -->
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 
@@ -599,8 +618,8 @@
           <p>Verdicts on this site belong to accredited independent fact-checkers (such as Africa Check, PesaCheck) and official state records (KNBS, Parliament Hansard, Auditor General reports), not editorial opinions.</p>
         </div>
         <div class="foot-col">
-          <h4>Corrections & Open Data</h4>
-          <p>Spotted a factual error or have an update? <a href="#submit" id="foot-submit-link">Submit a correction</a> or open a pull request. Datasets are licensed under Public Domain.</p>
+          <h4>Contact, Corrections & Open Data</h4>
+          <p>Spotted a factual error, have a tip, or want to write to us? <a href="#submit" id="foot-submit-link">Submit a receipt/correction</a>, email <a href="mailto:mustgomail@proton.me">mustgomail@proton.me</a>, or open a pull request. Datasets are licensed under Public Domain.</p>
           <div class="open-data-links">
             <a href="data/claims.json" target="_blank" class="open-data-link">claims.json ↗</a> ·
             <a href="data/mps.json" target="_blank" class="open-data-link">mps.json ↗</a> ·
@@ -626,6 +645,20 @@
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js').then((reg) => {
           console.log('MustGo ServiceWorker active:', reg.scope);
+          reg.addEventListener('updatefound', () => {
+            const newWorker = reg.installing;
+            if (!newWorker) return;
+            newWorker.addEventListener('statechange', () => {
+              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                const banner = document.getElementById('sw-update-banner');
+                const reloadBtn = document.getElementById('sw-reload-btn');
+                if (banner && reloadBtn) {
+                  banner.hidden = false;
+                  reloadBtn.onclick = () => window.location.reload();
+                }
+              }
+            });
+          });
         }).catch((err) => {
           console.warn('SW registration:', err);
         });
