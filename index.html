@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MustGo.co.ke · Ruto Receipts | Public Record Archive</title>
-  <meta name="description" content="A searchable civic archive of President William Ruto's public statements, on video, set against independent fact-checks and the public record.">
+  <meta name="description" content="A searchable civic archive of President William Ruto's public statements, on video, set against independent fact-checks, judicial rulings, and the public record.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="theme-color" content="#141414">
 
   <link rel="canonical" href="https://mustgo.co.ke/">
@@ -12,16 +13,126 @@
   <!-- OpenGraph / Social Previews (WhatsApp, X, Facebook) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MustGo.co.ke">
+  <meta property="og:locale" content="en_KE">
+  <meta property="og:locale:alternate" content="sw_KE">
   <meta property="og:title" content="MustGo.co.ke · The Ruto Receipts Archive">
   <meta property="og:description" content="What the President said, on camera, set against independent fact-checks and official records. The internet remembers.">
-  <meta property="og:url" content="https://mustgo.co.ke">
+  <meta property="og:url" content="https://mustgo.co.ke/">
   <meta property="og:image" content="https://mustgo.co.ke/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MustGo.co.ke · The Ruto Receipts Archive">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MustGo.co.ke · The Ruto Receipts Archive">
   <meta name="twitter:description" content="What the President said, on camera, set against independent fact-checks and official records.">
   <meta name="twitter:image" content="https://mustgo.co.ke/assets/og-image.png">
+  <meta name="twitter:image:alt" content="MustGo.co.ke · The Ruto Receipts Archive">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://mustgo.co.ke/#organization",
+        "name": "MustGo.co.ke",
+        "url": "https://mustgo.co.ke/",
+        "email": "mustgomail@proton.me",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://mustgo.co.ke/assets/icon-512.png",
+          "width": 512,
+          "height": 512
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://mustgo.co.ke/#website",
+        "url": "https://mustgo.co.ke/",
+        "name": "MustGo.co.ke · Ruto Receipts",
+        "description": "A searchable civic archive of President William Ruto's public statements, on video, set against independent fact-checks, judicial rulings, and the public record.",
+        "inLanguage": ["en", "sw"],
+        "publisher": { "@id": "https://mustgo.co.ke/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://mustgo.co.ke/#webpage",
+        "url": "https://mustgo.co.ke/",
+        "name": "MustGo.co.ke · Ruto Receipts | Public Record Archive",
+        "description": "A searchable civic archive of President William Ruto's public statements, on video, set against independent fact-checks, judicial rulings, and the public record.",
+        "isPartOf": { "@id": "https://mustgo.co.ke/#website" },
+        "about": { "@id": "https://mustgo.co.ke/#datacatalog" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://mustgo.co.ke/assets/og-image.png",
+          "width": 1200,
+          "height": 630
+        },
+        "inLanguage": ["en", "sw"]
+      },
+      {
+        "@type": "DataCatalog",
+        "@id": "https://mustgo.co.ke/#datacatalog",
+        "name": "MustGo.co.ke Civic Accountability Datasets",
+        "description": "Public domain datasets documenting verified statements and fact-checks, Kenyan MP voting records, judicial defiance cases, and human rights memorial records.",
+        "url": "https://mustgo.co.ke/",
+        "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "publisher": { "@id": "https://mustgo.co.ke/#organization" },
+        "dataset": [
+          {
+            "@type": "Dataset",
+            "name": "Ruto Receipts Claims & Fact-Checks",
+            "description": "Documented public statements by President William Ruto paired with independent fact-checks and official records.",
+            "url": "https://mustgo.co.ke/data/claims.json",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "distribution": {
+              "@type": "DataDownload",
+              "encodingFormat": "application/json",
+              "contentUrl": "https://mustgo.co.ke/data/claims.json"
+            }
+          },
+          {
+            "@type": "Dataset",
+            "name": "Kenyan MP Finance Bill 2024 Voting Scorecard",
+            "description": "Constituency and county voting records for Kenyan Members of Parliament on the Finance Bill 2024.",
+            "url": "https://mustgo.co.ke/data/mps.json",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "distribution": {
+              "@type": "DataDownload",
+              "encodingFormat": "application/json",
+              "contentUrl": "https://mustgo.co.ke/data/mps.json"
+            }
+          },
+          {
+            "@type": "Dataset",
+            "name": "Impunity Watch & Judicial Defiance Records",
+            "description": "Court rulings and documented instances of executive defiance in Kenya.",
+            "url": "https://mustgo.co.ke/data/impunity.json",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "distribution": {
+              "@type": "DataDownload",
+              "encodingFormat": "application/json",
+              "contentUrl": "https://mustgo.co.ke/data/impunity.json"
+            }
+          },
+          {
+            "@type": "Dataset",
+            "name": "Kenyan Civic Human Rights Memorial",
+            "description": "Memorial archive of citizens killed or disappeared during civic protests and state crackdowns.",
+            "url": "https://mustgo.co.ke/data/memorial.json",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "distribution": {
+              "@type": "DataDownload",
+              "encodingFormat": "application/json",
+              "contentUrl": "https://mustgo.co.ke/data/memorial.json"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="manifest" href="manifest.json">
