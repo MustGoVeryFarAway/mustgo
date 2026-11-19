@@ -7,10 +7,12 @@ Usage: python3 scripts/build.py [--no-fetch]
 Thumbnails come from the public fxtwitter API (api.fxtwitter.com), so no X API
 key is needed. Fetched thumbnails are cached back into claims.json.
 """
+import html
 import json
 import re
 import sys
 import urllib.request
+from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -74,6 +76,158 @@ def write_js(path, global_name, data):
     )
 
 
+VERDICT_ORDER = ("False", "Misleading", "Broken promise", "Unproven")
+DOSSIERS = [
+    ("Constitutional Violations & Impunity", "⚖️", {"constitution", "judiciary", "rule-of-law", "justice"}, {
+        "cas-50-appointments-unconstitutional", "housing-levy-unconstitutional-ruling",
+        "kdf-deployment-protesters-unconstitutional", "judiciary-threats-defiance-court-orders",
+        "shif-sha-healthcare-unconstitutional", "cabinet-50pct-women",
+        "finance-bill-2024-criminal-infiltrators-claim", "icc-cases-witness-tampering-vindication-claim",
+        "icc-paul-gicheru-witness-tampering-denial", "dp-muteshi-pev-land-ruling-2013",
+    }),
+    ("Reckless Spending & Executive Opulence", "💸", {"reckless-spending", "opulence", "austerity"}, {
+        "luxury-jet-us-state-visit-cheaper-claim", "state-house-renovations-ksh1-5bn",
+        "office-of-first-lady-budget-broken-promise", "foreign-trips-presidential-travel-austerity",
+        "controller-of-budget-budgeted-corruption", "universities-budget-ksh40bn",
+    }),
+    ("Killings, Abductions & Police Brutality", "🚨", {"police-brutality", "extrajudicial-killings", "human-rights", "killings"}, {
+        "rex-masai-live-ammunition-denial", "ssu-disbandment-river-yala-promise",
+        "parliament-shootings-restraint-claim", "abductions-give-me-names-kisumu",
+        "kware-quarry-transparent-investigation", "maandamano-2023-police-professionalism",
+        "protest-death-toll-19", "protest-deaths-six", "no-extrajudicial-killings",
+        "no-known-abductions", "dp-baby-pendo-police-denial-2017",
+        "icc-witness-meshack-yebei-murder-denial", "icc-cases-witness-tampering-vindication-claim",
+    }),
+    ("Corruption Scandals & Secret Mega-Deals", "💼", {"corruption", "mega-deals", "adani"}, {
+        "adani-jkia-deal-secrecy-denial", "adani-ketraco-power-lines-deal",
+        "fake-fertiliser-scandal-denial", "kntc-kemsa-cooking-oil-scandal",
+        "dpp-withdrawal-graft-cases-allies", "dp-arror-kimwarer-7bn-2019",
+        "minister-maize-subsidized-allocation-2009", "dp-weston-hotel-land-2018",
+        "tsc-letters-mps-state-house-distribution", "controller-of-budget-budgeted-corruption",
+        "shif-sha-healthcare-unconstitutional", "icc-paul-gicheru-witness-tampering-denial",
+        "dp-muteshi-pev-land-ruling-2013",
+    }),
+    ("Economic Ruin & Broken Promises", "📉", {"cost-of-living", "debt", "currency", "taxes", "finance-bill"}, {
+        "unga-ksh100-june-2024", "campaign-fuel-price-reduction-2022",
+        "campaign-dollar-fall-to-120", "campaign-no-more-borrowing-2022",
+        "campaign-2022-hustler-fund-interest-free", "sona-2023-unga-145-175",
+        "dp-stadiums-six-months-2017", "dp-laptops-class-one-2013",
+        "dp-galana-kulalu-1m-acres", "dp-jubilee-1-3m-jobs-2017",
+        "dp-free-secondary-education-2014", "dp-57-mega-dams-2016",
+        "jss-intern-teachers-permanent-promise",
+    }),
+    ("Abuse of Power, Co-optation & Tribalism", "👥", {"abuse-of-power", "shareholding", "ethnicity", "patronage"}, {
+        "shareholding-government-equal-service-denial", "vernacular-mobilization-one-kenya-contradiction",
+        "buying-opposition-mps-cooptation-denial", "tsc-letters-mps-state-house-distribution",
+        "judiciary-threats-defiance-court-orders", "dpp-withdrawal-graft-cases-allies",
+        "cas-50-appointments-unconstitutional", "icc-paul-gicheru-witness-tampering-denial",
+        "icc-cases-witness-tampering-vindication-claim",
+    }),
+]
+
+
+def fmt_date(raw):
+    if not raw:
+        return "Date unknown"
+    approx = raw.startswith("~")
+    clean = raw.lstrip("~")
+    out = clean
+    for fmt in ("%Y-%m-%d", "%Y-%m", "%Y"):
+        try:
+            dt = datetime.strptime(clean, fmt)
+            out = f"{dt.day} {dt.strftime('%b %Y')}"
+            break
+        except ValueError:
+            continue
+    return f"c. {out}" if approx else out
+
+
+def render_claim_card(c):
+    esc = lambda s: html.escape(str(s or ""), quote=True)
+    quote = c.get("quote") or ""
+    quote_short = quote[:130] + ("…" if len(quote) > 130 else "")
+    has_video = bool(c.get("tweet_url"))
+    thumb_cls = "thumb" if has_video else "thumb no-video"
+    img = f'<img src="{esc(c["thumbnail"])}" alt="" loading="lazy" onerror="this.remove()">' if c.get("thumbnail") else ""
+    video_tag = '<span class="video-status-tag">▶ Video Clip</span>' if has_video else '<span class="video-status-tag">📜 Record</span>'
+
+    dossier_badge = ""
+    c_tags = set(c.get("tags") or [])
+    for name, icon, tags, ids in DOSSIERS:
+        if c.get("id") in ids or (c_tags & tags):
+            dossier_badge = f'<span class="tag-pill tag-dossier" title="{esc(name)}">{icon} {esc(name.split(" ")[0])}</span>'
+            break
+
+    tag_pills = "".join(f'<span class="tag-pill">#{esc(t)}</span>' for t in (c.get("tags") or [])[:2])
+    ctx = f" · {esc(c['context'])}" if c.get("context") else ""
+    verdict = c.get("verdict") or ""
+    return (
+        f'<li class="card" tabindex="0">'
+        f'<div class="{thumb_cls}">'
+        f'<div class="fallback">{esc(quote_short)}</div>'
+        f'{img}'
+        f'<span class="badge" data-v="{esc(verdict)}">{esc(verdict)}</span>'
+        f'<span class="play" aria-hidden="true"></span>'
+        f'{video_tag}'
+        f'</div>'
+        f'<div class="body">'
+        f'<h2>{esc(c.get("title"))}</h2>'
+        f'<p class="meta">{esc(fmt_date(c.get("date")))}{ctx}</p>'
+        f'<div class="tags-list">{dossier_badge}{tag_pills}</div>'
+        f'</div>'
+        f'</li>'
+    )
+
+
+def prerender_index(claims):
+    index_path = ROOT / "index.html"
+    if not index_path.exists() or not claims:
+        return
+
+    total = len(claims)
+    counts = {v: 0 for v in VERDICT_ORDER}
+    for c in claims:
+        v = c.get("verdict")
+        counts[v] = counts.get(v, 0) + 1
+
+    debunked = counts.get("False", 0) + counts.get("Misleading", 0)
+    debunked_pct = round((debunked / total) * 100)
+    sc_summary = f"{total} Statements · {debunked_pct}% Debunked (False + Misleading)"
+
+    sc_bar = "".join(
+        f'<div class="score-seg" data-v="{html.escape(v, quote=True)}" style="width: {(counts[v] / total) * 100:.1f}%" '
+        f'title="{html.escape(v, quote=True)}: {counts[v]} ({(counts[v] / total) * 100:.1f}%) - Click to filter"></div>'
+        for v in VERDICT_ORDER if counts.get(v)
+    )
+    sc_pills = "".join(
+        f'<button type="button" class="score-pill" data-v="{html.escape(v, quote=True)}" aria-pressed="false">'
+        f'<span class="dot"></span><span>{html.escape(v, quote=True)}</span> '
+        f'<strong>{counts[v]}</strong> <span class="meta">({round((counts[v] / total) * 100)}%)</span></button>'
+        for v in VERDICT_ORDER if counts.get(v)
+    )
+
+    sorted_claims = sorted(claims, key=lambda c: (c.get("date") or "").replace("~", ""), reverse=True)
+    grid_html = "\n      " + "\n      ".join(render_claim_card(c) for c in sorted_claims) + "\n    "
+    count_html = f"{total} of {total} receipts"
+
+    sections = {
+        "SC_SUMMARY": sc_summary,
+        "SC_BAR": sc_bar,
+        "SC_PILLS": sc_pills,
+        "COUNT": count_html,
+        "GRID": grid_html,
+    }
+
+    original = index_path.read_text(encoding="utf-8")
+    updated = original
+    for key, content in sections.items():
+        pattern = re.compile(rf"(<!-- PRERENDER:{key} -->).*?(<!-- /PRERENDER:{key} -->)", re.S)
+        updated = pattern.sub(lambda m, val=content: f"{m.group(1)}{val}{m.group(2)}", updated, count=1)
+
+    if updated != original:
+        index_path.write_text(updated, encoding="utf-8")
+
+
 def main():
     claims_src = DATA_DIR / "claims.json"
     mps_src = DATA_DIR / "mps.json"
@@ -117,6 +271,7 @@ def main():
     write_js(DATA_DIR / "mps.js", "MPS", mps)
     write_js(DATA_DIR / "impunity.js", "IMPUNITY_CASES", impunity)
     write_js(DATA_DIR / "memorial.js", "MEMORIAL_RECORDS", memorial)
+    prerender_index(claims)
 
     with_video = sum(1 for c in claims if c.get("tweet_url"))
     print(f"Validated & wrote {len(claims)} claims ({with_video} with video), {len(mps)} MPs, {len(impunity)} impunity cases, {len(memorial)} memorial records.")
