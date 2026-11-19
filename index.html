@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MustGo.co.ke · Ruto Receipts | Public Record Archive</title>
+  <meta name="description" content="A searchable civic archive of President William Ruto's public statements, on video, set against independent fact-checks and the public record.">
+  <meta name="theme-color" content="#141414">
+
+  <!-- OpenGraph / Social Previews (WhatsApp, X, Facebook) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MustGo.co.ke">
+  <meta property="og:title" content="MustGo.co.ke · The Ruto Receipts Archive">
+  <meta property="og:description" content="What the President said, on camera, set against independent fact-checks and official records. The internet remembers.">
+  <meta property="og:url" content="https://mustgo.co.ke">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MustGo.co.ke · The Ruto Receipts Archive">
+  <meta name="twitter:description" content="What the President said, on camera, set against independent fact-checks and official records.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <!-- Kenyan flag stripe -->
+  <div class="flag-stripe" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="wrap">
+      <div class="top-nav">
+        <div class="domain-badge">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span class="domain-text">mustgo.co.ke</span>
+          <span class="domain-subtag">receipts</span>
+        </div>
+        <div class="header-actions">
+          <span id="offline-pill" class="offline-pill" hidden title="Running in offline mode">
+            <span class="offline-dot"></span> Offline
+          </span>
+          <button id="lang-toggle" class="btn btn-outline btn-sm lang-btn" type="button" aria-label="Toggle language between English and Kiswahili" title="Badili Lugha / Toggle English &amp; Kiswahili">
+            <span class="lang-flag" aria-hidden="true">🇰🇪</span>
+            <span id="lang-text">KISWAHILI</span>
+          </button>
+          <button id="pwa-install-btn" class="btn btn-outline btn-sm pwa-btn" type="button" hidden title="Install MustGo App">
+            <span class="btn-icon">📲</span> <span id="pwa-text">App</span>
+          </button>
+          <button id="theme-toggle" class="btn btn-outline btn-sm theme-btn" type="button" aria-label="Toggle dark/light theme" title="Toggle theme">
+            <span class="theme-icon-light" aria-hidden="true">☀️</span>
+            <span class="theme-icon-dark" aria-hidden="true">🌙</span>
+            <span class="theme-text">Theme</span>
+          </button>
+          <button id="open-chargesheet" class="btn btn-charge btn-sm" type="button" title="View executive charge sheet and factsheet">
+            <span class="btn-icon">📋</span> <span data-i18n="nav_chargesheet">Charge Sheet</span>
+          </button>
+          <button id="open-submit" class="btn btn-primary btn-sm">
+            <span class="btn-icon">＋</span> <span data-i18n="nav_submit">Submit a Receipt</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <div class="kicker-pill">
+          <span class="kicker-flag">🇰🇪</span>
+          <span class="kicker-text">Civic Accountability & Campaign Archive · Kenya</span>
+        </div>
+        <h1>MustGo <span>Receipts</span></h1>
+        <p class="lede">What President William Ruto said on camera, set against independent fact-checks, judicial rulings, and official state audits. Documenting corruption, constitutional breaches, police brutality, and broken promises.</p>
+        <div class="hero-actions">
+          <button id="hero-chargesheet-btn" class="btn btn-primary btn-sm" type="button">
+            <span class="btn-icon">📋</span> View Executive Charge Sheet
+          </button>
+          <a href="#dossiers-section" class="btn btn-outline btn-sm">
+            <span class="btn-icon">📁</span> Explore 6 Campaign Dossiers
+          </a>
+        </div>
+      </div>
+
+      <!-- Scorecard / Truth Meter -->
+      <section class="scorecard" aria-label="Verification Summary">
+        <div class="scorecard-header">
+          <div class="scorecard-title">
+            <span class="scorecard-icon">⚖️</span>
+            <strong>The Record Scorecard</strong>
+          </div>
+          <div id="sc-summary" class="scorecard-summary">Loading record...</div>
+        </div>
+        <div id="sc-bar" class="score-bar" role="progressbar" aria-label="Distribution of verdicts"></div>
+        <div id="sc-pills" class="score-pills"></div>
+      </section>
+    </div>
+  </header>
+
+  <!-- Civic Navigation Hub -->
+  <nav class="hub-nav wrap" aria-label="Civic Navigation Hub">
+    <button class="hub-tab active" id="tab-btn-receipts" data-tab="receipts" type="button">
+      <span class="hub-icon">🧾</span>
+      <span class="hub-label" data-i18n="nav_receipts">Receipts Archive</span>
+      <span class="hub-badge" id="hub-count-receipts">75</span>
+    </button>
+    <button class="hub-tab" id="tab-btn-mps" data-tab="mps" type="button">
+      <span class="hub-icon">🗳️</span>
+      <span class="hub-label" data-i18n="nav_mps">Find Your MP</span>
+      <span class="hub-badge" id="hub-count-mps">217</span>
+    </button>
+    <button class="hub-tab" id="tab-btn-impunity" data-tab="impunity" type="button">
+      <span class="hub-icon">⚖️</span>
+      <span class="hub-label" data-i18n="nav_impunity">Impunity Watch</span>
+      <span class="hub-badge" id="hub-count-impunity">10</span>
+    </button>
+    <button class="hub-tab" id="tab-btn-memorial" data-tab="memorial" type="button">
+      <span class="hub-icon">🕊️</span>
+      <span class="hub-label" data-i18n="nav_memorial">Memorial of Courage</span>
+      <span class="hub-badge" id="hub-count-memorial">13</span>
+    </button>
+  </nav>
+
+  <!-- Tab Section 1: Receipts Archive -->
+  <div id="section-receipts" class="tab-section">
+    <!-- Campaign Thematic Dossiers -->
+    <section id="dossiers-section" class="dossiers-section wrap" aria-label="Campaign Dossiers">
+    <div class="dossiers-header">
+      <div class="dossiers-title-group">
+        <span class="dossiers-kicker">CIVIC CAMPAIGN DOSSIERS</span>
+        <h2>The Record by Category of Misrule</h2>
+      </div>
+      <p class="dossiers-intro">Select a pillar below to filter verified receipts by specific constitutional violations, corruption scandals, or state abuses.</p>
+    </div>
+    
+    <div id="dossiers-grid" class="dossiers-grid">
+      <button class="dossier-card" type="button" data-dossier="constitution">
+        <div class="dossier-top">
+          <span class="dossier-icon">⚖️</span>
+          <span class="dossier-count" id="count-dossier-constitution">10</span>
+        </div>
+        <h3 class="dossier-name">Constitutional Violations & Impunity</h3>
+        <p class="dossier-desc">Defiance of court orders, 50 illegal CASs, Housing Levy & SHIF strike-downs & ICC witness tampering mistrial.</p>
+        <span class="dossier-arrow">Explore Dossier →</span>
+      </button>
+
+      <button class="dossier-card" type="button" data-dossier="spending">
+        <div class="dossier-top">
+          <span class="dossier-icon">💸</span>
+          <span class="dossier-count" id="count-dossier-spending">7</span>
+        </div>
+        <h3 class="dossier-name">Reckless Spending & Opulence</h3>
+        <p class="dossier-desc">Boeing 737 luxury jet, KSh 1.5B State House renovations, 62+ foreign trips & unconstitutional spouse office budgets.</p>
+        <span class="dossier-arrow">Explore Dossier →</span>
+      </button>
+
+      <button class="dossier-card" type="button" data-dossier="killings">
+        <div class="dossier-top">
+          <span class="dossier-icon">🚨</span>
+          <span class="dossier-count" id="count-dossier-killings">14</span>
+        </div>
+        <h3 class="dossier-name">Killings, Abductions & Brutality</h3>
+        <p class="dossier-desc">Rex Masai, Evans Kiratu, Parliament live bullets, Mukuru Kware bodies & ICC witness deaths (Meshack Yebei).</p>
+        <span class="dossier-arrow">Explore Dossier →</span>
+      </button>
+
+      <button class="dossier-card" type="button" data-dossier="corruption">
+        <div class="dossier-top">
+          <span class="dossier-icon">💼</span>
+          <span class="dossier-count" id="count-dossier-corruption">13</span>
+        </div>
+        <h3 class="dossier-name">Corruption & Secret Mega-Deals</h3>
+        <p class="dossier-desc">Secret Adani concessions, fake fertiliser, KSh 16.5B cooking oil & ICC witness bribery syndicate.</p>
+        <span class="dossier-arrow">Explore Dossier →</span>
+      </button>
+
+      <button class="dossier-card" type="button" data-dossier="economy">
+        <div class="dossier-top">
+          <span class="dossier-icon">📉</span>
+          <span class="dossier-count" id="count-dossier-economy">16</span>
+        </div>
+        <h3 class="dossier-name">Economic Ruin & Broken Promises</h3>
+        <p class="dossier-desc">KSh 100 Unga, 16% fuel VAT, dollar crash to 163, zero borrowing pledge broken, Hustler Fund 8% interest.</p>
+        <span class="dossier-arrow">Explore Dossier →</span>
+      </button>
+
+      <button class="dossier-card" type="button" data-dossier="abuse_power">
+        <div class="dossier-top">
+          <span class="dossier-icon">👥</span>
+          <span class="dossier-count" id="count-dossier-abuse_power">11</span>
+        </div>
+        <h3 class="dossier-name">Abuse of Power & Tribalism</h3>
+        <p class="dossier-desc">Ethnic shareholding doctrine, State House MP patronage, buying opposition & subverting ICC investigations.</p>
+        <span class="dossier-arrow">Explore Dossier →</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Filter & Search Controls -->
+  <nav class="controls wrap" aria-label="Filters">
+    <div class="search-box">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <input id="search" type="search" placeholder="Search quotes, topics, places (e.g. unga, budget, jobs)..." autocomplete="off" spellcheck="false">
+      <kbd class="search-kbd" title="Press / to search">/</kbd>
+      <button id="clear-search" class="clear-btn" type="button" aria-label="Clear search" hidden>×</button>
+    </div>
+
+    <div class="chips-group">
+      <span class="chips-label">Verdict:</span>
+      <div id="verdicts" class="chips" role="group" aria-label="Filter by Verdict"></div>
+    </div>
+
+    <div class="chips-group">
+      <span class="chips-label">Topic:</span>
+      <div id="tags" class="chips" role="group" aria-label="Filter by Topic"></div>
+    </div>
+
+    <div class="row">
+      <div class="active-filters-info">
+        <span id="count" class="count"></span>
+        <button id="reset-filters" class="btn-text" type="button" hidden>Reset all filters</button>
+      </div>
+      <label class="sort">Sort
+        <select id="sort">
+          <option value="new">Newest first</option>
+          <option value="old">Oldest first</option>
+        </select>
+      </label>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <!-- Active Dossier Banner (Shown when a dossier is selected) -->
+    <div id="dossier-banner" class="dossier-banner" hidden>
+      <div class="dossier-banner-content">
+        <span id="db-icon" class="dossier-banner-icon">⚖️</span>
+        <div>
+          <div class="dossier-banner-top">
+            <span class="dossier-pill-tag">ACTIVE CAMPAIGN DOSSIER</span>
+            <span id="db-count" class="dossier-banner-count"></span>
+          </div>
+          <h2 id="db-title" class="dossier-banner-title"></h2>
+          <p id="db-desc" class="dossier-banner-desc"></p>
+        </div>
+      </div>
+      <div class="dossier-banner-actions">
+        <button id="db-share-wa" class="btn btn-wa btn-sm" type="button" title="Share dossier summary on WhatsApp">
+          <span class="btn-icon">💬</span> WhatsApp
+        </button>
+        <button id="db-share-x" class="btn btn-x btn-sm" type="button" title="Share dossier on X">
+          <span class="btn-icon">𝕏</span> Post on X
+        </button>
+        <button id="db-clear" class="btn btn-outline btn-sm" type="button" title="View all receipts">
+          ✕ Clear Dossier
+        </button>
+      </div>
+    </div>
+
+    <ul id="grid" class="grid"></ul>
+    <div id="empty" class="empty" hidden>
+      <div class="empty-icon">📂</div>
+      <h3>No matching receipts found</h3>
+      <p>Try searching for a different keyword or resetting your filters.</p>
+      <button id="empty-reset-btn" class="btn btn-outline" type="button">Show all receipts</button>
+    </div>
+  </main>
+  </div><!-- /#section-receipts -->
+
+  <!-- Tab Section 2: Find Your MP Scorecard -->
+  <section id="section-mps" class="tab-section wrap" hidden aria-label="Find Your MP Scorecard">
+    <div class="section-hero-header">
+      <div class="kicker-pill">
+        <span class="kicker-flag">🗳️</span>
+        <span class="kicker-text" data-i18n="mp_kicker">PARLIAMENTARY ACCOUNTABILITY · 290 CONSTITUENCIES</span>
+      </div>
+      <h2 data-i18n="nav_mps">Find Your MP · Voting Scorecard</h2>
+      <p class="section-lead" data-i18n="mp_sub">
+        Did your representative vote with you or against you? Review how MPs voted on the historic Finance Bill 2024, the Affordable Housing Levy, and SHIF. Track their official voting records on key legislation.
+      </p>
+    </div>
+
+    <!-- MP Controls -->
+    <div class="mp-controls">
+      <div class="search-box">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input id="mp-search" type="search" placeholder="Search MP by name, constituency, or county (e.g. Kikuyu, Babu, Nairobi)..." autocomplete="off" spellcheck="false">
+        <button id="clear-mp-search" class="clear-btn" type="button" aria-label="Clear search" hidden>×</button>
+      </div>
+
+      <div class="chips-group">
+        <span class="chips-label" data-i18n="mp_vote_label">Finance Bill 2024 Vote:</span>
+        <div id="mp-vote-filters" class="chips" role="group" aria-label="Filter by Vote">
+          <button class="chip active" data-vote="all" type="button"><span data-i18n="mp_filter_all">All MPs</span> (<span id="mp-count-all">217</span>)</button>
+          <button class="chip chip-yes" data-vote="YES" type="button"><span data-i18n="mp_filter_yes">Voted YES · Passed Tax</span> (<span id="mp-count-yes">144</span>)</button>
+          <button class="chip chip-no" data-vote="NO" type="button"><span data-i18n="mp_filter_no">Voted NO · Rejected Tax</span> (<span id="mp-count-no">73</span>)</button>
+        </div>
+      </div>
+
+      <div class="chips-group">
+        <span class="chips-label">Counties:</span>
+        <div id="mp-county-filters" class="chips" role="group" aria-label="Filter by County">
+          <!-- Populated by app.js -->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="active-filters-info">
+          <span id="mp-results-count" class="count">Showing 217 MPs</span>
+          <button id="mp-reset-filters" class="btn-text" type="button" hidden>Reset filters</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MP Grid -->
+    <div id="mp-grid" class="mp-grid"></div>
+    <div id="mp-empty" class="empty" hidden>
+      <div class="empty-icon">🗳️</div>
+      <h3>No matching MPs found</h3>
+      <p>Try searching for a different constituency, MP name, or county.</p>
+      <button id="mp-empty-reset-btn" class="btn btn-outline" type="button">Show all MPs</button>
+    </div>
+  </section>
+
+  <!-- Tab Section 3: Impunity Watch (Judicial Defiance Index) -->
+  <section id="section-impunity" class="tab-section wrap" hidden aria-label="Impunity Watch">
+    <div class="section-hero-header">
+      <div class="kicker-pill">
+        <span class="kicker-flag">⚖️</span>
+        <span class="kicker-text">RULE OF LAW · JUDICIAL DEFIANCE INDEX</span>
+      </div>
+      <h2>Impunity Watch · The Judicial Defiance Index</h2>
+      <p class="section-lead">
+        A forensic register of High Court, Court of Appeal, and Supreme Court rulings overturned, ignored, or circumvented by the Executive.
+      </p>
+    </div>
+
+    <!-- Impunity Overview Metrics -->
+    <div class="impunity-stats-grid">
+      <div class="impunity-stat-card">
+        <span class="impunity-stat-icon">📜</span>
+        <span class="impunity-stat-num">10</span>
+        <span class="impunity-stat-label">Landmark Rulings Tracked</span>
+      </div>
+      <div class="impunity-stat-card">
+        <span class="impunity-stat-icon">🏛️</span>
+        <span class="impunity-stat-num">4</span>
+        <span class="impunity-stat-label">High Court Benches Defied</span>
+      </div>
+      <div class="impunity-stat-card">
+        <span class="impunity-stat-icon">⚠️</span>
+        <span class="impunity-stat-num">Art. 10 &amp; 201</span>
+        <span class="impunity-stat-label">Most Violated Articles</span>
+      </div>
+      <div class="impunity-stat-card">
+        <span class="impunity-stat-icon">🛡️</span>
+        <span class="impunity-stat-num">100%</span>
+        <span class="impunity-stat-label">Official Kenya Law Citations</span>
+      </div>
+    </div>
+
+    <!-- Impunity Filter Chips -->
+    <div class="chips-group impunity-filters">
+      <span class="chips-label">Filter Status:</span>
+      <div id="impunity-filters" class="chips" role="group" aria-label="Filter by Status">
+        <button class="chip active" data-status="all" type="button">All Rulings</button>
+        <button class="chip" data-status="DEFYING COURT ORDER" type="button">Defying Court Order</button>
+        <button class="chip" data-status="CIRCUMVENTED" type="button">Circumvented via Backdoor</button>
+        <button class="chip" data-status="CONSERVATORY INJUNCTION ACTIVE" type="button">Active Injunction</button>
+      </div>
+    </div>
+
+    <!-- Impunity Cards List -->
+    <div id="impunity-list" class="impunity-list"></div>
+  </section>
+
+  <!-- Tab Section 4: The Memorial of Courage -->
+  <section id="section-memorial" class="tab-section wrap" hidden aria-label="Memorial of Courage">
+    <div class="section-hero-header">
+      <div class="kicker-pill kicker-memorial">
+        <span class="kicker-flag">🕊️</span>
+        <span class="kicker-text">IN MEMORIAM · JUSTICE FOR THE BRAVE</span>
+      </div>
+      <h2>The Memorial of Courage · Victims of Injustice</h2>
+      <p class="section-lead">
+        Remembering the peaceful Kenyans shot dead, assaulted, or abducted in the fight for economic justice and constitutional freedom. We document their names, stories, and the status of justice.
+      </p>
+    </div>
+
+    <!-- Memorial Filter Chips -->
+    <div class="chips-group memorial-filters">
+      <span class="chips-label">Category:</span>
+      <div id="memorial-filters" class="chips" role="group" aria-label="Filter by Category">
+        <button class="chip active" data-cat="all" type="button">All Memorial Records</button>
+        <button class="chip" data-cat="Police Killings" type="button">Protest Deaths (Live Rounds)</button>
+        <button class="chip" data-cat="Enforced Abduction" type="button">Enforced Abductions</button>
+        <button class="chip" data-cat="Police Brutality" type="button">Police Brutality</button>
+      </div>
+    </div>
+
+    <!-- Memorial Cards Grid -->
+    <div id="memorial-grid" class="memorial-grid"></div>
+  </section>
+
+  <!-- Receipt Viewer Modal (Mobile Bottom-Sheet & Desktop Dialog) -->
+  <dialog id="viewer" aria-labelledby="v-title">
+    <div class="mobile-drawer-handle" aria-hidden="true"></div>
+    <div class="dialog-inner">
+      <div class="dialog-header">
+        <div class="dialog-nav-buttons">
+          <button id="v-prev" class="btn-icon-nav" aria-label="Previous receipt" title="Previous (←)">←</button>
+          <button id="v-next" class="btn-icon-nav" aria-label="Next receipt" title="Next (→)">→</button>
+          <span id="v-position" class="dialog-position-count"></span>
+        </div>
+        <button class="close" aria-label="Close dialog">×</button>
+      </div>
+
+      <article>
+        <div class="viewer-top-meta">
+          <span id="v-verdict" class="badge"></span>
+          <span id="v-id" class="receipt-id-tag"></span>
+        </div>
+
+        <h2 id="v-title"></h2>
+        <p id="v-meta" class="meta"></p>
+        
+        <blockquote id="v-quote"></blockquote>
+
+        <!-- Embed or Video Fallback Plaque -->
+        <div id="v-embed" class="embed"></div>
+        <p id="v-clipnote" class="meta" hidden></p>
+
+        <section class="reality">
+          <div class="reality-header">
+            <h3 data-i18n="what_record_shows">What the record shows</h3>
+            <span class="verified-stamp" data-i18n="verified_record">✓ Verified Record</span>
+          </div>
+          <p id="v-reality"></p>
+          <div class="links">
+            <a id="v-check" target="_blank" rel="noopener" class="link-btn primary-link">
+              <span data-i18n="read_factcheck">Read the Fact-Check ↗</span>
+            </a>
+            <a id="v-tweet" target="_blank" rel="noopener" class="link-btn secondary-link" hidden style="display: none;">
+              <span data-i18n="original_x_post">Original Post on X ↗</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- Social Sharing & Receipt Generator Actions -->
+        <section class="viewer-actions" aria-label="Share and Download">
+          <div class="action-buttons">
+            <button id="btn-share-wa" class="btn btn-wa" type="button" title="Share receipt to WhatsApp">
+              <span class="btn-icon">💬</span> WhatsApp
+            </button>
+            <button id="btn-share-x" class="btn btn-x" type="button" title="Share receipt to X">
+              <span class="btn-icon">𝕏</span> <span data-i18n="btn_share_x">Share on X</span>
+            </button>
+            <button id="btn-copy-link" class="btn btn-outline" type="button" title="Copy direct link to this receipt">
+              <span class="btn-icon">🔗</span> <span id="copy-text" data-i18n="btn_copy_link">Copy Link</span>
+            </button>
+            <button id="btn-download-slip" class="btn btn-receipt" type="button" title="Generate and download image receipt">
+              <span class="btn-icon">🧾</span> <span id="download-text" data-i18n="btn_download_receipt">Download Receipt</span>
+            </button>
+          </div>
+        </section>
+      </article>
+    </div>
+  </dialog>
+
+  <!-- Submit a Receipt Modal -->
+  <dialog id="submit-dialog" aria-labelledby="sub-title">
+    <div class="mobile-drawer-handle" aria-hidden="true"></div>
+    <div class="dialog-inner">
+      <div class="dialog-header">
+        <h2 id="sub-title">Submit a Public Receipt</h2>
+        <button class="close" aria-label="Close submit dialog">×</button>
+      </div>
+
+      <form id="submit-form" class="submit-form">
+        <p class="form-lede">Have a video clip of a statement made by the President, along with an independent fact-check or official record? Submit it here to be archived on <strong>mustgo.co.ke</strong>.</p>
+        
+        <label class="form-label">
+          <span>Claim Headline *</span>
+          <input type="text" id="sub-headline" placeholder="e.g. Claimed price of maize flour is KSh100" required>
+        </label>
+
+        <label class="form-label">
+          <span>Quote (as verbatim as possible) *</span>
+          <textarea id="sub-quote" rows="3" placeholder="What was said..." required></textarea>
+        </label>
+
+        <div class="form-row">
+          <label class="form-label">
+            <span>Date *</span>
+            <input type="date" id="sub-date" required>
+          </label>
+          <label class="form-label">
+            <span>Context / Location</span>
+            <input type="text" id="sub-context" placeholder="e.g. State House roundtable, church service">
+          </label>
+        </div>
+
+        <label class="form-label">
+          <span>Video Clip URL (X, YouTube, TikTok)</span>
+          <input type="url" id="sub-video" placeholder="https://x.com/... or https://youtube.com/...">
+        </label>
+
+        <label class="form-label">
+          <span>Fact-Check or Official Record URL *</span>
+          <input type="url" id="sub-factcheck" placeholder="https://africacheck.org/... or KNBS/Hansard link" required>
+          <small class="form-hint">Verdicts must be backed by an accredited fact-checker or official government reporting.</small>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" id="btn-submit-github" class="btn btn-primary">
+            <span>Open as GitHub Issue ↗</span>
+          </button>
+          <button type="button" id="btn-copy-submission" class="btn btn-outline">
+            <span>Copy Submission Text</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Executive Charge Sheet Dialog -->
+  <dialog id="chargesheet-dialog" class="chargesheet-dialog" aria-labelledby="cs-title">
+    <div class="mobile-drawer-handle" aria-hidden="true"></div>
+    <div class="dialog-inner chargesheet-inner">
+      <div class="dialog-header">
+        <div class="chargesheet-title-wrap">
+          <span class="kicker-flag">🇰🇪</span>
+          <div>
+            <span class="cs-top-tag">OFFICIAL CIVIC DOSSIER</span>
+            <h2 id="cs-title">The Executive Charge Sheet · Ruto Administration</h2>
+          </div>
+        </div>
+        <button class="close" aria-label="Close charge sheet dialog">×</button>
+      </div>
+
+      <div class="chargesheet-body">
+        <div class="chargesheet-lead-box">
+          <p class="chargesheet-lead-text">
+            A comprehensive, verified record compiling judicial rulings, Controller of Budget reports, Auditor-General findings, and independent fact-checks against the current Kenyan administration.
+          </p>
+          <div class="chargesheet-stats-row">
+            <div class="cs-stat">
+              <span class="cs-stat-num" id="cs-total-count">75</span>
+              <span class="cs-stat-label">Documented Receipts</span>
+            </div>
+            <div class="cs-stat">
+              <span class="cs-stat-num">6+</span>
+              <span class="cs-stat-label">High Court Overturns</span>
+            </div>
+            <div class="cs-stat">
+              <span class="cs-stat-num">KSh 300B+</span>
+              <span class="cs-stat-label">Opaque Mega-Deals</span>
+            </div>
+            <div class="cs-stat">
+              <span class="cs-stat-num">60+</span>
+              <span class="cs-stat-label">Documented Deaths</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 Thematic Indictment Blocks -->
+        <div class="cs-sections-list" id="cs-sections-list">
+          <!-- Dynamically populated by app.js -->
+        </div>
+
+        <div class="chargesheet-footer-actions">
+          <button id="cs-btn-copy" class="btn btn-primary" type="button">
+            <span class="btn-icon">📋</span> <span id="cs-copy-text">Copy Full Campaign Factsheet</span>
+          </button>
+          <button id="cs-btn-wa" class="btn btn-wa" type="button">
+            <span class="btn-icon">💬</span> Share Factsheet on WhatsApp
+          </button>
+          <button id="cs-btn-print" class="btn btn-outline" type="button">
+            <span class="btn-icon">🖨️</span> Print / Save PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <!-- Footer with Methodology & Disclaimer -->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-col">
+          <div class="foot-brand">
+            <span class="live-dot" aria-hidden="true"></span>
+            <h4>MustGo.co.ke</h4>
+          </div>
+          <p>A non-partisan civic archive dedicated to public accountability, factual accuracy, and institutional memory in Kenya.</p>
+          <p class="foot-tagline">"The internet never forgets."</p>
+        </div>
+        <div class="foot-col">
+          <h4>Standards & Sources</h4>
+          <p>Verdicts on this site belong to accredited independent fact-checkers (such as Africa Check, PesaCheck) and official state records (KNBS, Parliament Hansard, Auditor General reports), not editorial opinions.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Corrections & Open Data</h4>
+          <p>Spotted a factual error or have an update? <a href="#submit" id="foot-submit-link">Submit a correction</a> or open a pull request. Datasets are licensed under Public Domain.</p>
+          <div class="open-data-links">
+            <a href="data/claims.json" target="_blank" class="open-data-link">claims.json ↗</a> ·
+            <a href="data/mps.json" target="_blank" class="open-data-link">mps.json ↗</a> ·
+            <a href="data/impunity.json" target="_blank" class="open-data-link">impunity.json ↗</a> ·
+            <a href="data/memorial.json" target="_blank" class="open-data-link">memorial.json ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <p>© MustGo.co.ke · Public Domain Archive · Built for Kenyan Civic Accountability</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/i18n.js"></script>
+  <script src="data/claims.js"></script>
+  <script src="data/mps.js"></script>
+  <script src="data/impunity.js"></script>
+  <script src="data/memorial.js"></script>
+  <script src="assets/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').then((reg) => {
+          console.log('MustGo ServiceWorker active:', reg.scope);
+        }).catch((err) => {
+          console.warn('SW registration:', err);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
