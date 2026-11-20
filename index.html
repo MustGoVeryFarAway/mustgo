@@ -6,8 +6,8 @@
   <title>MustGo.co.ke · Ruto Receipts | Public Record Archive</title>
   <meta name="description" content="A searchable civic archive of President William Ruto's public statements, on video, set against independent fact-checks, judicial rulings, and the public record.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <meta name="theme-color" content="#f8f7f3" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0b0b0c" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0c0c0b" media="(prefers-color-scheme: dark)">
 
   <link rel="canonical" href="https://mustgo.co.ke/">
 
@@ -152,7 +152,7 @@
   <link rel="apple-touch-icon" href="assets/icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600..900;1,9..144,600..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -197,70 +197,87 @@
         </div>
       </div>
 
-      <div class="hero-content">
-        <div class="kicker-pill">
-          <span class="kicker-flag">🇰🇪</span>
-          <span class="kicker-text" data-i18n="kicker">Civic Accountability &amp; Campaign Archive · Kenya</span>
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="kicker-pill">
+            <span class="kicker-flag">🇰🇪</span>
+            <span class="kicker-text" data-i18n="kicker">Civic Accountability &amp; Campaign Archive · Kenya</span>
+          </div>
+          <h1><span data-i18n="hero_h1_main">MustGo</span> <span data-i18n="hero_h1_sub">Receipts</span></h1>
+          <p class="lede" data-i18n="hero_lede">What President William Ruto said on camera, set against independent fact-checks, judicial rulings, and official state audits. Documenting corruption, constitutional breaches, police brutality, and broken promises.</p>
+          <div class="hero-actions">
+            <button id="hero-chargesheet-btn" class="btn btn-accent" type="button">
+              <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <span>View Executive Charge Sheet</span>
+            </button>
+            <a href="#dossiers-section" class="btn btn-outline">
+              <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              <span>Explore 6 Campaign Dossiers</span>
+            </a>
+          </div>
         </div>
-        <h1><span data-i18n="hero_h1_main">MustGo</span> <span data-i18n="hero_h1_sub">Receipts</span></h1>
-        <p class="lede" data-i18n="hero_lede">What President William Ruto said on camera, set against independent fact-checks, judicial rulings, and official state audits. Documenting corruption, constitutional breaches, police brutality, and broken promises.</p>
-        <div class="hero-actions">
-          <button id="hero-chargesheet-btn" class="btn btn-accent" type="button">
-            <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-            <span>View Executive Charge Sheet</span>
-          </button>
-          <a href="#dossiers-section" class="btn btn-outline">
-            <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-            <span>Explore 6 Campaign Dossiers</span>
-          </a>
-        </div>
-      </div>
 
-      <!-- Scorecard / Truth Meter -->
-      <section class="scorecard" aria-label="Verification Summary">
-        <div class="scorecard-header">
-          <div class="scorecard-title">
-            <span class="scorecard-icon-box" aria-hidden="true">
-              <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
-            </span>
-            <strong data-i18n="scorecard_title">The Record Scorecard</strong>
+        <!-- Scorecard / Truth Meter -->
+        <section class="scorecard" aria-label="Verification Summary">
+          <div class="scorecard-header">
+            <div class="scorecard-title">
+              <span class="scorecard-icon-box" aria-hidden="true">
+                <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+              </span>
+              <strong data-i18n="scorecard_title">The Record Scorecard</strong>
+            </div>
+            <span class="scorecard-stamp">PUBLIC AUDIT</span>
           </div>
           <div id="sc-summary" class="scorecard-summary"><!-- PRERENDER:SC_SUMMARY -->84 Statements · 71% Debunked (False + Misleading)<!-- /PRERENDER:SC_SUMMARY --></div>
-        </div>
-        <div id="sc-bar" class="score-bar" role="progressbar" aria-label="Distribution of verdicts"><!-- PRERENDER:SC_BAR --><div class="score-seg" data-v="False" style="width: 50.0%" title="False: 42 (50.0%) - Click to filter"></div><div class="score-seg" data-v="Misleading" style="width: 21.4%" title="Misleading: 18 (21.4%) - Click to filter"></div><div class="score-seg" data-v="Broken promise" style="width: 25.0%" title="Broken promise: 21 (25.0%) - Click to filter"></div><div class="score-seg" data-v="Unproven" style="width: 3.6%" title="Unproven: 3 (3.6%) - Click to filter"></div><!-- /PRERENDER:SC_BAR --></div>
-        <div id="sc-pills" class="score-pills"><!-- PRERENDER:SC_PILLS --><button type="button" class="score-pill" data-v="False" aria-pressed="false"><span class="dot"></span><span>False</span> <strong>42</strong> <span class="meta">(50%)</span></button><button type="button" class="score-pill" data-v="Misleading" aria-pressed="false"><span class="dot"></span><span>Misleading</span> <strong>18</strong> <span class="meta">(21%)</span></button><button type="button" class="score-pill" data-v="Broken promise" aria-pressed="false"><span class="dot"></span><span>Broken promise</span> <strong>21</strong> <span class="meta">(25%)</span></button><button type="button" class="score-pill" data-v="Unproven" aria-pressed="false"><span class="dot"></span><span>Unproven</span> <strong>3</strong> <span class="meta">(4%)</span></button><!-- /PRERENDER:SC_PILLS --></div>
-      </section>
+          <div id="sc-bar" class="score-bar" role="progressbar" aria-label="Distribution of verdicts"><!-- PRERENDER:SC_BAR --><div class="score-seg" data-v="False" style="width: 50.0%" title="False: 42 (50.0%) - Click to filter"></div><div class="score-seg" data-v="Misleading" style="width: 21.4%" title="Misleading: 18 (21.4%) - Click to filter"></div><div class="score-seg" data-v="Broken promise" style="width: 25.0%" title="Broken promise: 21 (25.0%) - Click to filter"></div><div class="score-seg" data-v="Unproven" style="width: 3.6%" title="Unproven: 3 (3.6%) - Click to filter"></div><!-- /PRERENDER:SC_BAR --></div>
+          <div id="sc-pills" class="score-pills"><!-- PRERENDER:SC_PILLS --><button type="button" class="score-pill" data-v="False" aria-pressed="false"><span class="dot"></span><span>False</span> <strong>42</strong> <span class="meta">(50%)</span></button><button type="button" class="score-pill" data-v="Misleading" aria-pressed="false"><span class="dot"></span><span>Misleading</span> <strong>18</strong> <span class="meta">(21%)</span></button><button type="button" class="score-pill" data-v="Broken promise" aria-pressed="false"><span class="dot"></span><span>Broken promise</span> <strong>21</strong> <span class="meta">(25%)</span></button><button type="button" class="score-pill" data-v="Unproven" aria-pressed="false"><span class="dot"></span><span>Unproven</span> <strong>3</strong> <span class="meta">(4%)</span></button><!-- /PRERENDER:SC_PILLS --></div>
+        </section>
+      </div>
     </div>
   </header>
 
   <!-- Civic Navigation Hub -->
-  <nav class="hub-nav wrap" role="tablist" aria-label="Civic Navigation Hub">
-    <button class="hub-tab active" id="tab-btn-receipts" data-tab="receipts" type="button" role="tab" aria-selected="true" aria-controls="section-receipts">
-      <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>
-      <span class="hub-label" data-i18n="nav_receipts">Receipts Archive</span>
-      <span class="hub-badge" id="hub-count-receipts">84</span>
-    </button>
-    <button class="hub-tab" id="tab-btn-scandals" data-tab="scandals" type="button" role="tab" aria-selected="false" aria-controls="section-scandals">
-      <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      <span class="hub-label" data-i18n="nav_scandals">Scandals &amp; Misrule</span>
-      <span class="hub-badge" id="hub-count-scandals">18</span>
-    </button>
-    <button class="hub-tab" id="tab-btn-mps" data-tab="mps" type="button" role="tab" aria-selected="false" aria-controls="section-mps">
-      <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      <span class="hub-label" data-i18n="nav_mps">Find Your MP</span>
-      <span class="hub-badge" id="hub-count-mps">217</span>
-    </button>
-    <button class="hub-tab" id="tab-btn-impunity" data-tab="impunity" type="button" role="tab" aria-selected="false" aria-controls="section-impunity">
-      <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
-      <span class="hub-label" data-i18n="nav_impunity">Impunity Watch</span>
-      <span class="hub-badge" id="hub-count-impunity">12</span>
-    </button>
-    <button class="hub-tab" id="tab-btn-memorial" data-tab="memorial" type="button" role="tab" aria-selected="false" aria-controls="section-memorial">
-      <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 1 0-16 0c0 4.5 4 8 8 12Z"/><circle cx="12" cy="10" r="3"/></svg>
-      <span class="hub-label" data-i18n="nav_memorial">Memorial of Courage</span>
-      <span class="hub-badge" id="hub-count-memorial">15</span>
-    </button>
-  </nav>
+  <div class="hub-nav-bar" id="hub-nav-bar">
+    <div class="hub-nav-hint wrap" aria-hidden="true">
+      <span class="hub-hint-label">5 ARCHIVE SECTIONS</span>
+      <span class="hub-hint-swipe">SWIPE FOR MORE <span class="hub-hint-arrow">→</span></span>
+    </div>
+    <div class="hub-nav-shell wrap" id="hub-nav-shell">
+      <button id="hub-scroll-left" class="hub-scroll-btn hub-scroll-left" type="button" aria-label="Scroll sections left" hidden>
+        <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <nav class="hub-nav" id="hub-nav" role="tablist" aria-label="Civic Navigation Hub">
+        <button class="hub-tab active" id="tab-btn-receipts" data-tab="receipts" type="button" role="tab" aria-selected="true" aria-controls="section-receipts">
+          <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>
+          <span class="hub-label" data-i18n="nav_receipts">Receipts Archive</span>
+          <span class="hub-badge" id="hub-count-receipts">84</span>
+        </button>
+        <button class="hub-tab" id="tab-btn-scandals" data-tab="scandals" type="button" role="tab" aria-selected="false" aria-controls="section-scandals">
+          <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span class="hub-label" data-i18n="nav_scandals">Scandals &amp; Misrule</span>
+          <span class="hub-badge" id="hub-count-scandals">18</span>
+        </button>
+        <button class="hub-tab" id="tab-btn-mps" data-tab="mps" type="button" role="tab" aria-selected="false" aria-controls="section-mps">
+          <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span class="hub-label" data-i18n="nav_mps">Find Your MP</span>
+          <span class="hub-badge" id="hub-count-mps">217</span>
+        </button>
+        <button class="hub-tab" id="tab-btn-impunity" data-tab="impunity" type="button" role="tab" aria-selected="false" aria-controls="section-impunity">
+          <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+          <span class="hub-label" data-i18n="nav_impunity">Impunity Watch</span>
+          <span class="hub-badge" id="hub-count-impunity">12</span>
+        </button>
+        <button class="hub-tab" id="tab-btn-memorial" data-tab="memorial" type="button" role="tab" aria-selected="false" aria-controls="section-memorial">
+          <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 1 0-16 0c0 4.5 4 8 8 12Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="hub-label" data-i18n="nav_memorial">Memorial of Courage</span>
+          <span class="hub-badge" id="hub-count-memorial">15</span>
+        </button>
+      </nav>
+      <button id="hub-scroll-right" class="hub-scroll-btn hub-scroll-right" type="button" aria-label="Scroll sections right" hidden>
+        <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
 
   <!-- Tab Section 1: Receipts Archive -->
   <div id="section-receipts" class="tab-section">
@@ -277,62 +294,80 @@
     <div id="dossiers-grid" class="dossiers-grid">
       <button class="dossier-card" type="button" data-dossier="constitution">
         <div class="dossier-top">
-          <span class="dossier-icon">⚖️</span>
+          <div class="dossier-id-group">
+            <span class="dossier-num">FILE 01</span>
+            <span class="dossier-icon">⚖️</span>
+          </div>
           <span class="dossier-count" id="count-dossier-constitution">10</span>
         </div>
-        <h3 class="dossier-name">Constitutional Violations & Impunity</h3>
-        <p class="dossier-desc">Defiance of court orders, 50 illegal CASs, Housing Levy & SHIF strike-downs & ICC witness tampering mistrial.</p>
-        <span class="dossier-arrow">Explore Dossier →</span>
+        <h3 class="dossier-name">Constitutional Violations &amp; Impunity</h3>
+        <p class="dossier-desc">Defiance of court orders, 50 illegal CASs, Housing Levy &amp; SHIF strike-downs &amp; ICC witness tampering mistrial.</p>
+        <span class="dossier-arrow">Open Dossier →</span>
       </button>
 
       <button class="dossier-card" type="button" data-dossier="spending">
         <div class="dossier-top">
-          <span class="dossier-icon">💸</span>
+          <div class="dossier-id-group">
+            <span class="dossier-num">FILE 02</span>
+            <span class="dossier-icon">💸</span>
+          </div>
           <span class="dossier-count" id="count-dossier-spending">7</span>
         </div>
-        <h3 class="dossier-name">Reckless Spending & Opulence</h3>
-        <p class="dossier-desc">Boeing 737 luxury jet, KSh 1.5B State House renovations, 62+ foreign trips & unconstitutional spouse office budgets.</p>
-        <span class="dossier-arrow">Explore Dossier →</span>
+        <h3 class="dossier-name">Reckless Spending &amp; Opulence</h3>
+        <p class="dossier-desc">Boeing 737 luxury jet, KSh 1.5B State House renovations, 62+ foreign trips &amp; unconstitutional spouse office budgets.</p>
+        <span class="dossier-arrow">Open Dossier →</span>
       </button>
 
       <button class="dossier-card" type="button" data-dossier="killings">
         <div class="dossier-top">
-          <span class="dossier-icon">🚨</span>
+          <div class="dossier-id-group">
+            <span class="dossier-num">FILE 03</span>
+            <span class="dossier-icon">🚨</span>
+          </div>
           <span class="dossier-count" id="count-dossier-killings">14</span>
         </div>
-        <h3 class="dossier-name">Killings, Abductions & Brutality</h3>
-        <p class="dossier-desc">Rex Masai, Evans Kiratu, Parliament live bullets, Mukuru Kware bodies & ICC witness deaths (Meshack Yebei).</p>
-        <span class="dossier-arrow">Explore Dossier →</span>
+        <h3 class="dossier-name">Killings, Abductions &amp; Brutality</h3>
+        <p class="dossier-desc">Rex Masai, Evans Kiratu, Parliament live bullets, Mukuru Kware bodies &amp; ICC witness deaths (Meshack Yebei).</p>
+        <span class="dossier-arrow">Open Dossier →</span>
       </button>
 
       <button class="dossier-card" type="button" data-dossier="corruption">
         <div class="dossier-top">
-          <span class="dossier-icon">💼</span>
+          <div class="dossier-id-group">
+            <span class="dossier-num">FILE 04</span>
+            <span class="dossier-icon">💼</span>
+          </div>
           <span class="dossier-count" id="count-dossier-corruption">13</span>
         </div>
-        <h3 class="dossier-name">Corruption & Secret Mega-Deals</h3>
-        <p class="dossier-desc">Secret Adani concessions, fake fertiliser, KSh 16.5B cooking oil & ICC witness bribery syndicate.</p>
-        <span class="dossier-arrow">Explore Dossier →</span>
+        <h3 class="dossier-name">Corruption &amp; Secret Mega-Deals</h3>
+        <p class="dossier-desc">Secret Adani concessions, fake fertiliser, KSh 16.5B cooking oil &amp; ICC witness bribery syndicate.</p>
+        <span class="dossier-arrow">Open Dossier →</span>
       </button>
 
       <button class="dossier-card" type="button" data-dossier="economy">
         <div class="dossier-top">
-          <span class="dossier-icon">📉</span>
+          <div class="dossier-id-group">
+            <span class="dossier-num">FILE 05</span>
+            <span class="dossier-icon">📉</span>
+          </div>
           <span class="dossier-count" id="count-dossier-economy">16</span>
         </div>
-        <h3 class="dossier-name">Economic Ruin & Broken Promises</h3>
+        <h3 class="dossier-name">Economic Ruin &amp; Broken Promises</h3>
         <p class="dossier-desc">KSh 100 Unga, 16% fuel VAT, dollar crash to 163, zero borrowing pledge broken, Hustler Fund 8% interest.</p>
-        <span class="dossier-arrow">Explore Dossier →</span>
+        <span class="dossier-arrow">Open Dossier →</span>
       </button>
 
       <button class="dossier-card" type="button" data-dossier="abuse_power">
         <div class="dossier-top">
-          <span class="dossier-icon">👥</span>
+          <div class="dossier-id-group">
+            <span class="dossier-num">FILE 06</span>
+            <span class="dossier-icon">👥</span>
+          </div>
           <span class="dossier-count" id="count-dossier-abuse_power">11</span>
         </div>
-        <h3 class="dossier-name">Abuse of Power & Tribalism</h3>
-        <p class="dossier-desc">Ethnic shareholding doctrine, State House MP patronage, buying opposition & subverting ICC investigations.</p>
-        <span class="dossier-arrow">Explore Dossier →</span>
+        <h3 class="dossier-name">Abuse of Power &amp; Tribalism</h3>
+        <p class="dossier-desc">Ethnic shareholding doctrine, State House MP patronage, buying opposition &amp; subverting ICC investigations.</p>
+        <span class="dossier-arrow">Open Dossier →</span>
       </button>
     </div>
   </section>
@@ -812,10 +847,7 @@
         </label>
 
         <div class="form-actions">
-          <button type="submit" id="btn-submit-github" class="btn btn-primary">
-            <span>Open as GitHub Issue ↗</span>
-          </button>
-          <button type="button" id="btn-submit-email" class="btn btn-outline">
+          <button type="submit" id="btn-submit-email" class="btn btn-primary">
             <span>✉️ Email to mustgomail@proton.me</span>
           </button>
           <button type="button" id="btn-copy-submission" class="btn btn-outline">
@@ -918,7 +950,7 @@
         </div>
         <div class="foot-col">
           <h4>Contact, Corrections & Open Data</h4>
-          <p>Spotted a factual error, have a tip, or want to write to us? <a href="#submit" id="foot-submit-link">Submit a receipt/correction</a>, email <a href="mailto:mustgomail@proton.me">mustgomail@proton.me</a>, or open a pull request. Datasets are licensed under Public Domain.</p>
+          <p>Spotted a factual error, have a tip, or want to write to us? <a href="#submit" id="foot-submit-link">Submit a receipt/correction</a> or email <a href="mailto:mustgomail@proton.me">mustgomail@proton.me</a>. Datasets are licensed under Public Domain.</p>
           <div class="open-data-links">
             <a href="data/claims.json" target="_blank" class="open-data-link">claims.json ↗</a>
             <a href="data/scandals.json" target="_blank" class="open-data-link">scandals.json ↗</a>

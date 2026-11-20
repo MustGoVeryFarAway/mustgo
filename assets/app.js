@@ -170,7 +170,7 @@
 
   // --- Theme Management ---
   function updateThemeColor(theme) {
-    const color = theme === "dark" ? "#0b0b0c" : "#f8f7f3";
+    const color = theme === "dark" ? "#0c0c0b" : "#f4f1ea";
     document.querySelectorAll('meta[name="theme-color"]').forEach((m) => {
       m.setAttribute("content", color);
     });
@@ -886,28 +886,7 @@
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    const title = $("sub-headline").value.trim();
-    const quote = $("sub-quote").value.trim();
-    const date = $("sub-date").value.trim();
-    const context = $("sub-context").value.trim();
-    const video = $("sub-video").value.trim();
-    const factcheck = $("sub-factcheck").value.trim();
-
-    const body = [
-      `### Receipt Submission for mustgo.co.ke`,
-      ``,
-      `**Title:** ${title}`,
-      `**Quote:** ${quote}`,
-      `**Date:** ${date}`,
-      `**Context:** ${context || "N/A"}`,
-      `**Video URL:** ${video || "N/A"}`,
-      `**Fact-Check / Record URL:** ${factcheck}`,
-    ].join("\n");
-
-    const issueUrl = `https://github.com/MustGoVeryFarAway/mustgo/issues/new?title=${encodeURIComponent(`Receipt: ${title}`)}&body=${encodeURIComponent(body)}`;
-    window.open(issueUrl, "_blank");
-    showToast("Opened submission in GitHub Issues!");
-    $("submit-dialog").close();
+    submitViaEmail();
   }
 
   function submitViaEmail() {
@@ -935,6 +914,7 @@
 
     window.location.href = `mailto:mustgomail@proton.me?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     showToast("Opening email draft to mustgomail@proton.me...");
+    $("submit-dialog").close();
   }
 
   function copySubmissionText() {
@@ -1226,8 +1206,6 @@
       if (e.target === submitDialog) submitDialog.close();
     });
     $("submit-form").addEventListener("submit", handleFormSubmit);
-    const emailSubBtn = $("btn-submit-email");
-    if (emailSubBtn) emailSubBtn.onclick = submitViaEmail;
     $("btn-copy-submission").onclick = copySubmissionText;
 
     const footSubmitLink = $("foot-submit-link");
@@ -1343,6 +1321,9 @@
       const isActive = tab.dataset.tab === tabId;
       tab.classList.toggle("active", isActive);
       tab.setAttribute("aria-selected", String(isActive));
+      if (isActive && typeof tab.scrollIntoView === "function") {
+        tab.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
     });
 
     const secReceipts = $("section-receipts");
@@ -1384,6 +1365,47 @@
     document.querySelectorAll(".hub-tab").forEach((tab) => {
       tab.onclick = () => switchTab(tab.dataset.tab, true);
     });
+
+    const nav = $("hub-nav");
+    const shell = $("hub-nav-shell");
+    const bar = $("hub-nav-bar");
+    const leftBtn = $("hub-scroll-left");
+    const rightBtn = $("hub-scroll-right");
+    if (!nav || !shell) return;
+
+    const updateScrollHints = () => {
+      const maxScroll = nav.scrollWidth - nav.clientWidth;
+      const hasOverflow = maxScroll > 6;
+      const canLeft = hasOverflow && nav.scrollLeft > 6;
+      const canRight = hasOverflow && nav.scrollLeft < maxScroll - 6;
+
+      shell.classList.toggle("is-scrollable", hasOverflow);
+      shell.classList.toggle("can-scroll-left", canLeft);
+      shell.classList.toggle("can-scroll-right", canRight);
+      if (bar) {
+        bar.classList.toggle("is-scrollable", hasOverflow);
+        if (nav.scrollLeft > 12) bar.classList.add("has-scrolled");
+      }
+      if (leftBtn) leftBtn.hidden = !canLeft;
+      if (rightBtn) rightBtn.hidden = !canRight;
+    };
+
+    nav.addEventListener("scroll", updateScrollHints, { passive: true });
+    window.addEventListener("resize", updateScrollHints, { passive: true });
+    if (typeof ResizeObserver !== "undefined") {
+      const ro = new ResizeObserver(updateScrollHints);
+      ro.observe(nav);
+    }
+
+    if (leftBtn) {
+      leftBtn.onclick = () => nav.scrollBy({ left: -220, behavior: "smooth" });
+    }
+    if (rightBtn) {
+      rightBtn.onclick = () => nav.scrollBy({ left: 220, behavior: "smooth" });
+    }
+
+    updateScrollHints();
+    setTimeout(updateScrollHints, 250);
   }
 
   // --- Find Your MP Feature ---
