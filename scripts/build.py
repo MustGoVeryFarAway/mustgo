@@ -23,6 +23,7 @@ CLAIM_REQUIRED = ("id", "title", "quote", "verdict", "reality", "factcheck_url")
 MP_REQUIRED = ("id", "name", "constituency", "county", "finance_bill_2024")
 IMPUNITY_REQUIRED = ("id", "title", "court", "ruling", "executive_defiance", "status")
 MEMORIAL_REQUIRED = ("id", "name", "circumstances", "justice_status")
+SCANDAL_REQUIRED = ("id", "category", "title", "impact", "oversight_body", "summary", "status", "source_url")
 TWEET_RE = re.compile(r"^https://(?:x|twitter)\.com/\w+/status/(\d+)")
 
 
@@ -233,17 +234,20 @@ def main():
     mps_src = DATA_DIR / "mps.json"
     impunity_src = DATA_DIR / "impunity.json"
     memorial_src = DATA_DIR / "memorial.json"
+    scandals_src = DATA_DIR / "scandals.json"
 
     claims = json.loads(claims_src.read_text(encoding="utf-8"))
     mps = json.loads(mps_src.read_text(encoding="utf-8"))
     impunity = json.loads(impunity_src.read_text(encoding="utf-8"))
     memorial = json.loads(memorial_src.read_text(encoding="utf-8"))
+    scandals = json.loads(scandals_src.read_text(encoding="utf-8")) if scandals_src.exists() else []
 
     errors = []
     errors.extend(validate_claims(claims))
     errors.extend(validate_list(mps, MP_REQUIRED, "mps"))
     errors.extend(validate_list(impunity, IMPUNITY_REQUIRED, "impunity"))
     errors.extend(validate_list(memorial, MEMORIAL_REQUIRED, "memorial"))
+    errors.extend(validate_list(scandals, SCANDAL_REQUIRED, "scandals"))
 
     if errors:
         print("Validation failed:\n  " + "\n  ".join(errors), file=sys.stderr)
@@ -271,10 +275,11 @@ def main():
     write_js(DATA_DIR / "mps.js", "MPS", mps)
     write_js(DATA_DIR / "impunity.js", "IMPUNITY_CASES", impunity)
     write_js(DATA_DIR / "memorial.js", "MEMORIAL_RECORDS", memorial)
+    write_js(DATA_DIR / "scandals.js", "SCANDALS", scandals)
     prerender_index(claims)
 
     with_video = sum(1 for c in claims if c.get("tweet_url"))
-    print(f"Validated & wrote {len(claims)} claims ({with_video} with video), {len(mps)} MPs, {len(impunity)} impunity cases, {len(memorial)} memorial records.")
+    print(f"Validated & wrote {len(claims)} claims ({with_video} with video), {len(scandals)} scandals, {len(mps)} MPs, {len(impunity)} impunity cases, {len(memorial)} memorial records.")
 
 
 if __name__ == "__main__":

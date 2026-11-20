@@ -128,6 +128,18 @@
               "encodingFormat": "application/json",
               "contentUrl": "https://mustgo.co.ke/data/memorial.json"
             }
+          },
+          {
+            "@type": "Dataset",
+            "name": "Governance, Corruption & Misrule Ledger",
+            "description": "Verified case files documenting procurement corruption, reckless spending, abuse of office, and audit-flagged mismanagement.",
+            "url": "https://mustgo.co.ke/data/scandals.json",
+            "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "distribution": {
+              "@type": "DataDownload",
+              "encodingFormat": "application/json",
+              "contentUrl": "https://mustgo.co.ke/data/scandals.json"
+            }
           }
         ]
       }
@@ -213,10 +225,10 @@
             </span>
             <strong data-i18n="scorecard_title">The Record Scorecard</strong>
           </div>
-          <div id="sc-summary" class="scorecard-summary"><!-- PRERENDER:SC_SUMMARY -->75 Statements · 68% Debunked (False + Misleading)<!-- /PRERENDER:SC_SUMMARY --></div>
+          <div id="sc-summary" class="scorecard-summary"><!-- PRERENDER:SC_SUMMARY -->84 Statements · 71% Debunked (False + Misleading)<!-- /PRERENDER:SC_SUMMARY --></div>
         </div>
-        <div id="sc-bar" class="score-bar" role="progressbar" aria-label="Distribution of verdicts"><!-- PRERENDER:SC_BAR --><div class="score-seg" data-v="False" style="width: 48.0%" title="False: 36 (48.0%) - Click to filter"></div><div class="score-seg" data-v="Misleading" style="width: 20.0%" title="Misleading: 15 (20.0%) - Click to filter"></div><div class="score-seg" data-v="Broken promise" style="width: 28.0%" title="Broken promise: 21 (28.0%) - Click to filter"></div><div class="score-seg" data-v="Unproven" style="width: 4.0%" title="Unproven: 3 (4.0%) - Click to filter"></div><!-- /PRERENDER:SC_BAR --></div>
-        <div id="sc-pills" class="score-pills"><!-- PRERENDER:SC_PILLS --><button type="button" class="score-pill" data-v="False" aria-pressed="false"><span class="dot"></span><span>False</span> <strong>36</strong> <span class="meta">(48%)</span></button><button type="button" class="score-pill" data-v="Misleading" aria-pressed="false"><span class="dot"></span><span>Misleading</span> <strong>15</strong> <span class="meta">(20%)</span></button><button type="button" class="score-pill" data-v="Broken promise" aria-pressed="false"><span class="dot"></span><span>Broken promise</span> <strong>21</strong> <span class="meta">(28%)</span></button><button type="button" class="score-pill" data-v="Unproven" aria-pressed="false"><span class="dot"></span><span>Unproven</span> <strong>3</strong> <span class="meta">(4%)</span></button><!-- /PRERENDER:SC_PILLS --></div>
+        <div id="sc-bar" class="score-bar" role="progressbar" aria-label="Distribution of verdicts"><!-- PRERENDER:SC_BAR --><div class="score-seg" data-v="False" style="width: 50.0%" title="False: 42 (50.0%) - Click to filter"></div><div class="score-seg" data-v="Misleading" style="width: 21.4%" title="Misleading: 18 (21.4%) - Click to filter"></div><div class="score-seg" data-v="Broken promise" style="width: 25.0%" title="Broken promise: 21 (25.0%) - Click to filter"></div><div class="score-seg" data-v="Unproven" style="width: 3.6%" title="Unproven: 3 (3.6%) - Click to filter"></div><!-- /PRERENDER:SC_BAR --></div>
+        <div id="sc-pills" class="score-pills"><!-- PRERENDER:SC_PILLS --><button type="button" class="score-pill" data-v="False" aria-pressed="false"><span class="dot"></span><span>False</span> <strong>42</strong> <span class="meta">(50%)</span></button><button type="button" class="score-pill" data-v="Misleading" aria-pressed="false"><span class="dot"></span><span>Misleading</span> <strong>18</strong> <span class="meta">(21%)</span></button><button type="button" class="score-pill" data-v="Broken promise" aria-pressed="false"><span class="dot"></span><span>Broken promise</span> <strong>21</strong> <span class="meta">(25%)</span></button><button type="button" class="score-pill" data-v="Unproven" aria-pressed="false"><span class="dot"></span><span>Unproven</span> <strong>3</strong> <span class="meta">(4%)</span></button><!-- /PRERENDER:SC_PILLS --></div>
       </section>
     </div>
   </header>
@@ -226,7 +238,12 @@
     <button class="hub-tab active" id="tab-btn-receipts" data-tab="receipts" type="button" role="tab" aria-selected="true" aria-controls="section-receipts">
       <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>
       <span class="hub-label" data-i18n="nav_receipts">Receipts Archive</span>
-      <span class="hub-badge" id="hub-count-receipts">75</span>
+      <span class="hub-badge" id="hub-count-receipts">84</span>
+    </button>
+    <button class="hub-tab" id="tab-btn-scandals" data-tab="scandals" type="button" role="tab" aria-selected="false" aria-controls="section-scandals">
+      <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span class="hub-label" data-i18n="nav_scandals">Scandals &amp; Misrule</span>
+      <span class="hub-badge" id="hub-count-scandals">18</span>
     </button>
     <button class="hub-tab" id="tab-btn-mps" data-tab="mps" type="button" role="tab" aria-selected="false" aria-controls="section-mps">
       <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -236,12 +253,12 @@
     <button class="hub-tab" id="tab-btn-impunity" data-tab="impunity" type="button" role="tab" aria-selected="false" aria-controls="section-impunity">
       <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
       <span class="hub-label" data-i18n="nav_impunity">Impunity Watch</span>
-      <span class="hub-badge" id="hub-count-impunity">10</span>
+      <span class="hub-badge" id="hub-count-impunity">12</span>
     </button>
     <button class="hub-tab" id="tab-btn-memorial" data-tab="memorial" type="button" role="tab" aria-selected="false" aria-controls="section-memorial">
       <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 1 0-16 0c0 4.5 4 8 8 12Z"/><circle cx="12" cy="10" r="3"/></svg>
       <span class="hub-label" data-i18n="nav_memorial">Memorial of Courage</span>
-      <span class="hub-badge" id="hub-count-memorial">13</span>
+      <span class="hub-badge" id="hub-count-memorial">15</span>
     </button>
   </nav>
 
@@ -341,7 +358,7 @@
 
     <div class="row">
       <div class="active-filters-info">
-        <span id="count" class="count"><!-- PRERENDER:COUNT -->75 of 75 receipts<!-- /PRERENDER:COUNT --></span>
+        <span id="count" class="count"><!-- PRERENDER:COUNT -->84 of 84 receipts<!-- /PRERENDER:COUNT --></span>
         <button id="reset-filters" class="btn-text" type="button" hidden data-i18n="reset_filters">Reset all filters</button>
       </div>
       <label class="sort"><span data-i18n="sort_label">Sort</span>
@@ -386,16 +403,24 @@
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">National maize harvests have risen from 44 million bags in 2022 to 67 million in 2024.</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Claimed maize harvest rose to 67m bags</h2><p class="meta">20 Nov 2025 · State of the Nation address to Parliament</p><div class="tags-list"><span class="tag-pill">#agriculture</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb"><div class="fallback">(paraphrased) Ruto said the government is paying Social Health Authority premiums for indigent Kenyans.</div><img src="https://pbs.twimg.com/media/G6N--YSWkAAommU.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="badge" data-v="Misleading">Misleading</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">▶ Video Clip</span></div><div class="body"><h2>Claimed state pays SHA premiums for the poor</h2><p class="meta">20 Nov 2025 · State of the Nation address to Parliament</p><div class="tags-list"><span class="tag-pill">#healthcare</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">Today, more than 14-million Kenyans are registered on the eCitizen platform.</div><span class="badge" data-v="Misleading">Misleading</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Claimed over 14 million Kenyans on eCitizen</h2><p class="meta">c. 13 Aug 2025 · 9th Devolution Conference, Homa Bay</p><div class="tags-list"><span class="tag-pill">#governance</span><span class="tag-pill">#digital</span></div></div></li>
+      <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">(Administration pledge) Security agencies will protect the constitutional right to peaceful assembly and exercise restraint under …</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Repeated assurances of police restraint contradicted by 38 Saba Saba 2025 deaths</h2><p class="meta">7 Jul 2025 · Nationwide Saba Saba Day demonstrations across Kenya, July 2025</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Killings, Abductions &amp; Police Brutality">🚨 Killings,</span><span class="tag-pill">#police-brutality</span><span class="tag-pill">#killings</span></div></div></li>
+      <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">I am a believer in God and I owe nobody an apology for building a church at State House. The KSh 1.2 billion figure is gossip and …</div><span class="badge" data-v="Misleading">Misleading</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Defended State House mega-church project as private and beyond reproach</h2><p class="meta">4 Jul 2025 · Remarks at State House Nairobi responding to leaked plans for an 8,000-seater church inside State House grounds</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Constitutional Violations &amp; Impunity">⚖️ Constitutional</span><span class="tag-pill">#constitution</span><span class="tag-pill">#reckless-spending</span></div></div></li>
+      <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">(Official police narrative) The suspect sustained fatal head injuries after hitting his head against the cell wall at Central Poli…</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Police claimed blogger Albert Ojwang died of self-inflicted injuries in cell</h2><p class="meta">8 Jun 2025 · National Police Service initial statement on the death in custody of teacher and blogger Albert Ojwang</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Killings, Abductions &amp; Police Brutality">🚨 Killings,</span><span class="tag-pill">#police-brutality</span><span class="tag-pill">#extrajudicial-killings</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">(as reported) The affordable housing programme has &quot;already generated 250 000 jobs&quot;.</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Claimed affordable housing created 250,000 jobs</h2><p class="meta">c. 1 Jun 2025 · Madaraka Day / 1,000-days-in-office speeches, June 2025</p><div class="tags-list"><span class="tag-pill">#housing</span><span class="tag-pill">#jobs</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">Fertiliser subsidies have boosted food production by 50%.</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Claimed fertiliser subsidy boosted food output 50%</h2><p class="meta">c. 1 Jun 2025 · Madaraka Day / 1,000-days-in-office speeches, June 2025</p><div class="tags-list"><span class="tag-pill">#agriculture</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">Foreign exchange reserves were at two-and-a-half months of import cover, between $5-billion and $6-billion. It is now $10.3-billio…</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Claimed reserves were only 2.5 months&#x27; cover when he took office</h2><p class="meta">c. 1 Jun 2025 · Madaraka Day / 1,000-days-in-office speeches, June 2025</p><div class="tags-list"><span class="tag-pill">#economy</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">By the way, we are selling tea to Sudan, even after they said they are not buying our tea.</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Claimed Kenya still selling tea to Sudan despite ban</h2><p class="meta">31 Mar 2025 · Joint media interview with Mt Kenya vernacular stations, Sagana State Lodge</p><div class="tags-list"><span class="tag-pill">#trade</span><span class="tag-pill">#agriculture</span></div></div></li>
+      <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">The government of Kenya is not paying KSh 104 billion. This is a fee-for-service system built to stop fraud and brokers who were s…</div><span class="badge" data-v="Misleading">Misleading</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Claimed KSh 104.8B SHA IT deal costs taxpayers nothing upfront</h2><p class="meta">4 Mar 2025 · Public remarks defending the Social Health Authority (SHA) IT contract following Auditor-General&#x27;s report</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Corruption Scandals &amp; Secret Mega-Deals">💼 Corruption</span><span class="tag-pill">#corruption</span><span class="tag-pill">#healthcare</span></div></div></li>
+      <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">By digitising all government services on eCitizen, we have sealed corruption loopholes and ensured every shilling collected goes s…</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Touted eCitizen as sealing all government revenue leaks</h2><p class="meta">18 Feb 2025 · Public addresses on digital revenue collection and eCitizen paybill 222222</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Corruption Scandals &amp; Secret Mega-Deals">💼 Corruption</span><span class="tag-pill">#corruption</span><span class="tag-pill">#digital</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb"><div class="fallback">(paraphrased) Ruto said his government had reduced expenditure since 2022.</div><img src="https://pbs.twimg.com/amplify_video_thumb/1859573359572303872/img/JwdPr4DDE9jtYSWQ.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">▶ Video Clip</span></div><div class="body"><h2>Claimed government spending reduced since 2022</h2><p class="meta">21 Nov 2024 · State of the Nation address to Parliament</p><div class="tags-list"><span class="tag-pill">#economy</span><span class="tag-pill">#budget</span></div></div></li>
+      <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">I have directed the immediate cancellation of the ongoing procurement process for the JKIA expansion and the KETRACO transmission …</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Defended Adani deals as clean until US bribery indictment forced cancellation</h2><p class="meta">21 Nov 2024 · State of the Nation Address to Parliament, Nairobi</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Corruption Scandals &amp; Secret Mega-Deals">💼 Corruption</span><span class="tag-pill">#corruption</span><span class="tag-pill">#adani</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">The transmission line partnership with Adani will eliminate power blackouts and is the most cost-effective solution for Kenya with…</div><span class="badge" data-v="Misleading">Misleading</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Claimed KETRACO power lines concession to Adani was competitively negotiated</h2><p class="meta">14 Oct 2024 · Groundbreaking for development projects, Kwale County</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Corruption Scandals &amp; Secret Mega-Deals">💼 Corruption</span><span class="tag-pill">#corruption</span><span class="tag-pill">#adani</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">No Kenyan will be turned away from any hospital. The new Social Health Authority ensures free access and comprehensive coverage fo…</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Claimed SHIF/SHA transition was seamless and guaranteed free universal healthcare</h2><p class="meta">1 Oct 2024 · Presidential address on the official rollout of the Social Health Authority, State House Nairobi</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Constitutional Violations &amp; Impunity">⚖️ Constitutional</span><span class="tag-pill">#healthcare</span><span class="tag-pill">#constitution</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">As of now, I do not have a single name of someone who has been abducted or disappeared.</div><span class="badge" data-v="Misleading">Misleading</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Said he knew of no one abducted after protests</h2><p class="meta">29 Aug 2024 · Town hall meeting, Kisumu</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Killings, Abductions &amp; Police Brutality">🚨 Killings,</span><span class="tag-pill">#security</span><span class="tag-pill">#human-rights</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">If there is any Kenyan who has been abducted or arrested and not presented in court, let the family bring forward the name to me. …</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Challenged public to produce names of anyone abducted by police</h2><p class="meta">29 Aug 2024 · Live televised presidential town hall, Kisumu State Lodge</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Killings, Abductions &amp; Police Brutality">🚨 Killings,</span><span class="tag-pill">#security</span><span class="tag-pill">#police-brutality</span></div></div></li>
+      <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">The new student-centred university funding model ensures no student from a vulnerable family is left behind and is the fairest sys…</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Defended banded university funding model as fair and inclusive</h2><p class="meta">25 Aug 2024 · Town hall meeting and public remarks defending the Variable Scholarship and Loan Funding (VSLF) model</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Constitutional Violations &amp; Impunity">⚖️ Constitutional</span><span class="tag-pill">#education</span><span class="tag-pill">#constitution</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">JKIA is not being sold or leased. We are working on a public-private partnership with private investors to build a new runway and …</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Denied JKIA was being leased or mortgaged to Adani Group</h2><p class="meta">28 Jul 2024 · Town hall meeting and media interview, Mombasa</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Corruption Scandals &amp; Secret Mega-Deals">💼 Corruption</span><span class="tag-pill">#corruption</span><span class="tag-pill">#adani</span></div></div></li>
+      <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">Fuel prices will continue to fall despite the increase in the Road Maintenance Levy; Kenyans will not feel an extra burden at the …</div><span class="badge" data-v="Misleading">Misleading</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Claimed 39% Road Maintenance Levy hike would not burden motorists</h2><p class="meta">17 Jul 2024 · Public remarks defending the July 2024 hike of the Road Maintenance Levy from KSh 18 to KSh 25 per litre</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Economic Ruin &amp; Broken Promises">📉 Economic</span><span class="tag-pill">#taxes</span><span class="tag-pill">#cost-of-living</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb"><div class="fallback">Shame on them because they are sponsoring violence against our democratic nation... if they are going to sponsor anarchy, we are g…</div><img src="https://pbs.twimg.com/amplify_video_thumb/1812799023805308929/img/cf1ZTet-sluMgvtr.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="badge" data-v="Unproven">Unproven</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">▶ Video Clip</span></div><div class="body"><h2>Accused Ford Foundation of sponsoring protests</h2><p class="meta">15 Jul 2024 · Public event in Nakuru County</p><div class="tags-list"><span class="tag-pill">#protests</span><span class="tag-pill">#civil-society</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">The police will conduct a transparent, thorough, and swift investigation into the bodies found in Kware, Mukuru. Anyone involved w…</div><span class="badge" data-v="Broken promise">Broken promise</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Pledged independent police investigation into Mukuru Kware quarry bodies</h2><p class="meta">14 Jul 2024 · Public address during church service, Elgeyo Marakwet</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Killings, Abductions &amp; Police Brutality">🚨 Killings,</span><span class="tag-pill">#security</span><span class="tag-pill">#extrajudicial-killings</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb"><div class="fallback">The price of maize flour is at KSh100.</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">▶ Video Clip</span></div><div class="body"><h2>Claimed maize flour selling at KSh100</h2><p class="meta">30 Jun 2024 · Live televised roundtable with Citizen TV, NTV and KTN editors, State House Nairobi</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Economic Ruin &amp; Broken Promises">📉 Economic</span><span class="tag-pill">#economy</span><span class="tag-pill">#cost-of-living</span></div></div></li>
@@ -430,6 +455,7 @@
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">Our public debt is in the region of KSh8.8-trillion, close to KSh9-trillion.</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Understated public debt as KSh8.8 trillion</h2><p class="meta">14 May 2023 · Televised sit-down with journalists from six major newsrooms, ahead of the 2023 budget</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Economic Ruin &amp; Broken Promises">📉 Economic</span><span class="tag-pill">#debt</span><span class="tag-pill">#economy</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">Our exports as a percentage of GDP came down from 28% eight years ago to 10% this year.</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Claimed exports fell from 28% to 10% of GDP in 8 years</h2><p class="meta">14 May 2023 · Televised sit-down with journalists from six major newsrooms</p><div class="tags-list"><span class="tag-pill">#economy</span><span class="tag-pill">#trade</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">We are not coercing or buying any leader. Opposition MPs are crossing over voluntarily because they believe in the Kenya Kwanza de…</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Denied bribing or using state machinery to decimate parliamentary opposition</h2><p class="meta">12 Apr 2023 · Kenya Kwanza Parliamentary Group meeting, State House Nairobi</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Corruption Scandals &amp; Secret Mega-Deals">💼 Corruption</span><span class="tag-pill">#abuse-of-power</span><span class="tag-pill">#governance</span></div></div></li>
+      <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">The government-to-government oil import arrangement eliminated cartels, stabilized the shilling, and delivered transparent, cheape…</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Claimed Government-to-Government (G-to-G) oil deal was transparent and cut costs</h2><p class="meta">12 Apr 2023 · Public briefings defending the state-backed G-to-G petroleum procurement deal</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Corruption Scandals &amp; Secret Mega-Deals">💼 Corruption</span><span class="tag-pill">#corruption</span><span class="tag-pill">#economy</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">The 50 Chief Administrative Secretaries are necessary for the implementation of the bottom-up transformation agenda and their recr…</div><span class="badge" data-v="Broken promise">Broken promise</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Created and swore in 50 CAS positions after promising to trim government expenditure</h2><p class="meta">23 Mar 2023 · State House swearing-in of 50 CAS appointees, Nairobi</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Constitutional Violations &amp; Impunity">⚖️ Constitutional</span><span class="tag-pill">#constitution</span><span class="tag-pill">#reckless-spending</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">Those who are working and holding dollars, I am giving you free advice that shortly you might face losses... in a few weeks the do…</div><span class="badge" data-v="False">False</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Advised Kenyans to sell dollars, claiming rate would drop to KSh120</h2><p class="meta">22 Mar 2023 · Official opening of Kenya Sevens camp and address to the press, Nairobi</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Economic Ruin &amp; Broken Promises">📉 Economic</span><span class="tag-pill">#economy</span><span class="tag-pill">#currency</span></div></div></li>
       <li class="card" tabindex="0"><div class="thumb no-video"><div class="fallback">I have directed the immediate disbandment of the Special Service Unit... Under my watch, police will never be used for political a…</div><span class="badge" data-v="Broken promise">Broken promise</span><span class="play" aria-hidden="true"></span><span class="video-status-tag">📜 Record</span></div><div class="body"><h2>Pledged state abductions, extrajudicial killings, and River Yala bodies were over forever</h2><p class="meta">16 Oct 2022 · Speech at Kericho Green Stadium, Kericho County</p><div class="tags-list"><span class="tag-pill tag-dossier" title="Killings, Abductions &amp; Police Brutality">🚨 Killings,</span><span class="tag-pill">#security</span><span class="tag-pill">#police-brutality</span></div></div></li>
@@ -465,6 +491,80 @@
     </div>
   </main>
   </div><!-- /#section-receipts -->
+
+  <!-- Tab Section 1B: Scandals & Misrule Ledger (Beyond Statements) -->
+  <section id="section-scandals" class="tab-section wrap" hidden aria-label="Scandals, Corruption and Misrule Ledger">
+    <div class="section-hero-header">
+      <div class="kicker-pill">
+        <span class="kicker-flag">🗂️</span>
+        <span class="kicker-text" data-i18n="scandals_kicker">GOVERNANCE, AUDITS &amp; PUBLIC ACCOUNTABILITY LEDGER</span>
+      </div>
+      <h2 data-i18n="scandals_title">Scandals, Corruption &amp; Misrule Beyond Statements</h2>
+      <p class="section-lead" data-i18n="scandals_sub">
+        Documented acts of procurement corruption, reckless public spending, abuse of office, and systemic mismanagement—backed by Auditor-General reports, Controller of Budget audits, parliamentary probes, and High Court rulings.
+      </p>
+    </div>
+
+    <!-- Audit Summary Strip -->
+    <div class="scandals-summary-strip" id="scandals-summary-strip">
+      <div class="scandal-stat-card" data-cat="all">
+        <span class="scandal-stat-num" id="scandal-stat-total">18</span>
+        <span class="scandal-stat-label">Verified Case Files</span>
+      </div>
+      <div class="scandal-stat-card" data-cat="corruption">
+        <span class="scandal-stat-num" id="scandal-stat-corruption">6</span>
+        <span class="scandal-stat-label">Corruption &amp; Mega-Deals</span>
+      </div>
+      <div class="scandal-stat-card" data-cat="spending">
+        <span class="scandal-stat-num" id="scandal-stat-spending">5</span>
+        <span class="scandal-stat-label">Reckless Spending</span>
+      </div>
+      <div class="scandal-stat-card" data-cat="abuse">
+        <span class="scandal-stat-num" id="scandal-stat-abuse">4</span>
+        <span class="scandal-stat-label">Abuse of Office</span>
+      </div>
+      <div class="scandal-stat-card" data-cat="mismanagement">
+        <span class="scandal-stat-num" id="scandal-stat-mismanagement">3</span>
+        <span class="scandal-stat-label">Mismanagement</span>
+      </div>
+    </div>
+
+    <!-- Scandals Filter & Search Controls -->
+    <div class="mp-controls scandals-controls">
+      <div class="search-box">
+        <svg class="search-icon ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="scandals-search" type="search" placeholder="Search scandals, audits, deals (e.g. Adani, SHA, eCitizen, travel, fertiliser)..." autocomplete="off" spellcheck="false">
+        <button id="clear-scandals-search" class="clear-btn" type="button" aria-label="Clear search" hidden>×</button>
+      </div>
+
+      <div class="chips-group">
+        <span class="chips-label">Category:</span>
+        <div id="scandals-filters" class="chips" role="group" aria-label="Filter by Misrule Category">
+          <button class="chip active" data-cat="all" type="button" aria-pressed="true">All Cases</button>
+          <button class="chip" data-cat="corruption" type="button" aria-pressed="false">💼 Corruption &amp; Procurement</button>
+          <button class="chip" data-cat="spending" type="button" aria-pressed="false">💸 Reckless Spending</button>
+          <button class="chip" data-cat="abuse" type="button" aria-pressed="false">🏛️ Abuse of Office</button>
+          <button class="chip" data-cat="mismanagement" type="button" aria-pressed="false">📉 Mismanagement</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="active-filters-info">
+          <span id="scandals-results-count" class="count">Showing 18 of 18 case files</span>
+          <button id="scandals-reset-filters" class="btn-text" type="button" hidden>Reset filters</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scandals Cards Grid -->
+    <div id="scandals-grid" class="scandals-grid"></div>
+    <div id="scandals-empty" class="empty" hidden>
+      <div class="empty-icon">🗂️</div>
+      <h3>No matching case files found</h3>
+      <p>Try clearing your search or selecting another category.</p>
+      <button id="scandals-empty-reset-btn" class="btn btn-outline" type="button">Show all case files</button>
+    </div>
+  </section>
 
   <!-- Tab Section 2: Find Your MP Scorecard -->
   <section id="section-mps" class="tab-section wrap" hidden aria-label="Find Your MP Scorecard">
@@ -821,6 +921,7 @@
           <p>Spotted a factual error, have a tip, or want to write to us? <a href="#submit" id="foot-submit-link">Submit a receipt/correction</a>, email <a href="mailto:mustgomail@proton.me">mustgomail@proton.me</a>, or open a pull request. Datasets are licensed under Public Domain.</p>
           <div class="open-data-links">
             <a href="data/claims.json" target="_blank" class="open-data-link">claims.json ↗</a>
+            <a href="data/scandals.json" target="_blank" class="open-data-link">scandals.json ↗</a>
             <a href="data/mps.json" target="_blank" class="open-data-link">mps.json ↗</a>
             <a href="data/impunity.json" target="_blank" class="open-data-link">impunity.json ↗</a>
             <a href="data/memorial.json" target="_blank" class="open-data-link">memorial.json ↗</a>
@@ -835,6 +936,7 @@
 
   <script src="data/i18n.js"></script>
   <script src="data/claims.js"></script>
+  <script src="data/scandals.js"></script>
   <script src="data/mps.js"></script>
   <script src="data/impunity.js"></script>
   <script src="data/memorial.js"></script>

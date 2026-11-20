@@ -1,4 +1,4 @@
-const CACHE_NAME = "mustgo-receipts-v1.2.0";
+const CACHE_NAME = "mustgo-receipts-v1.3.0";
 
 const ASSETS_TO_CACHE = [
   "./",
@@ -10,6 +10,7 @@ const ASSETS_TO_CACHE = [
   "./assets/icon-192.png",
   "./assets/icon-512.png",
   "./data/claims.js",
+  "./data/scandals.js",
   "./data/mps.js",
   "./data/impunity.js",
   "./data/memorial.js",

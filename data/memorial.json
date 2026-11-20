@@ -219,5 +219,41 @@
     "justice_status_sw": "MAUAJI YA KISIRI · KESI YA ICC ILIFUNGWA",
     "tribute": "A grim reminder that state-linked witness elimination and impunity has deep historical roots in Kenya.",
     "tribute_sw": "Kikumbusho cha huzuni kwamba utekaji nyara na kuua mashahidi wa serikali una historia ndefu nchini."
+  },
+  {
+    "id": "albert-ojwang",
+    "name": "Albert Omondi Ojwang",
+    "age": 30,
+    "date": "2025-06-08",
+    "location": "Central Police Station, Nairobi",
+    "type": "Death in Police Custody & Cover-Up",
+    "type_sw": "Mauaji Kizuizini mwa Polisi na Kuficha Ushahidi",
+    "photo": null,
+    "circumstances": "A 30-year-old teacher and social media commentator arrested at his home in Homa Bay County on June 7, 2025 over an X post allegedly critical of Deputy Inspector General Eliud Lagat, and driven 350km to Central Police Station in Nairobi. Police initially claimed he hit his head on the cell wall; an independent autopsy confirmed fatal blunt-force assault and neck compression, and IPOA revealed station CCTV cables were disconnected and footage formatted.",
+    "circumstances_sw": "Mwalimu na mwanablogu mwenye umri wa miaka 30 aliyekamatwa nyumbani kwake Homa Bay na kusafirishwa kilomita 350 hadi Kituo cha Polisi cha Central Nairobi. Polisi walidai alijigonga ukutani, lakini upasuaji ulithibitisha alipigwa na kunyongwa hadi kufa huku kamera za CCTV zikifutwa makusudi.",
+    "official_record": "IPOA Investigation & High Court Murder Trial; Autopsy (June 10, 2025) confirmed assault and neck compression.",
+    "justice_status": "CENTRAL OCS & SUSPECTS CHARGED · TRIAL ONGOING",
+    "justice_status_sw": "OCS WA CENTRAL NA WASHUKIWA WAMESHTAKIWA · KESI INAENDELEA",
+    "tribute": "An educator silenced inside a police cell for speaking online. His killing sparked nationwide grief and exposed systematic cover-ups inside Kenyan police stations.",
+    "tribute_sw": "Mwalimu aliyenyamazishwa ndani ya selo ya polisi kwa kutoa maoni mtandaoni. Kifo chake kiliamsha taifa zima kupinga mauaji ya kizuizini.",
+    "source_url": "https://www.the-star.co.ke/news/2025-06-13-ojwang-died-inside-cell-at-central-police-station-ipoa"
+  },
+  {
+    "id": "boniface-kariuki",
+    "name": "Boniface Mwangi Kariuki",
+    "age": 22,
+    "date": "2025-06-30",
+    "location": "Nairobi CBD (Shot June 17, 2025)",
+    "type": "Police Killings (Close-Range Shooting)",
+    "type_sw": "Mauaji ya Polisi (Risasi ya Karibu)",
+    "photo": null,
+    "circumstances": "A 22-year-old unarmed street mask vendor shot in the head at point-blank range by a police officer along Mondlane Street in Nairobi CBD during the June 2025 protests over Albert Ojwang's death in custody. Captured on live cameras and photographs, Kariuki fought for his life in the ICU at Kenyatta National Hospital before succumbing on June 30, 2025.",
+    "circumstances_sw": "Muuzaji wa barakoa mwenye umri wa miaka 22 asiye na silaha aliyepigwa risasi ya kichwa kwa karibu sana na afisa wa polisi katikati mwa jiji la Nairobi wakati wa maandamano ya Juni 2025. Alifariki katika chumba cha ICU KNH mnamo Juni 30, 2025.",
+    "official_record": "KNH ICU Medical Record; IPOA & ODPP Murder Charges against Officer Klinzy Barasa.",
+    "justice_status": "OFFICER ARRESTED & CHARGED WITH MURDER",
+    "justice_status_sw": "AFISA ALIKAMATWA NA KUSHTAKIWA KWA MAUAJI",
+    "tribute": "A young hustler simply earning an honest living selling face masks on Nairobi's streets, cut down in broad daylight on camera.",
+    "tribute_sw": "Kijana mchapa kazi aliyekuwa akitafuta riziki halali kwa kuuza barakoa barabarani, maisha yake yakikatizwa mchana peupe mbele ya kamera.",
+    "source_url": "https://www.the-star.co.ke/news/2025-06-30-mask-vendor-boniface-kariuki-is-dead"
   }
 ]

@@ -407,7 +407,7 @@ window.CLAIMS = [
     "verdict": "Misleading",
     "reality": "The Kenya Human Rights Commission and the Police Reforms Working Group recorded 23 deaths from police shootings. Reuters tallied at least nine dead in Nairobi hospitals and morgues alone.",
     "tweet_url": null,
-    "factcheck_url": "https://citizen.digital/news/president-ruto-denies-extra-judicial-killings-confirms-6-deaths-14-injuries-in-protests-n344732",
+    "factcheck_url": "https://citizen.digital/article/president-ruto-denies-extra-judicial-killings-confirms-6-deaths-14-injuries-in-protests-n344732",
     "tags": [
       "security",
       "human-rights",
@@ -463,7 +463,7 @@ window.CLAIMS = [
     "verdict": "Broken promise",
     "reality": "His first Cabinet in September 2022 had 7 women among 22 Cabinet Secretaries. The Mzalendo promise tracker rates the pledge \"Broken\" and records 6 of 22 in 2026.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/gender/ruto-reneges-on-half-cabinet-for-women-pledge-3965198",
+    "factcheck_url": "https://biznakenya.com/ruto-women-in-cabinet/",
     "tags": [
       "gender",
       "governance"
@@ -539,7 +539,7 @@ window.CLAIMS = [
     "verdict": "False",
     "reality": "Director of Public Prosecutions and DCI records showed that over KSh 19 billion had been paid out to bankrupt contractor CMC di Ravenna with no physical work on the ground, leading to the prosecution of Treasury CS Henry Rotich.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/revealed-how-billions-were-lost-in-arror-and-kimwarer-dams-scandal-143682",
+    "factcheck_url": "https://www.the-star.co.ke/news/2019-02-28-flat-lie-dp-ruto-denies-loss-of-sh21-billion-in-dams-scandal",
     "tags": [
       "corruption",
       "budget",
@@ -559,7 +559,7 @@ window.CLAIMS = [
     "verdict": "Broken promise",
     "reality": "The Auditor-General's report revealed that less than 10,000 acres were ever cultivated after absorbing over KSh 7.2 billion, with the national irrigation scheme declaring the model farm unviable.",
     "tweet_url": null,
-    "factcheck_url": "https://africacheck.org/fact-checks/reports/kenyas-galana-kulalu-mega-irrigation-scheme-audit-exposes-mismanagement",
+    "factcheck_url": "https://www.the-star.co.ke/news/2019-07-09-designed-to-fail-why-galana-kulalu-project-collapsed",
     "tags": [
       "agriculture",
       "food-security",
@@ -597,7 +597,7 @@ window.CLAIMS = [
     "verdict": "False",
     "reality": "The National Land Commission (NLC) and Court of Appeal established that the land originally belonged to the Kenya Civil Aviation Authority (KCAA) and was illegally excised and alienated before being transferred to Weston Hotel.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/ruto-weston-hotel-and-the-kcaa-land-saga-117282",
+    "factcheck_url": "https://standardmedia.co.ke/article/2001520728/inside-the-silent-settlement-that-saw-weston-hotel-claim-public-land",
     "tags": [
       "land",
       "governance"
@@ -616,7 +616,7 @@ window.CLAIMS = [
     "verdict": "Broken promise",
     "reality": "When officially launched in November 2022, the Hustler Fund charged an annual interest rate of 8% (calculated daily), making it an interest-bearing credit facility rather than interest-free as promised.",
     "tweet_url": null,
-    "factcheck_url": "https://www.citizen.digital/news/hustler-fund-is-not-free-money-you-will-repay-president-ruto-n307564",
+    "factcheck_url": "https://citizen.digital/article/hustler-fund-is-not-free-money-you-will-repay-president-ruto-n307564",
     "tags": [
       "economy",
       "jobs",
@@ -636,7 +636,7 @@ window.CLAIMS = [
     "verdict": "False",
     "reality": "The Kenyan Shilling continued to depreciate against the US Dollar for the next 10 months, sinking from KSh131 at the time of the claim to an all-time low of KSh163 per dollar in January 2024.",
     "tweet_url": null,
-    "factcheck_url": "https://www.the-star.co.ke/health/2023-03-22-how-well-fix-dollar-shortage-in-weeks-president-ruto",
+    "factcheck_url": "https://www.the-star.co.ke/news/2023-03-22-how-well-fix-dollar-shortage-in-weeks-president-ruto",
     "tags": [
       "economy",
       "currency",
@@ -656,7 +656,7 @@ window.CLAIMS = [
     "verdict": "Broken promise",
     "reality": "Upon the removal of the fuel subsidy in September 2022 and the doubling of VAT on fuel to 16% in the Finance Act 2023, petrol prices soared to unprecedented records over KSh217 per litre.",
     "tweet_url": null,
-    "factcheck_url": "https://africacheck.org/fact-checks/reports/kenyas-president-ruto-scrapped-fuel-subsidies-did-prices-drop-he-claimed",
+    "factcheck_url": "https://www.aljazeera.com/news/2022/9/15/kenyas-new-president-scraps-petrol-subsidy",
     "tags": [
       "cost-of-living",
       "energy",
@@ -693,7 +693,7 @@ window.CLAIMS = [
     "verdict": "Broken promise",
     "reality": "Within the first two years of his administration, total public debt increased by over KSh2.4 trillion, with repeated commercial syndicated loans and new multi-billion funding packages from the World Bank and IMF.",
     "tweet_url": null,
-    "factcheck_url": "https://www.the-star.co.ke/health/2022-07-21-ruto-pledges-to-stop-borrowing-amidst-rising-debt",
+    "factcheck_url": "https://www.the-star.co.ke/news/2022-07-21-ruto-pledges-to-stop-borrowing-amidst-rising-debt",
     "tags": [
       "debt",
       "economy",
@@ -712,7 +712,7 @@ window.CLAIMS = [
     "verdict": "Broken promise",
     "reality": "A special audit by the Auditor-General and parliamentary investigations revealed that out of 57 planned mega-dams, fewer than 5 were ever completed, with tens of billions lost to stalled contracts and contractor compensation claims.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/audit-lays-bare-the-57-mega-dams-drain-374620",
+    "factcheck_url": "https://capitalfm.africa/dams-were-conduits-to-siphon-public-money-claims-mudavadi/",
     "tags": [
       "water",
       "infrastructure",
@@ -731,7 +731,7 @@ window.CLAIMS = [
     "verdict": "Misleading",
     "reality": "A forensic audit by PricewaterhouseCoopers (PwC) commissioned by the Treasury documented that the Ministry oversaw the irregular allocation of over 100,000 bags of subsidized maize to briefcase millers during a severe national famine.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/how-pwc-audit-unmasked-the-2009-maize-scandal-116290",
+    "factcheck_url": "https://www.africog.org/reports/Maize%20Report.pdf",
     "tags": [
       "agriculture",
       "corruption",
@@ -772,7 +772,7 @@ window.CLAIMS = [
     "verdict": "False",
     "reality": "An official post-mortem examination by Chief Government Pathologist Dr. Johansen Oduor and an IPOA investigation confirmed 29-year-old Rex Masai died from severe haemorrhage after being shot directly with a high-velocity live bullet on Moi Avenue.",
     "tweet_url": null,
-    "factcheck_url": "https://www.citizen.digital/news/govt-pathologist-confirms-rex-masai-died-of-gunshot-wound-during-protests-n380403",
+    "factcheck_url": "https://citizen.digital/article/govt-pathologist-confirms-rex-masai-died-of-gunshot-wound-during-protests-n380403",
     "tags": [
       "police-brutality",
       "protests",
@@ -814,7 +814,7 @@ window.CLAIMS = [
     "verdict": "False",
     "reality": "The Law Society of Kenya (LSK), KNCHR, and Amnesty Kenya had already published official dockets containing over 60 documented names of individuals abducted in unmarked Subarus by state security agents, including high-profile cases like Gabriel Oguda and Shad Khalif.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/the-anatomy-of-state-sponsored-abductions-in-kenya-4746200",
+    "factcheck_url": "https://www.the-star.co.ke/news/2024-08-29-bring-me-the-names-ruto-refutes-claims-of-abductions",
     "tags": [
       "security",
       "police-brutality",
@@ -855,7 +855,7 @@ window.CLAIMS = [
     "verdict": "Broken promise",
     "reality": "A month later, the primary suspect Collins Jumaisi escaped from Gigiri Police Station while in custody. Human rights organizations highlighted that the Kware dumping site was less than 100 metres from Kware Police Station, demanding an independent judicial inquiry rather than internal police probes.",
     "tweet_url": null,
-    "factcheck_url": "https://www.voanews.com/a/kenyan-police-arrest-suspected-serial-killer-after-discovery-of-bodies-in-quarry/7698642.html",
+    "factcheck_url": "https://www.the-star.co.ke/news/2024-08-20-kware-murders-main-suspect-collins-jumaisi-escapes-from-gigiri-police-station",
     "tags": [
       "security",
       "extrajudicial-killings",
@@ -875,7 +875,7 @@ window.CLAIMS = [
     "verdict": "False",
     "reality": "A landmark judicial inquest in 2019 into the death of 6-month-old Samantha Pendo in Kisumu found that she died of blunt force trauma caused by police batons during a house raid, holding senior police commanders criminally liable under command responsibility.",
     "tweet_url": null,
-    "factcheck_url": "https://www.the-star.co.ke/news/2019-02-14-police-commanders-found-culpable-in-baby-pendos-death/",
+    "factcheck_url": "https://icj-kenya.org/news/the-baby-pendo-case-and-the-unfulfilled-promise-of-accountability/",
     "tags": [
       "police-brutality",
       "security",
@@ -895,7 +895,7 @@ window.CLAIMS = [
     "verdict": "False",
     "reality": "The Prime Minister's Task Force on the Conservation of the Mau Forest Complex (2009) and subsequent National Land Commission investigations confirmed that over 100,000 hectares of forestland were illegally and irregularly excised through illegal paper titles allocated to powerful political figures and speculators.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/the-untold-story-of-the-plunder-of-mau-forest-118492",
+    "factcheck_url": "https://www.standardmedia.co.ke/national/article/2001556264/ruto-hands-sh26bn-to-mau-forest-evictees",
     "tags": [
       "environment",
       "mau-forest",
@@ -935,7 +935,7 @@ window.CLAIMS = [
     "verdict": "Misleading",
     "reality": "The Environment and Land Court quashed the government's directive to lift the logging ban in October 2023, ruling that the decision was unconstitutional, lacked mandatory public participation and Environmental Impact Assessments, and resulted in illegal logging in indigenous forests rather than controlled commercial plantations.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/high-court-quashes-ruto-directive-lifting-logging-ban-4402688",
+    "factcheck_url": "https://www.the-star.co.ke/news/2023-10-12-ruto-order-lifting-ban-on-logging-unconstitutional-court",
     "tags": [
       "environment",
       "logging",
@@ -955,7 +955,7 @@ window.CLAIMS = [
     "verdict": "Unproven",
     "reality": "The Kenya Forestry Research Institute (KEFRI) and Auditor General audits noted that survival rates of newly planted seedlings remained under 45% due to inadequate water and aftercare, while lifting the logging moratorium led to rapid canopy depletion in vital catchments.",
     "tweet_url": null,
-    "factcheck_url": "https://africacheck.org/fact-checks/reports/can-kenya-really-grow-15-billion-trees-10-years-fact-checking-the-claim",
+    "factcheck_url": "https://www.standardmedia.co.ke/national/article/2001559861/mazingira-day-kenya-sets-sights-on-172-million-trees",
     "tags": [
       "environment",
       "logging"
@@ -995,7 +995,7 @@ window.CLAIMS = [
     "verdict": "Broken promise",
     "reality": "NCIC audits and judicial challenges in the High Court documented that subsequent state distributions, senior security dockets, and regional development allocations were overtly weaponized along ethnic voting patterns, with top leaders publicly defending ethnic shareholding.",
     "tweet_url": null,
-    "factcheck_url": "https://www.the-star.co.ke/health/2022-09-13-president-william-rutos-full-inauguration-speech",
+    "factcheck_url": "https://www.the-star.co.ke/news/2022-09-13-president-william-rutos-full-inauguration-speech",
     "tags": [
       "governance",
       "ethnicity",
@@ -1015,7 +1015,7 @@ window.CLAIMS = [
     "verdict": "False",
     "reality": "National Assembly Speaker Moses Wetang'ula and Majority Chief Whip Sylvanus Osoro publicly confirmed that MPs accompanied leadership to State House where President Ruto gave them batches of TSC employment letters (approx. 10 per MP) to distribute, with legislators accused of selling the constitutional appointment letters for KSh 150,000 to KSh 400,000 in gross violation of Article 237 of the Constitution.",
     "tweet_url": null,
-    "factcheck_url": "https://citizen.digital/news/how-mps-sell-tsc-employment-letters-awarded-by-ruto-at-state-house-wetangula-n348270",
+    "factcheck_url": "https://citizen.digital/article/wetangulas-expose-reveals-how-state-house-has-politicized-teacher-employment-n388928",
     "tags": [
       "education",
       "corruption",
@@ -1038,7 +1038,7 @@ window.CLAIMS = [
     "verdict": "Broken promise",
     "reality": "In early 2024, the government reneged on the pledge, forcing JSS teachers into a second year of underpaid internship on KSh 17,000 stipends, prompting a nationwide strike. The Employment and Labour Relations Court declared the internship scheme illegal and exploitative, ruling that TSC has no constitutional mandate to hire registered teachers on casual terms.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/court-declares-jss-intern-teachers-programme-illegal-4592750",
+    "factcheck_url": "https://khrc.or.ke/press-release/tsc-must-reinstate-jss-teachers-it-fired/",
     "tags": [
       "education",
       "tsc",
@@ -1059,7 +1059,7 @@ window.CLAIMS = [
     "verdict": "False",
     "reality": "Whistleblower documents published by Sen. Okiya Omtatah and Kenya Aviation Workers Union (KAWU) court filings revealed a secret 30-year concession handing complete operational control, aeronautical revenues, and sovereign asset guarantees to India's Adani Group, triggering nationwide airport worker strikes and court injunctions.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/revealed-details-of-the-secret-adani-jkia-deal-4749200",
+    "factcheck_url": "https://www.standardmedia.co.ke/article/2001501892/secrets-of-30-year-adani-deal-to-takeover-jkia-in-november",
     "tags": [
       "corruption",
       "adani",
@@ -1082,7 +1082,7 @@ window.CLAIMS = [
     "verdict": "False",
     "reality": "Kenya Bureau of Standards (KEBS) test results and the National Assembly Agriculture Committee confirmed that over 5,000 bags of subsidized 'Kelphos-Plus' fertiliser distributed via NCPB stores contained non-fertiliser material consisting of crushed rocks, sand, and animal manure, prompting criminal charges against manufacturers and an impeachment motion against CS Mithika Linturi.",
     "tweet_url": null,
-    "factcheck_url": "https://africacheck.org/fact-checks/reports/kenyas-fake-fertiliser-scandal-what-we-know-so-far",
+    "factcheck_url": "https://citizen.digital/article/high-court-rules-sale-of-substandard-fertilizer-violated-farmers-rights-n391603",
     "tags": [
       "agriculture",
       "corruption",
@@ -1103,7 +1103,7 @@ window.CLAIMS = [
     "verdict": "Broken promise",
     "reality": "A three-judge bench of the High Court declared the appointment of all 50 CAS positions unconstitutional and null and void in July 2023, citing lack of public participation, ballooning wage bill, and arbitrary expansion from the initial 23 approved posts.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/high-court-quashes-ruto-appointment-of-50-cas-positions-4290920",
+    "factcheck_url": "https://www.standardmedia.co.ke/national/article/2001476477/court-quashes-appointment-of-50-cass-by-president-william-ruto",
     "tags": [
       "constitution",
       "reckless-spending",
@@ -1124,7 +1124,7 @@ window.CLAIMS = [
     "verdict": "False",
     "reality": "Charter invoice records from Royal Jet Dubai, parliamentary scrutiny, and Controller of Budget records revealed the charter cost between KSh 150 million and KSh 200 million in taxpayer funds, directly contradicting the 'friends donated it for KSh 10m' claim and far exceeding the KSh 20 million business class cost on Kenya Airways.",
     "tweet_url": null,
-    "factcheck_url": "https://www.citizen.digital/news/look-at-me-kenyansim-not-a-mad-man-i-spent-ksh10m-on-private-jet-to-us-ruto-n343070",
+    "factcheck_url": "https://citizen.digital/article/look-at-me-kenyansim-not-a-mad-man-i-spent-ksh10m-on-private-jet-to-us-ruto-n343070",
     "tags": [
       "reckless-spending",
       "opulence",
@@ -1145,7 +1145,7 @@ window.CLAIMS = [
     "verdict": "Broken promise",
     "reality": "Controller of Budget Dr. Margaret Nyakang'o's official reports showed State House hospitality, foreign travel, and continuous renovations of State House Nairobi and state lodges absorbed over KSh 1.5 billion in supplementary allocations within 18 months, exceeding original annual budgets by over 200%.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/cob-flags-ballooning-state-house-hospitality-and-travel-spending-4467290",
+    "factcheck_url": "https://thekenyatimes.com/latest-kenya-times-news/state-house-chief-justifies-millions-set-aside-for-renovation/",
     "tags": [
       "reckless-spending",
       "budget",
@@ -1165,7 +1165,7 @@ window.CLAIMS = [
     "verdict": "Broken promise",
     "reality": "Chief Justice Martha Koome, the Judicial Service Commission (JSC), and the Law Society of Kenya (LSK) issued stern public rebukes, warning that executive defiance of court rulings and public intimidation of judges violated Article 160 of the Constitution and undermined the rule of law.",
     "tweet_url": null,
-    "factcheck_url": "https://www.citizen.digital/news/cj-koome-stands-firm-defends-judiciary-against-claims-of-capture-by-executive-n335809",
+    "factcheck_url": "https://citizen.digital/article/cj-koome-stands-firm-defends-judiciary-against-claims-of-capture-by-executive-n335809",
     "tags": [
       "constitution",
       "abuse-of-power",
@@ -1184,9 +1184,9 @@ window.CLAIMS = [
     "date": "2024-06-25",
     "context": "Late-night National Security address, State House Nairobi",
     "verdict": "False",
-    "reality": "The High Court (Justice Lawrence Mugambi) in a petition filed by the Law Society of Kenya ruled that the deployment of KDF on 25 June was unconstitutional and violated Article 241(3)(c) because it was executed before parliamentary approval, ordering the state to define clear rules of engagement within 48 hours.",
+    "reality": "On 27 June 2024, High Court Justice Lawrence Mugambi ruled that while KDF could assist police under Article 241(3)(b) after Parliament was breached, the Defence CS's blanket gazette notice was dangerously vague and ordered the state to gazette exact terms of engagement, areas of intervention, and duration within 48 hours.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/high-court-declares-initial-kdf-deployment-against-protesters-irregular-4672900",
+    "factcheck_url": "https://citizen.digital/article/court-okays-military-deployment-to-contain-demos-orders-terms-gazetted-in-two-days-n344814",
     "tags": [
       "constitution",
       "security",
@@ -1207,7 +1207,7 @@ window.CLAIMS = [
     "verdict": "False",
     "reality": "Auditor-General and Senate investigations revealed that the KSh 16.5 billion scheme bypassed procurement laws to hand billions in single-sourced tenders to politically connected briefcase companies, with consignments contaminated and retail cooking oil prices remaining at historic highs.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/senate-unmasks-the-ksh16-5bn-edible-oil-procurement-scandal-4345200",
+    "factcheck_url": "https://citizen.digital/article/kntc-boss-pamela-mutua-grilled-over-ksh165b-edible-oils-scandal-n332169",
     "tags": [
       "corruption",
       "mismanagement",
@@ -1227,7 +1227,7 @@ window.CLAIMS = [
     "verdict": "False",
     "reality": "A cross-party investigation and public confessions by MPs confirmed that executive appointments, road project funding, and CDF disbursements were systematically withheld from opposition constituencies and rewarded to defectors in direct subversion of multiparty democracy under Article 108.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/how-state-house-uses-patronage-to-cripple-parliamentary-oversight-4215280",
+    "factcheck_url": "https://www.standardmedia.co.ke/amp/politics/2001466739/youre-now-our-members-ruto-tells-jubilee-mps-in-state-house-amid-kionis-objection",
     "tags": [
       "abuse-of-power",
       "governance",
@@ -1247,7 +1247,7 @@ window.CLAIMS = [
     "verdict": "False",
     "reality": "A three-judge bench of the High Court in November 2023 ruled the mandatory 1.5% Housing Levy unconstitutional, discriminatory, and unequal because it burdened only formal employees while excluding non-formal earners, ordering an immediate halt before the executive rushed through an amended bill.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/high-court-declares-housing-levy-unconstitutional-4447200",
+    "factcheck_url": "https://citizen.digital/article/housing-levy-human-rights-groups-lsk-move-to-court-of-appeal-to-challenge-stay-order-n332414",
     "tags": [
       "constitution",
       "housing",
@@ -1268,7 +1268,7 @@ window.CLAIMS = [
     "verdict": "Misleading",
     "reality": "Auditor-General and Energy Committee submissions revealed the KSh 95 billion deal with Adani Energy Solutions was executed through Privately Initiated Proposals (PIP) bypassing competitive bidding, with fixed 30-year capacity charges levied directly onto consumers' electricity tokens.",
     "tweet_url": null,
-    "factcheck_url": "https://www.citizen.digital/news/inside-adanis-ksh95-billion-30-year-deal-for-kenyas-power-lines-n351348",
+    "factcheck_url": "https://citizen.digital/article/inside-adanis-ksh95-billion-30-year-deal-for-kenyas-power-lines-n351348",
     "tags": [
       "corruption",
       "adani",
@@ -1289,7 +1289,7 @@ window.CLAIMS = [
     "verdict": "False",
     "reality": "Controller of Budget Dr. Margaret Nyakang'o submitted documentary evidence to the National Dialogue Committee (NADCO) revealing that her own official salary had been budgeted at more than triple what she actually received, exposing systemic executive budget padding and 'budgeted corruption' funneled to secret accounts.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/nyakango-blows-whistle-on-budgeted-corruption-in-kenya-kwanza-4441200",
+    "factcheck_url": "https://www.standardmedia.co.ke/sports/opinion/article/2001484730/nyakango-spills-the-beans-on-public-and-private-corruption",
     "tags": [
       "corruption",
       "budget",
@@ -1310,7 +1310,7 @@ window.CLAIMS = [
     "verdict": "False",
     "reality": "The rushed rollout of the Social Health Insurance Fund (SHIF/SHA) in October 2024 plunged healthcare into chaos across Kenya. Cancer patients, renal dialysis patients, and emergency cases were turned away or forced to pay out-of-pocket cash due to non-functioning IT portals and uncredited contributions. In July 2024, the High Court had declared the Social Health Insurance Act, 2023 unconstitutional for lack of meaningful public participation. In addition, a secretive KSh 104 billion integrated healthcare IT contract awarded to a private consortium sparked widespread outrage and parliamentary inquiries over single-sourcing and inflated cost.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/high-court-declares-shif-unconstitutional-4688118",
+    "factcheck_url": "https://capitalfm.africa/high-court-declares-social-health-insurance-act-unconstitutional/",
     "tags": [
       "healthcare",
       "constitution",
@@ -1332,7 +1332,7 @@ window.CLAIMS = [
     "verdict": "Broken promise",
     "reality": "Despite promising during the 2022 campaign that public funds would never be allocated to unconstitutional spouse offices, the Kenya Kwanza administration allocated over KSh 1.2 billion across FY 2022/23 and 2023/24 to the Office of the First Lady Rachel Ruto and the Office of the Spouse to the Deputy President Pastor Dorcas Rigathi. These state-funded budget lines were only cancelled in July 2024 following sustained nationwide Gen Z protests against executive opulence and waste.",
     "tweet_url": null,
-    "factcheck_url": "https://www.citizen.digital/news/govt-to-save-ksh12-billion-by-scraping-budget-allocated-to-spouses-of-ruto-gachagua-n345132",
+    "factcheck_url": "https://citizen.digital/article/govt-to-save-ksh12-billion-by-scraping-budget-allocated-to-spouses-of-ruto-gachagua-n345132",
     "tags": [
       "budget",
       "reckless-spending",
@@ -1354,7 +1354,7 @@ window.CLAIMS = [
     "verdict": "Broken promise",
     "reality": "Within the first three months of President Ruto taking office, the Director of Public Prosecutions (ODPP) systematically withdrew or terminated multi-billion shilling corruption, tax fraud, and economic crime cases against key political allies. These included the KSh 7.3 billion graft case against Deputy President Rigathi Gachagua, criminal charges against Cabinet Secretaries Aisha Jumwa and Mithika Linturi, and multi-billion tax evasion charges against key campaign financiers, drawing fierce condemnation from the Law Society of Kenya and Transparency International.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/why-high-profile-corruption-cases-are-collapsing-under-ruto-4015690",
+    "factcheck_url": "https://citizen.digital/article/dpp-haji-defends-high-profile-case-withdrawals-says-allowed-under-the-law-n320147",
     "tags": [
       "corruption",
       "abuse-of-power",
@@ -1376,7 +1376,7 @@ window.CLAIMS = [
     "verdict": "False",
     "reality": "Controller of Budget reports for FY 2023/24 revealed that national government spending on foreign travel surged to over KSh 14 billion. President Ruto personally undertook more than 62 foreign trips across 38 countries in his first 20 months—surpassing all previous Kenyan presidents in foreign travel frequency—routinely travelling with bloated delegations exceeding 50 people, while county operations and public university funds were starved of exchequer releases.",
     "tweet_url": null,
-    "factcheck_url": "https://nation.africa/kenya/news/revealed-ruto-cabinet-gobbled-up-sh14bn-on-foreign-trips-4683050",
+    "factcheck_url": "https://citizen.digital/article/revealed-govt-spent-ksh173b-on-travel-ksh49b-on-hospitality-as-austerity-measures-ignored-n384374",
     "tags": [
       "reckless-spending",
       "austerity",
@@ -1398,7 +1398,7 @@ window.CLAIMS = [
     "verdict": "Misleading",
     "reality": "The nationwide June 2024 protests against Finance Bill 2024 were organic, non-partisan, youth-led civic demonstrations demanding constitutional governance and an end to crippling punitive taxation and state corruption. Human rights monitors, including KNCHR and Amnesty International Kenya, confirmed police used live ammunition against unarmed youth. Faced with overwhelming public backlash, President Ruto was forced in a subsequent address just 24 hours later to retract his treason accusations, withdraw the entire Finance Bill 2024, and concede that the protesters were patriotic Kenyan youth whose concerns were legitimate.",
     "tweet_url": null,
-    "factcheck_url": "https://www.amnesty.org/en/latest/news/2024/06/kenya-deadly-crackdown-on-peaceful-protests/",
+    "factcheck_url": "https://citizen.digital/article/president-ruto-terms-tuesday-events-treasonous-vows-expeditious-response-n344678",
     "tags": [
       "protests",
       "human-rights",
@@ -1420,7 +1420,7 @@ window.CLAIMS = [
     "verdict": "Misleading",
     "reality": "Trial Chamber V(A) of the International Criminal Court (ICC) did not acquit William Ruto; rather, it declared a mistrial and vacated the charges without prejudice specifically citing a 'troubling incidence of witness interference and intolerable political meddling'. The prosecution documented that 16 of its 42 witnesses recanted or refused to cooperate due to intimidation, death threats, or bribery. Crucial witnesses, including Meshack Yebei (abducted and found murdered in Tsavo in 2015) and Eldoret journalist John Kituyi (beaten to death while probing Yebei's death), lost their lives, leading the judges to refuse an acquittal so charges could be renewed if fresh evidence surfaces.",
     "tweet_url": null,
-    "factcheck_url": "https://africacheck.org/fact-checks/reports/kenya-icc-and-facts-cases-against-ruto-and-sang",
+    "factcheck_url": "https://www.hrw.org/news/2016/04/05/icc-kenya-deputy-presidents-case-ends",
     "tags": [
       "icc",
       "judiciary",
@@ -1499,5 +1499,158 @@ window.CLAIMS = [
     "title_sw": "Alidai alinunua kwa njia halali shamba la ekari 100 la Turbo lililonyakuliwa kutoka kwa mwathiriwa wa PEV Adrian Muteshi",
     "reality_sw": "Jaji Rose Ougo wa Mahakama Kuu aliamua kwamba Ruto alijinyakulia shamba hilo kinyume cha sheria kutoka kwa Muteshi aliyekimbia ghasia za 2007/08, na akamuamuru arudishe shamba hilo na kulipa fidia ya KSh5 milioni.",
     "quote_sw": "Shamba la Turbo nililinunua kisheria na nilikuwa mnunuzi asiye na hatia."
+  },
+  {
+    "id": "sha-104b-it-system-not-state-funded",
+    "title": "Claimed KSh 104.8B SHA IT deal costs taxpayers nothing upfront",
+    "quote": "The government of Kenya is not paying KSh 104 billion. This is a fee-for-service system built to stop fraud and brokers who were stealing from NHIF.",
+    "date": "2025-03-04",
+    "context": "Public remarks defending the Social Health Authority (SHA) IT contract following Auditor-General's report",
+    "verdict": "Misleading",
+    "reality": "Auditor-General Nancy Gathungu's FY 2023/24 report revealed that the state neither owns nor controls the KSh 104.8B single-sourced system awarded to a Safaricom-led consortium, bypassed competitive bidding, and projects ~KSh 111B in 10-year collections funded directly from SHA member contributions and facility claims.",
+    "tweet_url": null,
+    "factcheck_url": "https://citizen.digital/article/state-sinks-ksh1048b-into-sha-system-it-neither-owns-nor-controls-auditor-general-n358565",
+    "tags": [
+      "corruption",
+      "healthcare",
+      "mega-deals"
+    ],
+    "clip_note": "Official Auditor-General FY 2023/24 audit findings on the Integrated Healthcare Information Technology System (IHITS)."
+  },
+  {
+    "id": "ecitizen-leakproof-revenue-audit",
+    "title": "Touted eCitizen as sealing all government revenue leaks",
+    "quote": "By digitising all government services on eCitizen, we have sealed corruption loopholes and ensured every shilling collected goes straight to Treasury.",
+    "date": "2025-02-18",
+    "context": "Public addresses on digital revenue collection and eCitizen paybill 222222",
+    "verdict": "False",
+    "reality": "Auditor-General Nancy Gathungu's audit of the eCitizen platform flagged over KSh 9.6 billion in unaccounted and questionable transactions, including KSh 7.05 billion sitting in settlement accounts without signed Service Level Agreements (SLAs) and KSh 127.85 million irregularly diverted to private entities.",
+    "tweet_url": null,
+    "factcheck_url": "https://citizen.digital/article/auditor-general-flags-billions-in-unaccounted-funds-on-ecitizen-platform-n367467",
+    "tags": [
+      "corruption",
+      "digital",
+      "mismanagement"
+    ],
+    "clip_note": "Based on the Office of the Auditor-General's special and annual audit reports on eCitizen."
+  },
+  {
+    "id": "university-funding-model-fair-constitutional",
+    "title": "Defended banded university funding model as fair and inclusive",
+    "quote": "The new student-centred university funding model ensures no student from a vulnerable family is left behind and is the fairest system Kenya has ever had.",
+    "date": "2024-08-25",
+    "context": "Town hall meeting and public remarks defending the Variable Scholarship and Loan Funding (VSLF) model",
+    "verdict": "False",
+    "reality": "On 20 December 2024, High Court Justice Chacha Mwita declared the banded university funding model unconstitutional and discriminatory, ruling that it lacked public participation, unfairly categorized students by parental income bands, and unlawfully shifted the state's duty to fund public universities onto parents.",
+    "tweet_url": null,
+    "factcheck_url": "https://citizen.digital/article/high-court-declares-new-university-funding-model-unconstitutional-n354804",
+    "tags": [
+      "education",
+      "constitution",
+      "mismanagement"
+    ],
+    "clip_note": "High Court judgment delivered on 20 December 2024 in petition filed by KHRC and students' groups."
+  },
+  {
+    "id": "state-house-church-ksh1-2b-no-public-funds",
+    "title": "Defended State House mega-church project as private and beyond reproach",
+    "quote": "I am a believer in God and I owe nobody an apology for building a church at State House. The KSh 1.2 billion figure is gossip and propaganda; I am funding it myself.",
+    "date": "2025-07-04",
+    "context": "Remarks at State House Nairobi responding to leaked plans for an 8,000-seater church inside State House grounds",
+    "verdict": "Misleading",
+    "reality": "Leaked architectural plans estimated the 8,000-seater structure at KSh 1.2 billion on public State House land. Civil society groups (Transparency International Kenya and KHRC) challenged the project under Article 8 of the Constitution (Kenya is a secular state), and the High Court issued conservatory orders halting construction.",
+    "tweet_url": null,
+    "factcheck_url": "https://citizen.digital/article/outrage-condemnation-over-rutos-ksh12-billion-state-house-church-n365763",
+    "tags": [
+      "constitution",
+      "reckless-spending",
+      "abuse-of-power"
+    ],
+    "clip_note": "Subsequent High Court conservatory orders paused construction pending determination of Article 8 petitions."
+  },
+  {
+    "id": "road-maintenance-levy-fuel-wont-rise",
+    "title": "Claimed 39% Road Maintenance Levy hike would not burden motorists",
+    "quote": "Fuel prices will continue to fall despite the increase in the Road Maintenance Levy; Kenyans will not feel an extra burden at the pump.",
+    "date": "2024-07-17",
+    "context": "Public remarks defending the July 2024 hike of the Road Maintenance Levy from KSh 18 to KSh 25 per litre",
+    "verdict": "Misleading",
+    "reality": "While global landed fuel costs dipped briefly in July 2024, raising the permanent Road Maintenance Levy by KSh 7 per litre (+39%) locked in higher tax stacking on every litre of petrol and diesel sold in Kenya. The Law Society of Kenya and consumer groups challenged the hike over lack of meaningful public participation.",
+    "tweet_url": null,
+    "factcheck_url": "https://ntvkenya.co.ke/news/fuel-prices-will-continue-to-fall-despite-road-levy-hike-ruto/",
+    "tags": [
+      "taxes",
+      "cost-of-living",
+      "economy"
+    ],
+    "clip_note": "EPRA implemented the KSh 25/litre levy in July 2024 following the withdrawal of the Finance Bill 2024."
+  },
+  {
+    "id": "g2g-oil-deal-transparent-cheaper-fuel",
+    "title": "Claimed Government-to-Government (G-to-G) oil deal was transparent and cut costs",
+    "quote": "The government-to-government oil import arrangement eliminated cartels, stabilized the shilling, and delivered transparent, cheaper petroleum imports for Kenyans.",
+    "date": "2023-04-12",
+    "context": "Public briefings defending the state-backed G-to-G petroleum procurement deal",
+    "verdict": "False",
+    "reality": "Auditor-General Nancy Gathungu poked holes in the G-to-G oil deal, citing a lack of transparency, ambiguous pricing structures, weak legal and financial safeguards, and risks of inflated costs being passed directly down to Kenyan consumers.",
+    "tweet_url": null,
+    "factcheck_url": "https://www.standardmedia.co.ke/sports/business/article/2001490410/auditor-general-pokes-holes-in-g-to-g-oil-deal",
+    "tags": [
+      "corruption",
+      "economy",
+      "mega-deals"
+    ],
+    "clip_note": "Based on Auditor-General and parliamentary scrutiny of the G-to-G petroleum import arrangement."
+  },
+  {
+    "id": "adani-deals-transparent-cancel-after-indictment",
+    "title": "Defended Adani deals as clean until US bribery indictment forced cancellation",
+    "quote": "I have directed the immediate cancellation of the ongoing procurement process for the JKIA expansion and the KETRACO transmission line deal based on new information provided by investigative agencies and partner nations.",
+    "date": "2024-11-21",
+    "context": "State of the Nation Address to Parliament, Nairobi",
+    "verdict": "False",
+    "reality": "For months, the administration dismissed whistleblowers, aviation unions, LSK, and KHRC court challenges while pushing secret, single-sourced $2.5B+ Adani concessions for JKIA and KETRACO. Cancellation only came after US federal prosecutors indicted Gautam Adani over bribery allegations in November 2024.",
+    "tweet_url": null,
+    "factcheck_url": "https://www.aljazeera.com/economy/2024/11/21/kenya-cancels-more-than-2-5bn-in-deals-with-adani-after-us-indictment",
+    "tags": [
+      "corruption",
+      "adani",
+      "mega-deals"
+    ],
+    "clip_note": "Al Jazeera coverage of the November 21, 2024 cancellation following US federal indictment."
+  },
+  {
+    "id": "albert-ojwang-police-custody-coverup",
+    "title": "Police claimed blogger Albert Ojwang died of self-inflicted injuries in cell",
+    "quote": "(Official police narrative) The suspect sustained fatal head injuries after hitting his head against the cell wall at Central Police Station and died while receiving treatment at Mbagathi Hospital.",
+    "date": "2025-06-08",
+    "context": "National Police Service initial statement on the death in custody of teacher and blogger Albert Ojwang",
+    "verdict": "False",
+    "reality": "An independent post-mortem ruled out suicide, finding severe blunt force trauma, neck compression, and assault injuries. IPOA confirmed Ojwang died inside Central Police Station cells and that station CCTV cables had been disconnected and footage formatted; Central OCS Samson Talam and other suspects were arrested and charged with murder.",
+    "tweet_url": null,
+    "factcheck_url": "https://www.the-star.co.ke/news/2025-06-13-ojwang-died-inside-cell-at-central-police-station-ipoa",
+    "tags": [
+      "police-brutality",
+      "extrajudicial-killings",
+      "human-rights"
+    ],
+    "clip_note": "IPOA official investigation findings and independent autopsy report (June 2025)."
+  },
+  {
+    "id": "saba-saba-2025-protests-crackdown",
+    "title": "Repeated assurances of police restraint contradicted by 38 Saba Saba 2025 deaths",
+    "quote": "(Administration pledge) Security agencies will protect the constitutional right to peaceful assembly and exercise restraint under the rule of law.",
+    "date": "2025-07-07",
+    "context": "Nationwide Saba Saba Day demonstrations across Kenya, July 2025",
+    "verdict": "False",
+    "reality": "The Kenya National Commission on Human Rights (KNCHR) confirmed that at least 38 people were killed—predominantly by gunshot wounds—and over 130 injured during the 7 July 2025 Saba Saba demonstrations, just weeks after the televised point-blank police shooting of 22-year-old mask vendor Boniface Kariuki in Nairobi CBD.",
+    "tweet_url": null,
+    "factcheck_url": "https://www.the-star.co.ke/news/2025-07-11-knchr-death-toll-from-saba-saba-protests-rises-to-38",
+    "tags": [
+      "police-brutality",
+      "killings",
+      "human-rights"
+    ],
+    "clip_note": "KNCHR official casualty report on the July 7, 2025 Saba Saba protests."
   }
 ];

@@ -28,7 +28,7 @@ window.IMPUNITY_CASES = [
       "Kifungu 201 (Usimamizi wa Fedha za Umma)",
       "Kifungu 232 (Maadili ya Utumishi wa Umma)"
     ],
-    "source_url": "https://kenyalaw.org/caselaw/cases/view/256084/"
+    "source_url": "https://www.standardmedia.co.ke/national/article/2001476477/court-quashes-appointment-of-50-cass-by-president-william-ruto"
   },
   {
     "id": "housing-levy-discriminatory-ruling",
@@ -57,7 +57,7 @@ window.IMPUNITY_CASES = [
       "Kifungu 27 (Usawa na Kutobaguliwa)",
       "Kifungu 201 (Haki katika Ushuru)"
     ],
-    "source_url": "https://kenyalaw.org/caselaw/cases/view/261944/"
+    "source_url": "https://citizen.digital/article/housing-levy-human-rights-groups-lsk-move-to-court-of-appeal-to-challenge-stay-order-n332414"
   },
   {
     "id": "shif-sha-unconstitutional-nullification",
@@ -86,7 +86,7 @@ window.IMPUNITY_CASES = [
       "Kifungu 43(1)(a) (Haki ya Kiwango cha Juu cha Afya)",
       "Kifungu 43(2) (Haki ya Kutonyimwa Matibabu ya Dharura)"
     ],
-    "source_url": "https://kenyalaw.org/caselaw/cases/view/271295/"
+    "source_url": "https://capitalfm.africa/high-court-declares-social-health-insurance-act-unconstitutional/"
   },
   {
     "id": "kdf-deployment-against-protesters",
@@ -116,7 +116,7 @@ window.IMPUNITY_CASES = [
       "Kifungu 238 (Kanuni za Usalama wa Kitaifa)",
       "Kifungu 241 (Mamlaka na Mipaka ya Jeshi la KDF)"
     ],
-    "source_url": "https://kenyalaw.org/caselaw/cases/view/270812/"
+    "source_url": "https://citizen.digital/article/court-okays-military-deployment-to-contain-demos-orders-terms-gazetted-in-two-days-n344814"
   },
   {
     "id": "privatisation-act-kicc-parastatals",
@@ -147,7 +147,7 @@ window.IMPUNITY_CASES = [
       "Kifungu 201 (Usimamizi wa Fedha za Umma)",
       "Kifungu 227 (Zabuni za Haki na Ushindani)"
     ],
-    "source_url": "https://kenyalaw.org/caselaw/cases/view/268910/"
+    "source_url": "https://katibainstitute.org/the-high-court-of-kenya-declares-the-privatisation-act-2023-unconstitutional/"
   },
   {
     "id": "adani-jkia-concession-freeze",
@@ -177,7 +177,7 @@ window.IMPUNITY_CASES = [
       "Kifungu 35 (Haki ya Kupata Taarifa)",
       "Kifungu 227 (Sheria za Zabuni za Umma)"
     ],
-    "source_url": "https://kenyalaw.org/caselaw/cases/view/274011/"
+    "source_url": "https://khrc.or.ke/case/khrc-lsk-sue-to-block-adanis-30-year-jkia-lease/"
   },
   {
     "id": "adani-ketraco-powerlines-freeze",
@@ -206,7 +206,7 @@ window.IMPUNITY_CASES = [
       "Kifungu 35 (Haki ya Taarifa za Umma)",
       "Kifungu 227 (Usawa Katika Mikataba ya Serikali)"
     ],
-    "source_url": "https://kenyalaw.org/caselaw/cases/view/276504/"
+    "source_url": "https://citizen.digital/article/inside-adanis-ksh95-billion-30-year-deal-for-kenyas-power-lines-n351348"
   },
   {
     "id": "executive-threats-to-judiciary",
@@ -235,7 +235,7 @@ window.IMPUNITY_CASES = [
       "Kifungu 165 (Mamlaka ya Mahakama Kuu)",
       "Kifungu 249 (Kulinda Katiba na Haki za Wananchi)"
     ],
-    "source_url": "https://www.judiciary.go.ke/press-releases/"
+    "source_url": "https://citizen.digital/article/youre-setting-up-the-country-for-chaos-and-anarchy-cj-koome-tells-ruto-on-judiciary-attacks-n334830"
   },
   {
     "id": "tsc-appointment-letters-mps",
@@ -264,7 +264,7 @@ window.IMPUNITY_CASES = [
       "Kifungu 232 (Maadili ya Utumishi wa Umma)",
       "Kifungu 237 (Uhuru wa Tume ya Walimu TSC)"
     ],
-    "source_url": "https://kenyalaw.org/caselaw/cases/view/251309/"
+    "source_url": "https://citizen.digital/article/wetangulas-expose-reveals-how-state-house-has-politicized-teacher-employment-n388928"
   },
   {
     "id": "dpp-dropping-allies-graft-cases",
@@ -293,6 +293,66 @@ window.IMPUNITY_CASES = [
       "Kifungu 157 (Mamlaka ya Mashtaka ya Umma)",
       "Kifungu 201 (Usimamizi Bora wa Fedha)"
     ],
-    "source_url": "https://kenyalaw.org/caselaw/cases/view/248102/"
+    "source_url": "https://citizen.digital/article/dpp-haji-defends-high-profile-case-withdrawals-says-allowed-under-the-law-n320147"
+  },
+  {
+    "id": "university-funding-model-unconstitutional",
+    "title": "Banded University Funding Model (VSLF) Declared Unconstitutional",
+    "title_sw": "Mfumo Mpya wa Ufadhili wa Vyuo Vikuu Watangazwa Kinyume cha Katiba",
+    "court": "High Court of Kenya",
+    "court_sw": "Mahakama Kuu ya Kenya",
+    "petition_no": "Petition No. E369 of 2023 (KHRC & Students' Caucus)",
+    "bench": "Justice Chacha Mwita",
+    "date": "2024-12-20",
+    "category": "Education & Equal Rights",
+    "category_sw": "Elimu na Usawa wa Kikatiba",
+    "ruling": "Justice Chacha Mwita declared the government's Variable Scholarship and Loan Funding (VSLF) model unconstitutional and discriminatory for lacking public participation, unfairly banding students by parental income, and shifting the state's constitutional duty to fund public universities onto parents.",
+    "ruling_sw": "Jaji Chacha Mwita alitangaza mfumo mpya wa ufadhili wa vyuo vikuu kuwa kinyume cha Katiba na wa kibaguzi kwa kukosa ushirikishwaji wa umma na kuwatwika wazazi mzigo wa serikali wa kufadhili elimu ya juu.",
+    "executive_defiance": "The Ministry of Education, HELB, and Universities Fund had already enforced the disputed income bands across two cohorts of university admissions, stranding thousands of students before rushing to seek appellate stays.",
+    "executive_defiance_sw": "Wizara ya Elimu na HELB zilikuwa tayari zimelazimisha makundi hayo ya kibaguzi kwa maelfu ya wanafunzi kabla ya kukimbilia mahakama ya rufaa kusimamisha uamuzi huo.",
+    "status": "DEFYING COURT ORDER",
+    "status_sw": "UKAIDI / RUFAA YA HARAKA",
+    "articles_violated": [
+      "Art. 10",
+      "Art. 27",
+      "Art. 43(1)(f)"
+    ],
+    "articles_violated_sw": [
+      "Kifungu 10 (Ushirikishwaji wa Umma)",
+      "Kifungu 27 (Kutobaguliwa)",
+      "Kifungu 43(1)(f) (Haki ya Elimu)"
+    ],
+    "source_url": "https://citizen.digital/article/high-court-declares-new-university-funding-model-unconstitutional-n354804"
+  },
+  {
+    "id": "state-house-church-conservatory-order",
+    "title": "High Court Halts KSh 1.2B State House Mega-Church Construction",
+    "title_sw": "Mahakama Kuu Yazuia Ujenzi wa Kanisa la KSh 1.2B Ikulu",
+    "court": "High Court of Kenya",
+    "court_sw": "Mahakama Kuu ya Kenya",
+    "petition_no": "Constitutional Petition (TI-Kenya & KHRC, 2025)",
+    "bench": "High Court Constitutional & Human Rights Division",
+    "date": "2025-07-18",
+    "category": "Secular State & Public Land",
+    "category_sw": "Uhuru wa Dini na Ardhi ya Umma",
+    "ruling": "Following petitions by Transparency International Kenya and the Kenya Human Rights Commission, the High Court issued conservatory orders halting construction of a permanent mega-church inside State House Nairobi pending determination of whether it violates Article 8 (no state religion) and public land laws.",
+    "ruling_sw": "Kufuatia kesi za Transparency International Kenya na KHRC, Mahakama Kuu ilitoa amri ya kusitisha ujenzi wa kanisa kubwa ndani ya Ikulu ya Nairobi ikichunguza ukiukaji wa Kifungu cha 8 (Kenya haina dini ya kitaifa) na sheria za ardhi ya umma.",
+    "executive_defiance": "President Ruto publicly declared he owed no one an apology for building a permanent church on public State House grounds without parliamentary approval or public participation.",
+    "executive_defiance_sw": "Rais Ruto alitangaza hadharani kuwa hatamwomba yeyote msamaha kwa kujenga kanisa katika ardhi ya umma ya Ikulu bila idhini ya Bunge wala ushirikishwaji wa wananchi.",
+    "status": "CONSERVATORY INJUNCTION ACTIVE",
+    "status_sw": "AMRI YA MAHAKAMA YA KUZUIA IPO HAI",
+    "articles_violated": [
+      "Art. 8",
+      "Art. 10",
+      "Art. 62",
+      "Art. 201"
+    ],
+    "articles_violated_sw": [
+      "Kifungu 8 (Hakuna Dini ya Serikali)",
+      "Kifungu 10 (Uwazi)",
+      "Kifungu 62 (Ardhi ya Umma)",
+      "Kifungu 201 (Fedha za Umma)"
+    ],
+    "source_url": "https://businesstoday.co.ke/court-blocks-rutos-ksh1-2b-state-house-church/"
   }
 ];

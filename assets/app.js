@@ -1,5 +1,6 @@
 (() => {
   const claims = (window.CLAIMS || []).slice();
+  const scandals = (window.SCANDALS || []).slice();
   const mps = (window.MPS || []).slice();
   const impunityCases = (window.IMPUNITY_CASES || []).slice();
   const memorialRecords = (window.MEMORIAL_RECORDS || []).slice();
@@ -8,6 +9,7 @@
 
   let activeTab = "receipts";
   let currentLang = localStorage.getItem("mustgo_lang") || "en";
+  const scandalState = { q: "", cat: "all" };
   const mpState = { q: "", vote: "all", county: null };
   const impunityState = { status: "all" };
   const memorialState = { cat: "all" };
@@ -588,6 +590,20 @@
           mpEl.style.borderColor = "var(--red)";
         }
       }, 100);
+      return;
+    }
+
+    if (hash === "scandals") {
+      switchTab("scandals", false);
+      return;
+    }
+
+    if (hash.startsWith("scandals=")) {
+      const cat = hash.replace("scandals=", "");
+      if (["all", "corruption", "spending", "abuse", "mismanagement"].includes(cat)) {
+        scandalState.cat = cat;
+      }
+      switchTab("scandals", false);
       return;
     }
 
@@ -1226,11 +1242,22 @@
     initDossiers();
     initChargeSheet();
     initHubNav();
+    initScandals();
     initMPs();
     initImpunity();
     initMemorial();
     initPWA();
     initLanguage();
+
+    // Sync hub tab badge counts dynamically
+    const hubReceiptsCount = $("hub-count-receipts");
+    if (hubReceiptsCount) hubReceiptsCount.textContent = claims.length;
+    const hubScandalsCount = $("hub-count-scandals");
+    if (hubScandalsCount) hubScandalsCount.textContent = scandals.length;
+    const hubImpunityCount = $("hub-count-impunity");
+    if (hubImpunityCount) hubImpunityCount.textContent = impunityCases.length;
+    const hubMemorialCount = $("hub-count-memorial");
+    if (hubMemorialCount) hubMemorialCount.textContent = memorialRecords.length;
 
     // Back to top button
     const backToTopBtn = $("back-to-top");
@@ -1278,11 +1305,14 @@
     if (searchInput) searchInput.placeholder = t("search_placeholder");
     const mpSearch = $("mp-search");
     if (mpSearch) mpSearch.placeholder = t("mp_search_placeholder");
+    const scandalsSearch = $("scandals-search");
+    if (scandalsSearch) scandalsSearch.placeholder = t("scandals_search_placeholder");
 
     // Re-render all views and active filters without rebinding listeners
     initScorecard();
     renderChips();
     render();
+    renderScandals();
     renderMPCountyChips();
     renderMPs();
     renderImpunity();
@@ -1316,11 +1346,13 @@
     });
 
     const secReceipts = $("section-receipts");
+    const secScandals = $("section-scandals");
     const secMps = $("section-mps");
     const secImpunity = $("section-impunity");
     const secMemorial = $("section-memorial");
 
     if (secReceipts) secReceipts.hidden = tabId !== "receipts";
+    if (secScandals) secScandals.hidden = tabId !== "scandals";
     if (secMps) secMps.hidden = tabId !== "mps";
     if (secImpunity) secImpunity.hidden = tabId !== "impunity";
     if (secMemorial) secMemorial.hidden = tabId !== "memorial";
@@ -1331,6 +1363,8 @@
 
     if (tabId === "receipts") {
       render();
+    } else if (tabId === "scandals") {
+      renderScandals();
     } else if (tabId === "mps") {
       renderMPs();
     } else if (tabId === "impunity") {
@@ -1713,6 +1747,7 @@
             </div>
 
             <p class="memorial-tribute">"${esc(tribute)}"</p>
+            ${m.source_url ? `<a href="${esc(m.source_url)}" target="_blank" rel="noopener" class="memorial-source-link">${t("memorial_read_source")}</a>` : ""}
           </div>
 
           <div class="memorial-actions">
@@ -1722,6 +1757,168 @@
             <button class="btn btn-x btn-sm" type="button" onclick="window.open('https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}', '_blank')">
               <span class="btn-icon">𝕏</span> ${xBtn}
             </button>
+          </div>
+        </article>
+      `;
+    }).join("");
+  }
+
+  // --- Scandals & Misrule Ledger Feature ---
+  function initScandals() {
+    const counts = {
+      all: scandals.length,
+      corruption: scandals.filter((s) => s.category === "corruption").length,
+      spending: scandals.filter((s) => s.category === "spending").length,
+      abuse: scandals.filter((s) => s.category === "abuse").length,
+      mismanagement: scandals.filter((s) => s.category === "mismanagement").length
+    };
+
+    const setStat = (id, val) => { const el = $(id); if (el) el.textContent = val; };
+    setStat("scandal-stat-total", counts.all);
+    setStat("scandal-stat-corruption", counts.corruption);
+    setStat("scandal-stat-spending", counts.spending);
+    setStat("scandal-stat-abuse", counts.abuse);
+    setStat("scandal-stat-mismanagement", counts.mismanagement);
+
+    const setCategory = (cat) => {
+      scandalState.cat = cat;
+      document.querySelectorAll("#scandals-filters .chip").forEach((c) => {
+        const isActive = c.dataset.cat === cat;
+        c.classList.toggle("active", isActive);
+        c.setAttribute("aria-pressed", String(isActive));
+      });
+      document.querySelectorAll("#scandals-summary-strip .scandal-stat-card").forEach((card) => {
+        card.classList.toggle("active", card.dataset.cat === cat);
+      });
+      renderScandals();
+    };
+
+    document.querySelectorAll("#scandals-filters .chip").forEach((btn) => {
+      btn.onclick = () => setCategory(btn.dataset.cat);
+    });
+
+    document.querySelectorAll("#scandals-summary-strip .scandal-stat-card").forEach((card) => {
+      card.onclick = () => setCategory(card.dataset.cat);
+    });
+
+    const searchInput = $("scandals-search");
+    const clearBtn = $("clear-scandals-search");
+    if (searchInput) {
+      const debouncedRender = debounce(renderScandals, 120);
+      searchInput.addEventListener("input", (e) => {
+        scandalState.q = e.target.value.trim().toLowerCase();
+        if (clearBtn) clearBtn.hidden = !scandalState.q;
+        debouncedRender();
+      });
+      if (clearBtn) {
+        clearBtn.onclick = () => {
+          searchInput.value = "";
+          scandalState.q = "";
+          clearBtn.hidden = true;
+          searchInput.focus();
+          renderScandals();
+        };
+      }
+    }
+
+    const resetBtn = $("scandals-reset-filters");
+    const doReset = () => {
+      scandalState.q = "";
+      if (searchInput) searchInput.value = "";
+      if (clearBtn) clearBtn.hidden = true;
+      setCategory("all");
+    };
+    if (resetBtn) resetBtn.onclick = doReset;
+    const emptyReset = $("scandals-empty-reset-btn");
+    if (emptyReset) emptyReset.onclick = doReset;
+
+    renderScandals();
+  }
+
+  function renderScandals() {
+    const grid = $("scandals-grid");
+    const empty = $("scandals-empty");
+    if (!grid) return;
+
+    const list = scandals.filter((s) => {
+      if (scandalState.cat !== "all" && s.category !== scandalState.cat) return false;
+      if (scandalState.q) {
+        const hay = [s.title, s.title_sw, s.summary, s.summary_sw, s.impact, s.oversight_body, s.status, s.category_label].join(" ").toLowerCase();
+        if (!hay.includes(scandalState.q)) return false;
+      }
+      return true;
+    });
+
+    const isSw = currentLang === "sw";
+    const resultsCount = $("scandals-results-count");
+    if (resultsCount) {
+      resultsCount.textContent = isSw
+        ? `Inaonyesha kashfa ${list.length} kati ya ${scandals.length}`
+        : `Showing ${list.length} of ${scandals.length} case files`;
+    }
+    const resetBtn = $("scandals-reset-filters");
+    if (resetBtn) {
+      resetBtn.hidden = scandalState.q === "" && scandalState.cat === "all";
+    }
+
+    if (list.length === 0) {
+      grid.innerHTML = "";
+      if (empty) empty.hidden = false;
+      return;
+    }
+    if (empty) empty.hidden = true;
+
+    const oversightLabel = t("scandals_oversight_label");
+    const statusLabel = t("scandals_status_label");
+    const readSourceLabel = t("scandals_read_source");
+
+    const catIcons = { corruption: "💼", spending: "💸", abuse: "🏛️", mismanagement: "📉" };
+
+    grid.innerHTML = list.map((s) => {
+      const title = (isSw && s.title_sw) ? s.title_sw : s.title;
+      const catLabel = (isSw && s.category_label_sw) ? s.category_label_sw : s.category_label;
+      const summary = (isSw && s.summary_sw) ? s.summary_sw : s.summary;
+      const oversight = (isSw && s.oversight_body_sw) ? s.oversight_body_sw : s.oversight_body;
+      const status = (isSw && s.status_sw) ? s.status_sw : s.status;
+      const icon = catIcons[s.category] || "🗂️";
+
+      const shareText = `🇰🇪 MustGo.co.ke · ${catLabel}\n\n${title}\nImpact: ${s.impact}\nOversight: ${oversight}\nStatus: ${status}\n\nSource: ${s.source_url}\nArchive: https://mustgo.co.ke/#scandals\n#MustGo #KenyanAccountability`;
+
+      return `
+        <article class="scandal-card" data-cat="${esc(s.category)}" id="${esc(s.id)}">
+          <div class="scandal-card-top">
+            <span class="scandal-cat-pill" data-cat="${esc(s.category)}">${icon} ${esc(catLabel)}</span>
+            <span class="scandal-impact-badge">${esc(s.impact)}</span>
+          </div>
+
+          <h3 class="scandal-title">${esc(title)}</h3>
+          <span class="scandal-date">${fmtDate(s.date)}</span>
+
+          <p class="scandal-summary">${esc(summary)}</p>
+
+          <div class="scandal-meta-box">
+            <div class="scandal-meta-row">
+              <strong>${oversightLabel}</strong>
+              <span>${esc(oversight)}</span>
+            </div>
+            <div class="scandal-meta-row">
+              <strong>${statusLabel}</strong>
+              <span class="scandal-status-pill">${esc(status)}</span>
+            </div>
+          </div>
+
+          <div class="scandal-card-footer">
+            <a href="${esc(s.source_url)}" target="_blank" rel="noopener" class="scandal-source-link">
+              <span>${readSourceLabel}</span>
+            </a>
+            <div class="scandal-share-btns">
+              <button class="btn btn-wa btn-sm" type="button" onclick="window.open('https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}', '_blank')" title="Share on WhatsApp">
+                <span class="btn-icon">💬</span>
+              </button>
+              <button class="btn btn-x btn-sm" type="button" onclick="window.open('https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}', '_blank')" title="Post on X">
+                <span class="btn-icon">𝕏</span>
+              </button>
+            </div>
           </div>
         </article>
       `;
