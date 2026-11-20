@@ -810,7 +810,7 @@ html.dark .theme-icon-dark { display: none; }
   margin-bottom: 32px;
 }
 
-/* Mobile / Overflow Swipe Cue Strip */
+/* Mobile / Overflow Swipe Cue Strip (shown only on mobile/tablet <= 900px) */
 .hub-nav-hint {
   display: none;
   justify-content: space-between;
@@ -823,10 +823,6 @@ html.dark .theme-icon-dark { display: none; }
   letter-spacing: 0.10em;
   text-transform: uppercase;
   color: var(--muted);
-}
-
-.hub-nav-bar.is-scrollable .hub-nav-hint {
-  display: flex;
 }
 
 .hub-hint-swipe {
@@ -3235,6 +3231,9 @@ blockquote {
 }
 
 @media (max-width: 900px) {
+  .hub-nav-bar.is-scrollable .hub-nav-hint {
+    display: flex;
+  }
   .scandals-summary-strip {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -3250,6 +3249,10 @@ blockquote {
 
   .masthead {
     padding: 16px 0 26px;
+  }
+
+  .scorecard {
+    display: none;
   }
 
   .top-nav {
