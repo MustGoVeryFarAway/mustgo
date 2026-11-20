@@ -167,6 +167,13 @@
   }
 
   // --- Theme Management ---
+  function updateThemeColor(theme) {
+    const color = theme === "dark" ? "#0b0b0c" : "#f8f7f3";
+    document.querySelectorAll('meta[name="theme-color"]').forEach((m) => {
+      m.setAttribute("content", color);
+    });
+  }
+
   function initTheme() {
     const saved = localStorage.getItem("mustgo-theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -174,6 +181,7 @@
 
     document.documentElement.setAttribute("data-theme", initial);
     document.documentElement.classList.toggle("dark", initial === "dark");
+    updateThemeColor(initial);
 
     const toggleBtn = $("theme-toggle");
     if (toggleBtn) {
@@ -182,6 +190,7 @@
         const next = isDark ? "light" : "dark";
         document.documentElement.setAttribute("data-theme", next);
         document.documentElement.classList.toggle("dark", next === "dark");
+        updateThemeColor(next);
         localStorage.setItem("mustgo-theme", next);
         showToast(`Switched to ${next} mode`);
       };

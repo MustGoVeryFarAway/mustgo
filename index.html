@@ -6,7 +6,8 @@
   <title>MustGo.co.ke · Ruto Receipts | Public Record Archive</title>
   <meta name="description" content="A searchable civic archive of President William Ruto's public statements, on video, set against independent fact-checks, judicial rulings, and the public record.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <meta name="theme-color" content="#141414">
+  <meta name="theme-color" content="#f8f7f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0b0c" media="(prefers-color-scheme: dark)">
 
   <link rel="canonical" href="https://mustgo.co.ke/">
 
@@ -149,32 +150,37 @@
   <header class="masthead">
     <div class="wrap">
       <div class="top-nav">
-        <div class="domain-badge">
+        <a href="#receipts" class="domain-badge" aria-label="MustGo.co.ke Home">
           <span class="live-dot" aria-hidden="true"></span>
           <span class="domain-text">mustgo.co.ke</span>
           <span class="domain-subtag">receipts</span>
-        </div>
+        </a>
         <div class="header-actions">
           <span id="offline-pill" class="offline-pill" hidden title="Running in offline mode">
             <span class="offline-dot"></span> Offline
           </span>
-          <button id="lang-toggle" class="btn btn-outline btn-sm lang-btn" type="button" aria-label="Toggle language between English and Kiswahili" title="Badili Lugha / Toggle English &amp; Kiswahili">
-            <span class="lang-flag" aria-hidden="true">🇰🇪</span>
-            <span id="lang-text">KISWAHILI</span>
-          </button>
-          <button id="pwa-install-btn" class="btn btn-outline btn-sm pwa-btn" type="button" hidden title="Install MustGo App">
-            <span class="btn-icon">📲</span> <span id="pwa-text" data-i18n="pwa_install_btn">App</span>
-          </button>
-          <button id="theme-toggle" class="btn btn-outline btn-sm theme-btn" type="button" aria-label="Toggle dark/light theme" title="Toggle theme">
-            <span class="theme-icon-light" aria-hidden="true">☀️</span>
-            <span class="theme-icon-dark" aria-hidden="true">🌙</span>
-            <span class="theme-text" data-i18n="theme_toggle">Theme</span>
-          </button>
+          <div class="nav-utility-group">
+            <button id="lang-toggle" class="btn btn-ghost btn-sm lang-btn" type="button" aria-label="Toggle language between English and Kiswahili" title="Badili Lugha / Toggle English &amp; Kiswahili">
+              <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span id="lang-text">KISWAHILI</span>
+            </button>
+            <button id="pwa-install-btn" class="btn btn-ghost btn-sm pwa-btn" type="button" hidden title="Install MustGo App">
+              <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span id="pwa-text" data-i18n="pwa_install_btn">App</span>
+            </button>
+            <button id="theme-toggle" class="btn btn-ghost btn-sm theme-btn" type="button" aria-label="Toggle dark/light theme" title="Toggle theme">
+              <svg class="ui-icon theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+              <svg class="ui-icon theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+              <span class="theme-text" data-i18n="theme_toggle">Theme</span>
+            </button>
+          </div>
           <button id="open-chargesheet" class="btn btn-charge btn-sm" type="button" title="View executive charge sheet and factsheet">
-            <span class="btn-icon">📋</span> <span data-i18n="nav_chargesheet">Charge Sheet</span>
+            <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+            <span data-i18n="nav_chargesheet">Charge Sheet</span>
           </button>
           <button id="open-submit" class="btn btn-primary btn-sm">
-            <span class="btn-icon">＋</span> <span data-i18n="nav_submit">Submit a Receipt</span>
+            <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <span data-i18n="nav_submit">Submit a Receipt</span>
           </button>
         </div>
       </div>
@@ -182,16 +188,18 @@
       <div class="hero-content">
         <div class="kicker-pill">
           <span class="kicker-flag">🇰🇪</span>
-          <span class="kicker-text" data-i18n="kicker">Civic Accountability & Campaign Archive · Kenya</span>
+          <span class="kicker-text" data-i18n="kicker">Civic Accountability &amp; Campaign Archive · Kenya</span>
         </div>
         <h1><span data-i18n="hero_h1_main">MustGo</span> <span data-i18n="hero_h1_sub">Receipts</span></h1>
         <p class="lede" data-i18n="hero_lede">What President William Ruto said on camera, set against independent fact-checks, judicial rulings, and official state audits. Documenting corruption, constitutional breaches, police brutality, and broken promises.</p>
         <div class="hero-actions">
-          <button id="hero-chargesheet-btn" class="btn btn-primary btn-sm" type="button">
-            <span class="btn-icon">📋</span> View Executive Charge Sheet
+          <button id="hero-chargesheet-btn" class="btn btn-accent" type="button">
+            <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <span>View Executive Charge Sheet</span>
           </button>
-          <a href="#dossiers-section" class="btn btn-outline btn-sm">
-            <span class="btn-icon">📁</span> Explore 6 Campaign Dossiers
+          <a href="#dossiers-section" class="btn btn-outline">
+            <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            <span>Explore 6 Campaign Dossiers</span>
           </a>
         </div>
       </div>
@@ -200,7 +208,9 @@
       <section class="scorecard" aria-label="Verification Summary">
         <div class="scorecard-header">
           <div class="scorecard-title">
-            <span class="scorecard-icon">⚖️</span>
+            <span class="scorecard-icon-box" aria-hidden="true">
+              <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+            </span>
             <strong data-i18n="scorecard_title">The Record Scorecard</strong>
           </div>
           <div id="sc-summary" class="scorecard-summary"><!-- PRERENDER:SC_SUMMARY -->75 Statements · 68% Debunked (False + Misleading)<!-- /PRERENDER:SC_SUMMARY --></div>
@@ -214,22 +224,22 @@
   <!-- Civic Navigation Hub -->
   <nav class="hub-nav wrap" role="tablist" aria-label="Civic Navigation Hub">
     <button class="hub-tab active" id="tab-btn-receipts" data-tab="receipts" type="button" role="tab" aria-selected="true" aria-controls="section-receipts">
-      <span class="hub-icon">🧾</span>
+      <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg>
       <span class="hub-label" data-i18n="nav_receipts">Receipts Archive</span>
       <span class="hub-badge" id="hub-count-receipts">75</span>
     </button>
     <button class="hub-tab" id="tab-btn-mps" data-tab="mps" type="button" role="tab" aria-selected="false" aria-controls="section-mps">
-      <span class="hub-icon">🗳️</span>
+      <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       <span class="hub-label" data-i18n="nav_mps">Find Your MP</span>
       <span class="hub-badge" id="hub-count-mps">217</span>
     </button>
     <button class="hub-tab" id="tab-btn-impunity" data-tab="impunity" type="button" role="tab" aria-selected="false" aria-controls="section-impunity">
-      <span class="hub-icon">⚖️</span>
+      <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
       <span class="hub-label" data-i18n="nav_impunity">Impunity Watch</span>
       <span class="hub-badge" id="hub-count-impunity">10</span>
     </button>
     <button class="hub-tab" id="tab-btn-memorial" data-tab="memorial" type="button" role="tab" aria-selected="false" aria-controls="section-memorial">
-      <span class="hub-icon">🕊️</span>
+      <svg class="ui-icon hub-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 1 0-16 0c0 4.5 4 8 8 12Z"/><circle cx="12" cy="10" r="3"/></svg>
       <span class="hub-label" data-i18n="nav_memorial">Memorial of Courage</span>
       <span class="hub-badge" id="hub-count-memorial">13</span>
     </button>
@@ -313,7 +323,7 @@
   <!-- Filter & Search Controls -->
   <nav class="controls wrap" aria-label="Filters">
     <div class="search-box">
-      <span class="search-icon" aria-hidden="true">🔍</span>
+      <svg class="search-icon ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input id="search" type="search" placeholder="Search quotes, topics, places (e.g. unga, budget, jobs)..." autocomplete="off" spellcheck="false">
       <kbd class="search-kbd" title="Press / to search">/</kbd>
       <button id="clear-search" class="clear-btn" type="button" aria-label="Clear search" hidden>×</button>
@@ -472,7 +482,7 @@
     <!-- MP Controls -->
     <div class="mp-controls">
       <div class="search-box">
-        <span class="search-icon" aria-hidden="true">🔍</span>
+        <svg class="search-icon ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         <input id="mp-search" type="search" placeholder="Search MP by name, constituency, or county (e.g. Kikuyu, Babu, Nairobi)..." autocomplete="off" spellcheck="false">
         <button id="clear-mp-search" class="clear-btn" type="button" aria-label="Clear search" hidden>×</button>
       </div>
@@ -777,7 +787,9 @@
   </dialog>
 
   <!-- Floating Back to Top Button -->
-  <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" title="Back to top" hidden>↑</button>
+  <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" title="Back to top" hidden>
+    <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
 
   <!-- Service Worker Update Banner -->
   <div id="sw-update-banner" class="sw-update-banner" role="status" aria-live="polite" hidden>
@@ -808,9 +820,9 @@
           <h4>Contact, Corrections & Open Data</h4>
           <p>Spotted a factual error, have a tip, or want to write to us? <a href="#submit" id="foot-submit-link">Submit a receipt/correction</a>, email <a href="mailto:mustgomail@proton.me">mustgomail@proton.me</a>, or open a pull request. Datasets are licensed under Public Domain.</p>
           <div class="open-data-links">
-            <a href="data/claims.json" target="_blank" class="open-data-link">claims.json ↗</a> ·
-            <a href="data/mps.json" target="_blank" class="open-data-link">mps.json ↗</a> ·
-            <a href="data/impunity.json" target="_blank" class="open-data-link">impunity.json ↗</a> ·
+            <a href="data/claims.json" target="_blank" class="open-data-link">claims.json ↗</a>
+            <a href="data/mps.json" target="_blank" class="open-data-link">mps.json ↗</a>
+            <a href="data/impunity.json" target="_blank" class="open-data-link">impunity.json ↗</a>
             <a href="data/memorial.json" target="_blank" class="open-data-link">memorial.json ↗</a>
           </div>
         </div>
