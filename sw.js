@@ -1,4 +1,4 @@
-const CACHE_NAME = "mustgo-receipts-v1.3.0";
+const CACHE_NAME = "mustgo-receipts-v1.3.1";
 
 const ASSETS_TO_CACHE = [
   "./",
@@ -64,6 +64,11 @@ self.addEventListener("fetch", (event) => {
         });
       })
     );
+    return;
+  }
+
+  // Bypass cross-origin requests (e.g. GoatCounter analytics, external embeds)
+  if (url.origin !== self.location.origin) {
     return;
   }
 

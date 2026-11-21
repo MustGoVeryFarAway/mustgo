@@ -168,6 +168,16 @@
     t._timer = setTimeout(() => { t.hidden = true; }, ms);
   }
 
+  // --- Analytics (GoatCounter) ---
+  function track(path, title, isEvent = true) {
+    if (!window.goatcounter || typeof window.goatcounter.count !== "function") return;
+    window.goatcounter.count({
+      path,
+      title: title || path,
+      event: isEvent
+    });
+  }
+
   // --- Theme Management ---
   function updateThemeColor(theme) {
     const color = theme === "dark" ? "#0c0c0b" : "#f4f1ea";
@@ -195,6 +205,7 @@
         updateThemeColor(next);
         localStorage.setItem("mustgo-theme", next);
         showToast(`Switched to ${next} mode`);
+        track(`event/theme/${next}`, `Theme: ${next}`);
       };
     }
   }
@@ -461,7 +472,12 @@
   // --- Viewer & Deep Linking ---
   async function open(c, updateHash = true) {
     if (!c) return;
+    const isNewClaim = !currentClaim || currentClaim.id !== c.id;
     currentClaim = c;
+
+    if (isNewClaim) {
+      track(`/receipt/${c.id}`, `Receipt: ${c.title}`, false);
+    }
 
     if (updateHash && window.location.hash !== `#${c.id}`) {
       history.pushState(null, "", `#${c.id}`);
@@ -642,6 +658,7 @@
       if (cs) {
         populateChargeSheetContent();
         cs.showModal();
+        track("/chargesheet", "Executive Charge Sheet", false);
       }
       return;
     }
@@ -683,12 +700,14 @@
   }
 
   function shareWhatsApp(c) {
+    track("event/share/whatsapp/receipt", `Share Receipt WA: ${c.id}`);
     const url = getShareUrl(c);
     const text = `🚨 *MustGo.co.ke Receipt*\n\n"${c.quote}"\n\n*Verdict:* ${c.verdict.toUpperCase()}\n*The Record:* ${c.reality}\n\n👉 See full video and fact-check:\n${url}`;
     window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, "_blank");
   }
 
   function shareX(c) {
+    track("event/share/x/receipt", `Share Receipt X: ${c.id}`);
     const url = getShareUrl(c);
     const quoteShort = c.quote.length > 90 ? c.quote.slice(0, 87) + "..." : c.quote;
     const text = `"${quoteShort}"\n\nVerdict: ${c.verdict.toUpperCase()}\nRecord: ${c.reality.slice(0, 80)}...\n\nReceipt via mustgo.co.ke:\n${url}`;
@@ -696,6 +715,7 @@
   }
 
   function copyClaimLink(c) {
+    track("event/share/copy/receipt", `Copy Receipt Link: ${c.id}`);
     const url = getShareUrl(c);
     navigator.clipboard.writeText(url).then(() => {
       const textEl = $("copy-text");
@@ -730,6 +750,7 @@
   }
 
   function generateReceiptSlip(c) {
+    track("event/download/receipt-slip", `Download Receipt PNG: ${c.id}`);
     const label = $("download-text");
     if (label) label.textContent = "Generating...";
 
@@ -882,6 +903,7 @@
       $("sub-factcheck").value = c.factcheck_url || "";
     }
     sub.showModal();
+    track("event/submit/open", c ? `Open Submit Clip: ${c.id}` : "Open Submit Receipt Modal");
   }
 
   function handleFormSubmit(e) {
@@ -913,6 +935,7 @@
     ].join("\n");
 
     window.location.href = `mailto:mustgomail@proton.me?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    track("event/submit/email", "Submit Receipt via Email");
     showToast("Opening email draft to mustgomail@proton.me...");
     $("submit-dialog").close();
   }
@@ -927,6 +950,7 @@
 
     const text = `MUSTGO RECEIPT SUBMISSION\nTitle: ${title}\nQuote: "${quote}"\nDate: ${date}\nContext: ${context}\nVideo: ${video}\nFact-check: ${factcheck}`;
     navigator.clipboard.writeText(text).then(() => {
+      track("event/submit/copy", "Copy Receipt Submission");
       showToast("Submission text copied to clipboard!");
     });
   }
@@ -948,6 +972,9 @@
         } else {
           state.dossier = dKey;
           history.pushState(null, "", `#dossier=${dKey}`);
+          if (DOSSIERS[dKey]) {
+            track(`/dossier/${dKey}`, `Dossier: ${DOSSIERS[dKey].name}`, false);
+          }
           const banner = $("dossier-banner");
           if (banner) {
             banner.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -970,6 +997,7 @@
     if (dbShareWa) {
       dbShareWa.onclick = () => {
         if (!state.dossier) return;
+        track("event/share/whatsapp/dossier", `Share Dossier WA: ${state.dossier}`);
         const d = DOSSIERS[state.dossier];
         const matching = claims.filter((c) => claimMatchesDossier(c, state.dossier));
         const origin = window.location.origin === "null" || !window.location.origin ? "https://mustgo.co.ke" : window.location.origin;
@@ -982,6 +1010,7 @@
     if (dbShareX) {
       dbShareX.onclick = () => {
         if (!state.dossier) return;
+        track("event/share/x/dossier", `Share Dossier X: ${state.dossier}`);
         const d = DOSSIERS[state.dossier];
         const origin = window.location.origin === "null" || !window.location.origin ? "https://mustgo.co.ke" : window.location.origin;
         const text = `🇰🇪 MustGo Dossier: ${d.name}\n\n${d.desc.slice(0, 140)}...\n\nExplore all receipts:\n${origin}${window.location.pathname}#dossier=${state.dossier}\n\n#MustGo #RutoReceipts`;
@@ -1000,6 +1029,7 @@
     const openCS = () => {
       populateChargeSheetContent();
       csDialog.showModal();
+      track("/chargesheet", "Executive Charge Sheet", false);
     };
 
     if (openBtn) openBtn.onclick = openCS;
@@ -1025,11 +1055,17 @@
     });
 
     const printBtn = $("cs-btn-print");
-    if (printBtn) printBtn.onclick = () => window.print();
+    if (printBtn) {
+      printBtn.onclick = () => {
+        track("event/chargesheet/print", "Print Charge Sheet");
+        window.print();
+      };
+    }
 
     const copyBtn = $("cs-btn-copy");
     if (copyBtn) {
       copyBtn.onclick = () => {
+        track("event/chargesheet/copy", "Copy Charge Sheet");
         const summaryText = buildChargeSheetText();
         navigator.clipboard.writeText(summaryText).then(() => {
           const textEl = $("cs-copy-text");
@@ -1043,6 +1079,7 @@
     const waBtn = $("cs-btn-wa");
     if (waBtn) {
       waBtn.onclick = () => {
+        track("event/share/whatsapp/chargesheet", "Share Charge Sheet WA");
         const summaryText = buildChargeSheetText();
         const origin = window.location.origin === "null" || !window.location.origin ? "https://mustgo.co.ke" : window.location.origin;
         const text = `🇰🇪 *EXECUTIVE CHARGE SHEET · MUSTGO.CO.KE*\n\n${summaryText.slice(0, 1800)}\n\n👉 Full evidence archive:\n${origin}`;
@@ -1096,6 +1133,7 @@
         if (cs) cs.close();
         state.dossier = key;
         history.pushState(null, "", `#dossier=${key}`);
+        track(`/dossier/${key}`, `Dossier: ${d.name}`, false);
         render();
         const banner = $("dossier-banner");
         if (banner) banner.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -1200,7 +1238,10 @@
 
     // Submit dialog events
     const submitDialog = $("submit-dialog");
-    $("open-submit").onclick = () => submitDialog.showModal();
+    $("open-submit").onclick = () => {
+      submitDialog.showModal();
+      track("event/submit/open", "Open Submit Receipt Modal");
+    };
     submitDialog.querySelector(".close").onclick = () => submitDialog.close();
     submitDialog.addEventListener("click", (e) => {
       if (e.target === submitDialog) submitDialog.close();
@@ -1213,8 +1254,23 @@
       footSubmitLink.onclick = (e) => {
         e.preventDefault();
         submitDialog.showModal();
+        track("event/submit/open", "Open Submit Receipt Modal (Footer)");
       };
     }
+
+    // Delegated analytics tracking for inline share/copy buttons and open-data links
+    document.addEventListener("click", (e) => {
+      const tracked = e.target.closest("[data-track-event]");
+      if (tracked) {
+        track(tracked.dataset.trackEvent, tracked.dataset.trackTitle || tracked.dataset.trackEvent);
+        return;
+      }
+      const dataLink = e.target.closest(".open-data-link");
+      if (dataLink) {
+        const file = (dataLink.getAttribute("href") || "").split("/").pop() || "dataset";
+        track(`event/opendata/${file}`, `Open Data: ${file}`);
+      }
+    });
 
     // Initialize campaign tools and new civic modules
     initDossiers();
@@ -1308,6 +1364,7 @@
       langBtn.onclick = () => {
         const nextLang = currentLang === "en" ? "sw" : "en";
         applyLanguage(nextLang);
+        track(`event/lang/${nextLang}`, `Language: ${nextLang}`);
         showToast(nextLang === "sw" ? "Lugha imebadilishwa kuwa Kiswahili 🇰🇪" : "Language switched to English 🇰🇪");
       };
     }
@@ -1316,7 +1373,11 @@
 
   // --- Civic Hub Tab Switching ---
   function switchTab(tabId, pushHash = true) {
+    const isTabChange = tabId !== activeTab;
     activeTab = tabId;
+    if (isTabChange) {
+      track(`/tab/${tabId}`, `Tab: ${tabId}`, false);
+    }
     document.querySelectorAll(".hub-tab").forEach((tab) => {
       const isActive = tab.dataset.tab === tabId;
       tab.classList.toggle("active", isActive);
@@ -1619,10 +1680,10 @@
           </div>
 
           <div class="mp-actions">
-            <button class="btn btn-x btn-mp" type="button" onclick="window.open('https://twitter.com/intent/tweet?text=${encodeURIComponent(xMsg)}', '_blank')">
+            <button class="btn btn-x btn-mp" type="button" data-track-event="event/share/x/mp" data-track-title="Share MP X: ${esc(m.id)}" onclick="window.open('https://twitter.com/intent/tweet?text=${encodeURIComponent(xMsg)}', '_blank')">
               <span class="btn-icon">𝕏</span> <span>${shareBtn}</span>
             </button>
-            <button class="btn btn-outline btn-mp" type="button" onclick="navigator.clipboard.writeText('${esc(copyText)}').then(() => showToast('${toastMsg}'))">
+            <button class="btn btn-outline btn-mp" type="button" data-track-event="event/share/copy/mp" data-track-title="Copy MP Record: ${esc(m.id)}" onclick="navigator.clipboard.writeText('${esc(copyText)}').then(() => showToast('${toastMsg}'))">
               <span class="btn-icon">📋</span> <span>${copyBtn}</span>
             </button>
           </div>
@@ -1773,10 +1834,10 @@
           </div>
 
           <div class="memorial-actions">
-            <button class="btn btn-wa btn-sm" type="button" onclick="window.open('https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}', '_blank')">
+            <button class="btn btn-wa btn-sm" type="button" data-track-event="event/share/whatsapp/memorial" data-track-title="Share Memorial WA: ${esc(m.id)}" onclick="window.open('https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}', '_blank')">
               <span class="btn-icon">💬</span> ${shareBtn}
             </button>
-            <button class="btn btn-x btn-sm" type="button" onclick="window.open('https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}', '_blank')">
+            <button class="btn btn-x btn-sm" type="button" data-track-event="event/share/x/memorial" data-track-title="Share Memorial X: ${esc(m.id)}" onclick="window.open('https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}', '_blank')">
               <span class="btn-icon">𝕏</span> ${xBtn}
             </button>
           </div>
@@ -1934,10 +1995,10 @@
               <span>${readSourceLabel}</span>
             </a>
             <div class="scandal-share-btns">
-              <button class="btn btn-wa btn-sm" type="button" onclick="window.open('https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}', '_blank')" title="Share on WhatsApp">
+              <button class="btn btn-wa btn-sm" type="button" data-track-event="event/share/whatsapp/scandal" data-track-title="Share Scandal WA: ${esc(s.id)}" onclick="window.open('https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}', '_blank')" title="Share on WhatsApp">
                 <span class="btn-icon">💬</span>
               </button>
-              <button class="btn btn-x btn-sm" type="button" onclick="window.open('https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}', '_blank')" title="Post on X">
+              <button class="btn btn-x btn-sm" type="button" data-track-event="event/share/x/scandal" data-track-title="Share Scandal X: ${esc(s.id)}" onclick="window.open('https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}', '_blank')" title="Post on X">
                 <span class="btn-icon">𝕏</span>
               </button>
             </div>
@@ -1966,7 +2027,10 @@
         btn.onclick = () => {
           btn.hidden = true;
           deferredPrompt.prompt();
-          deferredPrompt.userChoice.then(() => {
+          deferredPrompt.userChoice.then((choice) => {
+            if (choice && choice.outcome) {
+              track(`event/pwa/${choice.outcome}`, `PWA Install: ${choice.outcome}`);
+            }
             deferredPrompt = null;
           });
         };
